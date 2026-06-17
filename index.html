@@ -12,6 +12,19 @@
 </head>
 <body>
 
+  <!-- CUSTOM CURSOR -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- INTRO OVERLAY -->
+  <div id="intro">
+    <div id="intro-logo">
+      <span class="intro-char" style="--i:0">C</span><span class="intro-char" style="--i:1">E</span><span class="intro-char" style="--i:2">N</span><span class="intro-char" style="--i:3">T</span><span class="intro-char" style="--i:4">R</span><span class="intro-char" style="--i:5">A</span><span class="intro-char" style="--i:6">L</span><span class="intro-char" style="--i:7">I</span><span class="intro-char" style="--i:8">S</span>
+    </div>
+    <div id="intro-line"></div>
+    <div id="intro-wipe"></div>
+  </div>
+
   <!-- NAV -->
   <nav id="navbar">
     <div class="nav-inner">
@@ -34,32 +47,57 @@
 
   <!-- HERO -->
   <section id="accueil" class="hero">
+    <canvas id="hero-canvas"></canvas>
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="orb orb-3"></div>
+
     <div class="hero-content">
-      <p class="hero-label">Alfortville · Région Parisienne</p>
-      <h1>
-        <span class="hero-line hero-line-1">
-          <span class="word">UN</span>
-          <span class="word">ÉCOSYSTÈME</span>
+      <div class="hero-label-wrap">
+        <span class="hero-label-line"></span>
+        <p class="hero-label">Alfortville · Île-de-France</p>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="hero-line" data-delay="0">
+          <span class="scramble-word" data-text="UN">UN</span>
+          <span class="scramble-word hero-accent" data-text="ÉCOSYSTÈME">ÉCOSYSTÈME</span>
         </span>
-        <span class="hero-line hero-line-2">
-          <span class="word">QUI</span>
-          <span class="word">VOUS</span>
-          <span class="word">PROPULSE.</span>
+        <span class="hero-line" data-delay="120">
+          <span class="scramble-word" data-text="QUI">QUI</span>
+          <span class="scramble-word" data-text="VOUS">VOUS</span>
+          <span class="scramble-word hero-outline" data-text="PROPULSE.">PROPULSE.</span>
         </span>
       </h1>
-      <p class="hero-subtitle">Un écosystème dédié à la réussite des talents, des entrepreneurs et des entreprises — espaces, formations, conseil, services.</p>
-      <div class="hero-cta">
-        <a href="#nos-formations" class="btn-primary">Découvrir nos formations</a>
-        <a href="#nos-salles" class="btn-secondary">Réserver un espace</a>
+
+      <div class="hero-bottom">
+        <p class="hero-subtitle">Un écosystème dédié à la réussite<br>des talents, des entrepreneurs<br>et des entreprises.</p>
+        <div class="hero-cta">
+          <a href="#nos-formations" class="btn-primary magnetic">Nos formations</a>
+          <a href="#nos-salles" class="btn-secondary magnetic">Réserver un espace</a>
+        </div>
       </div>
     </div>
+
+    <!-- MARQUEE BAND -->
+    <div class="hero-marquee">
+      <div class="marquee-track">
+        <span>LOCATION D'ESPACES</span><span class="marquee-dot">✦</span>
+        <span>FORMATIONS DIPLÔMANTES</span><span class="marquee-dot">✦</span>
+        <span>CONSEIL EN ENTREPRISE</span><span class="marquee-dot">✦</span>
+        <span>STUDIO PODCAST</span><span class="marquee-dot">✦</span>
+        <span>ALFORTVILLE</span><span class="marquee-dot">✦</span>
+        <span>LOCATION D'ESPACES</span><span class="marquee-dot">✦</span>
+        <span>FORMATIONS DIPLÔMANTES</span><span class="marquee-dot">✦</span>
+        <span>CONSEIL EN ENTREPRISE</span><span class="marquee-dot">✦</span>
+        <span>STUDIO PODCAST</span><span class="marquee-dot">✦</span>
+        <span>ALFORTVILLE</span><span class="marquee-dot">✦</span>
+      </div>
+    </div>
+
     <div class="scroll-indicator">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 5L12 19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      <span>Défiler</span>
     </div>
   </section>
 
