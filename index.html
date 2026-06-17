@@ -634,35 +634,76 @@
         </div>
 
         <div class="contact-form-wrap scroll-reveal">
-          <form class="contact-form" id="contactForm" novalidate>
+          <form class="contact-form" id="contactForm" action="contact.php" method="POST" novalidate>
             <div class="form-row">
               <div class="form-group">
-                <label for="name">Nom complet</label>
-                <input type="text" id="name" name="name" placeholder="Jean Dupont" required />
+                <label for="name">Nom complet *</label>
+                <input type="text" id="name" name="name" placeholder="Jean Dupont" required autocomplete="name"/>
               </div>
               <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="jean@exemple.com" required />
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="jean@exemple.com" required autocomplete="email"/>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Téléphone</label>
+                <input type="tel" id="phone" name="phone" placeholder="+33 6 00 00 00 00" autocomplete="tel"/>
+              </div>
+              <div class="form-group">
+                <label for="company">Entreprise / Organisation</label>
+                <input type="text" id="company" name="company" placeholder="Votre société" autocomplete="organization"/>
               </div>
             </div>
             <div class="form-group">
-              <label for="subject">Sujet</label>
+              <label for="subject">Sujet de votre demande *</label>
               <select id="subject" name="subject" required>
-                <option value="" disabled selected>Choisissez un sujet</option>
-                <option value="espace">Réservation d'espace</option>
-                <option value="formation">Information formation</option>
-                <option value="studio">Réservation studio podcast</option>
-                <option value="conseil">Conseil en entreprise</option>
-                <option value="partenariat">Partenariat</option>
-                <option value="autre">Autre</option>
+                <option value="" disabled selected>Sélectionnez un sujet</option>
+                <optgroup label="Location d'espaces">
+                  <option value="salle-reunion">Réservation salle de réunion</option>
+                  <option value="salle-formation">Réservation salle de formation</option>
+                  <option value="evenement">Événement / Séminaire</option>
+                </optgroup>
+                <optgroup label="Studio Podcast">
+                  <option value="studio-podcast">Réservation studio podcast</option>
+                  <option value="production">Production de contenu</option>
+                </optgroup>
+                <optgroup label="Formation">
+                  <option value="formation-bts">BTS (NDRC / GPME / MCO)</option>
+                  <option value="formation-pro">Formation professionnelle</option>
+                  <option value="alternance">Alternance</option>
+                </optgroup>
+                <optgroup label="Autres">
+                  <option value="conseil">Conseil en entreprise</option>
+                  <option value="partenariat">Partenariat</option>
+                  <option value="devis">Demande de devis</option>
+                  <option value="autre">Autre demande</option>
+                </optgroup>
               </select>
             </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet ou votre demande..." required></textarea>
+            <div class="form-row form-row--dates" id="dateRow" style="display:none">
+              <div class="form-group">
+                <label for="date-start">Date souhaitée</label>
+                <input type="date" id="date-start" name="date_start"/>
+              </div>
+              <div class="form-group">
+                <label for="nb-personnes">Nombre de personnes</label>
+                <input type="number" id="nb-personnes" name="nb_personnes" placeholder="ex: 10" min="1" max="50"/>
+              </div>
             </div>
-            <button type="submit" class="btn-primary form-submit">Envoyer le message</button>
-            <p class="form-note">Nous vous répondons sous 24h ouvrées.</p>
+            <div class="form-group">
+              <label for="message">Votre message *</label>
+              <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet, vos besoins, vos questions..." required></textarea>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="rgpd" name="rgpd" required/>
+              <label for="rgpd">J'accepte que mes données soient utilisées pour traiter ma demande. <a href="#" style="color:var(--blue)">Politique de confidentialité</a></label>
+            </div>
+            <button type="submit" class="btn-primary form-submit magnetic">
+              <span class="form-submit-text">Envoyer le message</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <p class="form-note">✓ Réponse garantie sous 24h ouvrées · Vos données sont protégées</p>
           </form>
         </div>
 

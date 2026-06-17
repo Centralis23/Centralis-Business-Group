@@ -182,6 +182,14 @@ img {
 }
 
 /* ── ANIMATIONS ── */
+@keyframes formShake {
+  0%,100% { transform: translateX(0); }
+  20%     { transform: translateX(-6px); }
+  40%     { transform: translateX(6px); }
+  60%     { transform: translateX(-4px); }
+  80%     { transform: translateX(4px); }
+}
+
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-30px); }
@@ -1393,15 +1401,17 @@ body.cursor-hover #cursor-ring {
 
 /* Contact Form */
 .contact-form-wrap {
-  background: var(--bg-2);
+  background: #fff;
   border-radius: var(--radius-lg);
   padding: 2.5rem;
+  border: 1px solid rgba(26,86,255,0.08);
+  box-shadow: 0 4px 40px rgba(26,86,255,0.06);
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.2rem;
 }
 
 .form-row {
@@ -1413,48 +1423,55 @@ body.cursor-hover #cursor-ring {
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.45rem;
 }
 
 .form-group label {
-  font-size: 0.82rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: 700;
   color: var(--mid);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 1rem 1.25rem;
-  border: 1.5px solid var(--bg-3);
-  border-radius: var(--radius);
+  padding: 0.9rem 1.1rem;
+  border: 1.5px solid #E8ECF8;
+  border-radius: 10px;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.95rem;
   color: var(--dark);
-  background: var(--bg);
-  transition: var(--transition);
+  background: var(--bg-2);
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
   outline: none;
   appearance: none;
   -webkit-appearance: none;
 }
 
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-  color: var(--light);
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+  border-color: #C5D0F5;
 }
+
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--light); }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   border-color: var(--blue);
-  box-shadow: 0 0 0 3px rgba(26, 86, 255, 0.1);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(26,86,255,0.1);
 }
 
 .form-group textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 130px;
+  line-height: 1.6;
 }
 
 .form-group select {
@@ -1465,13 +1482,46 @@ body.cursor-hover #cursor-ring {
   cursor: pointer;
 }
 
+/* RGPD checkbox */
+.form-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  margin-top: 0.25rem;
+}
+
+.form-check input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  accent-color: var(--blue);
+  cursor: pointer;
+}
+
+.form-check label {
+  font-size: 0.82rem;
+  color: var(--light);
+  line-height: 1.5;
+  cursor: pointer;
+}
+
 .form-submit {
   padding: 1rem 2rem;
   font-size: 1rem;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s, opacity 0.2s;
+}
+
+.form-submit:disabled {
+  pointer-events: none;
 }
 
 .form-note {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--light);
   text-align: center;
 }

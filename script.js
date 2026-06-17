@@ -390,28 +390,83 @@ function startHeroSequence() {
 
 
 /* ═══════════════════════════════════════
-   14. CONTACT FORM
+   14. CONTACT FORM (AJAX → contact.php)
 ═══════════════════════════════════════ */
 (function initForm() {
   var form = document.getElementById('contactForm');
   if (!form) return;
+
+  // Show date/persons row for space/event bookings
+  var subjectSelect = form.querySelector('#subject');
+  var dateRow = document.getElementById('dateRow');
+  if (subjectSelect && dateRow) {
+    subjectSelect.addEventListener('change', function() {
+      var v = this.value;
+      var showDate = ['salle-reunion','salle-formation','evenement','studio-podcast'].includes(v);
+      dateRow.style.display = showDate ? 'flex' : 'none';
+    });
+  }
+
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     var btn = form.querySelector('.form-submit');
-    var orig = btn.textContent;
-    var name = form.querySelector('#name') && form.querySelector('#name').value.trim();
-    var email = form.querySelector('#email') && form.querySelector('#email').value.trim();
-    var msg = form.querySelector('#message') && form.querySelector('#message').value.trim();
-    if (!name || !email || !msg) {
-      btn.textContent = 'Veuillez remplir tous les champs';
+    var btnText = btn.querySelector('.form-submit-text') || btn;
+    var origText = btnText.textContent;
+
+    // Client-side validation
+    var name    = (form.querySelector('#name')   || {}).value || '';
+    var email   = (form.querySelector('#email')  || {}).value || '';
+    var message = (form.querySelector('#message')|| {}).value || '';
+    var rgpd    = form.querySelector('#rgpd') && form.querySelector('#rgpd').checked;
+
+    if (!name.trim() || !email.trim() || !message.trim()) {
+      shake(btn);
+      btnText.textContent = 'Remplissez les champs obligatoires *';
       btn.style.background = '#e53e3e';
-      setTimeout(function() { btn.textContent = orig; btn.style.background = ''; }, 3000);
+      setTimeout(function() { btnText.textContent = origText; btn.style.background = ''; }, 3000);
       return;
     }
-    btn.textContent = 'Envoi…'; btn.disabled = true; btn.style.opacity = '0.7';
-    setTimeout(function() {
-      btn.textContent = 'Message envoyé ✓'; btn.style.background = '#38a169'; btn.style.opacity = '1';
-      setTimeout(function() { btn.textContent = orig; btn.disabled = false; btn.style.background = ''; form.reset(); }, 3000);
-    }, 1500);
+    if (!rgpd) {
+      shake(btn);
+      btnText.textContent = 'Acceptez la politique de confidentialité';
+      btn.style.background = '#e53e3e';
+      setTimeout(function() { btnText.textContent = origText; btn.style.background = ''; }, 3000);
+      return;
+    }
+
+    btn.disabled = true;
+    btn.style.opacity = '0.75';
+    btnText.textContent = 'Envoi en cours…';
+
+    var data = new FormData(form);
+
+    fetch('contact.php', { method: 'POST', body: data })
+      .then(function(r) { return r.json(); })
+      .then(function(res) {
+        if (res.success) {
+          btnText.textContent = '✓ Message envoyé !';
+          btn.style.background = '#16a34a';
+          btn.style.opacity = '1';
+          form.reset();
+          if (dateRow) dateRow.style.display = 'none';
+          setTimeout(function() { btnText.textContent = origText; btn.style.background = ''; btn.disabled = false; }, 5000);
+        } else {
+          throw new Error(res.message || 'Erreur serveur');
+        }
+      })
+      .catch(function(err) {
+        btnText.textContent = err.message || 'Erreur — réessayez';
+        btn.style.background = '#e53e3e';
+        btn.style.opacity = '1';
+        btn.disabled = false;
+        setTimeout(function() { btnText.textContent = origText; btn.style.background = ''; }, 5000);
+      });
   });
+
+  function shake(el) {
+    el.style.animation = 'none';
+    el.offsetHeight; // reflow
+    el.style.animation = 'formShake 0.4s ease';
+    setTimeout(function() { el.style.animation = ''; }, 400);
+  }
 })();
