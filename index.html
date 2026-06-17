@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Centralis Business Group — Transformez Votre Avenir</title>
+  <meta name="description" content="Centralis Business Group — Cabinet de conseil stratégique, développement commercial et transformation digitale." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">CBG</a>
+      <ul class="nav__links">
+        <li><a href="#manifesto">Vision</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">À Propos</a></li>
+        <li><a href="#contact" class="nav__cta">Contact</a></li>
+      </ul>
+      <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <ul>
+        <li><a href="#manifesto" class="mobile-link">Vision</a></li>
+        <li><a href="#services" class="mobile-link">Services</a></li>
+        <li><a href="#about" class="mobile-link">À Propos</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__orb hero__orb--1"></div>
+    <div class="hero__orb hero__orb--2"></div>
+    <div class="hero__orb hero__orb--3"></div>
+    <div class="hero__grid-overlay"></div>
+    <div class="hero__inner">
+      <div class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        Cabinet de Conseil d'Excellence
+      </div>
+      <h1 class="hero__title">
+        <span class="hero__title-line hero__title-line--1">CENTRALIS</span>
+        <span class="hero__title-divider">
+          <span class="hero__title-slash">/</span>
+          <span class="hero__title-sub">BUSINESS GROUP</span>
+        </span>
+      </h1>
+      <p class="hero__tagline">Stratégie · Innovation · Excellence</p>
+      <div class="hero__actions">
+        <a href="#contact" class="btn btn--primary">Démarrer un Projet</a>
+        <a href="#services" class="btn btn--ghost">Découvrir nos Services</a>
+      </div>
+      <div class="hero__scroll-hint">
+        <span>Défiler</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section class="manifesto" id="manifesto">
+    <div class="manifesto__inner">
+      <span class="section-label reveal">Notre Mission</span>
+      <h2 class="manifesto__text reveal-words">
+        Nous transformons les entreprises en moteurs de croissance.
+      </h2>
+      <div class="manifesto__meta reveal">
+        <div class="manifesto__meta-item">
+          <span class="manifesto__meta-num">01</span>
+          <span class="manifesto__meta-desc">Analyser. Comprendre. Agir.</span>
+        </div>
+        <div class="manifesto__meta-item">
+          <span class="manifesto__meta-num">02</span>
+          <span class="manifesto__meta-desc">Innover. Structurer. Scaler.</span>
+        </div>
+        <div class="manifesto__meta-item">
+          <span class="manifesto__meta-num">03</span>
+          <span class="manifesto__meta-desc">Mesurer. Optimiser. Exceller.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="services__inner">
+      <div class="services__header">
+        <span class="section-label reveal">Ce que nous faisons</span>
+        <h2 class="services__title reveal">Nos Services</h2>
+      </div>
+      <div class="services__grid">
+
+        <div class="service-card reveal" data-delay="0">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2"/>
+              <path d="M16 24l6 6 10-12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="service-card__num">01</span>
+          <h3 class="service-card__title">Conseil<br/>Stratégique</h3>
+          <p class="service-card__desc">Nous analysons votre marché, vos forces et vos opportunités pour construire une feuille de route stratégique claire et actionnable.</p>
+          <ul class="service-card__list">
+            <li>Audit stratégique complet</li>
+            <li>Planification à 3–5 ans</li>
+            <li>Analyse concurrentielle</li>
+          </ul>
+          <a href="#contact" class="service-card__link">En savoir plus →</a>
+        </div>
+
+        <div class="service-card service-card--accent reveal" data-delay="150">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 36l10-14 8 8 8-18 6 10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="40" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <span class="service-card__num">02</span>
+          <h3 class="service-card__title">Développement<br/>Commercial</h3>
+          <p class="service-card__desc">Nous accélérons votre croissance grâce à des stratégies commerciales percutantes et des partenariats à haute valeur ajoutée.</p>
+          <ul class="service-card__list">
+            <li>Prospection &amp; acquisition</li>
+            <li>Structuration des ventes</li>
+            <li>Partenariats stratégiques</li>
+          </ul>
+          <a href="#contact" class="service-card__link">En savoir plus →</a>
+        </div>
+
+        <div class="service-card reveal" data-delay="300">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="8" width="14" height="14" rx="3" stroke="currentColor" stroke-width="2"/>
+              <rect x="26" y="8" width="14" height="14" rx="3" stroke="currentColor" stroke-width="2"/>
+              <rect x="8" y="26" width="14" height="14" rx="3" stroke="currentColor" stroke-width="2"/>
+              <circle cx="33" cy="33" r="7" stroke="currentColor" stroke-width="2"/>
+              <path d="M30 33h6M33 30v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="service-card__num">03</span>
+          <h3 class="service-card__title">Transformation<br/>Digitale</h3>
+          <p class="service-card__desc">Nous guidons votre transition numérique de A à Z — outils, process, culture — pour une organisation résiliente et agile.</p>
+          <ul class="service-card__list">
+            <li>Audit &amp; roadmap digitale</li>
+            <li>Déploiement d'outils SaaS</li>
+            <li>Formation &amp; accompagnement</li>
+          </ul>
+          <a href="#contact" class="service-card__link">En savoir plus →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats" id="stats">
+    <div class="stats__bg-shape"></div>
+    <div class="stats__inner">
+      <span class="section-label reveal" style="color: rgba(255,255,255,0.7); --accent-blue: rgba(255,255,255,0.7);">Nos chiffres clés</span>
+      <div class="stats__grid">
+        <div class="stat-item reveal" data-delay="0">
+          <span class="stat-item__num" data-target="500" data-suffix="+">0</span>
+          <span class="stat-item__label">Clients Accompagnés</span>
+        </div>
+        <div class="stat-item reveal" data-delay="100">
+          <span class="stat-item__num" data-target="15" data-suffix=" Ans">0</span>
+          <span class="stat-item__label">D'Expérience</span>
+        </div>
+        <div class="stat-item reveal" data-delay="200">
+          <span class="stat-item__num" data-target="98" data-suffix="%">0</span>
+          <span class="stat-item__label">Taux de Satisfaction</span>
+        </div>
+        <div class="stat-item reveal" data-delay="300">
+          <span class="stat-item__num" data-target="50" data-suffix="+">0</span>
+          <span class="stat-item__label">Experts Dédiés</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about__inner">
+      <div class="about__content">
+        <span class="section-label reveal">Qui nous sommes</span>
+        <h2 class="about__title reveal">Un cabinet différent,<br/>pour des résultats<br/><em>exceptionnels.</em></h2>
+        <p class="about__text reveal">Fondé sur des valeurs d'excellence, d'intégrité et d'innovation, Centralis Business Group accompagne les dirigeants ambitieux dans leurs moments de transformation les plus critiques.</p>
+        <p class="about__text reveal">Notre approche combine rigueur analytique et vision créative pour produire des résultats mesurables, durables et alignés avec vos ambitions.</p>
+        <a href="#contact" class="btn btn--primary reveal">Travailler avec nous</a>
+      </div>
+      <div class="about__visual reveal">
+        <div class="about__visual-dot-grid"></div>
+        <div class="about__visual-ring about__visual-ring--1"></div>
+        <div class="about__visual-ring about__visual-ring--2"></div>
+        <div class="about__visual-card about__visual-card--1">
+          <span class="about__visual-card-label">Vision 2030</span>
+          <span class="about__visual-card-value">Leader Africain</span>
+        </div>
+        <div class="about__visual-card about__visual-card--2">
+          <span class="about__visual-card-label">Secteurs couverts</span>
+          <span class="about__visual-card-value">12+</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact__inner">
+      <div class="contact__header">
+        <span class="section-label reveal">Commençons ensemble</span>
+        <h2 class="contact__title reveal">Prêt à<br/><span class="contact__title-accent">transformer</span><br/>votre entreprise?</h2>
+      </div>
+      <div class="contact__layout">
+        <div class="contact__info reveal">
+          <div class="contact__info-item">
+            <span class="contact__info-label">Email</span>
+            <a href="mailto:contact@centralisbusinessgroup.com" class="contact__info-value">contact@centralisbusinessgroup.com</a>
+          </div>
+          <div class="contact__info-item">
+            <span class="contact__info-label">Localisation</span>
+            <span class="contact__info-value">Afrique · Europe · International</span>
+          </div>
+          <div class="contact__info-item">
+            <span class="contact__info-label">Disponibilité</span>
+            <span class="contact__info-value">Réponse sous 24h</span>
+          </div>
+        </div>
+        <form class="contact__form reveal" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Nom complet</label>
+              <input type="text" id="name" name="name" placeholder="Jean Dupont" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="jean@entreprise.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="company">Entreprise</label>
+            <input type="text" id="company" name="company" placeholder="Votre entreprise" />
+          </div>
+          <div class="form-group">
+            <label for="service">Service souhaité</label>
+            <select id="service" name="service">
+              <option value="">Choisir un service</option>
+              <option value="conseil">Conseil Stratégique</option>
+              <option value="commercial">Développement Commercial</option>
+              <option value="digital">Transformation Digitale</option>
+              <option value="other">Autre</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet ou vos besoins..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">
+            <span>Envoyer le message</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <p class="form-note">Nous vous répondons sous 24 heures ouvrées.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">CBG</span>
+        <span class="footer__tagline">Centralis Business Group</span>
+      </div>
+      <nav class="footer__nav">
+        <a href="#manifesto">Vision</a>
+        <a href="#services">Services</a>
+        <a href="#about">À Propos</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p class="footer__copy">© 2025 Centralis Business Group. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
