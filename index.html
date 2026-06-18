@@ -16,10 +16,10 @@
 <div id="intro-overlay">
   <div class="intro-content">
     <div class="intro-logo-wrap">
-      <img src="logo.png" alt="Centralis Business Group" class="intro-logo-img" onerror="this.style.display='none';this.nextSibling.style.display='block'"/>
-      <div class="intro-logo-fallback" style="display:none">
-        <svg viewBox="0 0 120 120" width="80" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="60,10 110,35 110,85 60,110 10,85 10,35" stroke="#C9A96E" stroke-width="2" fill="none"/><text x="60" y="68" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="800" font-size="28" fill="#C9A96E">CBG</text></svg>
-      </div>
+      <svg viewBox="0 0 100 100" width="100" height="100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="50,5 92,28 92,72 50,95 8,72 8,28" fill="#0B2D6E" stroke="#C9A96E" stroke-width="1.5"/>
+  <text x="50" y="57" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="800" font-size="22" fill="white">CBG</text>
+</svg>
       <div class="intro-reveal-line"></div>
     </div>
     <div class="intro-bar"></div>
@@ -31,14 +31,23 @@
   <nav id="navbar">
     <div class="nav-inner container">
       <a href="#accueil" class="nav-logo">
-        <img src="logo.png" alt="Centralis Business Group" class="logo-img" onerror="this.style.display='none';this.nextSibling.style.display='flex'">
-        <span class="logo-text" style="display:none">CENTRALIS <em>BG</em></span>
-      </a>
+  <div class="nav-logo-cube">
+    <svg viewBox="0 0 60 60" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="30,3 55,17 55,43 30,57 5,43 5,17" fill="#0B2D6E"/>
+      <text x="30" y="35" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="800" font-size="13" fill="white" letter-spacing="0">CBG</text>
+    </svg>
+  </div>
+  <div class="nav-logo-text">
+    <span class="nav-logo-main">CENTRALIS</span>
+    <span class="nav-logo-sub">BUSINESS GROUP</span>
+  </div>
+</a>
       <ul class="nav-links">
         <li><a href="#a-propos">À Propos</a></li>
         <li><a href="#espaces">Espaces</a></li>
         <li><a href="#studio">Studio</a></li>
         <li><a href="#formations">Formations</a></li>
+        <li><a href="#blog">Blog</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <a href="#contact" class="btn-nav-cta">Nous contacter</a>
@@ -80,7 +89,7 @@
         <div class="hs-sep"></div>
         <div class="hs"><span class="hs-num">5+</span><span class="hs-lbl">Espaces équipés</span></div>
         <div class="hs-sep"></div>
-        <div class="hs"><span class="hs-num">3</span><span class="hs-lbl">BTS en alternance</span></div>
+        <div class="hs"><span class="hs-num">6</span><span class="hs-lbl">Formations certifiées</span></div>
         <div class="hs-sep"></div>
         <div class="hs"><span class="hs-num">7j/7</span><span class="hs-lbl">Réservation</span></div>
       </div>
@@ -163,45 +172,52 @@
   <!-- 3 PÔLES -->
   <section class="poles" id="poles">
     <div class="container">
-      <div class="section-hd scroll-reveal">
+      <div class="section-hd-center scroll-reveal">
         <p class="section-label">Notre groupe</p>
         <h2 class="serif-title">Trois pôles, <em>une vision</em></h2>
+        <p class="section-sub">Un écosystème complet pour entrepreneurs, étudiants et entreprises</p>
       </div>
-      <div class="poles-timeline">
-        <div class="ptl-line"></div>
+      <div class="poles-cards">
 
-        <div class="ptl-item scroll-reveal">
-          <div class="ptl-num">01</div>
-          <div class="ptl-dot"></div>
-          <div class="ptl-content">
-            <p class="ptl-label">Pôle 01</p>
-            <h3>Espaces Professionnels</h3>
-            <p>Salles de réunion, espaces de formation et studio podcast disponibles à la réservation. Des environnements haut de gamme conçus pour vos projets les plus ambitieux.</p>
-            <a href="#espaces" class="ptl-link">Découvrir les espaces →</a>
+        <div class="pole-card-v2 scroll-reveal">
+          <div class="pcv2-icon pcv2-icon--blue">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="3" y="8" width="26" height="20" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M11 28V20h10v8" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M3 16h26" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="4" r="2" stroke="currentColor" stroke-width="1.8"/><path d="M16 6v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
           </div>
+          <div class="pcv2-num">01</div>
+          <h3>Espaces Professionnels</h3>
+          <p>5 salles modulables de réunion et de formation, 2 studios podcast professionnels. Des environnements premium disponibles 7j/7 à Alfortville.</p>
+          <div class="pcv2-tags">
+            <span>5 salles</span><span>2 studios podcast</span><span>7j/7</span>
+          </div>
+          <a href="#espaces" class="pcv2-link">Découvrir les espaces →</a>
         </div>
 
-        <div class="ptl-item scroll-reveal">
-          <div class="ptl-num">02</div>
-          <div class="ptl-dot ptl-dot--gold"></div>
-          <div class="ptl-content">
-            <p class="ptl-label">Pôle 02</p>
-            <h3>Formations d'Excellence</h3>
-            <p>BTS NDRC, GPME et MCO en alternance. Des formations reconnues par l'État pour préparer les talents de demain avec un ancrage terrain immédiat.</p>
-            <a href="#formations" class="ptl-link">Voir les formations →</a>
+        <div class="pole-card-v2 pole-card-v2--featured scroll-reveal">
+          <div class="pcv2-icon pcv2-icon--gold">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4L4 11l12 7 12-7-12-7z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 15v8c0 2.5 3.6 4 8 4s8-1.5 8-4v-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
           </div>
+          <div class="pcv2-num">02</div>
+          <h3>Formations d'Excellence</h3>
+          <p>BTS NDRC, GPME, MCO, TP NTC en alternance. Formation IA & Marketing avec Melio Académie. TCF/FLE. 6 formations certifiées pour bâtir votre avenir.</p>
+          <div class="pcv2-tags">
+            <span>6 formations</span><span>Certifiées État</span><span>Alternance</span>
+          </div>
+          <a href="#formations" class="pcv2-link">Voir les formations →</a>
         </div>
 
-        <div class="ptl-item scroll-reveal">
-          <div class="ptl-num">03</div>
-          <div class="ptl-dot"></div>
-          <div class="ptl-content">
-            <p class="ptl-label">Pôle 03</p>
-            <h3>Conseil Stratégique</h3>
-            <p>Accompagnement personnalisé pour entrepreneurs et dirigeants. Stratégie, développement commercial et optimisation de performance sur-mesure.</p>
-            <a href="#contact" class="ptl-link">Nous consulter →</a>
+        <div class="pole-card-v2 scroll-reveal">
+          <div class="pcv2-icon pcv2-icon--blue">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="3" y="11" width="26" height="17" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M11 11V9a2 2 0 012-2h6a2 2 0 012 2v2" stroke="currentColor" stroke-width="1.8"/><path d="M3 20h26" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="20" r="2" fill="currentColor"/></svg>
           </div>
+          <div class="pcv2-num">03</div>
+          <h3>Conseil Stratégique</h3>
+          <p>Accompagnement sur-mesure pour entrepreneurs et dirigeants. Stratégie commerciale, développement d'entreprise et coaching personnalisé pour atteindre vos objectifs.</p>
+          <div class="pcv2-tags">
+            <span>Sur-mesure</span><span>Experts dédiés</span><span>ROI garanti</span>
+          </div>
+          <a href="#contact" class="pcv2-link">Nous consulter →</a>
         </div>
+
       </div>
     </div>
   </section>
@@ -250,7 +266,7 @@
               <span class="ecard-s-tag">Réunion · 8 personnes</span>
               <h3>Salle Koroba</h3>
               <p>Espace de réunion élégant pour rencontres professionnelles, entretiens et sessions de direction.</p>
-              <a href="https://centralisbusinessgroup.com/salle-koroba" class="ecard-s-link">RÉSERVER →</a>
+              <a href="#contact" class="ecard-s-link">RÉSERVER →</a>
             </div>
           </div>
           <div class="ecard-s scroll-reveal">
@@ -262,7 +278,7 @@
               <span class="ecard-s-tag">Formation · 20 personnes</span>
               <h3>Salle Lumumba</h3>
               <p>Espace moderne en configuration U, idéal pour ateliers et formations participatives.</p>
-              <a href="https://centralisbusinessgroup.com/nos-salles" class="ecard-s-link">RÉSERVER →</a>
+              <a href="#contact" class="ecard-s-link">RÉSERVER →</a>
             </div>
           </div>
           <div class="ecard-s scroll-reveal">
@@ -274,7 +290,7 @@
               <span class="ecard-s-tag">Formation · 16 personnes</span>
               <h3>Salle Mandela</h3>
               <p>Espace de formation avec œuvres d'art africaines et ambiance créative et inspirante.</p>
-              <a href="https://centralisbusinessgroup.com/nos-salles" class="ecard-s-link">RÉSERVER →</a>
+              <a href="#contact" class="ecard-s-link">RÉSERVER →</a>
             </div>
           </div>
         </div>
@@ -297,7 +313,7 @@
               <span class="ecard-s-tag">Formation · 16 personnes</span>
               <h3>Salle Nkhrumah</h3>
               <p>Salle lumineuse avec tableau blanc, idéale pour vos ateliers et séminaires intensifs.</p>
-              <a href="https://centralisbusinessgroup.com/nos-salles" class="ecard-s-link">RÉSERVER →</a>
+              <a href="#contact" class="ecard-s-link">RÉSERVER →</a>
             </div>
           </div>
           <div class="ecard-s scroll-reveal">
@@ -309,7 +325,7 @@
               <span class="ecard-s-tag">Formation · 16 personnes</span>
               <h3>Salle Sankara</h3>
               <p>Salle avec cloison vitrée et œuvres d'art africaines pour sessions haut de gamme.</p>
-              <a href="https://centralisbusinessgroup.com/nos-salles" class="ecard-s-link">RÉSERVER →</a>
+              <a href="#contact" class="ecard-s-link">RÉSERVER →</a>
             </div>
           </div>
         </div>
@@ -317,7 +333,7 @@
       </div>
 
       <div class="espaces-cta scroll-reveal">
-        <a href="https://centralisbusinessgroup.com/nos-salles" class="btn-gold">Voir tous nos espaces</a>
+        <a href="#contact" class="btn-gold">Voir tous nos espaces</a>
       </div>
     </div>
   </section>
@@ -386,7 +402,7 @@
           <li><span class="sf-check">✓</span> Accompagnement technique inclus</li>
         </ul>
         <div class="studio-ctas">
-          <a href="https://centralisbusinessgroup.com/studio-podcast" class="btn-gold">Réserver via CBG →</a>
+          <a href="#contact" class="btn-gold">Réserver via CBG →</a>
           <a href="https://quiet-force-studio.fr" target="_blank" rel="noopener" class="btn-studio-qf">
             Voir Quietforce Studio
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -555,6 +571,59 @@
     </div>
   </section>
 
+  <!-- BLOG -->
+  <section id="blog" class="blog">
+    <div class="container">
+      <div class="section-hd scroll-reveal">
+        <p class="section-label">Actualités CBG</p>
+        <h2 class="serif-title">Notre <em>blog</em></h2>
+        <p class="section-sub">Conseils, actualités et ressources pour entrepreneurs et étudiants</p>
+      </div>
+      <div class="blog-grid">
+
+        <article class="blog-card scroll-reveal">
+          <div class="blog-card-img">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80" alt="BTS alternance" loading="lazy"/>
+            <span class="blog-cat">Formation</span>
+          </div>
+          <div class="blog-card-body">
+            <time>12 Juin 2026</time>
+            <h3>Comment réussir son BTS en alternance en 2026</h3>
+            <p>Nos conseils pour concilier études et vie professionnelle et décrocher votre diplôme avec succès.</p>
+            <a href="#" class="blog-link">Lire l'article →</a>
+          </div>
+        </article>
+
+        <article class="blog-card scroll-reveal">
+          <div class="blog-card-img">
+            <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80" alt="Alfortville business" loading="lazy"/>
+            <span class="blog-cat">Entrepreneuriat</span>
+          </div>
+          <div class="blog-card-body">
+            <time>5 Juin 2026</time>
+            <h3>5 raisons de choisir Alfortville pour implanter votre entreprise</h3>
+            <p>Proximité de Paris, dynamisme économique, espaces accessibles — pourquoi Alfortville est la nouvelle adresse business.</p>
+            <a href="#" class="blog-link">Lire l'article →</a>
+          </div>
+        </article>
+
+        <article class="blog-card scroll-reveal">
+          <div class="blog-card-img">
+            <img src="https://images.unsplash.com/photo-1655720828018-edd2daec9349?w=800&q=80" alt="IA Marketing" loading="lazy"/>
+            <span class="blog-cat">Innovation</span>
+          </div>
+          <div class="blog-card-body">
+            <time>28 Mai 2026</time>
+            <h3>L'IA au service du marketing : ce qui change en 2026</h3>
+            <p>Comment les entrepreneurs utilisent l'intelligence artificielle pour transformer leurs stratégies commerciales.</p>
+            <a href="#" class="blog-link">Lire l'article →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
   <!-- PARTENAIRES -->
   <section class="partenaires">
     <div class="container">
@@ -698,10 +767,10 @@
       </div>
       <div class="footer-col">
         <h4>Espaces</h4>
-        <a href="https://centralisbusinessgroup.com/salle-koroba">Salle Koroba</a>
-        <a href="https://centralisbusinessgroup.com/nos-salles">Salles de réunion</a>
-        <a href="https://centralisbusinessgroup.com/nos-salles">Salles de formation</a>
-        <a href="https://centralisbusinessgroup.com/studio-podcast">Studio Podcast</a>
+        <a href="#contact">Salle Koroba</a>
+        <a href="#contact">Salles de réunion</a>
+        <a href="#contact">Salles de formation</a>
+        <a href="#contact">Studio Podcast</a>
       </div>
       <div class="footer-col">
         <h4>Formations</h4>

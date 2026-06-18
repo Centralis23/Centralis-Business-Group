@@ -8,23 +8,25 @@
 
 /* ── CUSTOM PROPERTIES ── */
 :root {
-  --black:   #06060F;
-  --dark:    #0D0D1A;
-  --card:    #111120;
-  --card2:   #181828;
+  --navy:    #0B2D6E;
+  --blue:    #1D4ED8;
+  --black:   #0B2D6E;
+  --dark:    #0F172A;
+  --card:    #FFFFFF;
+  --card2:   #F0F5FF;
   --gold:    #C9A96E;
   --gold2:   #E2C99A;
   --white:   #FFFFFF;
-  --gray:    #9494AA;
-  --light:   #C8C8D8;
-  --border:  rgba(201,169,110,0.15);
-  --borderw: rgba(255,255,255,0.08);
+  --gray:    #6B7280;
+  --light:   #94A3B8;
+  --border:  rgba(11,45,110,0.12);
+  --borderw: rgba(255,255,255,0.12);
   --font-s:  'Playfair Display', Georgia, serif;
   --font:    'Plus Jakarta Sans', sans-serif;
   --r:       10px;
   --rl:      18px;
   --tr:      all 0.3s cubic-bezier(0.4,0,0.2,1);
-  --shadow:  0 4px 30px rgba(0,0,0,0.3);
+  --shadow:  0 4px 30px rgba(11,45,110,0.1);
 }
 
 html { scroll-behavior: smooth; }
@@ -1734,3 +1736,277 @@ img { max-width: 100%; display: block; }
   .contact-split { grid-template-columns: 1fr; gap: 48px; }
   .contact-hero { margin-bottom: 48px; }
 }
+
+/* ═══════════════════════════════════════
+   LIGHT THEME OVERRIDES — REDESIGN LUMINEUX
+═══════════════════════════════════════ */
+
+/* Nav lumineux */
+#navbar { background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(11,45,110,0.08); }
+#navbar.nav-scrolled { background: rgba(255,255,255,0.98); border-bottom: 1px solid rgba(11,45,110,0.12); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; }
+.nav-links a { color: #0F172A; }
+.nav-links a:hover { color: #0B2D6E; }
+.btn-nav-cta { background: #0B2D6E; color: white; padding: 0.65rem 1.5rem; border-radius: 8px; font-size: 0.85rem; font-weight: 700; transition: background 0.2s; }
+.btn-nav-cta:hover { background: #1D4ED8; }
+.burger span { background: #0B2D6E; }
+
+/* Logo nav */
+.nav-logo { display: flex; align-items: center; gap: 12px; }
+.nav-logo-cube { flex-shrink: 0; }
+.nav-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+.nav-logo-main { font-size: 13px; font-weight: 800; color: #0B2D6E; letter-spacing: 0.1em; }
+.nav-logo-sub { font-size: 9px; font-weight: 500; color: #6B7280; letter-spacing: 0.15em; }
+.logo-img, .logo-text { display: none !important; }
+
+/* Section labels */
+.section-label { color: #0B2D6E; }
+.section-label--gold { color: #C9A96E; }
+.serif-title { color: #0F172A; }
+.serif-title em { color: #0B2D6E; font-style: italic; }
+
+/* About */
+.about { background: white; }
+.about-text { color: #374151; }
+.about-val h4 { color: #0F172A; }
+.about-val p { color: #6B7280; }
+.val-num { color: #0B2D6E; opacity: 0.15; }
+
+/* ─── PÔLES REDESIGN LUMINEUX ─── */
+.poles { background: #F0F5FF; padding: 100px 0; }
+.poles-timeline { margin-top: 60px; }
+.ptl-line { background: linear-gradient(to bottom, transparent, #0B2D6E 20%, #0B2D6E 80%, transparent); opacity: 0.2; }
+.ptl-num { color: #0B2D6E; opacity: 0.06; }
+.ptl-item:hover .ptl-num { opacity: 0.12; }
+.ptl-dot { background: rgba(11,45,110,0.2); border-color: #0B2D6E; }
+.ptl-dot--gold { background: #C9A96E; border-color: #C9A96E; box-shadow: 0 0 16px rgba(201,169,110,0.4); }
+.ptl-label { color: #0B2D6E; }
+.ptl-label::after { background: #0B2D6E; opacity: 0.3; }
+.ptl-content h3 { color: #0B2D6E; }
+.ptl-content > p { color: #4B5563; }
+.ptl-link { color: #0B2D6E; }
+.ptl-item + .ptl-item { border-top: 1px solid rgba(11,45,110,0.08); }
+
+/* ─── CHIFFRES — garde fond navy ─── */
+.chiffres { background: #0B2D6E; }
+.chiffre-n { color: #C9A96E; }
+.chiffre-l { color: rgba(255,255,255,0.65); }
+.chiffre-sfx { color: #C9A96E; }
+
+/* ─── ESPACES lumineux ─── */
+.espaces { background: white; }
+.espaces-center-title { color: #0B2D6E; }
+.ecard-s { background: white; border: 1px solid rgba(11,45,110,0.1); box-shadow: 0 2px 20px rgba(11,45,110,0.06); }
+.ecard-s:hover { border-color: rgba(11,45,110,0.2); box-shadow: 0 12px 40px rgba(11,45,110,0.12); }
+.ecard-s-num { color: rgba(11,45,110,0.3); }
+.ecard-s-tag { color: #0B2D6E; }
+.ecard-s h3 { color: #0B2D6E; }
+.ecard-s p { color: #6B7280; }
+.ecard-s-link { color: #0B2D6E; }
+.espaces-center-sub { color: #9CA3AF; }
+.ec-dot { background: #0B2D6E; box-shadow: 0 0 16px rgba(11,45,110,0.3); }
+
+/* ─── STUDIO garde fond dark navy ─── */
+.studio { background: #0B2D6E; }
+.studio-room { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); }
+.studio-header .section-label { color: #C9A96E; }
+
+/* ─── FORMATIONS lumineux ─── */
+.formations { background: #F8FAFF; }
+.form-card { background: white; border: 1px solid rgba(11,45,110,0.08); }
+.form-card--gold { background: #0B2D6E; }
+.form-sigle { color: #0B2D6E; }
+.form-card--gold .form-sigle { color: #C9A96E; }
+.form-fullname { color: #374151; }
+.form-card--gold .form-fullname { color: rgba(255,255,255,0.85); }
+.form-desc { color: #6B7280; }
+.form-card--gold .form-desc { color: rgba(255,255,255,0.7); }
+.form-points li { color: #4B5563; }
+.form-card--gold .form-points li { color: rgba(255,255,255,0.75); }
+.form-dur { color: #9CA3AF; }
+.form-card--gold .form-dur { color: rgba(255,255,255,0.5); }
+.btn-form { background: #F0F5FF; color: #0B2D6E; font-size: 13px; font-weight: 700; padding: 8px 16px; border-radius: 8px; transition: background 0.2s; }
+.btn-form:hover { background: #0B2D6E; color: white; }
+.bts-badge { background: rgba(11,45,110,0.08); color: #0B2D6E; }
+.bts-badge--gold { background: #C9A96E; color: #0B2D6E; }
+.alt-badge { background: rgba(201,169,110,0.12); color: #92700F; }
+
+/* ─── PARTENAIRES ─── */
+.partenaires { background: white; border-top: 1px solid #E5EEFF; border-bottom: 1px solid #E5EEFF; }
+.partenaire { color: #94A3B8; }
+.partenaire:hover { color: #0B2D6E; }
+.pdot { color: #C9A96E; }
+
+/* ─── CONTACT lumineux ─── */
+.contact { background: #F0F5FF; }
+.contact-hero .serif-title { color: #0F172A; }
+.contact-hero .serif-title em { color: #0B2D6E; }
+.contact-hero .section-label { color: #0B2D6E; }
+.ct-intro { color: #4B5563; }
+.ct-point h4 { color: #0F172A; }
+.ct-point p { color: #6B7280; }
+.ct-num { color: #0B2D6E; opacity: 0.15; }
+.ct-brand-name { color: #9CA3AF; }
+.ct-brand-lines span { background: #0B2D6E; opacity: 0.3; }
+.cf-tag { background: #0B2D6E; color: white; }
+.contact-form-wrap { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 8px 40px rgba(11,45,110,0.1); }
+label { color: #374151; }
+input, select, textarea { background: #F8FAFF; border: 1.5px solid #E5EEFF; color: #0F172A; }
+input:focus, select:focus, textarea:focus { border-color: #0B2D6E; outline: none; box-shadow: 0 0 0 3px rgba(11,45,110,0.08); }
+.form-check label { color: #6B7280; }
+.form-note { color: #9CA3AF; }
+
+/* ─── FOOTER ─── */
+.footer { background: #0B2D6E; }
+.footer-tagline { color: rgba(255,255,255,0.55); }
+.footer-loc { color: rgba(255,255,255,0.4); }
+.footer-col h4 { color: white; }
+.footer-col a { color: rgba(255,255,255,0.55); }
+.footer-col a:hover { color: #C9A96E; }
+.footer-bottom { background: rgba(0,0,0,0.2); }
+.footer-bottom-inner p, .footer-bottom-links a { color: rgba(255,255,255,0.4); }
+
+/* ─── SECTION HDs sur fond clair ─── */
+.section-hd .section-sub, .section-hd-center .section-sub { color: #6B7280; }
+.about-left .serif-title em { color: #0B2D6E; }
+
+/* ─── MARQUEE ─── */
+.marquee-band { background: #0B2D6E; }
+.marquee-track span { color: rgba(255,255,255,0.7); }
+.mdot { color: #C9A96E; }
+
+/* ─── BLOG ─── */
+.blog { padding: 100px 0; background: white; }
+.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 60px; }
+.blog-card { background: white; border: 1px solid #E5EEFF; border-radius: 16px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
+.blog-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(11,45,110,0.12); }
+.blog-card-img { position: relative; height: 220px; overflow: hidden; }
+.blog-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.blog-card:hover .blog-card-img img { transform: scale(1.04); }
+.blog-cat { position: absolute; top: 16px; left: 16px; background: #0B2D6E; color: white; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; padding: 6px 12px; border-radius: 100px; }
+.blog-card-body { padding: 24px; }
+.blog-card-body time { font-size: 11px; color: #9CA3AF; letter-spacing: 0.1em; display: block; margin-bottom: 10px; text-transform: uppercase; }
+.blog-card-body h3 { font-family: var(--font-s); font-size: 18px; color: #0F172A; line-height: 1.35; margin-bottom: 10px; font-weight: 600; }
+.blog-card-body p { font-size: 13px; color: #6B7280; line-height: 1.65; margin-bottom: 20px; }
+.blog-link { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #0B2D6E; font-weight: 700; transition: gap 0.2s; display: inline-flex; align-items: center; gap: 6px; }
+.blog-link:hover { gap: 10px; }
+@media (max-width: 900px) { .blog-grid { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .blog-grid { grid-template-columns: 1fr; } }
+
+/* Bouton gold sur fond clair */
+.btn-gold { background: #0B2D6E; color: white; }
+.btn-gold:hover { background: #1D4ED8; }
+.espaces-cta .btn-gold { background: #0B2D6E; }
+
+/* ─── NOUVELLES CARTES PÔLES ─── */
+.poles-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 64px;
+}
+.pole-card-v2 {
+  background: white;
+  border: 1.5px solid #E5EEFF;
+  border-radius: 20px;
+  padding: 40px 32px;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  overflow: hidden;
+}
+.pole-card-v2::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(to right, #0B2D6E, #1D4ED8);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.pole-card-v2--featured::before {
+  background: linear-gradient(to right, #C9A96E, #E2C99A);
+  transform: scaleX(1);
+}
+.pole-card-v2:hover::before { transform: scaleX(1); }
+.pole-card-v2:hover { transform: translateY(-8px); box-shadow: 0 24px 60px rgba(11,45,110,0.14); border-color: #C5D5FF; }
+.pole-card-v2--featured {
+  background: #0B2D6E;
+  border-color: #0B2D6E;
+  box-shadow: 0 12px 40px rgba(11,45,110,0.25);
+}
+.pole-card-v2--featured:hover { box-shadow: 0 24px 70px rgba(11,45,110,0.35); }
+.pcv2-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+.pcv2-icon--blue { background: #EEF3FF; color: #0B2D6E; }
+.pcv2-icon--gold { background: rgba(201,169,110,0.15); color: #C9A96E; }
+.pole-card-v2--featured .pcv2-icon { background: rgba(255,255,255,0.1); color: #C9A96E; }
+.pcv2-num {
+  font-family: var(--font-s);
+  font-size: 80px;
+  font-weight: 700;
+  color: #0B2D6E;
+  opacity: 0.05;
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  line-height: 1;
+  user-select: none;
+}
+.pole-card-v2--featured .pcv2-num { color: white; opacity: 0.06; }
+.pole-card-v2 h3 {
+  font-family: var(--font-s);
+  font-size: 22px;
+  color: #0B2D6E;
+  font-weight: 700;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.pole-card-v2--featured h3 { color: white; }
+.pole-card-v2 > p {
+  font-size: 14px;
+  color: #4B5563;
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+.pole-card-v2--featured > p { color: rgba(255,255,255,0.7); }
+.pcv2-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+.pcv2-tags span {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #0B2D6E;
+  background: #EEF3FF;
+  padding: 5px 12px;
+  border-radius: 100px;
+}
+.pole-card-v2--featured .pcv2-tags span {
+  background: rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.85);
+}
+.pcv2-link {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #0B2D6E;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.2s;
+}
+.pole-card-v2--featured .pcv2-link { color: #C9A96E; }
+.pcv2-link:hover { gap: 14px; }
+@media (max-width: 900px) { .poles-cards { grid-template-columns: 1fr; } }
