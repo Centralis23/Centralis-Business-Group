@@ -366,6 +366,31 @@ img { max-width: 100%; display: block; }
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 .hero-split-word:hover { opacity: 0.55; transform: translateX(6px); }
+.hero-split-name {
+  display: block;
+  font-family: var(--font-s);
+  font-size: clamp(2.8rem, 7vw, 6.5rem);
+  font-weight: 700;
+  color: white;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+.hero-split-sub {
+  font-size: clamp(0.78rem, 1.2vw, 0.95rem);
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 2.5rem;
+  max-width: 520px;
+  line-height: 1.7;
+}
+.hero-split-ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 .hero-split-divider {
   position: absolute;
   top: 0;
