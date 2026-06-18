@@ -1,867 +1,746 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Centralis Business Group — Holding d'excellence à Alfortville. Espaces professionnels, formations BTS en alternance et conseil stratégique." />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Centralis Business Group — Holding d'excellence à Alfortville. Espaces professionnels, formations BTS et conseil stratégique."/>
   <title>Centralis Business Group — Holding d'Excellence</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-<!-- INTRO OVERLAY -->
+<!-- ═══════════════════════════════════════
+     INTRO OVERLAY
+═══════════════════════════════════════ -->
 <div id="intro-overlay">
-  <div class="intro-content">
-    <div class="intro-logo-wrap">
-      <img src="images/logo.svg" alt="Centralis Business Group" class="intro-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
-      <svg viewBox="0 0 100 100" width="100" height="100" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:none">
-        <polygon points="50,5 92,28 92,72 50,95 8,72 8,28" fill="#1A1ACC" stroke="#C9A96E" stroke-width="1.5"/>
-        <text x="50" y="57" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="800" font-size="22" fill="white">CBG</text>
+  <div class="intro-inner">
+    <img src="images/logo.svg" alt="CBG" class="intro-logo" onerror="this.style.display='none';document.querySelector('.intro-logo-fb').style.display='block'"/>
+    <div class="intro-logo-fb" style="display:none">
+      <svg viewBox="0 0 120 120" width="120" height="120" fill="none">
+        <polygon points="60,6 110,33 110,87 60,114 10,87 10,33" fill="#1A1ACC" stroke="#C9A96E" stroke-width="2"/>
+        <text x="60" y="68" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="900" font-size="28" fill="white">CBG</text>
       </svg>
-      <div class="intro-reveal-line"></div>
     </div>
-    <div class="intro-bar"></div>
-    <p class="intro-tag">CENTRALIS BUSINESS GROUP</p>
+    <div class="intro-line"></div>
+    <p class="intro-tagline">CENTRALIS BUSINESS GROUP</p>
+    <p class="intro-sub">Alfortville · Île-de-France</p>
   </div>
 </div>
 
-  <!-- NAV -->
-  <nav id="navbar">
-    <div class="nav-inner container">
-      <a href="#accueil" class="nav-logo">
-  <img src="images/logo.svg" alt="Centralis Business Group" class="nav-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-  <div class="nav-logo-fallback" style="display:none">
-    <div class="nav-logo-cube">
-      <svg viewBox="0 0 60 60" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="30,3 55,17 55,43 30,57 5,43 5,17" fill="#1A1ACC"/>
-        <text x="30" y="35" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="800" font-size="13" fill="white">CBG</text>
-      </svg>
+<!-- ═══════════════════════════════════════
+     NAVBAR
+═══════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-inner container">
+    <a href="#accueil" class="nav-logo">
+      <img src="images/logo.svg" alt="Centralis Business Group" class="nav-logo-img" onerror="this.onerror=null;this.src='images/logo.png';this.onerror=null"/>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#a-propos">À Propos</a></li>
+      <li><a href="#espaces">Espaces</a></li>
+      <li><a href="#studio">Studio</a></li>
+      <li><a href="#formations">Formations</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn-nav-cta">Nous contacter</a>
+    <button class="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     HERO
+═══════════════════════════════════════ -->
+<section id="accueil" class="hero">
+  <div class="hero-media">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="video/hero.mp4" type="video/mp4">
+      <source src="video/hero-reference.mp4" type="video/mp4">
+    </video>
+    <div class="hero-fallback"></div>
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-content container">
+    <div class="hero-eyebrow reveal">
+      <span class="eyebrow-dot"></span>
+      Holding · Alfortville, Île-de-France
     </div>
-    <div class="nav-logo-text">
-      <span class="nav-logo-main">CENTRALIS</span>
-      <span class="nav-logo-sub">BUSINESS GROUP</span>
+    <h1 class="hero-title">
+      <span class="ht-line reveal reveal-delay-1">Centralis</span>
+      <span class="ht-line ht-italic reveal reveal-delay-2"><em>Business Group</em></span>
+      <span class="ht-line ht-small reveal reveal-delay-3">L'excellence à votre service</span>
+    </h1>
+    <div class="hero-ctas reveal reveal-delay-3">
+      <a href="#contact" class="btn-gold">Prendre contact</a>
+      <a href="#a-propos" class="btn-ghost-white">Découvrir →</a>
     </div>
   </div>
-</a>
-      <ul class="nav-links">
-        <li><a href="#a-propos">À Propos</a></li>
-        <li><a href="#espaces">Espaces</a></li>
-        <li><a href="#studio">Studio</a></li>
-        <li><a href="#formations">Formations</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <a href="#contact" class="btn-nav-cta">Nous contacter</a>
-      <button class="burger" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+  <div class="hero-stats">
+    <div class="hstat reveal">
+      <strong class="counter" data-target="3">0</strong>
+      <span>Pôles d'activité</span>
     </div>
-  </nav>
+    <div class="hstat-sep"></div>
+    <div class="hstat reveal reveal-delay-1">
+      <strong>5+</strong>
+      <span>Espaces équipés</span>
+    </div>
+    <div class="hstat-sep"></div>
+    <div class="hstat reveal reveal-delay-2">
+      <strong class="counter" data-target="6">0</strong>
+      <span>Formations certifiées</span>
+    </div>
+    <div class="hstat-sep"></div>
+    <div class="hstat reveal reveal-delay-3">
+      <strong>7j/7</strong>
+      <span>Réservation</span>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-bar"></div>
+    <span>Défiler</span>
+  </div>
+</section>
 
-  <!-- HERO avec vidéo -->
-  <section id="accueil" class="hero">
-    <div class="hero-media">
-      <video class="hero-video" autoplay muted loop playsinline>
-        <source src="video/hero.mp4" type="video/mp4">
-        <source src="video/hero-reference.mp4" type="video/mp4">
-        <source src="https://assets.mixkit.co/videos/preview/mixkit-skyscrapers-above-clouds-20617-large.mp4" type="video/mp4">
-        <source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-city-from-a-drone-3-large.mp4" type="video/mp4">
-      </video>
-      <div class="hero-fallback"></div>
-      <div class="hero-overlay"></div>
-    </div>
-    <div class="hero-content container">
-      <div class="hero-badge">
-        <span class="badge-line"></span>
-        Holding · Alfortville, Île-de-France
-        <span class="badge-line"></span>
-      </div>
-      <h1 class="hero-title">
-        <span class="hero-t1">Centralis</span>
-        <span class="hero-t2"><em>Business Group</em></span>
-        <span class="hero-t3">L'excellence à votre service</span>
-      </h1>
-      <p class="hero-sub">Un écosystème intégré pour accélérer la réussite des entrepreneurs, des talents et des entreprises — espaces professionnels, formations d'élite, conseil stratégique.</p>
-      <div class="hero-ctas">
-        <a href="#contact" class="btn-gold">Prendre contact</a>
-        <a href="#a-propos" class="btn-ghost">Découvrir le groupe</a>
-      </div>
-      <div class="hero-stats">
-        <div class="hs"><span class="hs-num">3</span><span class="hs-lbl">Pôles d'activité</span></div>
-        <div class="hs-sep"></div>
-        <div class="hs"><span class="hs-num">5+</span><span class="hs-lbl">Espaces équipés</span></div>
-        <div class="hs-sep"></div>
-        <div class="hs"><span class="hs-num">6</span><span class="hs-lbl">Formations certifiées</span></div>
-        <div class="hs-sep"></div>
-        <div class="hs"><span class="hs-num">7j/7</span><span class="hs-lbl">Réservation</span></div>
-      </div>
-    </div>
-    <div class="hero-scroll-hint">
-      <div class="scroll-line-anim"></div>
-      <span>Défiler</span>
-    </div>
-  </section>
-
-
-  <!-- À PROPOS -->
-  <section id="a-propos" class="about">
-    <div class="container about-grid">
-      <div class="about-left scroll-reveal">
-        <p class="section-label">Notre identité</p>
+<!-- ═══════════════════════════════════════
+     À PROPOS
+═══════════════════════════════════════ -->
+<section id="a-propos" class="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-left reveal">
+        <p class="section-eyebrow">Notre identité</p>
         <h2 class="serif-title">Là où <em>talent</em>,<br>ambition et<br>opportunité<br><em>convergent.</em></h2>
-        <div class="gold-rule"></div>
+        <div class="gold-bar"></div>
+        <div class="about-values">
+          <div class="aval"><span class="aval-n">01</span><div><h4>Excellence</h4><p>Des prestations premium qui reflètent vos ambitions</p></div></div>
+          <div class="aval"><span class="aval-n">02</span><div><h4>Accessibilité</h4><p>Un accès simplifié à des ressources d'exception</p></div></div>
+          <div class="aval"><span class="aval-n">03</span><div><h4>Communauté</h4><p>Un réseau solide de professionnels et d'entrepreneurs</p></div></div>
+        </div>
       </div>
-      <div class="about-right scroll-reveal">
+      <div class="about-right reveal reveal-delay-2">
         <p class="about-text">Centralis Business Group est bien plus qu'un espace de travail. Nous sommes un écosystème complet conçu pour les entrepreneurs, les étudiants et les entreprises qui visent l'excellence.</p>
         <p class="about-text">Basés à Alfortville, à deux pas de Paris, nous mettons à disposition des espaces modulables de haute qualité, des programmes de formation reconnus par l'État, et un accompagnement stratégique personnalisé.</p>
-        <div class="about-values">
-          <div class="about-val">
-            <span class="val-num">01</span>
-            <div><h4>Excellence</h4><p>Des prestations premium qui reflètent vos ambitions</p></div>
+        <div class="about-locaux">
+          <div class="locaux-img locaux-img--tall reveal">
+            <img src="images/accueil-bleu.jpg" alt="Salon prestige CBG" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80'"/>
+            <div class="locaux-label">Salon prestige</div>
           </div>
-          <div class="about-val">
-            <span class="val-num">02</span>
-            <div><h4>Accessibilité</h4><p>Un accès simplifié à des ressources d'exception</p></div>
-          </div>
-          <div class="about-val">
-            <span class="val-num">03</span>
-            <div><h4>Communauté</h4><p>Un réseau solide d'entrepreneurs et de professionnels</p></div>
+          <div class="locaux-col">
+            <div class="locaux-img reveal reveal-delay-1">
+              <img src="images/accueil-vert.jpg" alt="Espace accueil CBG" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1567016432779-094069958ea5?w=800&q=80'"/>
+              <div class="locaux-label">Accueil</div>
+            </div>
+            <div class="locaux-img reveal reveal-delay-2">
+              <img src="images/koroba.jpg" alt="Salle Koroba CBG" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=800&q=80'"/>
+              <div class="locaux-label">Nos salles</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- NOS LOCAUX -->
-    <div class="container locaux-wrap scroll-reveal">
-      <p class="locaux-eyebrow">Un cadre d'exception</p>
-      <div class="locaux-grid">
-        <div class="locaux-img locaux-img--tall">
-          <img src="images/accueil-bleu.jpg" alt="Salon prestige — Centralis Business Group" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=900&q=80'"/>
-          <div class="locaux-caption">Salon de prestige</div>
-        </div>
-        <div class="locaux-img">
-          <img src="images/accueil-vert.jpg" alt="Salon d'accueil — Centralis Business Group" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1567016432779-094069958ea5?w=900&q=80'"/>
-          <div class="locaux-caption">Espace d'accueil</div>
-        </div>
-        <div class="locaux-img locaux-img--short">
-          <img src="images/koroba.jpg" alt="Salle Koroba — Centralis Business Group" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=900&q=80'"/>
-          <div class="locaux-caption">Nos espaces</div>
-        </div>
-      </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     3 PÔLES
+═══════════════════════════════════════ -->
+<section class="poles" id="poles">
+  <div class="container">
+    <div class="section-hd reveal">
+      <p class="section-eyebrow section-eyebrow--gold">Notre groupe</p>
+      <h2 class="serif-title serif-title--white">Trois pôles,<br><em>une vision</em></h2>
     </div>
-  </section>
+    <div class="poles-grid">
 
-  <!-- 3 PÔLES -->
-  <section class="poles" id="poles">
-    <div class="container">
-      <div class="section-hd-center scroll-reveal">
-        <p class="section-label">Notre groupe</p>
-        <h2 class="serif-title">Trois pôles, <em>une vision</em></h2>
-        <p class="section-sub">Un écosystème complet pour entrepreneurs, étudiants et entreprises</p>
+      <div class="pole-card reveal">
+        <div class="pole-num">01</div>
+        <div class="pole-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="3" y="9" width="30" height="22" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M12 31V22h12v9" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M3 18h30" stroke="currentColor" stroke-width="1.8"/><path d="M18 5v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="18" cy="4" r="1.5" fill="currentColor"/></svg>
+        </div>
+        <h3>Espaces<br>Professionnels</h3>
+        <p>5 salles modulables de réunion et de formation, 2 studios podcast professionnels. Des environnements premium disponibles 7j/7 à Alfortville.</p>
+        <div class="pole-tags">
+          <span>5 salles</span><span>2 studios</span><span>7j/7</span>
+        </div>
+        <a href="#espaces" class="pole-link">Découvrir les espaces <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="pole-bar"></div>
       </div>
-      <div class="poles-cards">
 
-        <div class="pole-card-v2 scroll-reveal">
-          <div class="pcv2-icon pcv2-icon--blue">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="3" y="8" width="26" height="20" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M11 28V20h10v8" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M3 16h26" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="4" r="2" stroke="currentColor" stroke-width="1.8"/><path d="M16 6v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-          </div>
-          <div class="pcv2-num">01</div>
-          <h3>Espaces Professionnels</h3>
-          <p>5 salles modulables de réunion et de formation, 2 studios podcast professionnels. Des environnements premium disponibles 7j/7 à Alfortville.</p>
-          <div class="pcv2-tags">
-            <span>5 salles</span><span>2 studios podcast</span><span>7j/7</span>
-          </div>
-          <a href="#espaces" class="pcv2-link">Découvrir les espaces →</a>
+      <div class="pole-card pole-card--featured reveal reveal-delay-1">
+        <div class="pole-num">02</div>
+        <div class="pole-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 4L4 12l14 8 14-8-14-8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 17v9c0 2.8 4.5 5 10 5s10-2.2 10-5v-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
         </div>
-
-        <div class="pole-card-v2 pole-card-v2--featured scroll-reveal">
-          <div class="pcv2-icon pcv2-icon--gold">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4L4 11l12 7 12-7-12-7z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 15v8c0 2.5 3.6 4 8 4s8-1.5 8-4v-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-          </div>
-          <div class="pcv2-num">02</div>
-          <h3>Formations d'Excellence</h3>
-          <p>BTS NDRC, GPME, MCO, TP NTC en alternance. Formation IA & Marketing avec Melio Académie. TCF/FLE. 6 formations certifiées pour bâtir votre avenir.</p>
-          <div class="pcv2-tags">
-            <span>6 formations</span><span>Certifiées État</span><span>Alternance</span>
-          </div>
-          <a href="#formations" class="pcv2-link">Voir les formations →</a>
+        <h3>Formations<br>d'Excellence</h3>
+        <p>BTS NDRC, GPME, MCO, TP NTC en alternance. Formation IA & Marketing avec Melio Académie. TCF/FLE. 6 formations certifiées.</p>
+        <div class="pole-tags">
+          <span>6 formations</span><span>Certifiées État</span><span>Alternance</span>
         </div>
-
-        <div class="pole-card-v2 scroll-reveal">
-          <div class="pcv2-icon pcv2-icon--blue">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="3" y="11" width="26" height="17" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M11 11V9a2 2 0 012-2h6a2 2 0 012 2v2" stroke="currentColor" stroke-width="1.8"/><path d="M3 20h26" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="20" r="2" fill="currentColor"/></svg>
-          </div>
-          <div class="pcv2-num">03</div>
-          <h3>Conseil Stratégique</h3>
-          <p>Accompagnement sur-mesure pour entrepreneurs et dirigeants. Stratégie commerciale, développement d'entreprise et coaching personnalisé pour atteindre vos objectifs.</p>
-          <div class="pcv2-tags">
-            <span>Sur-mesure</span><span>Experts dédiés</span><span>ROI garanti</span>
-          </div>
-          <a href="#contact" class="pcv2-link">Nous consulter →</a>
-        </div>
-
+        <a href="#formations" class="pole-link">Voir les formations <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="pole-bar"></div>
       </div>
+
+      <div class="pole-card reveal reveal-delay-2">
+        <div class="pole-num">03</div>
+        <div class="pole-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="3" y="12" width="30" height="19" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M12 12v-2a2 2 0 012-2h8a2 2 0 012 2v2" stroke="currentColor" stroke-width="1.8"/><path d="M3 22h30" stroke="currentColor" stroke-width="1.8"/><circle cx="18" cy="22" r="2.5" fill="currentColor"/></svg>
+        </div>
+        <h3>Conseil<br>Stratégique</h3>
+        <p>Accompagnement sur-mesure pour entrepreneurs et dirigeants. Stratégie commerciale, développement d'entreprise et coaching personnalisé.</p>
+        <div class="pole-tags">
+          <span>Sur-mesure</span><span>Experts dédiés</span><span>ROI garanti</span>
+        </div>
+        <a href="#contact" class="pole-link">Nous consulter <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="pole-bar"></div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CHIFFRES CLÉS -->
-  <section class="chiffres">
-    <div class="container chiffres-grid">
-      <div class="chiffre scroll-reveal">
-        <span class="chiffre-n counter" data-target="500">0</span><span class="chiffre-sfx">m²</span>
-        <p class="chiffre-l">D'espaces professionnels</p>
-      </div>
-      <div class="chiffre scroll-reveal">
-        <span class="chiffre-n counter" data-target="3">0</span>
-        <p class="chiffre-l">Programmes BTS reconnus</p>
-      </div>
-      <div class="chiffre scroll-reveal">
-        <span class="chiffre-n counter" data-target="100">0</span><span class="chiffre-sfx">+</span>
-        <p class="chiffre-l">Professionnels accompagnés</p>
-      </div>
-      <div class="chiffre scroll-reveal">
-        <span class="chiffre-n">10</span><span class="chiffre-sfx">'</span>
-        <p class="chiffre-l">Minutes de Paris</p>
-      </div>
+<!-- ═══════════════════════════════════════
+     CHIFFRES CLÉS
+═══════════════════════════════════════ -->
+<section class="chiffres">
+  <div class="container chiffres-grid">
+    <div class="chiffre reveal">
+      <span class="chiffre-n"><span class="counter" data-target="500">0</span><span class="chiffre-sfx">m²</span></span>
+      <p>D'espaces professionnels</p>
     </div>
-  </section>
+    <div class="chiffre reveal reveal-delay-1">
+      <span class="chiffre-n"><span class="counter" data-target="3">0</span></span>
+      <p>BTS reconnus par l'État</p>
+    </div>
+    <div class="chiffre reveal reveal-delay-2">
+      <span class="chiffre-n"><span class="counter" data-target="100">0</span><span class="chiffre-sfx">+</span></span>
+      <p>Professionnels accompagnés</p>
+    </div>
+    <div class="chiffre reveal reveal-delay-3">
+      <span class="chiffre-n">10<span class="chiffre-sfx">'</span></span>
+      <p>Minutes de Paris</p>
+    </div>
+  </div>
+</section>
 
-<!-- ESPACES -->
+<!-- ═══════════════════════════════════════
+     ESPACES — STYLE AGENCE IMMO
+═══════════════════════════════════════ -->
 <section id="espaces" class="espaces">
   <div class="container">
-    <div class="section-hd-center scroll-reveal">
-      <p class="section-label">Location de salles</p>
+    <div class="section-hd reveal">
+      <p class="section-eyebrow">Location de salles</p>
       <h2 class="serif-title">Nos Espaces<br><em>Professionnels</em></h2>
       <p class="section-sub">5 salles modulables · Disponibles 7j/7 · Alfortville, à 10 min de Paris</p>
     </div>
 
-    <!-- Filter bar (visual only) -->
-    <div class="re-filters scroll-reveal">
+    <div class="re-filters reveal">
       <button class="re-filter-btn re-filter-btn--active">Tous les espaces</button>
       <button class="re-filter-btn">Réunion</button>
       <button class="re-filter-btn">Formation</button>
       <button class="re-filter-btn">Séminaire</button>
     </div>
 
-    <!-- Property grid -->
     <div class="re-grid">
 
-      <div class="re-card scroll-reveal">
-        <a href="salle-koroba.html" class="re-card-img-link">
-          <div class="re-card-img">
-            <img src="images/koroba.jpg" alt="Salle Koroba" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=900&q=80'"/>
-            <span class="re-badge re-badge--available">Disponible</span>
-            <span class="re-badge-type">Réunion</span>
-          </div>
+      <div class="re-card reveal">
+        <a href="salle-koroba.html" class="re-card-img-wrap">
+          <img src="images/koroba.jpg" alt="Salle Koroba" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=900&q=80'"/>
+          <span class="re-avail">Disponible</span>
+          <span class="re-type">Réunion</span>
         </a>
-        <div class="re-card-body">
-          <div class="re-card-header">
-            <h3 class="re-card-name">Salle Koroba</h3>
-            <div class="re-card-price">À partir de <strong>50€</strong><span>/h</span></div>
+        <div class="re-body">
+          <div class="re-header">
+            <h3>Salle Koroba</h3>
+            <div class="re-price">À partir de <strong>50€</strong>/h</div>
           </div>
-          <div class="re-card-specs">
-            <span class="re-spec"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 1a5 5 0 100 10A5 5 0 008 1zm0 9a4 4 0 110-8 4 4 0 010 8z" fill="currentColor"/><path d="M8 5v3l2 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>8 personnes</span>
-            <span class="re-spec"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>25 m²</span>
-            <span class="re-spec"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8 2v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Vidéoprojecteur</span>
+          <div class="re-specs">
+            <span>👥 8 personnes</span>
+            <span>📐 25 m²</span>
+            <span>📽 Projecteur</span>
           </div>
-          <p class="re-card-desc">Espace de réunion élégant avec moulures, table en bois, ambiance prestige.</p>
-          <div class="re-card-amenities">
+          <p class="re-desc">Espace de réunion élégant, moulures, table en bois clair, ambiance prestige.</p>
+          <div class="re-amenities">
             <span>Wifi</span><span>Clim</span><span>Écran</span><span>Tableau</span>
           </div>
-          <div class="re-card-actions">
-            <a href="salle-koroba.html" class="re-btn-detail">Voir le détail</a>
-            <a href="https://centralisbusinessgroup.com/reservation?salle=koroba" class="re-btn-book" target="_blank">Réserver</a>
+          <div class="re-actions">
+            <a href="salle-koroba.html" class="re-btn-outline">Voir le détail</a>
+            <a href="https://centralisbusinessgroup.com/reservation?salle=koroba" target="_blank" class="re-btn-solid">Réserver</a>
           </div>
         </div>
       </div>
 
-      <div class="re-card scroll-reveal">
-        <a href="salle-nkhrumah.html" class="re-card-img-link">
-          <div class="re-card-img">
-            <img src="images/nkhrumah.jpg" alt="Salle Nkhrumah" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=900&q=80'"/>
-            <span class="re-badge re-badge--available">Disponible</span>
-            <span class="re-badge-type">Formation</span>
-          </div>
+      <div class="re-card reveal reveal-delay-1">
+        <a href="salle-nkhrumah.html" class="re-card-img-wrap">
+          <img src="images/nkhrumah.jpg" alt="Salle Nkhrumah" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=900&q=80'"/>
+          <span class="re-avail">Disponible</span>
+          <span class="re-type">Formation</span>
         </a>
-        <div class="re-card-body">
-          <div class="re-card-header">
-            <h3 class="re-card-name">Salle Nkhrumah</h3>
-            <div class="re-card-price">À partir de <strong>80€</strong><span>/h</span></div>
+        <div class="re-body">
+          <div class="re-header">
+            <h3>Salle Nkhrumah</h3>
+            <div class="re-price">À partir de <strong>80€</strong>/h</div>
           </div>
-          <div class="re-card-specs">
-            <span class="re-spec"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 1a5 5 0 100 10A5 5 0 008 1zm0 9a4 4 0 110-8 4 4 0 010 8z" fill="currentColor"/><path d="M8 5v3l2 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>16 personnes</span>
-            <span class="re-spec"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>40 m²</span>
-            <span class="re-spec"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8 2v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Tableau blanc</span>
+          <div class="re-specs">
+            <span>👥 16 personnes</span>
+            <span>📐 40 m²</span>
+            <span>📋 Tableau blanc</span>
           </div>
-          <p class="re-card-desc">Salle de formation lumineuse, tableau blanc intégré, art contemporain.</p>
-          <div class="re-card-amenities">
+          <p class="re-desc">Salle de formation lumineuse, tableau blanc, art contemporain, config. modulable.</p>
+          <div class="re-amenities">
             <span>Wifi</span><span>Clim</span><span>Projecteur</span><span>Config. U</span>
           </div>
-          <div class="re-card-actions">
-            <a href="salle-nkhrumah.html" class="re-btn-detail">Voir le détail</a>
-            <a href="https://centralisbusinessgroup.com/reservation?salle=nkhrumah" class="re-btn-book" target="_blank">Réserver</a>
+          <div class="re-actions">
+            <a href="salle-nkhrumah.html" class="re-btn-outline">Voir le détail</a>
+            <a href="https://centralisbusinessgroup.com/reservation?salle=nkhrumah" target="_blank" class="re-btn-solid">Réserver</a>
           </div>
         </div>
       </div>
 
-      <div class="re-card scroll-reveal">
-        <a href="salle-sankara.html" class="re-card-img-link">
-          <div class="re-card-img">
-            <img src="images/sankara.jpg" alt="Salle Sankara" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=900&q=80'"/>
-            <span class="re-badge re-badge--available">Disponible</span>
-            <span class="re-badge-type">Formation</span>
-          </div>
+      <div class="re-card reveal reveal-delay-2">
+        <a href="salle-sankara.html" class="re-card-img-wrap">
+          <img src="images/sankara.jpg" alt="Salle Sankara" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=900&q=80'"/>
+          <span class="re-avail">Disponible</span>
+          <span class="re-type">Formation</span>
         </a>
-        <div class="re-card-body">
-          <div class="re-card-header">
-            <h3 class="re-card-name">Salle Sankara</h3>
-            <div class="re-card-price">À partir de <strong>80€</strong><span>/h</span></div>
+        <div class="re-body">
+          <div class="re-header">
+            <h3>Salle Sankara</h3>
+            <div class="re-price">À partir de <strong>80€</strong>/h</div>
           </div>
-          <div class="re-card-specs">
-            <span class="re-spec"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 1a5 5 0 100 10A5 5 0 008 1zm0 9a4 4 0 110-8 4 4 0 010 8z" fill="currentColor"/><path d="M8 5v3l2 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>16 personnes</span>
-            <span class="re-spec"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>40 m²</span>
-            <span class="re-spec"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8 2v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Cloison vitrée</span>
+          <div class="re-specs">
+            <span>👥 16 personnes</span>
+            <span>📐 40 m²</span>
+            <span>🪟 Cloison vitrée</span>
           </div>
-          <p class="re-card-desc">Espace haut de gamme avec cloison vitrée et œuvres d'art africaines.</p>
-          <div class="re-card-amenities">
+          <p class="re-desc">Cloison vitrée élégante, œuvres d'art africaines, ambiance haut de gamme.</p>
+          <div class="re-amenities">
             <span>Wifi</span><span>Clim</span><span>Projecteur</span><span>Art africain</span>
           </div>
-          <div class="re-card-actions">
-            <a href="salle-sankara.html" class="re-btn-detail">Voir le détail</a>
-            <a href="https://centralisbusinessgroup.com/reservation?salle=sankara" class="re-btn-book" target="_blank">Réserver</a>
+          <div class="re-actions">
+            <a href="salle-sankara.html" class="re-btn-outline">Voir le détail</a>
+            <a href="https://centralisbusinessgroup.com/reservation?salle=sankara" target="_blank" class="re-btn-solid">Réserver</a>
           </div>
         </div>
       </div>
 
-      <div class="re-card scroll-reveal">
-        <a href="salle-mandela.html" class="re-card-img-link">
-          <div class="re-card-img">
-            <img src="images/mandela.jpg" alt="Salle Mandela" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1462899006636-339e08d1844e?w=900&q=80'"/>
-            <span class="re-badge re-badge--available">Disponible</span>
-            <span class="re-badge-type">Formation</span>
-          </div>
+      <div class="re-card reveal">
+        <a href="salle-mandela.html" class="re-card-img-wrap">
+          <img src="images/mandela.jpg" alt="Salle Mandela" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1462899006636-339e08d1844e?w=900&q=80'"/>
+          <span class="re-avail">Disponible</span>
+          <span class="re-type">Formation</span>
         </a>
-        <div class="re-card-body">
-          <div class="re-card-header">
-            <h3 class="re-card-name">Salle Mandela</h3>
-            <div class="re-card-price">À partir de <strong>80€</strong><span>/h</span></div>
+        <div class="re-body">
+          <div class="re-header">
+            <h3>Salle Mandela</h3>
+            <div class="re-price">À partir de <strong>80€</strong>/h</div>
           </div>
-          <div class="re-card-specs">
-            <span class="re-spec"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 1a5 5 0 100 10A5 5 0 008 1zm0 9a4 4 0 110-8 4 4 0 010 8z" fill="currentColor"/><path d="M8 5v3l2 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>16 personnes</span>
-            <span class="re-spec"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>40 m²</span>
-            <span class="re-spec"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8 2v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Tableau blanc</span>
+          <div class="re-specs">
+            <span>👥 16 personnes</span>
+            <span>📐 40 m²</span>
+            <span>📋 Tableau blanc</span>
           </div>
-          <p class="re-card-desc">Ambiance inspirante, murs gris anthracite, tableaux africains et tableau blanc.</p>
-          <div class="re-card-amenities">
+          <p class="re-desc">Murs gris anthracite, tableaux africains, ambiance créative et inspirante.</p>
+          <div class="re-amenities">
             <span>Wifi</span><span>Clim</span><span>Projecteur</span><span>Art africain</span>
           </div>
-          <div class="re-card-actions">
-            <a href="salle-mandela.html" class="re-btn-detail">Voir le détail</a>
-            <a href="https://centralisbusinessgroup.com/reservation?salle=mandela" class="re-btn-book" target="_blank">Réserver</a>
+          <div class="re-actions">
+            <a href="salle-mandela.html" class="re-btn-outline">Voir le détail</a>
+            <a href="https://centralisbusinessgroup.com/reservation?salle=mandela" target="_blank" class="re-btn-solid">Réserver</a>
           </div>
         </div>
       </div>
 
-      <div class="re-card scroll-reveal">
-        <a href="salle-lumumba.html" class="re-card-img-link">
-          <div class="re-card-img">
-            <img src="images/lumumba.jpg" alt="Salle Lumumba" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80'"/>
-            <span class="re-badge re-badge--available">Disponible</span>
-            <span class="re-badge-type">Séminaire</span>
-          </div>
+      <div class="re-card reveal reveal-delay-1">
+        <a href="salle-lumumba.html" class="re-card-img-wrap">
+          <img src="images/lumumba.jpg" alt="Salle Lumumba" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80'"/>
+          <span class="re-avail">Disponible</span>
+          <span class="re-type re-type--gold">Séminaire</span>
         </a>
-        <div class="re-card-body">
-          <div class="re-card-header">
-            <h3 class="re-card-name">Salle Lumumba</h3>
-            <div class="re-card-price">À partir de <strong>100€</strong><span>/h</span></div>
+        <div class="re-body">
+          <div class="re-header">
+            <h3>Salle Lumumba</h3>
+            <div class="re-price">À partir de <strong>100€</strong>/h</div>
           </div>
-          <div class="re-card-specs">
-            <span class="re-spec"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 1a5 5 0 100 10A5 5 0 008 1zm0 9a4 4 0 110-8 4 4 0 010 8z" fill="currentColor"/><path d="M8 5v3l2 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>20 personnes</span>
-            <span class="re-spec"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>50 m²</span>
-            <span class="re-spec"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8 2v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Config. modulable</span>
+          <div class="re-specs">
+            <span>👥 20 personnes</span>
+            <span>📐 50 m²</span>
+            <span>🎙 Sono intégrée</span>
           </div>
-          <p class="re-card-desc">Grande salle modulable idéale pour séminaires, conférences et événements.</p>
-          <div class="re-card-amenities">
-            <span>Wifi</span><span>Clim</span><span>Projecteur HD</span><span>Config. U/Théâtre</span>
+          <p class="re-desc">Grande salle lumineuse, configuration îlots/U, décoration végétale, plantes.</p>
+          <div class="re-amenities">
+            <span>Wifi</span><span>Clim</span><span>Projecteur HD</span><span>Config. modulable</span>
           </div>
-          <div class="re-card-actions">
-            <a href="salle-lumumba.html" class="re-btn-detail">Voir le détail</a>
-            <a href="https://centralisbusinessgroup.com/reservation?salle=lumumba" class="re-btn-book" target="_blank">Réserver</a>
+          <div class="re-actions">
+            <a href="salle-lumumba.html" class="re-btn-outline">Voir le détail</a>
+            <a href="https://centralisbusinessgroup.com/reservation?salle=lumumba" target="_blank" class="re-btn-solid">Réserver</a>
           </div>
         </div>
       </div>
 
-    </div><!-- /re-grid -->
+    </div>
 
-    <div class="re-cta-bar scroll-reveal">
+    <div class="re-cta reveal">
       <p>Besoin d'un devis ou d'une configuration sur-mesure ?</p>
       <a href="#contact" class="btn-gold">Nous contacter</a>
     </div>
   </div>
 </section>
 
-  <!-- STUDIO PODCAST -->
-  <section id="studio" class="studio">
-    <div class="container">
-
-      <!-- Header -->
-      <div class="studio-header scroll-reveal">
-        <p class="section-label section-label--gold">En partenariat avec Quietforce Studio</p>
-        <h2 class="serif-title serif-title--white">Deux espaces pour<br>donner de la voix à <em>votre marque</em></h2>
-        <div class="gold-rule"></div>
-        <p class="studio-desc">Des studios podcast professionnels entièrement équipés — micros RØDE, traitement acoustique, ambiances soignées — pour enregistrer votre contenu avec style.</p>
-      </div>
-
-      <!-- 2 Studios côte à côte -->
-      <div class="studios-duo scroll-reveal">
-
-        <div class="studio-room">
-          <div class="studio-room-img">
-            <img src="images/studio-jaune.jpg" alt="Studio Jaune — Quietforce Studio" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=900&q=80'"/>
-            <div class="studio-room-overlay">
-              <span class="studio-room-badge">Studio Jaune</span>
-            </div>
-          </div>
-          <div class="studio-room-body">
-            <h3>Studio Jaune</h3>
-            <p>Ambiance chaude et vibrante — fauteuils jaunes, mur acoustique noir, lumières bleues. Idéal pour les podcasts dynamiques, interviews et créations de contenu percutantes.</p>
-            <div class="studio-room-specs">
-              <span>Micros RØDE</span>
-              <span>Traitement acoustique</span>
-              <span>Éclairage LED</span>
-              <span>2 hôtes</span>
-            </div>
+<!-- ═══════════════════════════════════════
+     STUDIO PODCAST
+═══════════════════════════════════════ -->
+<section id="studio" class="studio">
+  <div class="container">
+    <div class="studio-hd reveal">
+      <p class="section-eyebrow section-eyebrow--gold">En partenariat avec Quietforce Studio</p>
+      <h2 class="serif-title serif-title--white">Deux espaces pour<br>donner de la voix à <em>votre marque</em></h2>
+      <div class="gold-bar"></div>
+      <p class="studio-desc">Studios podcast professionnels entièrement équipés — micros RØDE, traitement acoustique, ambiances soignées — pour enregistrer votre contenu avec style.</p>
+    </div>
+    <div class="studios-duo">
+      <div class="studio-card reveal">
+        <div class="studio-card-img">
+          <img src="images/studio-jaune.jpg" alt="Studio Jaune — Quietforce Studio" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=900&q=80'"/>
+          <div class="studio-card-overlay"><span>Studio Jaune</span></div>
+        </div>
+        <div class="studio-card-body">
+          <h3>Studio Jaune</h3>
+          <p>Ambiance chaude et vibrante — fauteuils jaunes, mur acoustique noir, lumières LED bleues. Idéal pour podcasts dynamiques et interviews percutantes.</p>
+          <div class="studio-specs">
+            <span>Micros RØDE</span><span>Traitement acoustique</span><span>Éclairage LED</span><span>2 hôtes</span>
           </div>
         </div>
-
-        <div class="studio-room">
-          <div class="studio-room-img">
-            <img src="images/studio-bleu.jpg" alt="Studio Bleu — Quietforce Studio" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=900&q=80'"/>
-            <div class="studio-room-overlay">
-              <span class="studio-room-badge">Studio Bleu</span>
-            </div>
-          </div>
-          <div class="studio-room-body">
-            <h3>Studio Bleu</h3>
-            <p>Ambiance naturelle et élégante — canapés bleus, mur en lattes de bois, plante verte. Parfait pour les podcasts professionnels, émissions business et entretiens soignés.</p>
-            <div class="studio-room-specs">
-              <span>Micros RØDE</span>
-              <span>Panneaux bois acoustiques</span>
-              <span>Ambiance feutrée</span>
-              <span>2 hôtes</span>
-            </div>
+      </div>
+      <div class="studio-card reveal reveal-delay-2">
+        <div class="studio-card-img">
+          <img src="images/studio-bleu.jpg" alt="Studio Bleu — Quietforce Studio" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=900&q=80'"/>
+          <div class="studio-card-overlay"><span>Studio Bleu</span></div>
+        </div>
+        <div class="studio-card-body">
+          <h3>Studio Bleu</h3>
+          <p>Ambiance naturelle et élégante — canapés bleus, mur en lattes de bois, plante verte. Parfait pour podcasts professionnels et entretiens business.</p>
+          <div class="studio-specs">
+            <span>Micros RØDE</span><span>Panneaux bois</span><span>Ambiance feutrée</span><span>2 hôtes</span>
           </div>
         </div>
-
       </div>
+    </div>
+    <div class="studio-bottom reveal">
+      <ul class="studio-features">
+        <li>✓ Enregistrement multi-pistes haute fidélité</li>
+        <li>✓ Montage et post-production disponibles</li>
+        <li>✓ Diffusion sur toutes les plateformes</li>
+        <li>✓ Accompagnement technique inclus</li>
+      </ul>
+      <div class="studio-ctas">
+        <a href="#contact" class="btn-gold">Réserver via CBG →</a>
+        <a href="https://quiet-force-studio.fr" target="_blank" rel="noopener" class="btn-ghost-white">Voir Quietforce Studio →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <!-- Features + CTA -->
-      <div class="studio-bottom scroll-reveal">
-        <ul class="studio-features-inline">
-          <li><span class="sf-check">✓</span> Enregistrement multi-pistes haute fidélité</li>
-          <li><span class="sf-check">✓</span> Montage et post-production disponibles</li>
-          <li><span class="sf-check">✓</span> Diffusion sur toutes les plateformes</li>
-          <li><span class="sf-check">✓</span> Accompagnement technique inclus</li>
+<!-- ═══════════════════════════════════════
+     FORMATIONS
+═══════════════════════════════════════ -->
+<section id="formations" class="formations">
+  <div class="container">
+    <div class="section-hd reveal">
+      <p class="section-eyebrow">Nos formations</p>
+      <h2 class="serif-title">Des BTS pour bâtir<br><em>votre avenir professionnel</em></h2>
+      <p class="section-sub">Formations reconnues par l'État · En alternance · Ancrage terrain immédiat</p>
+    </div>
+    <div class="form-grid">
+
+      <div class="form-card reveal">
+        <div class="form-img">
+          <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80" alt="BTS NDRC" loading="lazy"/>
+        </div>
+        <div class="form-badges"><span class="badge-bts">BTS</span><span class="badge-alt">Alternance</span></div>
+        <h3 class="form-sigle">NDRC</h3>
+        <p class="form-name">Négociation et Digitalisation de la Relation Client</p>
+        <p class="form-desc">Maîtrisez les techniques commerciales modernes et le marketing digital pour devenir un commercial d'élite.</p>
+        <ul class="form-points">
+          <li>Négociation commerciale B2B/B2C</li>
+          <li>Marketing digital & CRM</li>
+          <li>Management commercial</li>
+          <li>Gestion de portefeuille client</li>
         </ul>
-        <div class="studio-ctas">
-          <a href="#contact" class="btn-gold">Réserver via CBG →</a>
-          <a href="https://quiet-force-studio.fr" target="_blank" rel="noopener" class="btn-studio-qf">
-            Voir Quietforce Studio
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
+        <div class="form-footer">
+          <span>2 ans · Bac+2</span>
+          <a href="#contact" class="btn-form">Candidater →</a>
+        </div>
+      </div>
+
+      <div class="form-card form-card--gold reveal reveal-delay-1">
+        <div class="form-img">
+          <img src="https://images.unsplash.com/photo-1664575602554-2087b04935a5?w=800&q=80" alt="BTS GPME" loading="lazy"/>
+        </div>
+        <div class="form-badges"><span class="badge-bts badge-bts--gold">BTS</span><span class="badge-alt">Alternance</span></div>
+        <h3 class="form-sigle">GPME</h3>
+        <p class="form-name">Gestion de la PME</p>
+        <p class="form-desc">Devenez le bras droit indispensable du chef d'entreprise en maîtrisant la gestion administrative et financière.</p>
+        <ul class="form-points">
+          <li>Gestion administrative & RH</li>
+          <li>Comptabilité & finances</li>
+          <li>Développement commercial</li>
+          <li>Communication d'entreprise</li>
+        </ul>
+        <div class="form-footer">
+          <span>2 ans · Bac+2</span>
+          <a href="#contact" class="btn-form btn-form--gold">Candidater →</a>
+        </div>
+      </div>
+
+      <div class="form-card reveal reveal-delay-2">
+        <div class="form-img">
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80" alt="BTS MCO" loading="lazy"/>
+        </div>
+        <div class="form-badges"><span class="badge-bts">BTS</span><span class="badge-alt">Alternance</span></div>
+        <h3 class="form-sigle">MCO</h3>
+        <p class="form-name">Management Commercial Opérationnel</p>
+        <p class="form-desc">Pilotez la performance commerciale, managez des équipes et maximisez les résultats d'une unité commerciale.</p>
+        <ul class="form-points">
+          <li>Animation & gestion de rayon</li>
+          <li>Management d'équipe</li>
+          <li>Développement de clientèle</li>
+          <li>Merchandising</li>
+        </ul>
+        <div class="form-footer">
+          <span>2 ans · Bac+2</span>
+          <a href="#contact" class="btn-form">Candidater →</a>
+        </div>
+      </div>
+
+      <div class="form-card reveal">
+        <div class="form-img">
+          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80" alt="TP NTC" loading="lazy"/>
+        </div>
+        <div class="form-badges"><span class="badge-bts badge-bts--alt">Titre Pro</span><span class="badge-alt">Alternance</span></div>
+        <h3 class="form-sigle">NTC</h3>
+        <p class="form-name">Négociateur Technico-Commercial</p>
+        <p class="form-desc">Maîtrisez les techniques de vente en B2B, la prospection et la négociation dans des secteurs à forte valeur ajoutée.</p>
+        <ul class="form-points">
+          <li>Prospection & développement commercial</li>
+          <li>Argumentation technique</li>
+          <li>Négociation B2B</li>
+          <li>Gestion de la relation client</li>
+        </ul>
+        <div class="form-footer">
+          <span>1 an · Titre Pro</span>
+          <a href="#contact" class="btn-form">Candidater →</a>
+        </div>
+      </div>
+
+      <div class="form-card form-card--special reveal reveal-delay-1">
+        <div class="form-img">
+          <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80" alt="IA Marketing" loading="lazy"/>
+        </div>
+        <div class="form-badges"><span class="badge-bts badge-bts--ia">IA</span><span class="badge-alt badge-alt--melio">Melio Académie</span></div>
+        <h3 class="form-sigle">IA Marketing</h3>
+        <p class="form-name">Intelligence Artificielle & Marketing</p>
+        <p class="form-desc">Formation de pointe en partenariat avec Melio Académie pour maîtriser l'IA appliquée au marketing digital.</p>
+        <ul class="form-points">
+          <li>Outils IA (ChatGPT, Midjourney…)</li>
+          <li>Stratégie de contenu IA</li>
+          <li>Automatisation marketing</li>
+          <li>Data & analytics</li>
+        </ul>
+        <div class="form-footer">
+          <span>Certification</span>
+          <a href="#contact" class="btn-form">Candidater →</a>
+        </div>
+      </div>
+
+      <div class="form-card reveal reveal-delay-2">
+        <div class="form-img">
+          <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80" alt="TCF FLE" loading="lazy"/>
+        </div>
+        <div class="form-badges"><span class="badge-bts badge-bts--lang">Langue</span></div>
+        <h3 class="form-sigle">TCF/FLE</h3>
+        <p class="form-name">Test de Connaissance du Français & Français Langue Étrangère</p>
+        <p class="form-desc">Préparation intensive aux tests officiels de langue française — TCF, DELF, DALF — pour vos démarches administratives ou professionnelles.</p>
+        <ul class="form-points">
+          <li>Compréhension orale & écrite</li>
+          <li>Expression écrite & orale</li>
+          <li>Méthodologie aux tests</li>
+          <li>Suivi personnalisé</li>
+        </ul>
+        <div class="form-footer">
+          <span>Sessions courtes</span>
+          <a href="#contact" class="btn-form">Candidater →</a>
         </div>
       </div>
 
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FORMATIONS -->
-  <section id="formations" class="formations">
-    <div class="container">
-      <div class="section-hd scroll-reveal">
-        <p class="section-label">Nos formations</p>
-        <h2 class="serif-title">Des BTS pour bâtir<br><em>votre avenir professionnel</em></h2>
-        <p class="section-sub">Formations reconnues par l'État · En alternance · Ancrage terrain immédiat</p>
-      </div>
-      <div class="formations-grid">
-
-        <div class="form-card scroll-reveal">
-          <div class="form-card-img">
-            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80" alt="BTS NDRC — Négociation commerciale" loading="lazy"/>
-            <div class="form-card-img-overlay"></div>
-          </div>
-          <div class="form-card-top">
-            <span class="bts-badge">BTS</span>
-            <span class="alt-badge">Alternance</span>
-          </div>
-          <h3 class="form-sigle">NDRC</h3>
-          <p class="form-fullname">Négociation et Digitalisation<br>de la Relation Client</p>
-          <p class="form-desc">Maîtrisez les techniques commerciales modernes, la gestion de la relation client et le marketing digital pour devenir un commercial d'élite.</p>
-          <ul class="form-points">
-            <li>Négociation commerciale B2B/B2C</li>
-            <li>Marketing digital & CRM</li>
-            <li>Management commercial</li>
-            <li>Gestion de portefeuille client</li>
-          </ul>
-          <div class="form-footer">
-            <span class="form-dur">2 ans · Bac+2</span>
-            <a href="#contact" class="btn-form">Candidater →</a>
-          </div>
-        </div>
-
-        <div class="form-card form-card--gold scroll-reveal">
-          <div class="form-card-img">
-            <img src="https://images.unsplash.com/photo-1664575602554-2087b04935a5?w=800&q=80" alt="BTS GPME — Gestion PME" loading="lazy"/>
-            <div class="form-card-img-overlay"></div>
-          </div>
-          <div class="form-card-top">
-            <span class="bts-badge bts-badge--gold">BTS</span>
-            <span class="alt-badge">Alternance</span>
-          </div>
-          <h3 class="form-sigle">GPME</h3>
-          <p class="form-fullname">Gestion de la PME</p>
-          <p class="form-desc">Devenez le bras droit indispensable du chef d'entreprise en maîtrisant la gestion administrative, financière et commerciale d'une PME.</p>
-          <ul class="form-points">
-            <li>Gestion administrative & RH</li>
-            <li>Comptabilité & gestion financière</li>
-            <li>Développement commercial</li>
-            <li>Communication d'entreprise</li>
-          </ul>
-          <div class="form-footer">
-            <span class="form-dur">2 ans · Bac+2</span>
-            <a href="#contact" class="btn-form btn-form--gold">Candidater →</a>
-          </div>
-        </div>
-
-        <div class="form-card scroll-reveal">
-          <div class="form-card-img">
-            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80" alt="BTS MCO — Management Commercial" loading="lazy"/>
-            <div class="form-card-img-overlay"></div>
-          </div>
-          <div class="form-card-top">
-            <span class="bts-badge">BTS</span>
-            <span class="alt-badge">Alternance</span>
-          </div>
-          <h3 class="form-sigle">MCO</h3>
-          <p class="form-fullname">Management Commercial<br>Opérationnel</p>
-          <p class="form-desc">Pilotez la performance commerciale d'une unité, managez des équipes et animez l'offre pour maximiser les résultats.</p>
-          <ul class="form-points">
-            <li>Animation & gestion de rayon</li>
-            <li>Management d'équipe</li>
-            <li>Développement de clientèle</li>
-            <li>Merchandising & communication</li>
-          </ul>
-          <div class="form-footer">
-            <span class="form-dur">2 ans · Bac+2</span>
-            <a href="#contact" class="btn-form">Candidater →</a>
-          </div>
-        </div>
-
-        <div class="form-card scroll-reveal">
-          <div class="form-card-img">
-            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&q=80" alt="TP NTC — Négociateur Technico-Commercial" loading="lazy"/>
-            <div class="form-card-img-overlay"></div>
-          </div>
-          <div class="form-card-top">
-            <span class="bts-badge">TP</span>
-            <span class="alt-badge">Alternance</span>
-          </div>
-          <h3 class="form-sigle">NTC</h3>
-          <p class="form-fullname">Négociateur<br>Technico-Commercial</p>
-          <p class="form-desc">Devenez l'expert qui combine maîtrise technique du produit et excellence commerciale — un profil rare et très recherché par les entreprises.</p>
-          <ul class="form-points">
-            <li>Prospection & développement commercial</li>
-            <li>Argumentation technico-commerciale</li>
-            <li>Négociation et closing</li>
-            <li>Gestion de la relation client</li>
-          </ul>
-          <div class="form-footer">
-            <span class="form-dur">Titre Pro · Bac+2</span>
-            <a href="#contact" class="btn-form">Candidater →</a>
-          </div>
-        </div>
-
-        <div class="form-card form-card--gold scroll-reveal">
-          <div class="form-card-img">
-            <img src="https://images.unsplash.com/photo-1655720828018-edd2daec9349?w=800&q=80" alt="Formation IA Marketing — Melio Académie" loading="lazy"/>
-            <div class="form-card-img-overlay"></div>
-          </div>
-          <div class="form-card-top">
-            <span class="bts-badge bts-badge--gold">IA</span>
-            <span class="alt-badge">Partenariat</span>
-          </div>
-          <h3 class="form-sigle">IA & MKT</h3>
-          <p class="form-fullname">Intelligence Artificielle<br>& Marketing Digital</p>
-          <p class="form-desc">En partenariat avec Melio Académie — maîtrisez les outils IA pour révolutionner vos stratégies marketing et démultiplier votre impact.</p>
-          <ul class="form-points">
-            <li>Outils IA : ChatGPT, MidJourney, Copilot</li>
-            <li>Automatisation & growth hacking</li>
-            <li>Création de contenu augmentée</li>
-            <li>Stratégie digitale & analytics</li>
-          </ul>
-          <div class="form-footer">
-            <span class="form-dur">Formation courte · Certifiante</span>
-            <a href="#contact" class="btn-form btn-form--gold">Candidater →</a>
-          </div>
-        </div>
-
-        <div class="form-card scroll-reveal">
-          <div class="form-card-img">
-            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80" alt="Formation TCF FLE — Français Langue Étrangère" loading="lazy"/>
-            <div class="form-card-img-overlay"></div>
-          </div>
-          <div class="form-card-top">
-            <span class="bts-badge">FLE</span>
-            <span class="alt-badge">Certification</span>
-          </div>
-          <h3 class="form-sigle">TCF / FLE</h3>
-          <p class="form-fullname">Test de Connaissance du Français<br>& Français Langue Étrangère</p>
-          <p class="form-desc">Préparez le TCF et maîtrisez le français professionnel pour intégrer le marché du travail français ou poursuivre des études supérieures.</p>
-          <ul class="form-points">
-            <li>Préparation au TCF (DELF/DALF)</li>
-            <li>Français des affaires</li>
-            <li>Communication professionnelle écrite</li>
-            <li>Oral & expression en milieu pro</li>
-          </ul>
-          <div class="form-footer">
-            <span class="form-dur">Formation continue · Tous niveaux</span>
-            <a href="#contact" class="btn-form">Candidater →</a>
-          </div>
-        </div>
-
-      </div>
+<!-- ═══════════════════════════════════════
+     BLOG
+═══════════════════════════════════════ -->
+<section id="blog" class="blog">
+  <div class="container">
+    <div class="section-hd reveal">
+      <p class="section-eyebrow">Actualités & Conseils</p>
+      <h2 class="serif-title">Le blog <em>CBG</em></h2>
     </div>
-  </section>
-
-  <!-- BLOG -->
-  <section id="blog" class="blog">
-    <div class="container">
-      <div class="section-hd scroll-reveal">
-        <p class="section-label">Actualités CBG</p>
-        <h2 class="serif-title">Notre <em>blog</em></h2>
-        <p class="section-sub">Conseils, actualités et ressources pour entrepreneurs et étudiants</p>
-      </div>
-      <div class="blog-grid">
-
-        <article class="blog-card scroll-reveal">
-          <div class="blog-card-img">
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80" alt="BTS alternance" loading="lazy"/>
-            <span class="blog-cat">Formation</span>
-          </div>
-          <div class="blog-card-body">
-            <time>12 Juin 2026</time>
-            <h3>Comment réussir son BTS en alternance en 2026</h3>
-            <p>Nos conseils pour concilier études et vie professionnelle et décrocher votre diplôme avec succès.</p>
-            <a href="#" class="blog-link">Lire l'article →</a>
-          </div>
-        </article>
-
-        <article class="blog-card scroll-reveal">
-          <div class="blog-card-img">
-            <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80" alt="Alfortville business" loading="lazy"/>
-            <span class="blog-cat">Entrepreneuriat</span>
-          </div>
-          <div class="blog-card-body">
-            <time>5 Juin 2026</time>
-            <h3>5 raisons de choisir Alfortville pour implanter votre entreprise</h3>
-            <p>Proximité de Paris, dynamisme économique, espaces accessibles — pourquoi Alfortville est la nouvelle adresse business.</p>
-            <a href="#" class="blog-link">Lire l'article →</a>
-          </div>
-        </article>
-
-        <article class="blog-card scroll-reveal">
-          <div class="blog-card-img">
-            <img src="https://images.unsplash.com/photo-1655720828018-edd2daec9349?w=800&q=80" alt="IA Marketing" loading="lazy"/>
-            <span class="blog-cat">Innovation</span>
-          </div>
-          <div class="blog-card-body">
-            <time>28 Mai 2026</time>
-            <h3>L'IA au service du marketing : ce qui change en 2026</h3>
-            <p>Comment les entrepreneurs utilisent l'intelligence artificielle pour transformer leurs stratégies commerciales.</p>
-            <a href="#" class="blog-link">Lire l'article →</a>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- PARTENAIRES -->
-  <section class="partenaires">
-    <div class="container">
-      <p class="section-label text-c scroll-reveal">Ils nous font confiance</p>
-      <div class="partenaires-strip scroll-reveal">
-        <span class="partenaire">Melio Académie</span>
-        <span class="pdot">◆</span>
-        <span class="partenaire">Quietforce Studio</span>
-        <span class="pdot">◆</span>
-        <span class="partenaire">EFS</span>
-        <span class="pdot">◆</span>
-        <span class="partenaire">Centralis</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <div class="container">
-      <div class="contact-hero scroll-reveal">
-        <p class="section-label section-label--gold">PARLONS DE VOTRE PROJET</p>
-        <h2 class="serif-title serif-title--white">Décrivez votre besoin,<br><em>nous ferons le reste.</em></h2>
-      </div>
-      <div class="contact-split">
-        <div class="contact-trust scroll-reveal">
-          <p class="ct-intro">Chaque demande est traitée par un expert dédié dans les 24 heures ouvrées. Votre projet est unique — notre réponse le sera aussi.</p>
-          <div class="ct-points">
-            <div class="ct-point">
-              <span class="ct-num">01</span>
-              <div>
-                <h4>Confidentialité totale</h4>
-                <p>Vos données ne sont jamais partagées avec des tiers.</p>
-              </div>
-            </div>
-            <div class="ct-point">
-              <span class="ct-num">02</span>
-              <div>
-                <h4>Réponse sous 24h</h4>
-                <p>Un conseiller dédié vous répond sous 24 heures ouvrables.</p>
-              </div>
-            </div>
-            <div class="ct-point">
-              <span class="ct-num">03</span>
-              <div>
-                <h4>Accompagnement sur-mesure</h4>
-                <p>Chaque projet est traité avec la précision qu'il mérite.</p>
-              </div>
-            </div>
-          </div>
-          <div class="ct-brand">
-            <div class="ct-brand-lines"><span></span><span></span></div>
-            <span class="ct-brand-name">CENTRALIS BUSINESS GROUP</span>
-          </div>
+    <div class="blog-grid">
+      <div class="blog-card reveal">
+        <div class="blog-img">
+          <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80" alt="Blog CBG" loading="lazy"/>
+          <span class="blog-tag">Entrepreneuriat</span>
         </div>
-        <div class="contact-form-wrap scroll-reveal">
-          <div class="cf-tag">DEMANDE CONFIDENTIELLE</div>
-          <form class="contact-form" id="contactForm" action="contact.php" method="POST" novalidate>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Nom complet *</label>
-                <input type="text" id="name" name="name" placeholder="Jean Dupont" required autocomplete="name"/>
-              </div>
-              <div class="form-group">
-                <label for="email">Email *</label>
-                <input type="email" id="email" name="email" placeholder="jean@exemple.com" required autocomplete="email"/>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="phone">Téléphone</label>
-                <input type="tel" id="phone" name="phone" placeholder="+33 6 00 00 00 00" autocomplete="tel"/>
-              </div>
-              <div class="form-group">
-                <label for="company">Entreprise</label>
-                <input type="text" id="company" name="company" placeholder="Votre société" autocomplete="organization"/>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="subject">Sujet *</label>
-              <select id="subject" name="subject" required>
-                <option value="" disabled selected>Sélectionnez un sujet</option>
-                <optgroup label="Location d'espaces">
-                  <option value="salle-reunion">Réservation salle de réunion</option>
-                  <option value="salle-formation">Réservation salle de formation</option>
-                  <option value="evenement">Événement / Séminaire</option>
-                </optgroup>
-                <optgroup label="Studio Podcast">
-                  <option value="studio-podcast">Réservation studio podcast</option>
-                  <option value="production">Production de contenu</option>
-                </optgroup>
-                <optgroup label="Formation">
-                  <option value="formation-bts">BTS (NDRC / GPME / MCO)</option>
-                  <option value="alternance">Alternance</option>
-                </optgroup>
-                <optgroup label="Autres">
-                  <option value="conseil">Conseil en entreprise</option>
-                  <option value="partenariat">Partenariat</option>
-                  <option value="devis">Demande de devis</option>
-                  <option value="autre">Autre demande</option>
-                </optgroup>
-              </select>
-            </div>
-            <div class="form-row" id="dateRow" style="display:none">
-              <div class="form-group">
-                <label for="date-start">Date souhaitée</label>
-                <input type="date" id="date-start" name="date_start"/>
-              </div>
-              <div class="form-group">
-                <label for="nb-personnes">Nombre de personnes</label>
-                <input type="number" id="nb-personnes" name="nb_personnes" placeholder="ex: 10" min="1" max="50"/>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="message">Message *</label>
-              <textarea id="message" name="message" rows="4" placeholder="Décrivez votre projet ou votre demande..." required></textarea>
-            </div>
-            <div class="form-check">
-              <input type="checkbox" id="rgpd" name="rgpd" required/>
-              <label for="rgpd">J'accepte que mes données soient utilisées pour traiter ma demande.</label>
-            </div>
-            <button type="submit" class="btn-gold form-submit">
-              <span class="form-submit-text">Envoyer le message</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <p class="form-note">Réponse garantie sous 24h · Données protégées</p>
-          </form>
+        <div class="blog-body">
+          <p class="blog-date">12 juin 2025</p>
+          <h3>5 raisons de domicilier votre entreprise en Île-de-France</h3>
+          <p>Alfortville, à 10 minutes de Paris, offre tous les avantages d'une adresse prestige sans les coûts parisiens...</p>
+          <a href="#contact" class="blog-link">Lire l'article →</a>
+        </div>
+      </div>
+      <div class="blog-card reveal reveal-delay-1">
+        <div class="blog-img">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80" alt="Blog CBG" loading="lazy"/>
+          <span class="blog-tag">Formation</span>
+        </div>
+        <div class="blog-body">
+          <p class="blog-date">5 juin 2025</p>
+          <h3>Comment réussir son BTS en alternance : nos conseils</h3>
+          <p>L'alternance est un tremplin formidable. Voici les clés pour concilier études et vie professionnelle avec succès...</p>
+          <a href="#contact" class="blog-link">Lire l'article →</a>
+        </div>
+      </div>
+      <div class="blog-card reveal reveal-delay-2">
+        <div class="blog-img">
+          <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=800&q=80" alt="Blog CBG" loading="lazy"/>
+          <span class="blog-tag">Podcast</span>
+        </div>
+        <div class="blog-body">
+          <p class="blog-date">28 mai 2025</p>
+          <h3>Podcast d'entreprise : pourquoi vous devez vous lancer</h3>
+          <p>Le podcast est devenu un outil marketing incontournable. Découvrez comment notre studio peut vous aider...</p>
+          <a href="#contact" class="blog-link">Lire l'article →</a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
+<!-- ═══════════════════════════════════════
+     CONTACT
+═══════════════════════════════════════ -->
+<section id="contact" class="contact">
+  <div class="contact-split">
+    <div class="ct-left">
+      <p class="section-eyebrow section-eyebrow--gold">Parlons de votre projet</p>
+      <h2 class="serif-title serif-title--white">Prenons<br>contact</h2>
+      <div class="gold-bar"></div>
+      <div class="ct-infos">
+        <div class="ct-info">
+          <div class="ct-icon">📍</div>
+          <div><strong>Adresse</strong><p>Alfortville, Île-de-France<br>À 10 min de Paris</p></div>
+        </div>
+        <div class="ct-info">
+          <div class="ct-icon">🕐</div>
+          <div><strong>Disponibilité</strong><p>Lun–Sam · 8h–20h<br>Réservation 7j/7 en ligne</p></div>
+        </div>
+        <div class="ct-info">
+          <div class="ct-icon">✉️</div>
+          <div><strong>Email</strong><p>contact@centralisbusinessgroup.com</p></div>
+        </div>
+      </div>
+      <div class="ct-trust">
+        <div class="trust-item">✓ Réponse sous 24h</div>
+        <div class="trust-item">✓ Devis gratuit</div>
+        <div class="trust-item">✓ Accompagnement personnalisé</div>
+      </div>
+    </div>
+    <div class="ct-right">
+      <form id="contact-form" action="contact.php" method="POST">
+        <div class="cf-row">
+          <div class="cf-group">
+            <label>Nom complet</label>
+            <input type="text" name="nom" placeholder="Jean Dupont" required/>
+          </div>
+          <div class="cf-group">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="jean@exemple.fr" required/>
+          </div>
+        </div>
+        <div class="cf-group">
+          <label>Sujet</label>
+          <select name="sujet">
+            <option value="">Choisissez un sujet</option>
+            <option>Location de salle</option>
+            <option>Réservation studio podcast</option>
+            <option>Inscription formation</option>
+            <option>Conseil stratégique</option>
+            <option>Autre demande</option>
+          </select>
+        </div>
+        <div class="cf-group">
+          <label>Message</label>
+          <textarea name="message" rows="5" placeholder="Décrivez votre projet..." required></textarea>
+        </div>
+        <button type="submit" class="btn-gold btn-submit">Envoyer le message</button>
+        <div id="form-success" style="display:none;margin-top:1rem;padding:1rem;background:#DCFCE7;border-radius:8px;color:#15803D;font-weight:600;">
+          ✓ Message envoyé ! Nous vous répondrons sous 24h.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
 
-  <footer class="footer">
-    <div class="container footer-top">
+<!-- ═══════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
       <div class="footer-brand">
-        <img src="logo.png" alt="Centralis Business Group" class="footer-logo-img" onerror="this.style.display='none';this.nextSibling.style.display='block'">
-        <div class="footer-logo-text" style="display:none">CENTRALIS<span>.</span></div>
-        <p class="footer-tagline">Un écosystème d'excellence pour<br>vos projets professionnels</p>
-        <p class="footer-loc">Alfortville, Île-de-France</p>
+        <img src="images/logo.svg" alt="CBG" class="footer-logo" onerror="this.style.display='none'"/>
+        <p>Holding d'excellence à Alfortville. Espaces professionnels, formations certifiées et conseil stratégique.</p>
       </div>
-      <div class="footer-col">
-        <h4>Espaces</h4>
-        <a href="#contact">Salle Koroba</a>
-        <a href="#contact">Salles de réunion</a>
-        <a href="#contact">Salles de formation</a>
-        <a href="#contact">Studio Podcast</a>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#a-propos">À Propos</a></li>
+          <li><a href="#espaces">Espaces</a></li>
+          <li><a href="#studio">Studio Podcast</a></li>
+          <li><a href="#formations">Formations</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </div>
-      <div class="footer-col">
-        <h4>Formations</h4>
-        <a href="#formations">BTS NDRC</a>
-        <a href="#formations">BTS GPME</a>
-        <a href="#formations">BTS MCO</a>
-        <a href="#contact">Candidature</a>
+      <div class="footer-links">
+        <h4>Nos espaces</h4>
+        <ul>
+          <li><a href="salle-koroba.html">Salle Koroba</a></li>
+          <li><a href="salle-nkhrumah.html">Salle Nkhrumah</a></li>
+          <li><a href="salle-sankara.html">Salle Sankara</a></li>
+          <li><a href="salle-mandela.html">Salle Mandela</a></li>
+          <li><a href="salle-lumumba.html">Salle Lumumba</a></li>
+        </ul>
       </div>
-      <div class="footer-col">
-        <h4>Groupe</h4>
-        <a href="#a-propos">À propos</a>
-        <a href="#poles">Nos pôles</a>
-        <a href="#contact">Conseil</a>
-        <a href="#contact">Partenariats</a>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>Alfortville, Île-de-France</p>
+        <p>contact@centralisbusinessgroup.com</p>
+        <p>Lun–Sam · 8h–20h</p>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="container footer-bottom-inner">
-        <p>© 2026 Centralis Business Group — Tous droits réservés</p>
-        <div class="footer-bottom-links">
-          <a href="#">Mentions légales</a>
-          <a href="#">Confidentialité</a>
-        </div>
-      </div>
+      <p>© 2025 Centralis Business Group · Tous droits réservés</p>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
