@@ -341,55 +341,55 @@ img { max-width: 100%; display: block; }
   pointer-events: none;
 }
 .hero-split-eyebrow {
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
-  color: rgba(255,255,255,0.55);
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  color: rgba(255,255,255,0.5);
   text-transform: uppercase;
   font-weight: 500;
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
 }
-.hero-split-words {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  pointer-events: auto;
-}
-.hero-split-word {
-  font-size: clamp(3.8rem, 11.5vw, 10.5rem);
-  font-weight: 800;
-  color: white;
-  line-height: 0.95;
-  letter-spacing: -0.04em;
-  font-family: var(--font);
-  text-decoration: none;
-  display: block;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-.hero-split-word:hover { opacity: 0.55; transform: translateX(6px); }
-.hero-split-name {
-  display: block;
+.hero-split-title {
   font-family: var(--font-s);
-  font-size: clamp(2.8rem, 7vw, 6.5rem);
+  font-size: clamp(2.6rem, 5.5vw, 5.2rem);
   font-weight: 700;
   color: white;
-  line-height: 1.05;
+  line-height: 1.08;
   letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
 }
+.hero-split-title em {
+  font-style: italic;
+  color: rgba(255,255,255,0.72);
+}
 .hero-split-sub {
-  font-size: clamp(0.78rem, 1.2vw, 0.95rem);
-  color: rgba(255,255,255,0.65);
-  letter-spacing: 0.06em;
+  font-size: clamp(0.75rem, 1.1vw, 0.88rem);
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 400;
   margin-bottom: 2.5rem;
-  max-width: 520px;
-  line-height: 1.7;
+  max-width: 480px;
+  line-height: 1.8;
 }
-.hero-split-ctas {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+.hero-split-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  color: var(--dark);
+  padding: 0.9rem 2.2rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: var(--tr);
+}
+.hero-split-btn:hover {
+  background: var(--blue);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(26,26,204,0.4);
 }
 .hero-split-divider {
   position: absolute;
