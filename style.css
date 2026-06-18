@@ -321,10 +321,15 @@ img { max-width: 100%; display: block; }
 .hero-split-img,
 .hero-split-vid {
   position: absolute;
-  inset: 0;
-  width: 100%;
+  top: 50%;
+  left: 50%;
+  width: 177.78vh; /* 16:9 ratio */
   height: 100%;
-  object-fit: cover;
+  min-width: 100%;
+  min-height: 56.25vw; /* 16:9 ratio */
+  transform: translate(-50%, -50%);
+  border: none;
+  pointer-events: none;
 }
 .hero-split-tint {
   position: absolute;
