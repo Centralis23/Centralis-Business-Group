@@ -662,7 +662,9 @@
       </div>
     </div>
     <div class="ct-right">
-      <form id="contact-form" action="contact.php" method="POST">
+      <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact"/>
+        <p style="display:none"><input name="bot-field"/></p>
         <div class="cf-row">
           <div class="cf-group">
             <label>Nom complet</label>

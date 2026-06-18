@@ -96,7 +96,7 @@ if (heroVideo && heroFallback) {
   heroVideo.addEventListener('error', () => { heroVideo.style.display = 'none'; });
 }
 
-// 8. Contact form AJAX
+// 8. Contact form — Netlify Forms
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
   contactForm.addEventListener('submit', async function(e) {
@@ -106,9 +106,13 @@ if (contactForm) {
     btn.textContent = 'Envoi en cours...';
     btn.disabled = true;
     try {
-      const res = await fetch('contact.php', { method: 'POST', body: new FormData(this) });
-      const data = await res.json();
-      if (data.success) {
+      const body = new URLSearchParams(new FormData(this)).toString();
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body
+      });
+      if (res.ok) {
         const success = document.getElementById('form-success');
         if (success) success.style.display = 'block';
         this.reset();
