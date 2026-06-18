@@ -239,18 +239,19 @@ img { max-width: 100%; display: block; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-.navbar-centered.scrolled {
-  background: rgba(255,255,255,0.97);
+  background: rgba(255,255,255,0.98);
   box-shadow: 0 2px 20px rgba(17,24,39,0.08);
   backdrop-filter: blur(12px);
+  transition: box-shadow 0.3s ease;
+}
+.navbar-centered.scrolled {
+  box-shadow: 0 2px 28px rgba(17,24,39,0.13);
 }
 .nav-centered-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 80px;
   padding: 0 3rem;
   position: relative;
 }
@@ -267,19 +268,15 @@ img { max-width: 100%; display: block; }
   padding: 0.5rem 0.85rem;
   font-size: 0.85rem;
   font-weight: 600;
-  color: rgba(255,255,255,0.85);
+  color: var(--dark);
   border-radius: 4px;
   transition: var(--tr);
   letter-spacing: 0.02em;
 }
 .nav-links-left a:hover,
-.nav-links-right a:hover { color: white; }
-.navbar-centered.scrolled .nav-links-left a,
-.navbar-centered.scrolled .nav-links-right a { color: var(--dark); }
-.navbar-centered.scrolled .nav-links-left a:hover,
-.navbar-centered.scrolled .nav-links-right a:hover { color: var(--blue); }
+.nav-links-right a:hover { color: var(--blue); }
 .navbar-centered .nav-logo { flex: 0 0 auto; display: flex; align-items: center; }
-.navbar-centered .nav-logo-img { height: 56px; width: auto; object-fit: contain; }
+.navbar-centered .nav-logo-img { height: 68px; width: auto; object-fit: contain; }
 .navbar-centered .burger {
   display: none;
   flex-direction: column;
@@ -291,8 +288,7 @@ img { max-width: 100%; display: block; }
   position: absolute;
   right: 1.5rem;
 }
-.navbar-centered .burger span { display: block; width: 24px; height: 2px; background: white; border-radius: 2px; transition: var(--tr); }
-.navbar-centered.scrolled .burger span { background: var(--dark); }
+.navbar-centered .burger span { display: block; width: 24px; height: 2px; background: var(--dark); border-radius: 2px; transition: var(--tr); }
 @media (max-width: 900px) {
   .nav-links-left, .nav-links-right { display: none; }
   .nav-links-left.open, .nav-links-right.open {
