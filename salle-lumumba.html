@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <meta name="description" content="Salle Lumumba — Grande salle de séminaire à Alfortville. Centralis Business Group."/>
+  <meta name="description" content="Salle Lumumba — Séminaire Premium à Alfortville. Centralis Business Group."/>
   <title>Salle Lumumba — Centralis Business Group</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -11,18 +11,17 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-<nav id="navbar">
+
+<nav id="navbar" class="scrolled">
   <div class="nav-inner container">
     <a href="index.html" class="nav-logo">
-      <img src="images/logo.png" alt="Centralis Business Group" class="nav-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-      <div class="nav-logo-fallback" style="display:none"><div class="nav-logo-cube"><svg viewBox="0 0 60 60" width="40" height="40" fill="none"><polygon points="30,3 55,17 55,43 30,57 5,43 5,17" fill="#1A1ACC"/><text x="30" y="35" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="800" font-size="13" fill="white">CBG</text></svg></div><div class="nav-logo-text"><span class="nav-logo-main">CENTRALIS</span><span class="nav-logo-sub">BUSINESS GROUP</span></div></div>
+      <img src="images/logo.png" alt="Centralis Business Group" class="nav-logo-img"/>
     </a>
     <ul class="nav-links">
       <li><a href="index.html#a-propos">À Propos</a></li>
       <li><a href="index.html#espaces">Espaces</a></li>
       <li><a href="index.html#studio">Studio</a></li>
       <li><a href="index.html#formations">Formations</a></li>
-      <li><a href="index.html#blog">Blog</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
     <a href="index.html#contact" class="btn-nav-cta">Nous contacter</a>
@@ -30,64 +29,93 @@
   </div>
 </nav>
 
-<div class="salle-hero">
-  <div class="container">
-    <nav class="salle-breadcrumb">
+<!-- HERO IMAGE PLEINE LARGEUR -->
+<div class="salle-page-hero" id="salle-hero">
+  <img src="images/lumumba.jpg" alt="Salle Lumumba" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80'"/>
+  <div class="salle-page-hero-overlay"></div>
+  <div class="salle-page-hero-content container">
+    <nav class="salle-breadcrumb" style="margin-bottom:0.75rem;">
       <a href="index.html">Accueil</a><span>›</span>
       <a href="index.html#espaces">Espaces</a><span>›</span>
       Salle Lumumba
     </nav>
+    <h1>Salle Lumumba</h1>
+    <div class="salle-hero-badges">
+      <span class="salle-hero-badge salle-hero-badge--avail">Disponible</span>
+      <span class="salle-hero-badge salle-hero-badge--type">Séminaire Premium</span>
+      <span class="salle-hero-badge salle-hero-badge--price">À partir de 100€/h</span>
+    </div>
   </div>
 </div>
 
+<!-- STATS RAPIDES -->
+<div class="salle-quick-stats">
+  <div class="salle-quick-stats-inner">
+    <div class="sqs-item"><strong>20</strong><span>Personnes max.</span></div>
+    <div class="sqs-item"><strong>50 m²</strong><span>Surface</span></div>
+    <div class="sqs-item"><strong>7j/7</strong><span>Disponibilité</span></div>
+    <div class="sqs-item"><strong>10 min</strong><span>De Paris</span></div>
+    <div class="sqs-item"><strong>Wi-Fi</strong><span>Fibre optique</span></div>
+  </div>
+</div>
+
+<!-- LAYOUT PRINCIPAL -->
 <div class="container">
   <div class="salle-layout">
     <div class="salle-left">
-      <div class="salle-gallery">
+
+      <!-- GALERIE -->
+      <div class="salle-gallery reveal">
         <div class="salle-gallery-main">
           <img src="images/lumumba.jpg" alt="Salle Lumumba" id="gallery-main-img" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80'"/>
         </div>
         <div class="salle-gallery-thumbs">
-          <img src="images/lumumba.jpg" alt="" onclick="document.getElementById('gallery-main-img').src=this.src" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=70'"/>
-          <img src="images/accueil-bleu.jpg" alt="" onclick="document.getElementById('gallery-main-img').src=this.src" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=70'"/>
-          <img src="images/accueil-vert.jpg" alt="" onclick="document.getElementById('gallery-main-img').src=this.src" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1567016432779-094069958ea5?w=400&q=70'"/>
-          <img src="images/koroba.jpg" alt="" onclick="document.getElementById('gallery-main-img').src=this.src" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=400&q=70'"/>
+          <img src="images/lumumba.jpg" alt="" onclick="document.getElementById('gallery-main-img').src=this.src"/>
+          <img src="images/accueil-bleu.jpg" alt="" onclick="document.getElementById('gallery-main-img').src=this.src"/>
+          <img src="images/accueil-vert.jpg" alt="" onclick="document.getElementById('gallery-main-img').src=this.src"/>
+          <img src="images/koroba.png" alt="" onclick="document.getElementById('gallery-main-img').src=this.src"/>
         </div>
       </div>
-      <div class="salle-info-block">
+
+      <!-- DESCRIPTION -->
+      <div class="salle-info-block reveal">
         <h2>Salle Lumumba</h2>
         <div class="salle-info-tags">
-          <span>Séminaire</span><span>20 personnes</span><span class="tag-green">Disponible</span>
+          <span>Séminaire</span><span>20 personnes</span><span>50 m²</span><span class="tag-green">Disponible</span>
         </div>
-        <p class="salle-description">Notre plus grande salle, la Salle Lumumba est pensée pour les grands événements professionnels. Lumineuse et épurée, elle arbore une décoration végétale dorée sur les murs blancs et deux plantes ficus imposantes, créant une atmosphère à la fois sobre et inspirante. Sa configuration en îlots avec laptops fournis la rend idéale pour séminaires d'entreprise, formations plénières, conférences et assemblées générales.</p>
+        <p class="salle-description">La salle Lumumba est le fleuron des espaces Centralis Business Group : une grande salle lumineuse de 50 m² pensée pour les événements et séminaires qui marquent les esprits. Sa végétalisation intérieure apporte une touche de sérénité rare dans un contexte professionnel, tandis que la sonorisation intégrée garantit une diffusion parfaite de la parole jusqu'au dernier rang. Avec une capacité de 20 personnes, elle offre une flexibilité de configuration exceptionnelle — îlots de travail, disposition en U, théâtral ou banquet — pour répondre à chaque format d'événement avec une précision et une qualité premium.</p>
       </div>
-      <div class="salle-specs-grid">
-        <div class="salle-spec-item"><div class="salle-spec-icon">👥</div><div class="salle-spec-val">20</div><div class="salle-spec-lbl">Personnes max.</div></div>
-        <div class="salle-spec-item"><div class="salle-spec-icon">📐</div><div class="salle-spec-val">50 m²</div><div class="salle-spec-lbl">Surface</div></div>
-        <div class="salle-spec-item"><div class="salle-spec-icon">🕐</div><div class="salle-spec-val">7j/7</div><div class="salle-spec-lbl">Disponibilité</div></div>
-        <div class="salle-spec-item"><div class="salle-spec-icon">🌐</div><div class="salle-spec-val">Wi-Fi</div><div class="salle-spec-lbl">Connexion fibre</div></div>
-        <div class="salle-spec-item"><div class="salle-spec-icon">❄️</div><div class="salle-spec-val">Clim.</div><div class="salle-spec-lbl">Climatisation</div></div>
-        <div class="salle-spec-item"><div class="salle-spec-icon">📍</div><div class="salle-spec-val">10 min</div><div class="salle-spec-lbl">De Paris</div></div>
-      </div>
-      <div class="salle-equip">
+
+      <!-- ÉQUIPEMENTS -->
+      <div class="salle-equip reveal">
         <h3>Équipements inclus</h3>
-        <ul class="salle-equip-list"><li>Vidéoprojecteur HD</li><li>Grand écran de projection</li><li>Sonorisation intégrée</li><li>Micro sans fil x2</li><li>Grand tableau blanc</li><li>Wi-Fi fibre haut débit</li><li>Climatisation réversible</li><li>Laptops disponibles</li><li>Config. modulable (U/théâtre/îlots)</li><li>Cafetière & eau</li><li>Paperboard x2</li></ul>
+        <ul class="salle-equip-list">
+          <li>Vidéoprojecteur HD</li><li>Écran de projection</li>
+          <li>Sonorisation intégrée</li><li>Wi-Fi fibre optique</li>
+          <li>Climatisation réversible</li><li>Cafetière &amp; eau</li>
+          <li>Tableau blanc &amp; paperboard</li><li>Micro sans fil</li>
+        </ul>
       </div>
-      <div class="salle-pricing">
+
+      <!-- TARIFS -->
+      <div class="salle-pricing reveal">
         <h3>Tarifs</h3>
         <div class="pricing-table">
           <div class="pricing-row"><span class="pricing-label">1 heure</span><span class="pricing-val">100€</span></div>
-          <div class="pricing-row"><span class="pricing-label">Demi-journée (4h)</span><span class="pricing-val">350€</span></div>
-          <div class="pricing-row"><span class="pricing-label">Journée complète (8h)</span><span class="pricing-val">650€</span></div>
+          <div class="pricing-row"><span class="pricing-label">Demi-journée (4h)</span><span class="pricing-val">360€</span></div>
+          <div class="pricing-row"><span class="pricing-label">Journée complète (8h)</span><span class="pricing-val">680€</span></div>
           <div class="pricing-row"><span class="pricing-label">Semaine (5 jours)</span><span class="pricing-val">Sur devis</span></div>
         </div>
       </div>
+
     </div>
+
+    <!-- SIDEBAR -->
     <div class="salle-sidebar">
-      <div class="salle-book-card">
+      <div class="salle-book-card reveal-scale">
         <h3>Réserver cet espace</h3>
         <div class="salle-book-price"><strong>100€</strong><span>/ heure</span></div>
-        <a href="https://centralisbusinessgroup.com/reservation?salle=lumumba" class="btn-book-main" target="_blank">Réserver via BookingPress →</a>
+        <a href="https://centralisbusinessgroup.com/reservation?salle=lumumba" class="btn-book-main" target="_blank">Réserver maintenant</a>
         <a href="index.html#contact" class="btn-book-contact">Demander un devis</a>
         <ul class="salle-book-info">
           <li>Réservation en ligne 24h/24</li>
@@ -98,19 +126,166 @@
         </ul>
       </div>
     </div>
+
   </div>
 </div>
 
-<section class="salle-related">
+<!-- IDÉAL POUR -->
+<section class="ideal-pour">
   <div class="container">
-    <h2>Autres espaces disponibles</h2>
-    <div class="salle-related-grid"><div class="re-card"><a href="salle-koroba.html" class="re-card-img-link"><div class="re-card-img"><img src="images/koroba.jpg" alt="Salle Koroba" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=600&q=80'"/><span class="re-badge re-badge--available">Disponible</span><span class="re-badge-type">Réunion</span></div></a><div class="re-card-body"><div class="re-card-header"><h3 class="re-card-name">Salle Koroba</h3><div class="re-card-price">À partir de <strong>50€</strong><span>/h</span></div></div><div class="re-card-actions"><a href="salle-koroba.html" class="re-btn-detail">Voir le détail</a><a href="https://centralisbusinessgroup.com/reservation?salle=koroba" class="re-btn-book" target="_blank">Réserver</a></div></div></div><div class="re-card"><a href="salle-nkhrumah.html" class="re-card-img-link"><div class="re-card-img"><img src="images/nkhrumah.jpg" alt="Salle Nkhrumah" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80'"/><span class="re-badge re-badge--available">Disponible</span><span class="re-badge-type">Formation</span></div></a><div class="re-card-body"><div class="re-card-header"><h3 class="re-card-name">Salle Nkhrumah</h3><div class="re-card-price">À partir de <strong>80€</strong><span>/h</span></div></div><div class="re-card-actions"><a href="salle-nkhrumah.html" class="re-btn-detail">Voir le détail</a><a href="https://centralisbusinessgroup.com/reservation?salle=nkhrumah" class="re-btn-book" target="_blank">Réserver</a></div></div></div><div class="re-card"><a href="salle-mandela.html" class="re-card-img-link"><div class="re-card-img"><img src="images/mandela.jpg" alt="Salle Mandela" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1462899006636-339e08d1844e?w=600&q=80'"/><span class="re-badge re-badge--available">Disponible</span><span class="re-badge-type">Formation</span></div></a><div class="re-card-body"><div class="re-card-header"><h3 class="re-card-name">Salle Mandela</h3><div class="re-card-price">À partir de <strong>80€</strong><span>/h</span></div></div><div class="re-card-actions"><a href="salle-mandela.html" class="re-btn-detail">Voir le détail</a><a href="https://centralisbusinessgroup.com/reservation?salle=mandela" class="re-btn-book" target="_blank">Réserver</a></div></div></div></div>
+    <h3 class="reveal">Idéal pour</h3>
+    <div class="ideal-grid">
+      <div class="ideal-item reveal"><div class="ideal-dot"></div><p>Séminaires d'entreprise et team retreats</p></div>
+      <div class="ideal-item reveal reveal-delay-1"><div class="ideal-dot"></div><p>Formations intensives sur plusieurs jours</p></div>
+      <div class="ideal-item reveal reveal-delay-2"><div class="ideal-dot"></div><p>Assemblées générales et réunions plénières</p></div>
+      <div class="ideal-item reveal"><div class="ideal-dot"></div><p>Conférences et interventions d'experts</p></div>
+      <div class="ideal-item reveal reveal-delay-1"><div class="ideal-dot"></div><p>Événements d'entreprise et lancements produits</p></div>
+      <div class="ideal-item reveal reveal-delay-2"><div class="ideal-dot"></div><p>Remises de diplômes et cérémonies officielles</p></div>
+    </div>
   </div>
 </section>
 
-<footer style="background:#0D0D2B;color:white;padding:2rem;text-align:center;font-size:0.85rem;">
-  <p>© 2025 Centralis Business Group · Alfortville, Île-de-France · <a href="index.html" style="color:#C9A96E;">Retour à l'accueil</a></p>
+<!-- AMBIANCE -->
+<section class="salle-ambiance">
+  <div class="container">
+    <div class="ambiance-grid">
+      <div class="ambiance-imgs reveal-left">
+        <div class="ambiance-img ambiance-img--tall">
+          <img src="images/lumumba.jpg" alt="Salle Lumumba" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80'"/>
+        </div>
+        <div class="ambiance-img">
+          <img src="images/accueil-bleu.jpg" alt="Accueil CBG" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80'"/>
+        </div>
+        <div class="ambiance-img">
+          <img src="images/accueil-vert.jpg" alt="Espaces CBG" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1567016432779-094069958ea5?w=600&q=80'"/>
+        </div>
+      </div>
+      <div class="ambiance-text reveal-right">
+        <p class="section-eyebrow">L'environnement</p>
+        <h3>L'espace premium pour vos événements marquants</h3>
+        <p>La salle Lumumba représente le summum de l'offre Centralis Business Group. Avec ses 50 m² baignés de lumière naturelle, sa végétalisation intérieure apaisante et sa sonorisation professionnelle intégrée, elle offre un cadre d'exception pour les événements qui méritent l'excellence.</p>
+        <p>Sa configuration modulable à l'infini, combinée à des équipements audiovisuels de dernière génération, en fait l'espace de référence pour les séminaires intensifs, les grandes conférences et les cérémonies d'entreprise. Chaque événement organisé dans la salle Lumumba laisse une impression durable sur tous les participants.</p>
+        <div class="ambiance-feature">Accès PMR et stationnement inclus</div>
+        <div class="ambiance-feature">À 10 minutes de Paris — métro et RER à proximité</div>
+        <div class="ambiance-feature">Service d'accueil personnalisé sur demande</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SALLES SIMILAIRES -->
+<section class="salle-related">
+  <div class="container">
+    <h2 class="reveal">Autres espaces disponibles</h2>
+    <div class="re-grid reveal">
+
+      <div class="re-card reveal">
+        <a href="salle-koroba.html" class="re-card-img-wrap">
+          <img src="images/koroba.png" alt="Salle Koroba" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=900&q=80'"/>
+          <span class="re-avail">Disponible</span>
+          <span class="re-type">Réunion</span>
+        </a>
+        <div class="re-body">
+          <div class="re-header">
+            <h3>Salle Koroba</h3>
+            <div class="re-price">À partir de <strong>50€</strong>/h</div>
+          </div>
+          <div class="re-specs">
+            <span>8 personnes</span>
+            <span>25 m²</span>
+            <span>Projecteur</span>
+          </div>
+          <p class="re-desc">Espace de réunion élégant, moulures, table en bois clair, ambiance prestige.</p>
+          <div class="re-amenities">
+            <span>Wifi</span><span>Clim</span><span>Écran</span><span>Tableau</span>
+          </div>
+          <div class="re-actions">
+            <a href="salle-koroba.html" class="re-btn-outline">Voir le détail</a>
+            <a href="https://centralisbusinessgroup.com/reservation?salle=koroba" target="_blank" class="re-btn-solid">Réserver</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="re-card reveal reveal-delay-1">
+        <a href="salle-nkhrumah.html" class="re-card-img-wrap">
+          <img src="images/nkhrumah.jpg" alt="Salle Nkhrumah" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=900&q=80'"/>
+          <span class="re-avail">Disponible</span>
+          <span class="re-type">Formation</span>
+        </a>
+        <div class="re-body">
+          <div class="re-header">
+            <h3>Salle Nkhrumah</h3>
+            <div class="re-price">À partir de <strong>80€</strong>/h</div>
+          </div>
+          <div class="re-specs">
+            <span>16 personnes</span>
+            <span>40 m²</span>
+            <span>Tableau blanc</span>
+          </div>
+          <p class="re-desc">Salle de formation lumineuse, tableau blanc, art contemporain, config. modulable.</p>
+          <div class="re-amenities">
+            <span>Wifi</span><span>Clim</span><span>Projecteur</span><span>Config. U</span>
+          </div>
+          <div class="re-actions">
+            <a href="salle-nkhrumah.html" class="re-btn-outline">Voir le détail</a>
+            <a href="https://centralisbusinessgroup.com/reservation?salle=nkhrumah" target="_blank" class="re-btn-solid">Réserver</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="re-card reveal reveal-delay-2">
+        <a href="salle-mandela.html" class="re-card-img-wrap">
+          <img src="images/mandela.jpg" alt="Salle Mandela" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1462899006636-339e08d1844e?w=900&q=80'"/>
+          <span class="re-avail">Disponible</span>
+          <span class="re-type">Créative</span>
+        </a>
+        <div class="re-body">
+          <div class="re-header">
+            <h3>Salle Mandela</h3>
+            <div class="re-price">À partir de <strong>80€</strong>/h</div>
+          </div>
+          <div class="re-specs">
+            <span>16 personnes</span>
+            <span>40 m²</span>
+            <span>Tableau blanc</span>
+          </div>
+          <p class="re-desc">Murs gris anthracite, tableaux africains, ambiance créative et inspirante.</p>
+          <div class="re-amenities">
+            <span>Wifi</span><span>Clim</span><span>Projecteur</span><span>Art africain</span>
+          </div>
+          <div class="re-actions">
+            <a href="salle-mandela.html" class="re-btn-outline">Voir le détail</a>
+            <a href="https://centralisbusinessgroup.com/reservation?salle=mandela" target="_blank" class="re-btn-solid">Réserver</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="salle-footer">
+  <div class="container">
+    <p>© 2025 Centralis Business Group · Alfortville, Île-de-France · <a href="index.html">Retour à l'accueil</a></p>
+  </div>
 </footer>
+
 <script src="script.js"></script>
+<script>
+const sqsItems = document.querySelectorAll('.sqs-item');
+const statsObs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      statsObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+sqsItems.forEach(el => statsObs.observe(el));
+
+const hero = document.getElementById('salle-hero');
+if (hero) setTimeout(() => hero.classList.add('loaded'), 100);
+</script>
 </body>
 </html>

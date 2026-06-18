@@ -883,3 +883,167 @@ img { max-width: 100%; display: block; }
 .salle-related h2 { font-family: var(--font-s); font-size: 1.75rem; margin-bottom: 2rem; color: var(--dark); }
 .salle-related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 @media (max-width: 900px) { .salle-related-grid { grid-template-columns: 1fr; } }
+
+/* ── ANIMATIONS AVANCÉES ── */
+/* Ligne de révélation de texte */
+.clip-reveal { overflow: hidden; }
+.clip-reveal span { display: block; transform: translateY(100%); transition: transform 0.9s cubic-bezier(0.22,1,0.36,1); }
+.clip-reveal.visible span { transform: translateY(0); }
+
+/* Fade in depuis la gauche */
+.reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+/* Fade in depuis la droite */
+.reveal-right { opacity: 0; transform: translateX(40px); transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+/* Scale in */
+.reveal-scale { opacity: 0; transform: scale(0.92); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+/* ── STYLES PAGES SALLES ── */
+.salle-page-hero {
+  position: relative;
+  height: 65vh;
+  min-height: 420px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+.salle-page-hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
+  transition: transform 6s ease;
+}
+.salle-page-hero.loaded img { transform: scale(1); }
+.salle-page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,10,30,0.85) 0%, rgba(10,10,30,0.2) 60%, transparent 100%);
+}
+.salle-page-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 3rem 0 2.5rem;
+}
+.salle-page-hero-content h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+.salle-hero-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.salle-hero-badge {
+  padding: 4px 14px;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.salle-hero-badge--avail { background: #22C55E; color: white; }
+.salle-hero-badge--type { background: rgba(255,255,255,0.15); color: white; backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.25); }
+.salle-hero-badge--price { background: #1A1ACC; color: white; }
+
+/* Stats rapides sous le hero */
+.salle-quick-stats {
+  background: white;
+  border-bottom: 1px solid rgba(26,26,204,0.08);
+  padding: 0;
+}
+.salle-quick-stats-inner {
+  display: flex;
+  align-items: stretch;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.sqs-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 1rem;
+  border-right: 1px solid rgba(26,26,204,0.08);
+  gap: 2px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.sqs-item:last-child { border-right: none; }
+.sqs-item.visible { opacity: 1; transform: translateY(0); }
+.sqs-item strong { font-size: 1.4rem; font-weight: 900; color: #1A1ACC; line-height: 1; }
+.sqs-item span { font-size: 0.72rem; color: #6B7280; letter-spacing: 0.05em; text-align: center; }
+
+/* Use-cases / Idéal pour */
+.ideal-pour {
+  padding: 4rem 0;
+  background: #F7F8FF;
+}
+.ideal-pour h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; font-weight: 700; color: #111827; margin-bottom: 1.5rem; }
+.ideal-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
+@media (max-width: 768px) { .ideal-grid { grid-template-columns: 1fr 1fr; } }
+.ideal-item {
+  background: white;
+  border: 1px solid rgba(26,26,204,0.08);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.ideal-item:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(26,26,204,0.1); }
+.ideal-dot { width: 8px; height: 8px; border-radius: 50%; background: #1A1ACC; flex-shrink: 0; margin-top: 6px; }
+.ideal-item p { font-size: 0.85rem; color: #374151; font-weight: 600; line-height: 1.4; }
+
+/* Section ambiance */
+.salle-ambiance {
+  padding: 5rem 0;
+  background: white;
+}
+.ambiance-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+@media (max-width: 768px) { .ambiance-grid { grid-template-columns: 1fr; gap: 2rem; } }
+.ambiance-imgs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 0.75rem;
+}
+.ambiance-img {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+.ambiance-img img { width: 100%; height: 180px; object-fit: cover; transition: transform 0.5s ease; display: block; }
+.ambiance-img:hover img { transform: scale(1.05); }
+.ambiance-img--tall { grid-row: span 2; }
+.ambiance-img--tall img { height: 100%; min-height: 375px; }
+.ambiance-text h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.75rem; font-weight: 700; color: #111827; line-height: 1.2; margin-bottom: 1rem; }
+.ambiance-text p { font-size: 0.92rem; color: #374151; line-height: 1.8; margin-bottom: 1.25rem; }
+.ambiance-feature { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.65rem; font-size: 0.85rem; color: #111827; font-weight: 500; }
+.ambiance-feature::before { content: ''; width: 20px; height: 2px; background: #1A1ACC; flex-shrink: 0; }
+
+/* Footer salle — identique au footer principal */
+.salle-footer {
+  background: #080818;
+  padding: 2.5rem 0;
+  text-align: center;
+}
+.salle-footer p { font-size: 0.82rem; color: rgba(255,255,255,0.35); }
+.salle-footer a { color: #1A1ACC; font-weight: 600; }
+.salle-footer a:hover { color: white; }

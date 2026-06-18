@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <meta name="description" content="Salle Koroba — Espace de réunion prestige à Alfortville. Centralis Business Group."/>
+  <meta name="description" content="Salle Koroba — Réunion prestige à Alfortville. Centralis Business Group."/>
   <title>Salle Koroba — Centralis Business Group</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -11,18 +11,17 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-<nav id="navbar">
+
+<nav id="navbar" class="scrolled">
   <div class="nav-inner container">
     <a href="index.html" class="nav-logo">
-      <img src="images/logo.png" alt="Centralis Business Group" class="nav-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-      <div class="nav-logo-fallback" style="display:none"><div class="nav-logo-cube"><svg viewBox="0 0 60 60" width="40" height="40" fill="none"><polygon points="30,3 55,17 55,43 30,57 5,43 5,17" fill="#1A1ACC"/><text x="30" y="35" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="800" font-size="13" fill="white">CBG</text></svg></div><div class="nav-logo-text"><span class="nav-logo-main">CENTRALIS</span><span class="nav-logo-sub">BUSINESS GROUP</span></div></div>
+      <img src="images/logo.png" alt="Centralis Business Group" class="nav-logo-img"/>
     </a>
     <ul class="nav-links">
       <li><a href="index.html#a-propos">À Propos</a></li>
       <li><a href="index.html#espaces">Espaces</a></li>
       <li><a href="index.html#studio">Studio</a></li>
       <li><a href="index.html#formations">Formations</a></li>
-      <li><a href="index.html#blog">Blog</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
     <a href="index.html#contact" class="btn-nav-cta">Nous contacter</a>
@@ -30,55 +29,76 @@
   </div>
 </nav>
 
-<div class="salle-hero">
-  <div class="container">
-    <nav class="salle-breadcrumb">
+<!-- HERO IMAGE PLEINE LARGEUR -->
+<div class="salle-page-hero" id="salle-hero">
+  <img src="images/koroba.png" alt="Salle Koroba" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=1200&q=80'"/>
+  <div class="salle-page-hero-overlay"></div>
+  <div class="salle-page-hero-content container">
+    <nav class="salle-breadcrumb" style="margin-bottom:0.75rem;">
       <a href="index.html">Accueil</a><span>›</span>
       <a href="index.html#espaces">Espaces</a><span>›</span>
       Salle Koroba
     </nav>
+    <h1>Salle Koroba</h1>
+    <div class="salle-hero-badges">
+      <span class="salle-hero-badge salle-hero-badge--avail">Disponible</span>
+      <span class="salle-hero-badge salle-hero-badge--type">Réunion</span>
+      <span class="salle-hero-badge salle-hero-badge--price">À partir de 50€/h</span>
+    </div>
   </div>
 </div>
 
+<!-- STATS RAPIDES -->
+<div class="salle-quick-stats">
+  <div class="salle-quick-stats-inner">
+    <div class="sqs-item"><strong>8</strong><span>Personnes max.</span></div>
+    <div class="sqs-item"><strong>25 m²</strong><span>Surface</span></div>
+    <div class="sqs-item"><strong>7j/7</strong><span>Disponibilité</span></div>
+    <div class="sqs-item"><strong>10 min</strong><span>De Paris</span></div>
+    <div class="sqs-item"><strong>Wi-Fi</strong><span>Fibre optique</span></div>
+  </div>
+</div>
+
+<!-- LAYOUT PRINCIPAL -->
 <div class="container">
   <div class="salle-layout">
     <div class="salle-left">
-      <div class="salle-gallery">
+
+      <!-- GALERIE -->
+      <div class="salle-gallery reveal">
         <div class="salle-gallery-main">
           <img src="images/koroba.png" alt="Salle Koroba" id="gallery-main-img" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=1200&q=80'"/>
         </div>
         <div class="salle-gallery-thumbs">
-          <img src="images/koroba.png" alt="" onclick="document.getElementById('gallery-main-img').src=this.src" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=400&q=70'"/>
-          <img src="images/accueil-bleu.jpg" alt="" onclick="document.getElementById('gallery-main-img').src=this.src" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=70'"/>
-          <img src="images/accueil-vert.jpg" alt="" onclick="document.getElementById('gallery-main-img').src=this.src" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1567016432779-094069958ea5?w=400&q=70'"/>
-          <img src="images/nkhrumah.jpg" alt="" onclick="document.getElementById('gallery-main-img').src=this.src" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&q=70'"/>
+          <img src="images/koroba.png" alt="" onclick="document.getElementById('gallery-main-img').src=this.src"/>
+          <img src="images/accueil-bleu.jpg" alt="" onclick="document.getElementById('gallery-main-img').src=this.src"/>
+          <img src="images/accueil-vert.jpg" alt="" onclick="document.getElementById('gallery-main-img').src=this.src"/>
+          <img src="images/lumumba.jpg" alt="" onclick="document.getElementById('gallery-main-img').src=this.src"/>
         </div>
       </div>
-      <div class="salle-info-block">
+
+      <!-- DESCRIPTION -->
+      <div class="salle-info-block reveal">
         <h2>Salle Koroba</h2>
         <div class="salle-info-tags">
-          <span>Réunion</span><span>8 personnes</span><span class="tag-green">Disponible</span>
+          <span>Réunion</span><span>8 personnes</span><span>25 m²</span><span class="tag-green">Disponible</span>
         </div>
-        <p class="salle-description">Nichée au cœur de nos locaux, la Salle Koroba est notre espace de réunion signature. Ses murs ornés de moulures crème, sa table en bois clair et ses chaises design créent une atmosphère intimiste et haut de gamme, idéale pour les rencontres professionnelles, entretiens de direction, négociations importantes et sessions de coaching. Un cadre qui inspire confiance et sérieux.</p>
+        <p class="salle-description">La salle Koroba est un espace de réunion intimiste et raffiné, conçu pour les rencontres qui comptent. Ses moulures crème et sa table en bois clair créent une atmosphère chaleureuse qui favorise la concentration et les échanges de qualité. Avec une capacité de 8 personnes dans 25 m² soigneusement aménagés, elle offre le cadre idéal pour les décisions stratégiques, les entretiens confidentiels et les négociations importantes. Chaque détail a été pensé pour inspirer confiance et projeter une image d'excellence.</p>
       </div>
-      <div class="salle-specs-grid">
-        <div class="salle-spec-item"><div class="salle-spec-icon">👥</div><div class="salle-spec-val">8</div><div class="salle-spec-lbl">Personnes max.</div></div>
-        <div class="salle-spec-item"><div class="salle-spec-icon">📐</div><div class="salle-spec-val">25 m²</div><div class="salle-spec-lbl">Surface</div></div>
-        <div class="salle-spec-item"><div class="salle-spec-icon">🕐</div><div class="salle-spec-val">7j/7</div><div class="salle-spec-lbl">Disponibilité</div></div>
-        <div class="salle-spec-item"><div class="salle-spec-icon">🌐</div><div class="salle-spec-val">Wi-Fi</div><div class="salle-spec-lbl">Connexion fibre</div></div>
-        <div class="salle-spec-item"><div class="salle-spec-icon">❄️</div><div class="salle-spec-val">Clim.</div><div class="salle-spec-lbl">Climatisation</div></div>
-        <div class="salle-spec-item"><div class="salle-spec-icon">📍</div><div class="salle-spec-val">10 min</div><div class="salle-spec-lbl">De Paris</div></div>
-      </div>
-      <div class="salle-equip">
+
+      <!-- ÉQUIPEMENTS -->
+      <div class="salle-equip reveal">
         <h3>Équipements inclus</h3>
         <ul class="salle-equip-list">
           <li>Vidéoprojecteur HD</li><li>Écran de projection</li>
           <li>Tableau blanc</li><li>Wi-Fi fibre optique</li>
-          <li>Climatisation réversible</li><li>Cafetière & eau</li>
+          <li>Climatisation réversible</li><li>Cafetière &amp; eau</li>
           <li>Paperboard</li><li>Prises multiples</li>
         </ul>
       </div>
-      <div class="salle-pricing">
+
+      <!-- TARIFS -->
+      <div class="salle-pricing reveal">
         <h3>Tarifs</h3>
         <div class="pricing-table">
           <div class="pricing-row"><span class="pricing-label">1 heure</span><span class="pricing-val">50€</span></div>
@@ -87,12 +107,15 @@
           <div class="pricing-row"><span class="pricing-label">Semaine (5 jours)</span><span class="pricing-val">Sur devis</span></div>
         </div>
       </div>
+
     </div>
+
+    <!-- SIDEBAR -->
     <div class="salle-sidebar">
-      <div class="salle-book-card">
+      <div class="salle-book-card reveal-scale">
         <h3>Réserver cet espace</h3>
         <div class="salle-book-price"><strong>50€</strong><span>/ heure</span></div>
-        <a href="https://centralisbusinessgroup.com/reservation?salle=koroba" class="btn-book-main" target="_blank">Réserver via BookingPress →</a>
+        <a href="https://centralisbusinessgroup.com/reservation?salle=koroba" class="btn-book-main" target="_blank">Réserver maintenant</a>
         <a href="index.html#contact" class="btn-book-contact">Demander un devis</a>
         <ul class="salle-book-info">
           <li>Réservation en ligne 24h/24</li>
@@ -103,23 +126,166 @@
         </ul>
       </div>
     </div>
+
   </div>
 </div>
 
-<section class="salle-related">
+<!-- IDÉAL POUR -->
+<section class="ideal-pour">
   <div class="container">
-    <h2>Autres espaces disponibles</h2>
-    <div class="salle-related-grid">
-      <div class="re-card"><a href="salle-nkhrumah.html" class="re-card-img-link"><div class="re-card-img"><img src="images/nkhrumah.jpg" alt="Salle Nkhrumah" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80'"/><span class="re-badge re-badge--available">Disponible</span><span class="re-badge-type">Formation</span></div></a><div class="re-card-body"><div class="re-card-header"><h3 class="re-card-name">Salle Nkhrumah</h3><div class="re-card-price">À partir de <strong>80€</strong><span>/h</span></div></div><div class="re-card-actions"><a href="salle-nkhrumah.html" class="re-btn-detail">Voir le détail</a><a href="https://centralisbusinessgroup.com/reservation?salle=nkhrumah" class="re-btn-book" target="_blank">Réserver</a></div></div></div>
-      <div class="re-card"><a href="salle-sankara.html" class="re-card-img-link"><div class="re-card-img"><img src="images/sankara.jpg" alt="Salle Sankara" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&q=80'"/><span class="re-badge re-badge--available">Disponible</span><span class="re-badge-type">Formation</span></div></a><div class="re-card-body"><div class="re-card-header"><h3 class="re-card-name">Salle Sankara</h3><div class="re-card-price">À partir de <strong>80€</strong><span>/h</span></div></div><div class="re-card-actions"><a href="salle-sankara.html" class="re-btn-detail">Voir le détail</a><a href="https://centralisbusinessgroup.com/reservation?salle=sankara" class="re-btn-book" target="_blank">Réserver</a></div></div></div>
-      <div class="re-card"><a href="salle-mandela.html" class="re-card-img-link"><div class="re-card-img"><img src="images/mandela.jpg" alt="Salle Mandela" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1462899006636-339e08d1844e?w=600&q=80'"/><span class="re-badge re-badge--available">Disponible</span><span class="re-badge-type">Formation</span></div></a><div class="re-card-body"><div class="re-card-header"><h3 class="re-card-name">Salle Mandela</h3><div class="re-card-price">À partir de <strong>80€</strong><span>/h</span></div></div><div class="re-card-actions"><a href="salle-mandela.html" class="re-btn-detail">Voir le détail</a><a href="https://centralisbusinessgroup.com/reservation?salle=mandela" class="re-btn-book" target="_blank">Réserver</a></div></div></div>
+    <h3 class="reveal">Idéal pour</h3>
+    <div class="ideal-grid">
+      <div class="ideal-item reveal"><div class="ideal-dot"></div><p>Réunions de direction et comités restreints</p></div>
+      <div class="ideal-item reveal reveal-delay-1"><div class="ideal-dot"></div><p>Entretiens RH et recrutements</p></div>
+      <div class="ideal-item reveal reveal-delay-2"><div class="ideal-dot"></div><p>Négociations commerciales confidentielles</p></div>
+      <div class="ideal-item reveal"><div class="ideal-dot"></div><p>Séances de coaching individuel</p></div>
+      <div class="ideal-item reveal reveal-delay-1"><div class="ideal-dot"></div><p>Sessions de travail stratégique</p></div>
+      <div class="ideal-item reveal reveal-delay-2"><div class="ideal-dot"></div><p>Rencontres partenaires et investisseurs</p></div>
     </div>
   </div>
 </section>
 
-<footer style="background:#0D0D2B;color:white;padding:2rem;text-align:center;font-size:0.85rem;">
-  <p>© 2025 Centralis Business Group · Alfortville, Île-de-France · <a href="index.html" style="color:#C9A96E;">Retour à l'accueil</a></p>
+<!-- AMBIANCE -->
+<section class="salle-ambiance">
+  <div class="container">
+    <div class="ambiance-grid">
+      <div class="ambiance-imgs reveal-left">
+        <div class="ambiance-img ambiance-img--tall">
+          <img src="images/koroba.png" alt="Salle Koroba" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=600&q=80'"/>
+        </div>
+        <div class="ambiance-img">
+          <img src="images/accueil-bleu.jpg" alt="Accueil CBG" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80'"/>
+        </div>
+        <div class="ambiance-img">
+          <img src="images/accueil-vert.jpg" alt="Espaces CBG" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1567016432779-094069958ea5?w=600&q=80'"/>
+        </div>
+      </div>
+      <div class="ambiance-text reveal-right">
+        <p class="section-eyebrow">L'environnement</p>
+        <h3>Un cadre intimiste pour des décisions d'importance</h3>
+        <p>La salle Koroba incarne l'élégance discrète. Ses moulures crème et sa table en bois clair créent une atmosphère unique qui allie le cachet classique à la fonctionnalité moderne. La lumière naturelle filtrée et l'acoustique soignée en font un lieu propice à la concentration et aux échanges confidentiels.</p>
+        <p>Chaque détail a été pensé pour que vos réunions se déroulent dans les meilleures conditions : mobilier ergonomique, équipements audiovisuels discrets mais performants, et une ambiance générale qui inspire confiance et sérénité.</p>
+        <div class="ambiance-feature">Accès PMR et stationnement inclus</div>
+        <div class="ambiance-feature">À 10 minutes de Paris — métro et RER à proximité</div>
+        <div class="ambiance-feature">Service d'accueil personnalisé sur demande</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SALLES SIMILAIRES -->
+<section class="salle-related">
+  <div class="container">
+    <h2 class="reveal">Autres espaces disponibles</h2>
+    <div class="re-grid reveal">
+
+      <div class="re-card reveal">
+        <a href="salle-nkhrumah.html" class="re-card-img-wrap">
+          <img src="images/nkhrumah.jpg" alt="Salle Nkhrumah" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=900&q=80'"/>
+          <span class="re-avail">Disponible</span>
+          <span class="re-type">Formation</span>
+        </a>
+        <div class="re-body">
+          <div class="re-header">
+            <h3>Salle Nkhrumah</h3>
+            <div class="re-price">À partir de <strong>80€</strong>/h</div>
+          </div>
+          <div class="re-specs">
+            <span>16 personnes</span>
+            <span>40 m²</span>
+            <span>Tableau blanc</span>
+          </div>
+          <p class="re-desc">Salle de formation lumineuse, tableau blanc, art contemporain, config. modulable.</p>
+          <div class="re-amenities">
+            <span>Wifi</span><span>Clim</span><span>Projecteur</span><span>Config. U</span>
+          </div>
+          <div class="re-actions">
+            <a href="salle-nkhrumah.html" class="re-btn-outline">Voir le détail</a>
+            <a href="https://centralisbusinessgroup.com/reservation?salle=nkhrumah" target="_blank" class="re-btn-solid">Réserver</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="re-card reveal reveal-delay-1">
+        <a href="salle-sankara.html" class="re-card-img-wrap">
+          <img src="images/sankara.jpg" alt="Salle Sankara" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=900&q=80'"/>
+          <span class="re-avail">Disponible</span>
+          <span class="re-type">Formation</span>
+        </a>
+        <div class="re-body">
+          <div class="re-header">
+            <h3>Salle Sankara</h3>
+            <div class="re-price">À partir de <strong>80€</strong>/h</div>
+          </div>
+          <div class="re-specs">
+            <span>16 personnes</span>
+            <span>40 m²</span>
+            <span>Cloison vitrée</span>
+          </div>
+          <p class="re-desc">Cloison vitrée élégante, œuvres d'art africaines, ambiance haut de gamme.</p>
+          <div class="re-amenities">
+            <span>Wifi</span><span>Clim</span><span>Projecteur</span><span>Art africain</span>
+          </div>
+          <div class="re-actions">
+            <a href="salle-sankara.html" class="re-btn-outline">Voir le détail</a>
+            <a href="https://centralisbusinessgroup.com/reservation?salle=sankara" target="_blank" class="re-btn-solid">Réserver</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="re-card reveal reveal-delay-2">
+        <a href="salle-lumumba.html" class="re-card-img-wrap">
+          <img src="images/lumumba.jpg" alt="Salle Lumumba" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80'"/>
+          <span class="re-avail">Disponible</span>
+          <span class="re-type re-type--premium">Séminaire</span>
+        </a>
+        <div class="re-body">
+          <div class="re-header">
+            <h3>Salle Lumumba</h3>
+            <div class="re-price">À partir de <strong>100€</strong>/h</div>
+          </div>
+          <div class="re-specs">
+            <span>20 personnes</span>
+            <span>50 m²</span>
+            <span>Sono intégrée</span>
+          </div>
+          <p class="re-desc">Grande salle lumineuse, config. îlots ou U, végétalisation, sono intégrée.</p>
+          <div class="re-amenities">
+            <span>Wifi</span><span>Clim</span><span>Projecteur</span><span>Sono</span>
+          </div>
+          <div class="re-actions">
+            <a href="salle-lumumba.html" class="re-btn-outline">Voir le détail</a>
+            <a href="https://centralisbusinessgroup.com/reservation?salle=lumumba" target="_blank" class="re-btn-solid">Réserver</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="salle-footer">
+  <div class="container">
+    <p>© 2025 Centralis Business Group · Alfortville, Île-de-France · <a href="index.html">Retour à l'accueil</a></p>
+  </div>
 </footer>
+
 <script src="script.js"></script>
+<script>
+const sqsItems = document.querySelectorAll('.sqs-item');
+const statsObs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      statsObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+sqsItems.forEach(el => statsObs.observe(el));
+
+const hero = document.getElementById('salle-hero');
+if (hero) setTimeout(() => hero.classList.add('loaded'), 100);
+</script>
 </body>
 </html>
