@@ -1,5 +1,17 @@
 'use strict';
 
+/* ─── 0. INTRO ANIMATION ─── */
+(function() {
+  var overlay = document.getElementById('intro-overlay');
+  if (!overlay) return;
+  document.body.style.overflow = 'hidden';
+  setTimeout(function() {
+    overlay.classList.add('exit');
+    document.body.style.overflow = '';
+    setTimeout(function() { overlay.style.display = 'none'; }, 900);
+  }, 2600);
+})();
+
 /* ─── 1. NAV SCROLL + BURGER ─── */
 (function() {
   var nav = document.getElementById('navbar');

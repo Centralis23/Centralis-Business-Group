@@ -12,6 +12,18 @@
 </head>
 <body>
 
+<!-- INTRO OVERLAY -->
+<div id="intro-overlay">
+  <div class="intro-content">
+    <img src="logo.png" alt="Centralis Business Group" class="intro-logo-img" onerror="this.style.display='none';this.nextSibling.style.display='block'"/>
+    <div class="intro-logo-fallback" style="display:none">
+      <svg viewBox="0 0 120 120" width="80" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="60,10 110,35 110,85 60,110 10,85 10,35" stroke="#C9A96E" stroke-width="2" fill="none"/><text x="60" y="68" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="800" font-size="28" fill="#C9A96E">CBG</text></svg>
+    </div>
+    <div class="intro-bar"></div>
+    <p class="intro-tag">CENTRALIS BUSINESS GROUP</p>
+  </div>
+</div>
+
   <!-- NAV -->
   <nav id="navbar">
     <div class="nav-inner container">
@@ -121,6 +133,24 @@
             <span class="val-num">03</span>
             <div><h4>Communauté</h4><p>Un réseau solide d'entrepreneurs et de professionnels</p></div>
           </div>
+        </div>
+      </div>
+    </div>
+    <!-- NOS LOCAUX -->
+    <div class="container locaux-wrap scroll-reveal">
+      <p class="locaux-eyebrow">Un cadre d'exception</p>
+      <div class="locaux-grid">
+        <div class="locaux-img locaux-img--tall">
+          <img src="images/accueil-bleu.jpg" alt="Salon prestige — Centralis Business Group" loading="lazy"/>
+          <div class="locaux-caption">Salon de prestige</div>
+        </div>
+        <div class="locaux-img">
+          <img src="images/accueil-vert.jpg" alt="Salon d'accueil — Centralis Business Group" loading="lazy"/>
+          <div class="locaux-caption">Espace d'accueil</div>
+        </div>
+        <div class="locaux-img locaux-img--short">
+          <img src="images/koroba.jpg" alt="Salle Koroba — Centralis Business Group" loading="lazy"/>
+          <div class="locaux-caption">Nos espaces</div>
         </div>
       </div>
     </div>
@@ -284,33 +314,6 @@
 
       </div>
 
-      <!-- ESPACES D'ACCUEIL -->
-      <div class="accueil-section mt-grid scroll-reveal">
-        <p class="section-label" style="margin-bottom:1.5rem">Espaces d'accueil</p>
-        <div class="accueil-grid">
-          <div class="ecard ecard--accueil">
-            <div class="ecard-img">
-              <img src="images/accueil-vert.jpg" alt="Espace d'accueil vert — Centralis Business Group" loading="lazy"/>
-              <span class="ecard-tag">Accueil</span>
-            </div>
-            <div class="ecard-body">
-              <h3>Salon Vert</h3>
-              <p>Espace d'accueil cosy avec fauteuils confortables, arbre fleuri et tableau doré. Parfait pour recevoir vos clients dans un cadre chaleureux.</p>
-            </div>
-          </div>
-          <div class="ecard ecard--accueil">
-            <div class="ecard-img">
-              <img src="images/accueil-bleu.jpg" alt="Espace d'accueil bleu — Centralis Business Group" loading="lazy"/>
-              <span class="ecard-tag">Accueil</span>
-            </div>
-            <div class="ecard-body">
-              <h3>Salon Bleu</h3>
-              <p>Salon de prestige aux murs navy avec boiseries, canapés bleus et éclairage tamisé. Une première impression inoubliable pour vos visiteurs.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div class="espaces-cta scroll-reveal">
         <a href="https://centralisbusinessgroup.com/nos-salles" class="btn-gold">Voir tous nos espaces</a>
       </div>
@@ -337,15 +340,19 @@
       <div class="studio-visual scroll-reveal">
         <div class="studio-photos">
           <div class="studio-photo-main">
-            <img src="images/studio.jpg" alt="Studio Podcast Centralis Business Group" loading="lazy"/>
+            <img src="images/studio.jpg" alt="Studio Podcast Centralis Business Group" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=900&q=80'"/>
             <div class="studio-photo-badge">
               <span class="studio-vis-dot"></span>
               Studio disponible à la réservation
             </div>
           </div>
           <div class="studio-photo-sub">
-            <img src="images/studio-2.jpg" alt="Micro RØDE Studio Podcast" loading="lazy" onerror="this.parentElement.style.display='none'"/>
-            <img src="images/studio-3.jpg" alt="Ambiance Studio Podcast" loading="lazy" onerror="this.parentElement.style.display='none'"/>
+            <img src="images/studio-2.jpg" alt="Micro professionnel studio podcast" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=600&q=80'"/>
+            <img src="images/studio-3.jpg" alt="Enregistrement podcast studio" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=600&q=80'"/>
+          </div>
+          <div class="studio-photo-sub studio-photo-sub--bottom">
+            <img src="images/studio-4.jpg" alt="Console de mixage studio" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?w=600&q=80'"/>
+            <img src="images/studio-5.jpg" alt="Ambiance studio professionnel" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&q=80'"/>
           </div>
         </div>
       </div>
@@ -363,6 +370,10 @@
       <div class="formations-grid">
 
         <div class="form-card scroll-reveal">
+          <div class="form-card-img">
+            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80" alt="BTS NDRC — Négociation commerciale" loading="lazy"/>
+            <div class="form-card-img-overlay"></div>
+          </div>
           <div class="form-card-top">
             <span class="bts-badge">BTS</span>
             <span class="alt-badge">Alternance</span>
@@ -383,6 +394,10 @@
         </div>
 
         <div class="form-card form-card--gold scroll-reveal">
+          <div class="form-card-img">
+            <img src="https://images.unsplash.com/photo-1664575602554-2087b04935a5?w=800&q=80" alt="BTS GPME — Gestion PME" loading="lazy"/>
+            <div class="form-card-img-overlay"></div>
+          </div>
           <div class="form-card-top">
             <span class="bts-badge bts-badge--gold">BTS</span>
             <span class="alt-badge">Alternance</span>
@@ -403,6 +418,10 @@
         </div>
 
         <div class="form-card scroll-reveal">
+          <div class="form-card-img">
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80" alt="BTS MCO — Management Commercial" loading="lazy"/>
+            <div class="form-card-img-overlay"></div>
+          </div>
           <div class="form-card-top">
             <span class="bts-badge">BTS</span>
             <span class="alt-badge">Alternance</span>
