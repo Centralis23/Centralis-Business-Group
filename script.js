@@ -2,16 +2,32 @@
    CENTRALIS BUSINESS GROUP — script.js
    ================================================ */
 
-// 1. Block scroll during intro, remove overlay after animation
+// 1. Intro progress bar
 document.body.style.overflow = 'hidden';
-setTimeout(() => {
-  const intro = document.getElementById('intro-overlay');
-  if (intro) {
-    intro.addEventListener('animationend', () => { intro.remove(); }, { once: true });
-    setTimeout(() => { intro.remove(); }, 500);
-  }
-  document.body.style.overflow = '';
-}, 3800);
+(function() {
+  const overlay = document.getElementById('intro-overlay');
+  const bar = document.getElementById('intro-progress');
+  const pct = document.getElementById('intro-percent');
+  if (!overlay || !bar) return;
+  let progress = 0;
+  const duration = 2800;
+  const interval = 30;
+  const step = 100 / (duration / interval);
+  const timer = setInterval(() => {
+    progress = Math.min(progress + step + Math.random() * step * 0.5, 100);
+    bar.style.width = progress + '%';
+    if (pct) pct.textContent = Math.floor(progress) + '%';
+    if (progress >= 100) {
+      clearInterval(timer);
+      if (pct) pct.textContent = '100%';
+      setTimeout(() => {
+        overlay.classList.add('hidden');
+        document.body.style.overflow = '';
+        setTimeout(() => overlay.remove(), 650);
+      }, 300);
+    }
+  }, interval);
+})();
 
 // 2. Navbar — add .scrolled class on scroll
 const navbar = document.getElementById('navbar');
