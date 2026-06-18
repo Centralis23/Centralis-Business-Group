@@ -354,14 +354,15 @@ img { max-width: 100%; display: block; }
   margin-bottom: 1.75rem;
 }
 .hero-split-title {
-  font-family: var(--font-s);
-  font-size: clamp(2rem, 3.5vw, 3.8rem);
-  font-weight: 700;
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(1.9rem, 3vw, 3.4rem);
+  font-weight: 500;
   color: white;
-  line-height: 1.18;
-  letter-spacing: -0.01em;
-  margin-bottom: 1.25rem;
-  max-width: 700px;
+  line-height: 1.22;
+  letter-spacing: 0.01em;
+  margin-bottom: 1.5rem;
+  max-width: 680px;
+  text-transform: uppercase;
 }
 .hero-split-title em {
   font-style: italic;
@@ -377,25 +378,43 @@ img { max-width: 100%; display: block; }
   max-width: 480px;
   line-height: 2;
 }
+.hero-split-ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  pointer-events: auto;
+}
 .hero-split-btn {
   display: inline-block;
-  background: white;
-  color: var(--dark);
-  padding: 0.9rem 2.4rem;
+  padding: 0.9rem 2rem;
   border-radius: 4px;
   font-weight: 700;
   font-size: 0.82rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   transition: var(--tr);
-  pointer-events: auto;
   width: auto;
 }
-.hero-split-btn:hover {
+.hero-split-btn--primary {
+  background: white;
+  color: var(--dark);
+}
+.hero-split-btn--primary:hover {
   background: var(--blue);
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(26,26,204,0.4);
+}
+.hero-split-btn--ghost {
+  background: transparent;
+  color: white;
+  border: 1.5px solid rgba(255,255,255,0.55);
+}
+.hero-split-btn--ghost:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: white;
+  transform: translateY(-2px);
 }
 .hero-split-divider {
   position: absolute;
