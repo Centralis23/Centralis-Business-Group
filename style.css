@@ -1029,7 +1029,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* ═══════════════════════════════════════════════
-   INTRO OVERLAY
+   INTRO OVERLAY — CINEMATIC LINE REVEAL
 ═══════════════════════════════════════════════ */
 #intro-overlay {
   position: fixed;
@@ -1039,7 +1039,8 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: clip-path 0.9s cubic-bezier(0.76, 0, 0.24, 1);
+  overflow: hidden;
+  transition: clip-path 1s cubic-bezier(0.76, 0, 0.24, 1);
   clip-path: inset(0 0 0 0);
 }
 #intro-overlay.exit {
@@ -1049,38 +1050,84 @@ img { max-width: 100%; display: block; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.4rem;
+  position: relative;
+}
+
+/* Logo wrapper — clip-path reveals from left to right */
+.intro-logo-wrap {
+  position: relative;
+  clip-path: inset(0 100% 0 0);
+  animation: logoReveal 0.85s cubic-bezier(0.76, 0, 0.24, 1) 0.45s forwards;
+}
+@keyframes logoReveal {
+  to { clip-path: inset(0 0% 0 0); }
 }
 .intro-logo-img {
-  width: 200px;
+  width: 220px;
   max-width: 70vw;
-  opacity: 0;
-  transform: scale(0.85);
-  animation: introLogoIn 0.9s cubic-bezier(0.34,1.56,0.64,1) 0.2s forwards;
+  display: block;
   filter: brightness(0) invert(1);
 }
-@keyframes introLogoIn {
-  to { opacity: 1; transform: scale(1); }
+.intro-logo-fallback {
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+/* Gold line that sweeps left → right, revealing the logo */
+.intro-reveal-line {
+  position: absolute;
+  top: -80px;
+  bottom: -80px;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(201,169,110,0.6) 20%,
+    #fff 50%,
+    rgba(201,169,110,0.6) 80%,
+    transparent 100%
+  );
+  box-shadow:
+    0 0 12px rgba(201,169,110,1),
+    0 0 40px rgba(201,169,110,0.5),
+    0 0 80px rgba(201,169,110,0.2);
+  pointer-events: none;
+  left: 0%;
+  opacity: 0;
+  z-index: 2;
+  animation: lineSweep 0.85s cubic-bezier(0.76, 0, 0.24, 1) 0.45s both;
+}
+@keyframes lineSweep {
+  0%   { left: -2%;  opacity: 1; }
+  95%  { opacity: 1; }
+  100% { left: 102%; opacity: 0; }
+}
+
+/* Gold bar under logo */
 .intro-bar {
-  height: 2px;
-  background: #C9A96E;
+  height: 1.5px;
+  background: linear-gradient(to right, transparent, #C9A96E, transparent);
   width: 0;
   border-radius: 2px;
-  animation: introBarGrow 0.8s ease 0.9s forwards;
+  animation: introBarGrow 0.7s ease 1.2s forwards;
 }
 @keyframes introBarGrow {
-  to { width: 200px; }
+  to { width: 240px; }
 }
+
+/* Tag text */
 .intro-tag {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-weight: 700;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.42em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.3);
   opacity: 0;
-  animation: introTagIn 0.6s ease 1.4s forwards;
+  animation: introTagIn 0.6s ease 1.6s forwards;
 }
 @keyframes introTagIn {
   to { opacity: 1; }
