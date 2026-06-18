@@ -250,7 +250,7 @@ img { max-width: 100%; display: block; }
 .nav-centered-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 2rem;
   height: 80px;
   padding: 0 3rem;
   position: relative;
@@ -260,9 +260,8 @@ img { max-width: 100%; display: block; }
   display: flex;
   list-style: none;
   gap: 0.25rem;
-  flex: 1;
+  margin-left: auto;
 }
-.nav-links-right { justify-content: flex-end; }
 .nav-links-left a,
 .nav-links-right a {
   padding: 0.5rem 0.85rem;
