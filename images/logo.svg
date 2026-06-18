@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="400" height="320">
+  <!-- CBG Isometric Cube Logo -->
+  <g transform="translate(200,10)">
+    <!-- Outer hexagon border (isometric cube outline) -->
+    <!-- Top face (parallelogram top) -->
+    <polygon points="0,-80 70,-40 0,0 -70,-40" fill="none" stroke="#1A1ACC" stroke-width="5" stroke-linejoin="round"/>
+    <!-- Left face -->
+    <polygon points="-70,-40 0,0 0,80 -70,40" fill="none" stroke="#1A1ACC" stroke-width="5" stroke-linejoin="round"/>
+    <!-- Right face -->
+    <polygon points="70,-40 0,0 0,80 70,40" fill="none" stroke="#1A1ACC" stroke-width="5" stroke-linejoin="round"/>
+
+    <!-- Letter C on left face -->
+    <g transform="translate(-35,20)" font-family="Arial Black,sans-serif" font-weight="900" font-size="38" fill="#1A1ACC">
+      <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" transform="skewY(-26)">C</text>
+    </g>
+
+    <!-- Letter B on right face -->
+    <g transform="translate(35,20)" font-family="Arial Black,sans-serif" font-weight="900" font-size="38" fill="#1A1ACC">
+      <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" transform="skewY(26)">B</text>
+    </g>
+
+    <!-- Letter G on top face -->
+    <g transform="translate(0,-40)" font-family="Arial Black,sans-serif" font-weight="900" font-size="32" fill="#1A1ACC">
+      <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" transform="skewX(-40) scale(1.2,0.6)">G</text>
+    </g>
+  </g>
+
+  <!-- CENTRALIS text -->
+  <text x="200" y="210" text-anchor="middle" font-family="Arial Black,Impact,sans-serif" font-weight="900" font-size="48" fill="#1A1ACC" letter-spacing="6">CENTRALIS</text>
+
+  <!-- Divider lines + BUSINESS GROUP -->
+  <line x1="50" y1="232" x2="140" y2="232" stroke="#1A1ACC" stroke-width="2"/>
+  <text x="200" y="248" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="18" fill="#1A1ACC" letter-spacing="5">BUSINESS GROUP</text>
+  <line x1="260" y1="232" x2="350" y2="232" stroke="#1A1ACC" stroke-width="2"/>
+</svg>

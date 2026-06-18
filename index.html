@@ -16,10 +16,11 @@
 <div id="intro-overlay">
   <div class="intro-content">
     <div class="intro-logo-wrap">
-      <svg viewBox="0 0 100 100" width="100" height="100" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <polygon points="50,5 92,28 92,72 50,95 8,72 8,28" fill="#0B2D6E" stroke="#C9A96E" stroke-width="1.5"/>
-  <text x="50" y="57" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="800" font-size="22" fill="white">CBG</text>
-</svg>
+      <img src="images/logo.svg" alt="Centralis Business Group" class="intro-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+      <svg viewBox="0 0 100 100" width="100" height="100" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:none">
+        <polygon points="50,5 92,28 92,72 50,95 8,72 8,28" fill="#1A1ACC" stroke="#C9A96E" stroke-width="1.5"/>
+        <text x="50" y="57" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="800" font-size="22" fill="white">CBG</text>
+      </svg>
       <div class="intro-reveal-line"></div>
     </div>
     <div class="intro-bar"></div>
@@ -31,15 +32,18 @@
   <nav id="navbar">
     <div class="nav-inner container">
       <a href="#accueil" class="nav-logo">
-  <div class="nav-logo-cube">
-    <svg viewBox="0 0 60 60" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="30,3 55,17 55,43 30,57 5,43 5,17" fill="#0B2D6E"/>
-      <text x="30" y="35" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="800" font-size="13" fill="white" letter-spacing="0">CBG</text>
-    </svg>
-  </div>
-  <div class="nav-logo-text">
-    <span class="nav-logo-main">CENTRALIS</span>
-    <span class="nav-logo-sub">BUSINESS GROUP</span>
+  <img src="images/logo.svg" alt="Centralis Business Group" class="nav-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+  <div class="nav-logo-fallback" style="display:none">
+    <div class="nav-logo-cube">
+      <svg viewBox="0 0 60 60" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="30,3 55,17 55,43 30,57 5,43 5,17" fill="#1A1ACC"/>
+        <text x="30" y="35" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="800" font-size="13" fill="white">CBG</text>
+      </svg>
+    </div>
+    <div class="nav-logo-text">
+      <span class="nav-logo-main">CENTRALIS</span>
+      <span class="nav-logo-sub">BUSINESS GROUP</span>
+    </div>
   </div>
 </a>
       <ul class="nav-links">
@@ -61,9 +65,9 @@
   <section id="accueil" class="hero">
     <div class="hero-media">
       <video class="hero-video" autoplay muted loop playsinline>
-        <!-- Vidéo CDN externe (preview) — remplacer par video/hero.mp4 sur Hostinger pour la version finale -->
+        <source src="video/hero.mp4" type="video/mp4">
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-business-team-working-in-a-modern-office-4778-large.mp4" type="video/mp4">
         <source src="https://assets.mixkit.co/videos/preview/mixkit-skyscrapers-above-clouds-20617-large.mp4" type="video/mp4">
-        <source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-city-at-night-11-large.mp4" type="video/mp4">
       </video>
       <div class="hero-fallback"></div>
       <div class="hero-overlay"></div>
@@ -100,27 +104,6 @@
     </div>
   </section>
 
-  <!-- MARQUEE -->
-  <div class="marquee-band">
-    <div class="marquee-track">
-      <span>Espaces Professionnels</span><span class="mdot">◆</span>
-      <span>Formations BTS</span><span class="mdot">◆</span>
-      <span>Studio Podcast</span><span class="mdot">◆</span>
-      <span>Conseil Stratégique</span><span class="mdot">◆</span>
-      <span>Alternance</span><span class="mdot">◆</span>
-      <span>Événements & Séminaires</span><span class="mdot">◆</span>
-      <span>Alfortville · Île-de-France</span><span class="mdot">◆</span>
-      <span>Holding d'Excellence</span><span class="mdot">◆</span>
-      <span>Espaces Professionnels</span><span class="mdot">◆</span>
-      <span>Formations BTS</span><span class="mdot">◆</span>
-      <span>Studio Podcast</span><span class="mdot">◆</span>
-      <span>Conseil Stratégique</span><span class="mdot">◆</span>
-      <span>Alternance</span><span class="mdot">◆</span>
-      <span>Événements & Séminaires</span><span class="mdot">◆</span>
-      <span>Alfortville · Île-de-France</span><span class="mdot">◆</span>
-      <span>Holding d'Excellence</span><span class="mdot">◆</span>
-    </div>
-  </div>
 
   <!-- À PROPOS -->
   <section id="a-propos" class="about">
