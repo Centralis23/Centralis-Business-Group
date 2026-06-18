@@ -33,20 +33,21 @@
 <!-- ═══════════════════════════════════════
      NAVBAR
 ═══════════════════════════════════════ -->
-<nav id="navbar">
-  <div class="nav-inner container">
-    <a href="#accueil" class="nav-logo">
-      <img src="images/logo.png" alt="Centralis Business Group" class="nav-logo-img" onerror="this.onerror=null;this.src='images/logo.png';this.onerror=null"/>
-    </a>
-    <ul class="nav-links">
+<nav id="navbar" class="navbar-centered">
+  <div class="nav-centered-inner">
+    <ul class="nav-links-left">
       <li><a href="#a-propos">À Propos</a></li>
       <li><a href="#espaces">Espaces</a></li>
       <li><a href="#studio">Studio</a></li>
+    </ul>
+    <a href="#accueil" class="nav-logo">
+      <img src="images/logo.png" alt="Centralis Business Group" class="nav-logo-img" onerror="this.onerror=null;this.src='images/logo.png';this.onerror=null"/>
+    </a>
+    <ul class="nav-links-right">
       <li><a href="#formations">Formations</a></li>
       <li><a href="#blog">Blog</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="#contact" class="btn-nav-cta">Nous contacter</a>
     <button class="burger" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -54,51 +55,25 @@
 </nav>
 
 <!-- ═══════════════════════════════════════
-     HERO
+     HERO SPLIT
 ═══════════════════════════════════════ -->
-<section id="accueil" class="hero">
-  <div class="hero-media">
-    <video class="hero-video" autoplay muted loop playsinline>
-      <source src="video/hero.mp4" type="video/mp4">
-      
-    </video>
-    <div class="hero-fallback"></div>
-    <div class="hero-overlay"></div>
+<section id="accueil" class="hero-split">
+  <div class="hero-split-panel hero-split-left">
+    <img src="images/accueil-bleu.jpg" alt="" class="hero-split-img" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80'"/>
+    <div class="hero-split-tint hero-split-tint--dark"></div>
   </div>
-  <div class="hero-content container">
-    <h1 class="hero-title">
-<span class="ht-line reveal">Centralis</span>
-      <span class="ht-line ht-italic reveal reveal-delay-1"><em>Business Group</em></span>
-    </h1>
-    <div class="hero-ctas reveal reveal-delay-2">
-      <a href="#contact" class="btn-gold">Prendre contact</a>
-      <a href="#a-propos" class="btn-ghost-white">Découvrir</a>
-    </div>
+  <div class="hero-split-panel hero-split-right">
+    <img src="images/lumumba.jpg" alt="" class="hero-split-img" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1200&q=80'"/>
+    <div class="hero-split-tint hero-split-tint--light"></div>
   </div>
-  <div class="hero-stats">
-    <div class="hstat reveal">
-      <strong class="counter" data-target="3">0</strong>
-      <span>Pôles d'activité</span>
+  <div class="hero-split-divider"></div>
+  <div class="hero-split-content">
+    <p class="hero-split-eyebrow">Holding d'excellence · Alfortville, Île-de-France</p>
+    <div class="hero-split-words">
+      <a href="#espaces" class="hero-split-word">Espaces</a>
+      <a href="#formations" class="hero-split-word">Formations</a>
+      <a href="#contact" class="hero-split-word">Conseil</a>
     </div>
-    <div class="hstat-sep"></div>
-    <div class="hstat reveal reveal-delay-1">
-      <strong>5+</strong>
-      <span>Espaces équipés</span>
-    </div>
-    <div class="hstat-sep"></div>
-    <div class="hstat reveal reveal-delay-2">
-      <strong class="counter" data-target="6">0</strong>
-      <span>Formations certifiées</span>
-    </div>
-    <div class="hstat-sep"></div>
-    <div class="hstat reveal reveal-delay-3">
-      <strong>7j/7</strong>
-      <span>Réservation</span>
-    </div>
-  </div>
-  <div class="hero-scroll">
-    <div class="scroll-bar"></div>
-    <span>Défiler</span>
   </div>
 </section>
 

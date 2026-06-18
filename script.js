@@ -20,19 +20,31 @@ if (navbar) {
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 }
+const navbarCentered = document.querySelector('.navbar-centered');
+if (navbarCentered && navbarCentered !== navbar) {
+  const onScrollC = () => navbarCentered.classList.toggle('scrolled', window.scrollY > 80);
+  window.addEventListener('scroll', onScrollC, { passive: true });
+  onScrollC();
+}
 
 // 3. Burger menu
 const burger = document.querySelector('.burger');
+const navLeft = document.querySelector('.nav-links-left');
+const navRight = document.querySelector('.nav-links-right');
 const navLinks = document.querySelector('.nav-links');
-if (burger && navLinks) {
+if (burger) {
   burger.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('open');
+    const targets = [navLeft, navRight, navLinks].filter(Boolean);
+    const isOpen = targets[0] ? !targets[0].classList.contains('open') : false;
+    targets.forEach(t => t.classList.toggle('open', isOpen));
     burger.setAttribute('aria-expanded', isOpen);
   });
-  navLinks.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      burger.setAttribute('aria-expanded', 'false');
+  [navLeft, navRight, navLinks].filter(Boolean).forEach(nav => {
+    nav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        [navLeft, navRight, navLinks].filter(Boolean).forEach(t => t.classList.remove('open'));
+        burger.setAttribute('aria-expanded', 'false');
+      });
     });
   });
 }
