@@ -331,7 +331,7 @@ img { max-width: 100%; display: block; }
 .hero-full-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(5,5,20,0.38);
+  background: rgba(5,5,20,0.22);
   z-index: 1;
 }
 .hero-full-content {
@@ -367,13 +367,12 @@ img { max-width: 100%; display: block; }
   font-weight: 300;
 }
 .hero-full-sub {
-  font-size: 0.88rem;
-  color: rgba(255,255,255,0.6);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.85);
   font-weight: 400;
   margin-bottom: 2.5rem;
-  line-height: 2;
+  line-height: 1.7;
+  max-width: 580px;
 }
 .hero-split-ctas {
   display: flex;
