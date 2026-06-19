@@ -433,7 +433,8 @@ img { max-width: 100%; display: block; }
 }
 .about-photo {
   overflow: hidden;
-  clip-path: inset(0 100% 0 0);
+  border-radius: 10px;
+  clip-path: inset(0 100% 0 0 round 10px);
   transition: clip-path 1s cubic-bezier(0.77,0,0.18,1);
 }
 .about-photo.in-view { clip-path: inset(0 0% 0 0); }
@@ -493,7 +494,7 @@ img { max-width: 100%; display: block; }
 .about-title {
   font-family: var(--font-s);
   font-size: clamp(1.7rem, 2.5vw, 2.5rem);
-  font-weight: 700;
+  font-weight: 500;
   color: var(--dark);
   line-height: 1.18;
   margin-bottom: 1.5rem;
@@ -560,6 +561,26 @@ img { max-width: 100%; display: block; }
 
 .about-pillar h4 { font-family: var(--font-s); font-size: 0.92rem; font-weight: 700; color: var(--dark); margin-bottom: 0.2rem; }
 .about-pillar p { font-size: 0.82rem; color: var(--gray); line-height: 1.65; }
+
+/* CTA lien après les pilliers */
+.about-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  font-family: var(--font-s);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--blue);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--blue);
+  padding-bottom: 2px;
+  transition: gap 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  transition: opacity 0.6s ease 1s, gap 0.3s ease;
+}
+.about-content.in-view .about-cta { opacity: 1; }
+.about-cta:hover { gap: 0.85rem; }
 
 /* ── Bande stats ── */
 .about-stats {
