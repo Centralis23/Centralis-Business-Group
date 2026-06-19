@@ -175,10 +175,17 @@ document.querySelectorAll('.re-filter-btn').forEach(btn => {
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
   photos.forEach(p => io.observe(p));
   if (content) io.observe(content);
   stats.forEach(s => io.observe(s));
+  // Fallback : si l'élément est déjà visible au chargement
+  setTimeout(() => {
+    [...photos, content, ...stats].filter(Boolean).forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight) el.classList.add('in-view');
+    });
+  }, 100);
 })();
 
 // 11. Gallery thumbnail click (salle pages)
