@@ -313,6 +313,7 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .hero-full-bg {
   position: absolute;
@@ -342,6 +343,9 @@ img { max-width: 100%; display: block; }
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  padding-top: 80px;
 }
 .hero-split-eyebrow {
   font-size: 0.68rem;
@@ -638,6 +642,7 @@ img { max-width: 100%; display: block; }
     height: 180px;
   }
   .about-content { padding: 2.5rem 1.5rem; }
+  .about-desc { text-align: justify; }
   .about-stats { grid-template-columns: repeat(2, 1fr); }
   .about-stat:nth-child(2) { border-right: none; }
 }
