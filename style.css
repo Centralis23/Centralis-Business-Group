@@ -412,7 +412,12 @@ img { max-width: 100%; display: block; }
 }
 
 /* ── À PROPOS ── */
-.about { background: var(--white); overflow: hidden; }
+.about {
+  background: var(--white);
+  overflow: hidden;
+  margin-top: 5rem;
+  border-top: 1px solid rgba(26,26,204,0.08);
+}
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
