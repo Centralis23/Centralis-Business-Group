@@ -166,6 +166,7 @@ document.querySelectorAll('.re-filter-btn').forEach(btn => {
 (function() {
   const photos = document.querySelectorAll('.about-photo');
   const content = document.querySelector('.about-content');
+  const stats = document.querySelectorAll('.about-stat');
   if (!photos.length && !content) return;
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -177,6 +178,7 @@ document.querySelectorAll('.re-filter-btn').forEach(btn => {
   }, { threshold: 0.15 });
   photos.forEach(p => io.observe(p));
   if (content) io.observe(content);
+  stats.forEach(s => io.observe(s));
 })();
 
 // 11. Gallery thumbnail click (salle pages)
