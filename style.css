@@ -412,39 +412,60 @@ img { max-width: 100%; display: block; }
 }
 
 /* ── À PROPOS ── */
-.about { padding: 8rem 0; background: var(--white); }
+.about { background: var(--white); }
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  align-items: start;
+  min-height: 600px;
 }
-@media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 3rem; } }
-.about-values { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
-.aval { display: flex; gap: 1.25rem; align-items: flex-start; }
-.aval-n { font-size: 0.75rem; font-weight: 800; color: var(--blue); letter-spacing: 0.05em; padding-top: 2px; flex-shrink: 0; }
-.aval h4 { font-size: 0.95rem; font-weight: 700; color: var(--dark); margin-bottom: 0.2rem; }
-.aval p { font-size: 0.82rem; color: var(--gray); }
-.about-text { color: #374151; line-height: 1.8; margin-bottom: 1rem; font-size: 0.95rem; }
-.about-locaux { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 2rem; }
-.locaux-img { position: relative; border-radius: 12px; overflow: hidden; }
-.locaux-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-.locaux-img:hover img { transform: scale(1.04); }
-.locaux-img--tall { grid-row: span 2; }
-.locaux-img--tall img { height: 100%; }
-.locaux-col { display: flex; flex-direction: column; gap: 0.75rem; }
-.locaux-col .locaux-img img { height: 140px; }
-.locaux-label {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 0.6rem 0.85rem;
-  background: linear-gradient(transparent, rgba(10,10,30,0.65));
-  color: white;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+/* Photos — colonne gauche */
+.about-photos {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 4px;
+}
+.about-photo { overflow: hidden; }
+.about-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
+.about-photo:hover img { transform: scale(1.04); }
+.about-photo--main { grid-row: span 2; }
+.about-photo--sm1 {}
+.about-photo--sm2 {}
+
+/* Contenu — colonne droite */
+.about-content {
+  padding: 5rem 5rem 5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about-title {
+  font-family: var(--font-s);
+  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+.about-desc {
+  font-size: 0.95rem;
+  color: var(--gray);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  max-width: 480px;
+}
+.about-pillars { display: flex; flex-direction: column; gap: 1.5rem; }
+.about-pillar { display: flex; gap: 1rem; align-items: flex-start; }
+.about-pillar-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+.about-pillar h4 { font-family: var(--font-s); font-size: 0.92rem; font-weight: 700; color: var(--dark); margin-bottom: 0.2rem; }
+.about-pillar p { font-size: 0.82rem; color: var(--gray); line-height: 1.6; }
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-photos { min-height: 320px; }
+  .about-content { padding: 3rem 2rem; }
 }
 
 /* ── PÔLES — image cards sur fond blanc ── */
