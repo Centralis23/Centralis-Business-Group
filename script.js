@@ -162,7 +162,24 @@ document.querySelectorAll('.re-filter-btn').forEach(btn => {
   });
 });
 
-// 10. Gallery thumbnail click (salle pages)
+// 10. About section — motion design reveal
+(function() {
+  const photos = document.querySelectorAll('.about-photo');
+  const content = document.querySelector('.about-content');
+  if (!photos.length && !content) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  photos.forEach(p => io.observe(p));
+  if (content) io.observe(content);
+})();
+
+// 11. Gallery thumbnail click (salle pages)
 const mainImg = document.querySelector('.salle-gallery-main img');
 if (mainImg) {
   mainImg.style.transition = 'opacity 0.2s ease';
