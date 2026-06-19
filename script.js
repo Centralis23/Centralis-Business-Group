@@ -154,7 +154,27 @@ if (contactForm) {
   });
 }
 
-// 9. Filter buttons (visual only)
+// 9. Activités cards — staggered reveal
+(function() {
+  const cards = document.querySelectorAll('.act-card');
+  if (!cards.length) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  cards.forEach(c => io.observe(c));
+  setTimeout(() => {
+    cards.forEach(c => {
+      if (c.getBoundingClientRect().top < window.innerHeight) c.classList.add('in-view');
+    });
+  }, 120);
+})();
+
+// 11. Filter buttons (visual only)
 document.querySelectorAll('.re-filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.re-filter-btn').forEach(b => b.classList.remove('re-filter-btn--active'));
