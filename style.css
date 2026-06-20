@@ -1298,7 +1298,7 @@ img { max-width: 100%; display: block; }
 
 /* ── ACTIVITÉS ── */
 .activites {
-  background: linear-gradient(160deg, #F0F7FF 0%, #F5FAFF 60%, #EEF6FF 100%);
+  background: linear-gradient(160deg, #F7FBFF 0%, #FAFCFF 60%, #F5FAFF 100%);
   padding: 5rem 0 6rem;
   position: relative;
   overflow: hidden;
@@ -1307,14 +1307,15 @@ img { max-width: 100%; display: block; }
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle at 75% 15%, rgba(100,180,255,0.06) 0%, transparent 50%);
+  background-image: radial-gradient(circle at 75% 15%, rgba(100,180,255,0.04) 0%, transparent 50%);
   pointer-events: none;
 }
 .activites-header {
-  max-width: 1280px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem 3.5rem;
   position: relative;
+  overflow: hidden;
 }
 .activites-header::before {
   content: '01';
@@ -1354,23 +1355,25 @@ img { max-width: 100%; display: block; }
 }
 .activites-title {
   font-family: var(--font-s);
-  font-size: clamp(2rem, 3.2vw, 3rem);
-  font-weight: 400;
-  color: var(--dark);
-  line-height: 1.08;
-  letter-spacing: -0.03em;
+  font-size: clamp(5rem, 10vw, 9rem);
+  font-weight: 700;
+  color: rgba(17,24,39,0.08);
+  line-height: 1;
+  letter-spacing: -0.04em;
   position: relative;
+  user-select: none;
 }
 .activites-title em {
   font-style: italic;
-  color: var(--blue);
+  color: rgba(26,26,204,0.1);
 }
 .activites-inner {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
   gap: 1.25rem;
 }
 .act-card {
@@ -1394,7 +1397,7 @@ img { max-width: 100%; display: block; }
 .act-img {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 3/4;
+  aspect-ratio: 16/9;
   border-radius: 0;
 }
 .act-img img {
@@ -1456,11 +1459,8 @@ img { max-width: 100%; display: block; }
   transition: gap 0.3s ease;
 }
 .act-card:hover .act-link { gap: 0.7rem; }
-@media (max-width: 900px) {
-  .activites-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-}
-@media (max-width: 500px) {
-  .activites-inner { grid-template-columns: 1fr; gap: 1.2rem; }
+@media (max-width: 700px) {
+  .activites-inner { grid-template-columns: 1fr; gap: 1rem; }
   .act-img { aspect-ratio: 4/3; }
   .act-card:nth-child(n) { transition-delay: 0s; }
 }
