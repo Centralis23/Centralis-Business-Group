@@ -1378,7 +1378,7 @@ img { max-width: 100%; display: block; }
   flex-direction: column;
   text-decoration: none;
   color: var(--dark);
-  background: #fff;
+  background: transparent;
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1);
