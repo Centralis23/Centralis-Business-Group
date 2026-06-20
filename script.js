@@ -193,6 +193,26 @@ if (contactForm) {
     const x = e.pageX - carousel.offsetLeft;
     carousel.scrollLeft = scrollLeft - (x - startX) * 1.5;
   });
+
+  // Auto-scroll
+  let autoInterval;
+  const cardWidth = () => carousel.querySelector('.act-card').offsetWidth + 20;
+  function startAuto() {
+    autoInterval = setInterval(() => {
+      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+      if (carousel.scrollLeft >= maxScroll - 4) {
+        carousel.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        carousel.scrollBy({ left: cardWidth(), behavior: 'smooth' });
+      }
+    }, 3000);
+  }
+  function stopAuto() { clearInterval(autoInterval); }
+  startAuto();
+  carousel.addEventListener('mouseenter', stopAuto);
+  carousel.addEventListener('mouseleave', startAuto);
+  carousel.addEventListener('touchstart', stopAuto, { passive: true });
+  carousel.addEventListener('touchend', () => setTimeout(startAuto, 3000), { passive: true });
 })();
 
 // 11. Filter buttons (visual only)
