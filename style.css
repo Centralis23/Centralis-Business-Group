@@ -772,7 +772,7 @@ img { max-width: 100%; display: block; }
 .chiffre p { font-size: 0.82rem; color: var(--gray); font-weight: 500; }
 
 /* ── ESPACES ── */
-.espaces { padding: 8rem 0; background: #FAFAF8; margin-top: 4rem; }
+.espaces { padding: 8rem 0; background: #fff; margin-top: 4rem; }
 .re-filters { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
 .re-filter-btn {
   background: white;
