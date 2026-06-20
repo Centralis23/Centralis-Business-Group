@@ -154,12 +154,11 @@ if (contactForm) {
   });
 }
 
-// 9. Activités — staggered reveal + cursor image follower
+// 9. Activités — carrousel reveal + drag to scroll
 (function() {
-  const items = document.querySelectorAll('.act-item');
-  const preview = document.getElementById('act-preview');
-  const previewImg = document.getElementById('act-preview-img');
-  if (!items.length) return;
+  const cards = document.querySelectorAll('.act-card');
+  const carousel = document.querySelector('.act-carousel');
+  if (!cards.length) return;
 
   // Scroll reveal
   const io = new IntersectionObserver((entries) => {
@@ -169,49 +168,30 @@ if (contactForm) {
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
-  items.forEach(c => io.observe(c));
+  }, { threshold: 0.05 });
+  cards.forEach(c => io.observe(c));
   setTimeout(() => {
-    items.forEach(c => {
+    cards.forEach(c => {
       if (c.getBoundingClientRect().top < window.innerHeight) c.classList.add('in-view');
     });
   }, 120);
 
-  if (!preview || !previewImg) return;
-
-  // Cursor follower
-  let mouseX = 0, mouseY = 0;
-  let curX = 0, curY = 0;
-  let rafId = null;
-
-  function lerp(a, b, t) { return a + (b - a) * t; }
-
-  function animatePreview() {
-    curX = lerp(curX, mouseX, 0.1);
-    curY = lerp(curY, mouseY, 0.1);
-    preview.style.transform = `translate(${curX}px, ${curY}px) scale(1) rotate(0deg)`;
-    rafId = requestAnimationFrame(animatePreview);
-  }
-
-  document.addEventListener('mousemove', e => {
-    mouseX = e.clientX + 24;
-    mouseY = e.clientY - 80;
+  // Drag to scroll
+  if (!carousel) return;
+  let isDown = false, startX, scrollLeft;
+  carousel.addEventListener('mousedown', e => {
+    isDown = true;
+    carousel.classList.add('dragging');
+    startX = e.pageX - carousel.offsetLeft;
+    scrollLeft = carousel.scrollLeft;
   });
-
-  items.forEach(item => {
-    item.addEventListener('mouseenter', () => {
-      const img = item.dataset.img;
-      if (img && previewImg.src !== img) {
-        previewImg.src = img;
-      }
-      preview.classList.add('visible');
-      if (!rafId) rafId = requestAnimationFrame(animatePreview);
-    });
-    item.addEventListener('mouseleave', () => {
-      preview.classList.remove('visible');
-      cancelAnimationFrame(rafId);
-      rafId = null;
-    });
+  carousel.addEventListener('mouseleave', () => { isDown = false; carousel.classList.remove('dragging'); });
+  carousel.addEventListener('mouseup', () => { isDown = false; carousel.classList.remove('dragging'); });
+  carousel.addEventListener('mousemove', e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - carousel.offsetLeft;
+    carousel.scrollLeft = scrollLeft - (x - startX) * 1.5;
   });
 })();
 
