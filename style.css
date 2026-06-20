@@ -794,11 +794,11 @@ img { max-width: 100%; display: block; }
   background: #fff;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 1px 8px rgba(0,0,0,0.05);
-  border: 1px solid #EBEBEB;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+  border: 1px solid #F0F0EE;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
-.re-card:hover { transform: translateY(-6px); box-shadow: 0 12px 36px rgba(0,0,0,0.1); }
+.re-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,0.13); }
 .re-card-img-wrap {
   display: block;
   position: relative;
@@ -812,31 +812,31 @@ img { max-width: 100%; display: block; }
   position: absolute;
   top: 12px;
   left: 12px;
-  background: rgba(34,197,94,0.9);
-  color: white;
+  background: rgba(255,255,255,0.92);
+  color: #16a34a;
   padding: 3px 10px;
   border-radius: 50px;
   font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
 }
 .re-type {
   position: absolute;
   top: 12px;
   right: 12px;
-  background: rgba(17,24,39,0.75);
-  color: white;
+  background: rgba(255,255,255,0.88);
+  color: var(--dark);
   padding: 3px 10px;
   border-radius: 50px;
   font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
 }
-.re-type--premium { background: rgba(17,24,39,0.85); }
+.re-type--premium { background: rgba(255,255,255,0.92); }
 .re-body { padding: 1.2rem 1.3rem 1.3rem; }
 .re-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.65rem; gap: 0.5rem; }
 .re-header h3 { font-size: 1rem; font-weight: 500; color: var(--dark); font-family: var(--font-s); letter-spacing: -0.01em; }
