@@ -1370,14 +1370,20 @@ img { max-width: 100%; display: block; }
 .act-carousel {
   display: flex;
   gap: 1.25rem;
-  padding: 0.5rem 2.5rem 2rem;
+  padding: 0.5rem 5vw 2rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+  scroll-padding-left: 5vw;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   cursor: grab;
 }
 .act-carousel::-webkit-scrollbar { display: none; }
+.act-carousel::after {
+  content: '';
+  flex: 0 0 5vw;
+  min-width: 5vw;
+}
 .act-carousel.dragging { cursor: grabbing; scroll-snap-type: none; }
 .act-card {
   flex: 0 0 calc(30% - 1rem);
