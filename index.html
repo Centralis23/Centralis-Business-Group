@@ -102,29 +102,6 @@
 
   </div>
 
-  <!-- Bande de chiffres clés -->
-  <div class="about-stats">
-    <div class="about-stat">
-      <span class="about-stat-num counter" data-target="5">0</span>
-      <span class="about-stat-suffix">+</span>
-      <span class="about-stat-label">Espaces disponibles</span>
-    </div>
-    <div class="about-stat">
-      <span class="about-stat-num counter" data-target="2">0</span>
-      <span class="about-stat-suffix"></span>
-      <span class="about-stat-label">Studios podcast</span>
-    </div>
-    <div class="about-stat">
-      <span class="about-stat-num counter" data-target="4">0</span>
-      <span class="about-stat-suffix"></span>
-      <span class="about-stat-label">Formations diplômantes</span>
-    </div>
-    <div class="about-stat">
-      <span class="about-stat-num counter" data-target="10">0</span>
-      <span class="about-stat-suffix"> min</span>
-      <span class="about-stat-label">de Paris</span>
-    </div>
-  </div>
 </section>
 
 <!-- ═══════════════════════════════════════
@@ -135,69 +112,44 @@
     <p class="activites-label">Ce que nous faisons</p>
     <h2 class="activites-title">Nos <em>activités</em></h2>
   </div>
-  <div class="activites-inner">
 
-    <a href="#espaces" class="act-card">
-      <div class="act-img">
-        <img src="images/koroba.png" alt="Location de salle" loading="lazy"/>
-        <div class="act-tags">
-          <span>Réunion</span>
-          <span>Séminaire</span>
-        </div>
-      </div>
-      <div class="act-body">
-        <h3>Location de salle</h3>
-        <p>5 espaces modulables, à 10 min de Paris, disponibles 7j/7.</p>
-        <span class="act-link">Découvrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-      </div>
+  <div class="act-list">
+    <a href="#espaces" class="act-item" data-img="images/koroba.png">
+      <span class="act-num">01</span>
+      <span class="act-name">Location de salle</span>
+      <span class="act-cat">Réunion · Séminaire · Coworking</span>
+      <span class="act-arrow">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
     </a>
-
-    <a href="#studio" class="act-card">
-      <div class="act-img">
-        <img src="images/studio-jaune.jpeg" alt="Studio Podcast" loading="lazy"/>
-        <div class="act-tags">
-          <span>Podcast</span>
-          <span>Enregistrement</span>
-        </div>
-      </div>
-      <div class="act-body">
-        <h3>Studio Podcast</h3>
-        <p>Deux studios pro équipés pour donner de la voix à votre marque.</p>
-        <span class="act-link">Découvrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-      </div>
+    <a href="#studio" class="act-item" data-img="images/studio-jaune.jpeg">
+      <span class="act-num">02</span>
+      <span class="act-name">Studio Podcast</span>
+      <span class="act-cat">Podcast · Enregistrement · Broadcast</span>
+      <span class="act-arrow">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
     </a>
-
-    <a href="#formations" class="act-card">
-      <div class="act-img">
-        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&q=80" alt="Formation" loading="lazy"/>
-        <div class="act-tags">
-          <span>BTS</span>
-          <span>Alternance</span>
-          <span>Certifié État</span>
-        </div>
-      </div>
-      <div class="act-body">
-        <h3>Formation</h3>
-        <p>BTS NDRC, GPME, MCO et titres professionnels reconnus par l'État.</p>
-        <span class="act-link">Découvrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-      </div>
+    <a href="#formations" class="act-item" data-img="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&q=80">
+      <span class="act-num">03</span>
+      <span class="act-name">Formation</span>
+      <span class="act-cat">BTS · Alternance · Certifié État</span>
+      <span class="act-arrow">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
     </a>
-
-    <a href="#contact" class="act-card">
-      <div class="act-img">
-        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=900&q=80" alt="Conseil aux entreprises" loading="lazy"/>
-        <div class="act-tags">
-          <span>Stratégie</span>
-          <span>Accompagnement</span>
-        </div>
-      </div>
-      <div class="act-body">
-        <h3>Conseil aux entreprises</h3>
-        <p>Accompagnement sur-mesure pour entrepreneurs et dirigeants.</p>
-        <span class="act-link">Découvrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-      </div>
+    <a href="#contact" class="act-item" data-img="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=900&q=80">
+      <span class="act-num">04</span>
+      <span class="act-name">Conseil aux entreprises</span>
+      <span class="act-cat">Stratégie · Accompagnement · Dirigeants</span>
+      <span class="act-arrow">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
     </a>
+  </div>
 
+  <div class="act-preview" id="act-preview" aria-hidden="true">
+    <img src="" alt="" id="act-preview-img"/>
   </div>
 </section>
 

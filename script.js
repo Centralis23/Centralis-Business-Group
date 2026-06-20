@@ -154,10 +154,14 @@ if (contactForm) {
   });
 }
 
-// 9. Activités cards — staggered reveal
+// 9. Activités — staggered reveal + cursor image follower
 (function() {
-  const cards = document.querySelectorAll('.act-card');
-  if (!cards.length) return;
+  const items = document.querySelectorAll('.act-item');
+  const preview = document.getElementById('act-preview');
+  const previewImg = document.getElementById('act-preview-img');
+  if (!items.length) return;
+
+  // Scroll reveal
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -165,13 +169,50 @@ if (contactForm) {
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-  cards.forEach(c => io.observe(c));
+  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+  items.forEach(c => io.observe(c));
   setTimeout(() => {
-    cards.forEach(c => {
+    items.forEach(c => {
       if (c.getBoundingClientRect().top < window.innerHeight) c.classList.add('in-view');
     });
   }, 120);
+
+  if (!preview || !previewImg) return;
+
+  // Cursor follower
+  let mouseX = 0, mouseY = 0;
+  let curX = 0, curY = 0;
+  let rafId = null;
+
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  function animatePreview() {
+    curX = lerp(curX, mouseX, 0.1);
+    curY = lerp(curY, mouseY, 0.1);
+    preview.style.transform = `translate(${curX}px, ${curY}px) scale(1) rotate(0deg)`;
+    rafId = requestAnimationFrame(animatePreview);
+  }
+
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX + 24;
+    mouseY = e.clientY - 80;
+  });
+
+  items.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      const img = item.dataset.img;
+      if (img && previewImg.src !== img) {
+        previewImg.src = img;
+      }
+      preview.classList.add('visible');
+      if (!rafId) rafId = requestAnimationFrame(animatePreview);
+    });
+    item.addEventListener('mouseleave', () => {
+      preview.classList.remove('visible');
+      cancelAnimationFrame(rafId);
+      rafId = null;
+    });
+  });
 })();
 
 // 11. Filter buttons (visual only)
