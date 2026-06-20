@@ -195,29 +195,26 @@ if (contactForm) {
   });
 
   // Auto-scroll
-  let autoInterval;
-  let currentIndex = 0;
-  const totalCards = cards.length;
+  let autoTimer = null;
+  let paused = false;
 
-  function scrollToIndex(i) {
-    const card = cards[i];
-    if (!card) return;
-    carousel.scrollTo({ left: card.offsetLeft - carousel.offsetLeft - (window.innerWidth * 0.05), behavior: 'smooth' });
+  function tick() {
+    if (paused) return;
+    const max = carousel.scrollWidth - carousel.clientWidth;
+    if (carousel.scrollLeft >= max - 2) {
+      carousel.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      const step = cards[0] ? cards[0].offsetWidth + 20 : 300;
+      carousel.scrollBy({ left: step, behavior: 'smooth' });
+    }
   }
 
-  function startAuto() {
-    autoInterval = setInterval(() => {
-      currentIndex = (currentIndex + 1) % totalCards;
-      scrollToIndex(currentIndex);
-    }, 3000);
-  }
-  function stopAuto() { clearInterval(autoInterval); }
+  autoTimer = setInterval(tick, 3000);
 
-  startAuto();
-  carousel.addEventListener('mouseenter', stopAuto);
-  carousel.addEventListener('mouseleave', startAuto);
-  carousel.addEventListener('touchstart', () => { stopAuto(); }, { passive: true });
-  carousel.addEventListener('touchend', () => setTimeout(startAuto, 4000), { passive: true });
+  carousel.addEventListener('mouseenter', () => { paused = true; });
+  carousel.addEventListener('mouseleave', () => { paused = false; });
+  carousel.addEventListener('touchstart', () => { paused = true; }, { passive: true });
+  carousel.addEventListener('touchend', () => { setTimeout(() => { paused = false; }, 3000); }, { passive: true });
 })();
 
 // 11. Filter buttons (visual only)
