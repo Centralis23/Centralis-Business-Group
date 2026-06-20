@@ -1301,7 +1301,6 @@ img { max-width: 100%; display: block; }
   background: linear-gradient(160deg, #F7FBFF 0%, #FAFCFF 60%, #F5FAFF 100%);
   padding: 5rem 0 6rem;
   position: relative;
-  overflow: hidden;
 }
 .activites::before {
   content: '';
@@ -1369,7 +1368,7 @@ img { max-width: 100%; display: block; }
 .act-carousel {
   display: flex;
   gap: 1.25rem;
-  padding: 0 2rem 1rem;
+  padding: 0.5rem 2.5rem 2rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
