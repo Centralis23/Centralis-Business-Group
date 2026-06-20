@@ -1326,7 +1326,7 @@ img { max-width: 100%; display: block; }
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--dark);
+  color: var(--blue);
   margin-bottom: 0.5rem;
   position: relative;
   padding-left: 1.1rem;
@@ -1340,7 +1340,7 @@ img { max-width: 100%; display: block; }
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--dark);
+  background: var(--blue);
 }
 .activites-title {
   font-family: var(--font-s);
