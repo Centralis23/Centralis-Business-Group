@@ -771,7 +771,7 @@ img { max-width: 100%; display: block; }
 .chiffre p { font-size: 0.82rem; color: var(--gray); font-weight: 500; }
 
 /* ── ESPACES — REAL ESTATE ── */
-.espaces { padding: 8rem 0; background: var(--white); }
+.espaces { padding: 8rem 0; background: var(--white); margin-top: 4rem; }
 .re-filters { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
 .re-filter-btn {
   background: white;
@@ -913,7 +913,7 @@ img { max-width: 100%; display: block; }
 .studio-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
 
 /* ── FORMATIONS ── */
-.formations { padding: 8rem 0; background: var(--bg); }
+.formations { padding: 8rem 0; background: var(--bg); margin-top: 4rem; }
 .form-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 @media (max-width: 1024px) { .form-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px) { .form-grid { grid-template-columns: 1fr; } }
@@ -1297,7 +1297,7 @@ img { max-width: 100%; display: block; }
 
 /* ── ACTIVITÉS ── */
 .activites {
-  background: linear-gradient(160deg, #F6F7FF 0%, #F9F9F8 60%, #F5F6FD 100%);
+  background: linear-gradient(160deg, #FFFEF5 0%, #FEFDF0 60%, #FFFEF8 100%);
   padding: 5rem 0 6rem;
   position: relative;
   overflow: hidden;
@@ -1306,7 +1306,7 @@ img { max-width: 100%; display: block; }
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle at 80% 10%, rgba(26,26,204,0.03) 0%, transparent 45%);
+  background-image: radial-gradient(circle at 75% 15%, rgba(255,220,50,0.05) 0%, transparent 50%);
   pointer-events: none;
 }
 .activites-header {
@@ -1365,12 +1365,12 @@ img { max-width: 100%; display: block; }
   color: var(--blue);
 }
 .activites-inner {
-  max-width: 1280px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  gap: 1.25rem;
 }
 .act-card {
   display: flex;
