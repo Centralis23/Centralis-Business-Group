@@ -772,7 +772,96 @@ img { max-width: 100%; display: block; }
 .chiffre p { font-size: 0.82rem; color: var(--gray); font-weight: 500; }
 
 /* ── ESPACES ── */
-.espaces { padding: 8rem 0; background: #fff; margin-top: 4rem; }
+.espaces { background: #fff; margin-top: 4rem; padding-bottom: 6rem; }
+
+/* Hero espaces */
+.espaces-hero {
+  position: relative;
+  height: 92vh;
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  margin-bottom: 5rem;
+}
+.espaces-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.espaces-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 60%, rgba(0,0,0,0.8) 100%);
+}
+.espaces-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 4rem 3rem;
+  max-width: 860px;
+}
+.espaces-hero-eyebrow {
+  font-family: var(--font);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 1rem;
+}
+.espaces-hero-title {
+  font-family: var(--font-s);
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.2rem;
+}
+.espaces-hero-title em {
+  font-style: italic;
+  color: rgba(255,255,255,0.8);
+}
+.espaces-hero-sub {
+  font-family: var(--font);
+  font-size: 1rem;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.65;
+  max-width: 580px;
+}
+.espaces-nav {
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+  padding: 2rem 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0 2rem;
+}
+.espaces-nav-btn {
+  display: inline-block;
+  padding: 0.65rem 1.4rem;
+  background: #F4F4F2;
+  color: var(--dark);
+  border-radius: 8px;
+  font-family: var(--font);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.espaces-nav-btn:hover { background: var(--dark); color: #fff; }
+
+@media (max-width: 768px) {
+  .espaces-hero { height: 80vh; }
+  .espaces-hero-content { padding: 0 1.5rem 2rem; }
+  .espaces-nav { padding: 1.5rem; margin: 0; border-radius: 0; }
+}
 .re-filters { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
 .re-filter-btn {
   background: white;
