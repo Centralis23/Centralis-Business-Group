@@ -1320,8 +1320,8 @@ img { max-width: 100%; display: block; }
 .activites-header::before {
   content: '01';
   position: absolute;
-  top: -1.5rem;
-  left: 1.5rem;
+  top: -1rem;
+  right: 2rem;
   font-family: var(--font-s);
   font-size: clamp(6rem, 12vw, 11rem);
   font-weight: 700;
@@ -1355,25 +1355,23 @@ img { max-width: 100%; display: block; }
 }
 .activites-title {
   font-family: var(--font-s);
-  font-size: clamp(5rem, 10vw, 9rem);
-  font-weight: 700;
-  color: rgba(17,24,39,0.08);
-  line-height: 1;
-  letter-spacing: -0.04em;
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  font-weight: 400;
+  color: var(--dark);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   position: relative;
-  user-select: none;
 }
 .activites-title em {
   font-style: italic;
-  color: rgba(26,26,204,0.1);
+  color: var(--blue);
 }
 .activites-inner {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, auto);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
 }
 .act-card {
@@ -1397,7 +1395,7 @@ img { max-width: 100%; display: block; }
 .act-img {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 16/9;
+  aspect-ratio: 4/5;
   border-radius: 0;
 }
 .act-img img {
@@ -1459,7 +1457,10 @@ img { max-width: 100%; display: block; }
   transition: gap 0.3s ease;
 }
 .act-card:hover .act-link { gap: 0.7rem; }
-@media (max-width: 700px) {
+@media (max-width: 900px) {
+  .activites-inner { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+}
+@media (max-width: 500px) {
   .activites-inner { grid-template-columns: 1fr; gap: 1rem; }
   .act-img { aspect-ratio: 4/3; }
   .act-card:nth-child(n) { transition-delay: 0s; }
