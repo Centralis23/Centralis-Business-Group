@@ -1021,20 +1021,56 @@ img { max-width: 100%; display: block; }
 .re-cta p { font-size: 1rem; font-weight: 600; color: var(--dark); }
 
 /* ── STUDIO ── */
-.studio { padding: 8rem 0; background: var(--blue); }
-.studio-hd { text-align: center; max-width: 720px; margin: 0 auto 4rem; }
-.studio-desc { color: rgba(255,255,255,0.65); font-size: 0.95rem; margin-top: 1.25rem; }
-.studios-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; }
+.studio {
+  padding: 8rem 0;
+  background: #0C0C0C;
+  position: relative;
+  overflow: hidden;
+}
+.studio::before {
+  content: '';
+  position: absolute;
+  top: -200px; left: 50%;
+  transform: translateX(-50%);
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(26,26,204,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.studio-hd { text-align: center; max-width: 720px; margin: 0 auto 4rem; position: relative; }
+.studio-desc { color: rgba(255,255,255,0.55); font-size: 0.95rem; margin-top: 1.25rem; }
+.studios-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; position: relative; }
 @media (max-width: 768px) { .studios-duo { grid-template-columns: 1fr; } }
-.studio-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; overflow: hidden; transition: transform 0.35s ease, background 0.35s ease; }
-.studio-card:hover { transform: translateY(-6px); background: rgba(255,255,255,0.12); }
+
+/* Animation d'entrée cartes studio */
+.studio-card {
+  background: #181818;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity 0.7s ease, transform 0.7s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.studio-card.studio-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.studio-card:nth-child(2) { transition-delay: 0.15s; }
+.studio-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+  border-color: rgba(255,255,255,0.18);
+}
 .studio-card-img { position: relative; aspect-ratio: 16/10; overflow: hidden; }
-.studio-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-.studio-card:hover .studio-card-img img { transform: scale(1.04); }
+.studio-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.studio-card:hover .studio-card-img img { transform: scale(1.05); }
 .studio-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(transparent 50%, rgba(10,10,30,0.75));
+  background: linear-gradient(transparent 40%, rgba(0,0,0,0.7));
   display: flex;
   align-items: flex-end;
   padding: 1.25rem;
@@ -1042,13 +1078,25 @@ img { max-width: 100%; display: block; }
 .studio-card-overlay span { color: white; font-weight: 700; font-size: 1.1rem; font-family: var(--font-s); }
 .studio-card-body { padding: 1.5rem; }
 .studio-card-body h3 { font-family: var(--font-s); font-size: 1.25rem; font-weight: 700; color: white; margin-bottom: 0.75rem; }
-.studio-card-body p { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 1rem; }
-.studio-specs { display: flex; flex-wrap: wrap; gap: 6px; }
-.studio-specs span { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); padding: 3px 10px; border-radius: 50px; font-size: 0.72rem; font-weight: 600; }
-.studio-bottom { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+.studio-card-body p { font-size: 0.85rem; color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 1rem; }
+.studio-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.studio-card:hover .studio-card-link { color: #fff; }
+.studio-specs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1rem; }
+.studio-specs span { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.65); padding: 3px 10px; border-radius: 50px; font-size: 0.72rem; font-weight: 600; }
+.studio-bottom { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.07); position: relative; }
 .studio-features { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-.studio-features li { font-size: 0.85rem; color: rgba(255,255,255,0.75); padding-left: 1.1rem; position: relative; }
-.studio-features li::before { content: ''; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.5); }
+.studio-features li { font-size: 0.85rem; color: rgba(255,255,255,0.55); padding-left: 1.1rem; position: relative; }
+.studio-features li::before { content: ''; position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.3); }
 .studio-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
 
 /* ── FORMATIONS ── */

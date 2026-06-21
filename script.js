@@ -251,6 +251,21 @@ document.querySelectorAll('.re-filter-btn').forEach(btn => {
   }, 100);
 })();
 
+// 12. Studio cards — animation d'entrée
+(function() {
+  const cards = document.querySelectorAll('.studio-card');
+  if (!cards.length) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('studio-in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  cards.forEach(c => io.observe(c));
+})();
+
 // 11. Gallery thumbnail click (salle pages)
 const mainImg = document.querySelector('.salle-gallery-main img');
 if (mainImg) {
