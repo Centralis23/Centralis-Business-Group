@@ -1119,7 +1119,7 @@ img { max-width: 100%; display: block; }
 .form-img { aspect-ratio: 16/9; overflow: hidden; }
 .form-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
 .form-card:hover .form-img img { transform: scale(1.04); }
-.form-card > *:not(.form-img) { padding: 0 1.4rem; }
+.form-card > *:not(.form-img):not(.form-footer) { padding: 0 1.4rem; }
 .form-badges { display: flex; gap: 6px; margin-top: 1.25rem; }
 .badge-bts {
   background: var(--blueL);
