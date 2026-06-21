@@ -7,9 +7,10 @@
     if (location.hash) history.replaceState(null, '', location.pathname + location.search);
     document.documentElement.style.scrollBehavior = 'auto';
     window.scrollTo(0, 0);
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function() { window.scrollTo(0, 0); });
+    window.addEventListener('pageshow', function(e) {
       window.scrollTo(0, 0);
-      setTimeout(function(){ document.documentElement.style.scrollBehavior = ''; }, 100);
+      setTimeout(function(){ document.documentElement.style.scrollBehavior = ''; }, 50);
     });
   </script>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
