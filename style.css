@@ -1837,6 +1837,9 @@ img { max-width: 100%; display: block; }
   }
 
   /* 4. Cartes salles en carousel horizontal sur mobile */
+  .re-carousel-wrap {
+    position: relative;
+  }
   .re-grid {
     display: flex;
     overflow-x: auto;
@@ -1853,4 +1856,27 @@ img { max-width: 100%; display: block; }
     min-width: 280px;
     scroll-snap-align: start;
   }
+  .re-arrow {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-60%);
+    z-index: 10;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #E8E8E6;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--dark);
+    transition: background 0.2s, color 0.2s;
+  }
+  .re-arrow:active { background: var(--blue); color: #fff; }
+  .re-arrow--prev { left: -12px; }
+  .re-arrow--next { right: -12px; }
 }
+
+/* Flèches cachées sur desktop */
+.re-arrow { display: none; }

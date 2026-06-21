@@ -225,6 +225,20 @@ document.querySelectorAll('.re-filter-btn').forEach(btn => {
   }, 100);
 })();
 
+// Salle cards carousel arrows
+(function() {
+  const grid = document.querySelector('.re-grid');
+  const prev = document.querySelector('.re-arrow--prev');
+  const next = document.querySelector('.re-arrow--next');
+  if (!grid || !prev || !next) return;
+  const scroll = (dir) => {
+    const cardWidth = grid.querySelector('.re-card').offsetWidth + 16;
+    grid.scrollBy({ left: dir * cardWidth, behavior: 'smooth' });
+  };
+  prev.addEventListener('click', () => scroll(-1));
+  next.addEventListener('click', () => scroll(1));
+})();
+
 // 12. Studio cards — animation d'entrée
 (function() {
   const cards = document.querySelectorAll('.studio-card');
