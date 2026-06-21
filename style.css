@@ -632,6 +632,7 @@ img { max-width: 100%; display: block; }
     height: auto;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 260px 180px;
+    padding: 0 1rem;
   }
   .about-photo--main {
     grid-column: span 2;
