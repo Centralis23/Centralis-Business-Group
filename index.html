@@ -2,7 +2,16 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8"/>
-  <script>if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; } document.documentElement.style.scrollBehavior = 'auto'; window.scrollTo(0, 0); window.addEventListener('load', function(){ document.documentElement.style.scrollBehavior = ''; });</script>
+  <script>
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+    document.documentElement.style.scrollBehavior = 'auto';
+    window.scrollTo(0, 0);
+    window.addEventListener('load', function() {
+      window.scrollTo(0, 0);
+      setTimeout(function(){ document.documentElement.style.scrollBehavior = ''; }, 100);
+    });
+  </script>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <meta name="description" content="Centralis Business Group — Holding d'excellence à Alfortville. Espaces professionnels, formations BTS et conseil stratégique."/>
   <title>Centralis Business Group — Holding d'Excellence</title>
