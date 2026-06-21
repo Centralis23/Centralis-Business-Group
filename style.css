@@ -1914,10 +1914,9 @@ img { max-width: 100%; display: block; }
   /* 4. Cartes salles en carousel horizontal sur mobile */
   .re-carousel-wrap {
     position: relative;
+    padding: 0 44px;
   }
-  .re-arrow {
-    display: flex !important;
-  }
+  .re-arrows-row { display: none; }
   .re-card:hover {
     transform: none;
     box-shadow: 0 2px 16px rgba(0,0,0,0.07);
@@ -1930,33 +1929,60 @@ img { max-width: 100%; display: block; }
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     padding-bottom: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
   }
   .re-grid::-webkit-scrollbar { display: none; }
   .re-grid .re-card {
-    flex: 0 0 80vw;
-    min-width: 280px;
+    flex: 0 0 78vw;
+    min-width: 260px;
     scroll-snap-align: start;
-  }
-  .re-arrows-row {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 0.5rem;
   }
   .re-arrow {
     display: flex;
-    width: 44px; height: 44px;
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 36px; height: 36px;
     border-radius: 50%;
     background: #fff;
     border: 1px solid #E8E8E6;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.12);
     align-items: center;
     justify-content: center;
     cursor: pointer;
     color: var(--dark);
     transition: background 0.2s, color 0.2s;
   }
+  .re-arrow--prev { left: 2px; }
+  .re-arrow--next { right: 2px; }
   .re-arrow:active { background: var(--blue); color: #fff; }
+
+  /* Cartes formations — mêmes flèches latérales */
+  .form-carousel-wrap {
+    position: relative;
+    padding: 0 44px;
+  }
+  .form-arrows-row { display: none !important; }
+  .form-arrow {
+    display: flex;
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #E8E8E6;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--dark);
+    transition: background 0.2s, color 0.2s;
+  }
+  .form-arrow--prev { left: 2px; }
+  .form-arrow--next { right: 2px; }
+  .form-arrow:active { background: var(--blue); color: #fff; }
 }
 
