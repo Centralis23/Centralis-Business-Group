@@ -180,8 +180,17 @@ if (contactForm) {
     });
   }, 120);
 
-  // Drag to scroll
+  // Duplicate cards for infinite scroll
   if (!carousel) return;
+  const origCards = Array.from(carousel.querySelectorAll('.act-card'));
+  origCards.forEach(c => {
+    const clone = c.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    clone.classList.add('in-view');
+    carousel.appendChild(clone);
+  });
+
+  // Drag to scroll
   let isDown = false, startX, scrollLeft;
   carousel.addEventListener('mousedown', e => {
     isDown = true;
@@ -198,17 +207,16 @@ if (contactForm) {
     carousel.scrollLeft = scrollLeft - (x - startX) * 1.5;
   });
 
-  // Auto-scroll continu fluide
+  // Auto-scroll infini : boucle sur la première moitié (cartes originales)
   let paused = false;
-  const speed = 0.6; // pixels par frame
+  const speed = 0.6;
 
   function autoScroll() {
     if (!paused) {
-      const max = carousel.scrollWidth - carousel.clientWidth;
-      if (carousel.scrollLeft >= max - 1) {
-        carousel.scrollLeft = 0;
-      } else {
-        carousel.scrollLeft += speed;
+      const halfWidth = carousel.scrollWidth / 2;
+      carousel.scrollLeft += speed;
+      if (carousel.scrollLeft >= halfWidth) {
+        carousel.scrollLeft -= halfWidth;
       }
     }
     requestAnimationFrame(autoScroll);
