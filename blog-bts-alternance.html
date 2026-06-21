@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Comment réussir son BTS en alternance : nos conseils — Blog Centralis Business Group"/>
+  <title>Comment réussir son BTS en alternance — CBG</title>
+  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .blog-hero {
+      position: relative;
+      height: 60vh;
+      min-height: 380px;
+      overflow: hidden;
+      border-radius: 0 0 32px 32px;
+      margin-bottom: 0;
+    }
+    .blog-hero img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .blog-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.65) 100%);
+    }
+    .blog-hero-content {
+      position: absolute;
+      bottom: 2.5rem; left: 0; right: 0;
+      padding: 0 4rem;
+    }
+    .blog-breadcrumb {
+      display: flex; gap: 0.5rem; align-items: center;
+      font-size: 0.75rem; color: rgba(255,255,255,0.65);
+      margin-bottom: 0.75rem;
+    }
+    .blog-breadcrumb a { color: rgba(255,255,255,0.65); text-decoration: none; }
+    .blog-breadcrumb a:hover { color: #fff; }
+    .blog-hero-tag {
+      display: inline-block;
+      padding: 0.3rem 0.9rem;
+      border-radius: 50px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: var(--blue);
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .blog-hero h1 {
+      font-family: var(--font-s);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: -0.02em;
+      max-width: 760px;
+      line-height: 1.2;
+    }
+    .blog-hero-date { color: rgba(255,255,255,0.6); font-size: 0.82rem; margin-top: 0.75rem; }
+
+    .blog-article {
+      max-width: 780px;
+      margin: 4rem auto 6rem;
+      padding: 0 2rem;
+    }
+    .blog-article h2 {
+      font-family: var(--font-s);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin: 2.5rem 0 0.75rem;
+    }
+    .blog-article p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #374151;
+      margin-bottom: 1.25rem;
+    }
+    .blog-article ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .blog-article ul li {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #374151;
+      margin-bottom: 0.5rem;
+    }
+    .blog-article strong { color: var(--dark); }
+    .blog-cta-box {
+      background: var(--blueL);
+      border-left: 4px solid var(--blue);
+      border-radius: 8px;
+      padding: 1.5rem 2rem;
+      margin: 3rem 0;
+    }
+    .blog-cta-box p { color: var(--dark); margin: 0 0 1rem; font-weight: 500; }
+    .blog-back { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--blue); font-weight: 600; font-size: 0.88rem; margin-bottom: 2rem; }
+    .blog-back:hover { gap: 0.8rem; }
+
+    @media (max-width: 768px) {
+      .blog-hero { height: 50vh; border-radius: 0 0 20px 20px; }
+      .blog-hero-content { padding: 0 1.5rem; bottom: 1.5rem; }
+      .blog-article { margin: 2.5rem auto 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="navbar" class="scrolled">
+  <div class="nav-inner container">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="Centralis Business Group" class="nav-logo-img"/>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#accueil">Accueil</a></li>
+      <li><a href="index.html#espaces">Espaces</a></li>
+      <li><a href="index.html#studio">Studio</a></li>
+      <li><a href="index.html#formations">Formations</a></li>
+      <li><a href="index.html#blog">Blog</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="index.html#formulaire" class="btn-nav-cta">Nous contacter</a>
+    <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="blog-hero">
+  <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1400&q=80" alt="BTS alternance"/>
+  <div class="blog-hero-overlay"></div>
+  <div class="blog-hero-content">
+    <nav class="blog-breadcrumb">
+      <a href="index.html">Accueil</a><span>›</span>
+      <a href="index.html#blog">Blog</a><span>›</span>
+      Formation
+    </nav>
+    <span class="blog-hero-tag">Formation</span>
+    <h1>Comment réussir son BTS en alternance : nos conseils</h1>
+    <p class="blog-hero-date">5 juin 2025</p>
+  </div>
+</div>
+
+<div class="blog-article">
+  <a href="index.html#blog" class="blog-back">← Retour au blog</a>
+
+  <p>L'alternance est l'une des voies les plus efficaces pour entrer sur le marché du travail avec un diplôme reconnu et une expérience professionnelle solide. Mais réussir un BTS en alternance demande une organisation rigoureuse et une vraie stratégie. Voici nos meilleurs conseils.</p>
+
+  <h2>1. Bien choisir son entreprise d'accueil</h2>
+  <p>Le choix de l'entreprise est aussi important que celui de la formation. Privilégiez une structure qui correspond à votre projet professionnel et qui dispose d'un <strong>tuteur impliqué</strong>. Un bon tuteur fait souvent la différence entre une alternance enrichissante et une année subie.</p>
+
+  <h2>2. Organiser son temps entre école et entreprise</h2>
+  <p>L'un des défis majeurs de l'alternance est la gestion du temps. Voici quelques principes clés :</p>
+  <ul>
+    <li>Utilisez un agenda numérique pour planifier vos semaines à l'avance</li>
+    <li>Préparez vos cours en entreprise et inversement</li>
+    <li>Réservez des créneaux fixes pour les révisions et les travaux scolaires</li>
+    <li>Communiquez proactivement avec votre tuteur sur vos contraintes scolaires</li>
+  </ul>
+
+  <h2>3. S'impliquer pleinement en entreprise</h2>
+  <p>L'alternance n'est pas un stage. Vous êtes un salarié à part entière. Montrez votre <strong>proactivité</strong>, posez des questions, proposez des idées. Les employeurs apprécient les alternants qui prennent des initiatives et s'investissent au-delà de leur fiche de poste.</p>
+
+  <h2>4. Préparer le rapport de stage et les oraux</h2>
+  <p>Le BTS se finalise souvent par un rapport écrit et des épreuves orales. Commencez à prendre des notes dès le premier jour en entreprise. Notez les projets auxquels vous participez, les problèmes résolus, les méthodes utilisées. Ces éléments seront précieux pour votre rapport et impressionneront vos examinateurs.</p>
+
+  <h2>5. Profiter du réseau de son centre de formation</h2>
+  <p>Votre centre de formation est aussi un réseau. Chez Centralis Business Group, nous mettons en relation nos étudiants avec des entreprises partenaires, des intervenants professionnels et un écosystème d'entrepreneurs. Ces contacts peuvent ouvrir des portes bien au-delà de l'obtention du diplôme.</p>
+
+  <div class="blog-cta-box">
+    <p>Vous souhaitez vous inscrire en BTS NDRC, GPME ou MCO en alternance chez CBG ?</p>
+    <a href="index.html#formulaire" class="btn-primary">Candidater →</a>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="CBG" class="footer-logo" onerror="this.style.display='none'"/>
+        <p>Groupe d'excellence à Alfortville. Espaces professionnels, formations certifiées et conseil stratégique.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#a-propos">À Propos</a></li>
+          <li><a href="index.html#espaces">Espaces</a></li>
+          <li><a href="index.html#studio">Studio Podcast</a></li>
+          <li><a href="index.html#formations">Formations</a></li>
+          <li><a href="index.html#blog">Blog</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Nos espaces</h4>
+        <ul>
+          <li><a href="salle-koroba.html">Salle Koroba</a></li>
+          <li><a href="salle-nkhrumah.html">Salle Nkhrumah</a></li>
+          <li><a href="salle-sankara.html">Salle Sankara</a></li>
+          <li><a href="salle-mandela.html">Salle Mandela</a></li>
+          <li><a href="salle-lumumba.html">Salle Lumumba</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>12 rue Anatole France, 94140 Alfortville</p>
+        <p>contact@centralisbusinessgroup.com</p>
+        <p>Lundi – Vendredi · 10h à 18h</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Centralis Business Group · Tous droits réservés</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

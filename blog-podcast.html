@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Podcast d'entreprise : pourquoi vous devez vous lancer — Blog Centralis Business Group"/>
+  <title>Podcast d'entreprise : pourquoi vous devez vous lancer — CBG</title>
+  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .blog-hero {
+      position: relative;
+      height: 60vh;
+      min-height: 380px;
+      overflow: hidden;
+      border-radius: 0 0 32px 32px;
+      margin-bottom: 0;
+    }
+    .blog-hero img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .blog-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.65) 100%);
+    }
+    .blog-hero-content {
+      position: absolute;
+      bottom: 2.5rem; left: 0; right: 0;
+      padding: 0 4rem;
+    }
+    .blog-breadcrumb {
+      display: flex; gap: 0.5rem; align-items: center;
+      font-size: 0.75rem; color: rgba(255,255,255,0.65);
+      margin-bottom: 0.75rem;
+    }
+    .blog-breadcrumb a { color: rgba(255,255,255,0.65); text-decoration: none; }
+    .blog-breadcrumb a:hover { color: #fff; }
+    .blog-hero-tag {
+      display: inline-block;
+      padding: 0.3rem 0.9rem;
+      border-radius: 50px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: var(--blue);
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .blog-hero h1 {
+      font-family: var(--font-s);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: -0.02em;
+      max-width: 760px;
+      line-height: 1.2;
+    }
+    .blog-hero-date { color: rgba(255,255,255,0.6); font-size: 0.82rem; margin-top: 0.75rem; }
+
+    .blog-article {
+      max-width: 780px;
+      margin: 4rem auto 6rem;
+      padding: 0 2rem;
+    }
+    .blog-article h2 {
+      font-family: var(--font-s);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin: 2.5rem 0 0.75rem;
+    }
+    .blog-article p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #374151;
+      margin-bottom: 1.25rem;
+    }
+    .blog-article ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .blog-article ul li {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #374151;
+      margin-bottom: 0.5rem;
+    }
+    .blog-article strong { color: var(--dark); }
+    .blog-cta-box {
+      background: var(--blueL);
+      border-left: 4px solid var(--blue);
+      border-radius: 8px;
+      padding: 1.5rem 2rem;
+      margin: 3rem 0;
+    }
+    .blog-cta-box p { color: var(--dark); margin: 0 0 1rem; font-weight: 500; }
+    .blog-back { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--blue); font-weight: 600; font-size: 0.88rem; margin-bottom: 2rem; }
+    .blog-back:hover { gap: 0.8rem; }
+
+    @media (max-width: 768px) {
+      .blog-hero { height: 50vh; border-radius: 0 0 20px 20px; }
+      .blog-hero-content { padding: 0 1.5rem; bottom: 1.5rem; }
+      .blog-article { margin: 2.5rem auto 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="navbar" class="scrolled">
+  <div class="nav-inner container">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="Centralis Business Group" class="nav-logo-img"/>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#accueil">Accueil</a></li>
+      <li><a href="index.html#espaces">Espaces</a></li>
+      <li><a href="index.html#studio">Studio</a></li>
+      <li><a href="index.html#formations">Formations</a></li>
+      <li><a href="index.html#blog">Blog</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="index.html#formulaire" class="btn-nav-cta">Nous contacter</a>
+    <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="blog-hero">
+  <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1400&q=80" alt="Studio podcast entreprise"/>
+  <div class="blog-hero-overlay"></div>
+  <div class="blog-hero-content">
+    <nav class="blog-breadcrumb">
+      <a href="index.html">Accueil</a><span>›</span>
+      <a href="index.html#blog">Blog</a><span>›</span>
+      Podcast
+    </nav>
+    <span class="blog-hero-tag">Podcast</span>
+    <h1>Podcast d'entreprise : pourquoi vous devez vous lancer</h1>
+    <p class="blog-hero-date">28 mai 2025</p>
+  </div>
+</div>
+
+<div class="blog-article">
+  <a href="index.html#blog" class="blog-back">← Retour au blog</a>
+
+  <p>En quelques années, le podcast est passé d'un format de niche à un canal de communication incontournable. Aujourd'hui, des milliers d'entreprises de toutes tailles utilisent le podcast pour renforcer leur marque, fidéliser leur audience et générer des opportunités commerciales. Voici pourquoi vous devriez faire de même.</p>
+
+  <h2>1. Le podcast humanise votre marque</h2>
+  <p>Contrairement à un article de blog ou une publication sur les réseaux sociaux, le podcast met en avant votre voix, votre personnalité, votre façon de penser. Il crée une <strong>relation de proximité</strong> avec votre audience que peu d'autres formats permettent. Les auditeurs qui vous écoutent régulièrement ont l'impression de vous connaître — et c'est un avantage commercial considérable.</p>
+
+  <h2>2. Un format consommé dans tous les moments de vie</h2>
+  <p>Le podcast se consomme en faisant du sport, en conduisant, en cuisinant. C'est un format qui s'insère dans les interstices du quotidien, là où les autres contenus ne peuvent pas aller. Votre message touche votre audience même quand elle n'est pas devant un écran.</p>
+
+  <h2>3. Positionnez-vous comme expert de votre secteur</h2>
+  <p>Partager votre expertise via un podcast renforce votre crédibilité. En invitant des partenaires, clients ou experts de votre secteur, vous :</p>
+  <ul>
+    <li>Produisez du contenu à forte valeur ajoutée</li>
+    <li>Étendez votre réseau professionnel</li>
+    <li>Générez des opportunités de partenariats</li>
+    <li>Vous positionnez comme référence dans votre domaine</li>
+  </ul>
+
+  <h2>4. Un ROI mesurable et durable</h2>
+  <p>Un épisode de podcast peut être <strong>réutilisé sous de nombreuses formes</strong> : article de blog, vidéo YouTube, citations pour LinkedIn, newsletter... C'est un investissement de contenu qui se démultiplie. Et contrairement à la publicité payante, vos épisodes continuent de générer de l'audience des mois après leur publication.</p>
+
+  <h2>5. Lancez-vous facilement avec notre studio</h2>
+  <p>La principale barrière au podcast est souvent technique : micro, acoustique, enregistrement, montage. Notre studio podcast à Alfortville est équipé de tout le matériel professionnel dont vous avez besoin. Vous arrivez, vous enregistrez, nous vous accompagnons. Pas besoin d'investissement lourd ni de compétences techniques.</p>
+
+  <div class="blog-cta-box">
+    <p>Vous voulez lancer votre podcast d'entreprise ? Réservez une session dans notre studio.</p>
+    <a href="index.html#formulaire" class="btn-primary">Réserver le studio →</a>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="CBG" class="footer-logo" onerror="this.style.display='none'"/>
+        <p>Groupe d'excellence à Alfortville. Espaces professionnels, formations certifiées et conseil stratégique.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#a-propos">À Propos</a></li>
+          <li><a href="index.html#espaces">Espaces</a></li>
+          <li><a href="index.html#studio">Studio Podcast</a></li>
+          <li><a href="index.html#formations">Formations</a></li>
+          <li><a href="index.html#blog">Blog</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Nos espaces</h4>
+        <ul>
+          <li><a href="salle-koroba.html">Salle Koroba</a></li>
+          <li><a href="salle-nkhrumah.html">Salle Nkhrumah</a></li>
+          <li><a href="salle-sankara.html">Salle Sankara</a></li>
+          <li><a href="salle-mandela.html">Salle Mandela</a></li>
+          <li><a href="salle-lumumba.html">Salle Lumumba</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>12 rue Anatole France, 94140 Alfortville</p>
+        <p>contact@centralisbusinessgroup.com</p>
+        <p>Lundi – Vendredi · 10h à 18h</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Centralis Business Group · Tous droits réservés</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
