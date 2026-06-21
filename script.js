@@ -194,27 +194,27 @@ if (contactForm) {
     carousel.scrollLeft = scrollLeft - (x - startX) * 1.5;
   });
 
-  // Auto-scroll
-  let autoTimer = null;
+  // Auto-scroll continu fluide
   let paused = false;
+  const speed = 0.6; // pixels par frame
 
-  function tick() {
-    if (paused) return;
-    const max = carousel.scrollWidth - carousel.clientWidth;
-    if (carousel.scrollLeft >= max - 2) {
-      carousel.scrollTo({ left: 0, behavior: 'smooth' });
-    } else {
-      const step = cards[0] ? cards[0].offsetWidth + 20 : 300;
-      carousel.scrollBy({ left: step, behavior: 'smooth' });
+  function autoScroll() {
+    if (!paused) {
+      const max = carousel.scrollWidth - carousel.clientWidth;
+      if (carousel.scrollLeft >= max - 1) {
+        carousel.scrollLeft = 0;
+      } else {
+        carousel.scrollLeft += speed;
+      }
     }
+    requestAnimationFrame(autoScroll);
   }
-
-  autoTimer = setInterval(tick, 3000);
+  requestAnimationFrame(autoScroll);
 
   carousel.addEventListener('mouseenter', () => { paused = true; });
   carousel.addEventListener('mouseleave', () => { paused = false; });
   carousel.addEventListener('touchstart', () => { paused = true; }, { passive: true });
-  carousel.addEventListener('touchend', () => { setTimeout(() => { paused = false; }, 3000); }, { passive: true });
+  carousel.addEventListener('touchend', () => { setTimeout(() => { paused = false; }, 2000); }, { passive: true });
 })();
 
 // 11. Filter buttons (visual only)
