@@ -1019,6 +1019,7 @@ img { max-width: 100%; display: block; }
   flex-wrap: wrap;
 }
 .re-cta p { font-size: 1rem; font-weight: 600; color: var(--dark); }
+.re-arrow { display: none; }
 
 /* ── STUDIO ── */
 .studio {
@@ -1855,6 +1856,9 @@ img { max-width: 100%; display: block; }
   .re-carousel-wrap {
     position: relative;
   }
+  .re-arrow {
+    display: flex !important;
+  }
   .re-grid {
     display: flex;
     overflow-x: auto;
@@ -1893,5 +1897,3 @@ img { max-width: 100%; display: block; }
   .re-arrow--next { right: -12px; }
 }
 
-/* Flèches cachées sur desktop */
-.re-arrow { display: none; }
