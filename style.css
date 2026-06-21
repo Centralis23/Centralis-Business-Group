@@ -1692,9 +1692,8 @@ img { max-width: 100%; display: block; }
   width: 24px;
 }
 .act-card {
-  flex: 0 0 calc(30% - 1rem);
-  min-width: 280px;
-  /* scroll-snap-align removed — handled by auto-scroll JS */
+  flex: 0 0 320px;
+  width: 320px;
   display: flex;
   flex-direction: column;
   text-decoration: none;
