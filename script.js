@@ -3,12 +3,12 @@
    ================================================ */
 
 // 1. Intro progress bar
-document.body.style.overflow = 'hidden';
 (function() {
   const overlay = document.getElementById('intro-overlay');
   const bar = document.getElementById('intro-progress');
   const pct = document.getElementById('intro-percent');
-  if (!overlay || !bar) return;
+  if (!overlay || !bar) { document.body.style.overflow = ''; return; }
+  document.body.style.overflow = 'hidden';
   let progress = 0;
   const duration = 2800;
   const interval = 30;
