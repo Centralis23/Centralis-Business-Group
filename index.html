@@ -631,10 +631,10 @@
               Cal.config.forwardQueryParams = true;
               Cal.ns["visite-centralis"]("inline", {
                 elementOrSelector:"#my-cal-inline-visite-centralis",
-                config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"auto"},
+                config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"},
                 calLink: "centralis-business-group-2h05wo/visite-centralis",
               });
-              Cal.ns["visite-centralis"]("ui", {"hideEventTypeDetails":true,"layout":"month_view"});
+              Cal.ns["visite-centralis"]("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#ffffff"},"dark":{"cal-brand":"#59639b"}},"hideEventTypeDetails":true,"layout":"month_view"});
             </script>
           </div>
         </div>
