@@ -781,7 +781,7 @@ img { max-width: 100%; display: block; }
   min-height: 560px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   overflow: hidden;
   margin: 0 2rem 5rem;
   border-radius: 24px;
