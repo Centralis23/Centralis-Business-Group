@@ -16,7 +16,18 @@ window.scrollTo(0, 0);
     if (!overlay) return;
     overlay.classList.add('hidden');
     document.body.style.overflow = '';
-    setTimeout(() => { if (overlay.parentNode) overlay.remove(); }, 650);
+    setTimeout(() => {
+      if (overlay.parentNode) overlay.remove();
+      // Scroll to anchor if page was opened with a hash (e.g. from blog CTA buttons)
+      const hash = window._initHash || '';
+      if (hash) {
+        const target = document.querySelector(hash);
+        if (target) {
+          const top = target.getBoundingClientRect().top + window.scrollY - 100;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      }
+    }, 650);
   }
 
   if (!overlay || !bar) { document.body.style.overflow = ''; return; }
