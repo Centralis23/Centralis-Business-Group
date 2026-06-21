@@ -609,13 +609,17 @@
   <div class="container">
 
     <div class="ct-header reveal">
-      <p class="section-eyebrow">Parlons de votre projet</p>
-      <h2 class="serif-title">Une question ?<br><em>Écrivez-nous.</em></h2>
-      <p class="ct-subtitle">Notre équipe vous répond sous 24h.</p>
+      <p class="section-eyebrow">Contact &amp; Visite</p>
+      <h2 class="serif-title">Prenons contact,<br><em>rencontrons-nous.</em></h2>
+      <p class="ct-subtitle">Écrivez-nous ou réservez directement une visite de nos locaux.</p>
     </div>
 
-    <div class="ct-body">
+    <!-- LIGNE 1 : formulaire + calendrier -->
+    <div class="ct-main-grid">
+
+      <!-- FORMULAIRE -->
       <div class="ct-form-wrap reveal">
+        <p class="ct-block-label">Envoyer un message</p>
         <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="contact"/>
           <p style="display:none"><input name="bot-field"/></p>
@@ -651,74 +655,60 @@
         </form>
       </div>
 
-      <div class="ct-info-row reveal">
-        <div class="ct-info-card">
-          <div class="ct-info-icon">
-            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M10 2a5.5 5.5 0 100 11A5.5 5.5 0 0010 2zM3 18c0-3 3.1-5 7-5s7 2 7 5"/></svg>
+      <!-- VISITE + CALENDRIER -->
+      <div class="ct-visite-wrap reveal">
+        <p class="ct-block-label">Visiter nos locaux</p>
+        <div class="ct-visite-top">
+          <div class="ct-visite-video">
+            <video autoplay muted loop playsinline>
+              <source src="carte centralis.mp4" type="video/mp4"/>
+            </video>
           </div>
-          <div>
-            <strong>Adresse</strong>
-            <p>Alfortville, Île-de-France</p>
-          </div>
-        </div>
-        <div class="ct-info-card">
-          <div class="ct-info-icon">
-            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><rect x="2" y="4" width="16" height="12" rx="2"/><path d="M2 6l8 5.5L18 6"/></svg>
-          </div>
-          <div>
-            <strong>Email</strong>
-            <p>contact@centralisbusinessgroup.com</p>
+          <div class="ct-visite-text">
+            <p>Venez découvrir nos espaces professionnels lors d'une visite personnalisée. Échangez avec notre équipe sur vos besoins.</p>
           </div>
         </div>
-        <div class="ct-info-card">
-          <div class="ct-info-icon">
-            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><circle cx="10" cy="10" r="8"/><path d="M10 6v4l2.5 2"/></svg>
-          </div>
-          <div>
-            <strong>Disponibilité</strong>
-            <p>Lun–Sam · 8h–20h</p>
-          </div>
+        <div class="ct-cal">
+          <div id="my-cal-inline-visite-centralis"></div>
+          <script type="text/javascript">
+            (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+            Cal("init", "visite-centralis", {origin:"https://app.cal.com"});
+            Cal.config = Cal.config || {};
+            Cal.config.forwardQueryParams = true;
+            Cal.ns["visite-centralis"]("inline", {
+              elementOrSelector:"#my-cal-inline-visite-centralis",
+              config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+              calLink: "centralis-business-group-2h05wo/visite-centralis",
+            });
+            Cal.ns["visite-centralis"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+          </script>
         </div>
+      </div>
+
+    </div>
+
+    <!-- LIGNE 2 : infos de contact -->
+    <div class="ct-info-row reveal">
+      <div class="ct-info-card">
+        <div class="ct-info-icon">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M10 2a5.5 5.5 0 100 11A5.5 5.5 0 0010 2zM3 18c0-3 3.1-5 7-5s7 2 7 5"/></svg>
+        </div>
+        <div><strong>Adresse</strong><p>Alfortville, Île-de-France</p></div>
+      </div>
+      <div class="ct-info-card">
+        <div class="ct-info-icon">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><rect x="2" y="4" width="16" height="12" rx="2"/><path d="M2 6l8 5.5L18 6"/></svg>
+        </div>
+        <div><strong>Email</strong><p>contact@centralisbusinessgroup.com</p></div>
+      </div>
+      <div class="ct-info-card">
+        <div class="ct-info-icon">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><circle cx="10" cy="10" r="8"/><path d="M10 6v4l2.5 2"/></svg>
+        </div>
+        <div><strong>Disponibilité</strong><p>Lun–Sam · 8h–20h</p></div>
       </div>
     </div>
 
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════
-     VISITEZ NOS LOCAUX
-═══════════════════════════════════════ -->
-<section class="visite-section">
-  <div class="container">
-    <div class="visite-hd reveal">
-      <p class="section-eyebrow">Venez nous rencontrer</p>
-      <h2 class="serif-title">Visitez nos <em>locaux</em></h2>
-      <p class="visite-sub">Venez découvrir l'univers Centralis Business Group lors d'une visite personnalisée de nos espaces professionnels. Échangez avec notre équipe sur vos besoins et vos projets.</p>
-    </div>
-    <div class="visite-body">
-      <div class="visite-cal reveal">
-        <!-- Cal inline embed code begins -->
-        <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-visite-centralis"></div>
-        <script type="text/javascript">
-          (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-          Cal("init", "visite-centralis", {origin:"https://app.cal.com"});
-          Cal.config = Cal.config || {};
-          Cal.config.forwardQueryParams = true;
-          Cal.ns["visite-centralis"]("inline", {
-            elementOrSelector:"#my-cal-inline-visite-centralis",
-            config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
-            calLink: "centralis-business-group-2h05wo/visite-centralis",
-          });
-          Cal.ns["visite-centralis"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-        </script>
-        <!-- Cal inline embed code ends -->
-      </div>
-      <div class="visite-video reveal">
-        <video autoplay muted loop playsinline>
-          <source src="carte centralis.mp4" type="video/mp4"/>
-        </video>
-      </div>
-    </div>
   </div>
 </section>
 
