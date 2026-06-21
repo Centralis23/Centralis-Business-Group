@@ -2,6 +2,10 @@
    CENTRALIS BUSINESS GROUP — script.js
    ================================================ */
 
+// Désactive la restauration de scroll du navigateur
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
+
 // 1. Intro progress bar
 (function() {
   const overlay = document.getElementById('intro-overlay');
