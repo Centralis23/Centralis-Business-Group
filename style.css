@@ -852,8 +852,8 @@ img { max-width: 100%; display: block; }
   align-items: center;
   justify-content: center;
   padding: 0.7rem 1rem;
-  background: #6B6B6B;
-  color: #fff;
+  background: #F4F4F2;
+  color: var(--dark);
   border-radius: 10px;
   font-family: var(--font);
   font-size: 0.85rem;
