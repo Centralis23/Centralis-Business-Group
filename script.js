@@ -11,8 +11,20 @@ window.scrollTo(0, 0);
   const overlay = document.getElementById('intro-overlay');
   const bar = document.getElementById('intro-progress');
   const pct = document.getElementById('intro-percent');
+
+  function dismiss() {
+    if (!overlay) return;
+    overlay.classList.add('hidden');
+    document.body.style.overflow = '';
+    setTimeout(() => { if (overlay.parentNode) overlay.remove(); }, 650);
+  }
+
   if (!overlay || !bar) { document.body.style.overflow = ''; return; }
   document.body.style.overflow = 'hidden';
+
+  // Filet de sécurité : forcer la fermeture après 5s max
+  const safetyTimer = setTimeout(dismiss, 5000);
+
   let progress = 0;
   const duration = 2800;
   const interval = 30;
@@ -23,12 +35,9 @@ window.scrollTo(0, 0);
     if (pct) pct.textContent = Math.floor(progress) + '%';
     if (progress >= 100) {
       clearInterval(timer);
+      clearTimeout(safetyTimer);
       if (pct) pct.textContent = '100%';
-      setTimeout(() => {
-        overlay.classList.add('hidden');
-        document.body.style.overflow = '';
-        setTimeout(() => overlay.remove(), 650);
-      }, 300);
+      setTimeout(dismiss, 300);
     }
   }, interval);
 })();
