@@ -1793,20 +1793,23 @@ img { max-width: 100%; display: block; }
 @media (max-width: 768px) {
   /* 1. Hero bannière d'accueil */
   .hero-full-title {
-    font-size: clamp(1.9rem, 8vw, 2.6rem);
+    font-size: clamp(2rem, 9vw, 2.8rem);
     line-height: 1.15;
-    text-align: left;
+    text-align: center;
   }
   .hero-full-sub {
     font-size: 0.9rem;
-    text-align: left;
+    text-align: center;
     line-height: 1.6;
+    margin-left: auto;
+    margin-right: auto;
   }
   .hero-split-ctas {
-    justify-content: flex-start;
+    justify-content: center;
   }
   .hero-full-content {
     padding: 0 1.5rem;
+    text-align: center;
   }
 
   /* 2. Bannière espaces/location de salle */
@@ -1817,15 +1820,15 @@ img { max-width: 100%; display: block; }
   }
   .espaces-hero-content {
     padding: 0 1.5rem 2rem;
-    text-align: left;
+    text-align: center;
   }
   .espaces-hero-title {
-    font-size: clamp(1.8rem, 7.5vw, 2.4rem);
+    font-size: clamp(1.9rem, 8vw, 2.6rem);
     line-height: 1.12;
   }
   .espaces-hero-sub {
     font-size: 0.88rem;
-    margin: 0;
+    margin: 0 auto;
   }
 
   /* 3. Texte "Qui sommes nous" — supprime justification sur mobile */
