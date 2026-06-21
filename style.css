@@ -1313,6 +1313,7 @@ img { max-width: 100%; display: block; }
 .cf-group input:focus, .cf-group select:focus, .cf-group textarea:focus {
   outline: none; border-color: var(--blue); background: #fff;
 }
+.cf-select--mobile { display: none; }
 .cf-pills {
   display: flex;
   flex-wrap: wrap;
@@ -1907,7 +1908,24 @@ img { max-width: 100%; display: block; }
     margin: 0 auto;
   }
 
-  /* 3. Texte "Qui sommes nous" — supprime justification sur mobile */
+  /* 3. Sujet formulaire — liste déroulante sur mobile */
+  .cf-pills--desktop { display: none; }
+  .cf-select--mobile {
+    display: block;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1.5px solid #E8E8E6;
+    border-radius: 10px;
+    font-family: var(--font); font-size: 0.88rem;
+    color: var(--dark); background: #FAFAF8;
+    appearance: none; -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 1rem center;
+    padding-right: 2.5rem;
+  }
+  .cf-select--mobile:focus { outline: none; border-color: var(--blue); background-color: #fff; }
+
+  /* Texte "Qui sommes nous" — supprime justification sur mobile */
   .about-desc {
     text-align: left;
   }
