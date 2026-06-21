@@ -158,10 +158,9 @@ if (contactForm) {
   });
 }
 
-// 9. Activités — carrousel reveal + drag to scroll
+// 9. Activités — carrousel reveal + arrows mobile
 (function() {
   const cards = document.querySelectorAll('.act-card');
-  const carousel = document.querySelector('.act-carousel');
   if (!cards.length) return;
 
   // Scroll reveal
@@ -181,17 +180,17 @@ if (contactForm) {
   }, 120);
 
   // Mobile carousel arrows
-  const carousel = document.querySelector('.act-carousel');
-  const prev = document.querySelector('.act-arrow--prev');
-  const next = document.querySelector('.act-arrow--next');
-  if (carousel && prev && next) {
+  const actCarousel = document.querySelector('.act-carousel');
+  const actPrev = document.querySelector('.act-arrow--prev');
+  const actNext = document.querySelector('.act-arrow--next');
+  if (actCarousel && actPrev && actNext) {
     const scroll = (dir) => {
-      const card = carousel.querySelector('.act-card');
+      const card = actCarousel.querySelector('.act-card');
       if (!card) return;
-      carousel.scrollBy({ left: dir * (card.offsetWidth + 16), behavior: 'smooth' });
+      actCarousel.scrollBy({ left: dir * (card.offsetWidth + 16), behavior: 'smooth' });
     };
-    prev.addEventListener('click', () => scroll(-1));
-    next.addEventListener('click', () => scroll(1));
+    actPrev.addEventListener('click', () => scroll(-1));
+    actNext.addEventListener('click', () => scroll(1));
   }
 })();
 
