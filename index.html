@@ -4,7 +4,6 @@
   <meta charset="UTF-8"/>
   <script>
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-    window._initHash = location.hash;
     if (location.hash) history.replaceState(null, '', location.pathname + location.search);
     document.documentElement.style.scrollBehavior = 'auto';
     window.scrollTo(0, 0);

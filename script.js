@@ -16,32 +16,22 @@ window.scrollTo(0, 0);
     if (!overlay) return;
     overlay.classList.add('hidden');
     document.body.style.overflow = '';
-    setTimeout(() => { if (overlay.parentNode) overlay.remove(); }, 650);
-  }
-
-  function scrollToHash(hash) {
-    if (!hash) return;
-    const target = document.querySelector(hash);
-    if (target) {
-      const top = target.getBoundingClientRect().top + window.scrollY - 100;
-      window.scrollTo({ top, behavior: 'smooth' });
-    }
+    setTimeout(() => {
+      if (overlay.parentNode) overlay.remove();
+      // Scroll to target section si paramètre ?to= présent (depuis boutons blog)
+      const to = new URLSearchParams(window.location.search).get('to');
+      if (to) {
+        const target = document.getElementById(to);
+        if (target) {
+          const top = target.getBoundingClientRect().top + window.scrollY - 100;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      }
+    }, 100);
   }
 
   if (!overlay || !bar) { document.body.style.overflow = ''; return; }
-
-  // Si la page est ouverte avec une ancre (depuis un bouton blog etc.),
-  // on saute l'intro et on va directement à la section ciblée
-  const initHash = window._initHash || '';
-  if (initHash) {
-    dismiss();
-    setTimeout(() => scrollToHash(initHash), 100);
-    return;
-  }
-
   document.body.style.overflow = 'hidden';
-
-  // Filet de sécurité : forcer la fermeture après 5s max
   const safetyTimer = setTimeout(dismiss, 5000);
 
   let progress = 0;
