@@ -606,66 +606,82 @@
      CONTACT
 ═══════════════════════════════════════ -->
 <section id="contact" class="contact">
-  <div class="contact-split">
-    <div class="ct-left">
-      <p class="section-eyebrow section-eyebrow--white">Parlons de votre projet</p>
-      <h2 class="serif-title serif-title--white">Prenons<br>contact</h2>
-      <div class="blue-bar"></div>
-      <div class="ct-infos">
-        <div class="ct-info">
-          <div class="ct-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9zM2 14.5c0-2.5 2.7-4 6-4s6 1.5 6 4"/></svg></div>
-          <div><strong>Adresse</strong><p>Alfortville, Île-de-France<br>À 10 min de Paris</p></div>
-        </div>
-        <div class="ct-info">
-          <div class="ct-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5V8l2.5 1.5"/></svg></div>
-          <div><strong>Disponibilité</strong><p>Lun–Sam · 8h–20h<br>Réservation 7j/7 en ligne</p></div>
-        </div>
-        <div class="ct-info">
-          <div class="ct-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M1.5 5l6.5 4.5L14.5 5"/></svg></div>
-          <div><strong>Email</strong><p>contact@centralisbusinessgroup.com</p></div>
-        </div>
-      </div>
-      <div class="ct-trust">
-        <div class="trust-item">Réponse sous 24h</div>
-        <div class="trust-item">Devis gratuit</div>
-        <div class="trust-item">Accompagnement personnalisé</div>
-      </div>
+  <div class="container">
+
+    <div class="ct-header reveal">
+      <p class="section-eyebrow">Parlons de votre projet</p>
+      <h2 class="serif-title">Une question ?<br><em>Écrivez-nous.</em></h2>
+      <p class="ct-subtitle">Notre équipe vous répond sous 24h.</p>
     </div>
-    <div class="ct-right">
-      <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="contact"/>
-        <p style="display:none"><input name="bot-field"/></p>
-        <div class="cf-row">
-          <div class="cf-group">
-            <label>Nom complet</label>
-            <input type="text" name="nom" placeholder="Jean Dupont" required/>
+
+    <div class="ct-body">
+      <div class="ct-form-wrap reveal">
+        <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact"/>
+          <p style="display:none"><input name="bot-field"/></p>
+          <div class="cf-row">
+            <div class="cf-group">
+              <label>Nom complet</label>
+              <input type="text" name="nom" placeholder="Jean Dupont" required/>
+            </div>
+            <div class="cf-group">
+              <label>Email</label>
+              <input type="email" name="email" placeholder="jean@exemple.fr" required/>
+            </div>
           </div>
           <div class="cf-group">
-            <label>Email</label>
-            <input type="email" name="email" placeholder="jean@exemple.fr" required/>
+            <label>Sujet</label>
+            <select name="sujet">
+              <option value="">Choisissez un sujet</option>
+              <option>Location de salle</option>
+              <option>Réservation studio podcast</option>
+              <option>Inscription formation</option>
+              <option>Conseil stratégique</option>
+              <option>Autre demande</option>
+            </select>
+          </div>
+          <div class="cf-group">
+            <label>Message</label>
+            <textarea name="message" rows="5" placeholder="Décrivez votre projet..." required></textarea>
+          </div>
+          <button type="submit" class="ct-submit">Envoyer le message</button>
+          <div id="form-success" style="display:none;margin-top:1rem;padding:1rem;background:#DCFCE7;border-radius:10px;color:#15803D;font-weight:600;font-size:0.88rem;">
+            Message envoyé ! Nous vous répondrons sous 24h.
+          </div>
+        </form>
+      </div>
+
+      <div class="ct-info-row reveal">
+        <div class="ct-info-card">
+          <div class="ct-info-icon">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M10 2a5.5 5.5 0 100 11A5.5 5.5 0 0010 2zM3 18c0-3 3.1-5 7-5s7 2 7 5"/></svg>
+          </div>
+          <div>
+            <strong>Adresse</strong>
+            <p>Alfortville, Île-de-France</p>
           </div>
         </div>
-        <div class="cf-group">
-          <label>Sujet</label>
-          <select name="sujet">
-            <option value="">Choisissez un sujet</option>
-            <option>Location de salle</option>
-            <option>Réservation studio podcast</option>
-            <option>Inscription formation</option>
-            <option>Conseil stratégique</option>
-            <option>Autre demande</option>
-          </select>
+        <div class="ct-info-card">
+          <div class="ct-info-icon">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><rect x="2" y="4" width="16" height="12" rx="2"/><path d="M2 6l8 5.5L18 6"/></svg>
+          </div>
+          <div>
+            <strong>Email</strong>
+            <p>contact@centralisbusinessgroup.com</p>
+          </div>
         </div>
-        <div class="cf-group">
-          <label>Message</label>
-          <textarea name="message" rows="5" placeholder="Décrivez votre projet..." required></textarea>
+        <div class="ct-info-card">
+          <div class="ct-info-icon">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><circle cx="10" cy="10" r="8"/><path d="M10 6v4l2.5 2"/></svg>
+          </div>
+          <div>
+            <strong>Disponibilité</strong>
+            <p>Lun–Sam · 8h–20h</p>
+          </div>
         </div>
-        <button type="submit" class="btn-gold btn-submit">Envoyer le message</button>
-        <div id="form-success" style="display:none;margin-top:1rem;padding:1rem;background:#DCFCE7;border-radius:8px;color:#15803D;font-weight:600;">
-          Message envoyé ! Nous vous répondrons sous 24h.
-        </div>
-      </form>
+      </div>
     </div>
+
   </div>
 </section>
 
