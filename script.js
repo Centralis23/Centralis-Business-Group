@@ -225,6 +225,20 @@ document.querySelectorAll('.re-filter-btn').forEach(btn => {
   }, 100);
 })();
 
+// Formation cards carousel arrows
+(function() {
+  const grid = document.querySelector('.form-grid');
+  const prev = document.querySelector('.form-arrow--prev');
+  const next = document.querySelector('.form-arrow--next');
+  if (!grid || !prev || !next) return;
+  const scroll = (dir) => {
+    const cardWidth = grid.querySelector('.form-card').offsetWidth + 16;
+    grid.scrollBy({ left: dir * cardWidth, behavior: 'smooth' });
+  };
+  prev.addEventListener('click', () => scroll(-1));
+  next.addEventListener('click', () => scroll(1));
+})();
+
 // Salle cards carousel arrows
 (function() {
   const grid = document.querySelector('.re-grid');
