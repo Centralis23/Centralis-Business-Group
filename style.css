@@ -1822,7 +1822,9 @@ img { max-width: 100%; display: block; }
     flex-wrap: nowrap;
   }
   .hero-split-btn {
-    padding: 0.65rem 1rem;
+    flex: 1;
+    text-align: center;
+    padding: 0.65rem 0.5rem;
     font-size: 0.68rem;
     white-space: nowrap;
   }
