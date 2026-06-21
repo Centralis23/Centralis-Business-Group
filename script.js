@@ -180,14 +180,18 @@ if (contactForm) {
     });
   }, 120);
 
-  // Clone cards for seamless CSS marquee loop
-  const track = document.querySelector('.act-track');
-  if (track) {
-    Array.from(track.querySelectorAll('.act-card')).forEach(card => {
-      const clone = card.cloneNode(true);
-      clone.setAttribute('aria-hidden', 'true');
-      track.appendChild(clone);
-    });
+  // Mobile carousel arrows
+  const carousel = document.querySelector('.act-carousel');
+  const prev = document.querySelector('.act-arrow--prev');
+  const next = document.querySelector('.act-arrow--next');
+  if (carousel && prev && next) {
+    const scroll = (dir) => {
+      const card = carousel.querySelector('.act-card');
+      if (!card) return;
+      carousel.scrollBy({ left: dir * (card.offsetWidth + 16), behavior: 'smooth' });
+    };
+    prev.addEventListener('click', () => scroll(-1));
+    next.addEventListener('click', () => scroll(1));
   }
 })();
 

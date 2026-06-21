@@ -1699,20 +1699,16 @@ img { max-width: 100%; display: block; }
   gap: 1.25rem;
 }
 /* ── Carrousel activités ── */
+.act-carousel-wrap { position: relative; }
+.act-arrow { display: none; }
 .act-carousel {
   overflow: hidden;
   padding: 0.5rem 0 2rem;
 }
 .act-track {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
-  width: max-content;
-  animation: act-marquee 28s linear infinite;
-}
-.act-track:hover { animation-play-state: paused; }
-@keyframes act-marquee {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
 }
 .act-dots {
   display: flex;
@@ -1732,8 +1728,7 @@ img { max-width: 100%; display: block; }
   width: 24px;
 }
 .act-card {
-  flex: 0 0 320px;
-  width: 320px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   text-decoration: none;
@@ -1825,8 +1820,28 @@ img { max-width: 100%; display: block; }
 .act-card:hover .act-link { gap: 0.7rem; }
 
 @media (max-width: 768px) {
-  .act-card { flex: 0 0 80vw; }
-  .act-carousel { padding: 0 1.25rem 1rem; }
+  .act-carousel { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding: 0.5rem 1rem 1.5rem; }
+  .act-carousel::-webkit-scrollbar { display: none; }
+  .act-track { display: flex; gap: 1rem; width: max-content; animation: none; }
+  .act-card { flex: 0 0 80vw; width: 80vw; }
+  .act-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 44%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1.5px solid rgba(26,26,204,0.15);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+    cursor: pointer;
+    color: var(--blue);
+  }
+  .act-arrow--prev { left: -4px; }
+  .act-arrow--next { right: -4px; }
 }
 .salle-footer a:hover { color: white; }
 

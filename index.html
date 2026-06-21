@@ -110,7 +110,7 @@
     <div class="about-content">
       <p class="section-eyebrow">Qui sommes-nous</p>
       <h2 class="about-title">Un lieu pensé pour chaque étape de votre parcours</h2>
-      <p class="about-desc">Plus qu'une holding de services, Centralis Business Group est un véritable accélérateur de projets et d'opportunités. Notre mission est de créer un environnement où les talents, les entrepreneurs et les entreprises disposent de toutes les ressources nécessaires pour se développer, innover et atteindre leurs objectifs.</p>
+      <p class="about-desc">Plus qu'un groupe de services, Centralis Business Group est un véritable accélérateur de projets et d'opportunités. Notre mission est de créer un environnement où les talents, les entrepreneurs et les entreprises disposent de toutes les ressources nécessaires pour se développer, innover et atteindre leurs objectifs.</p>
       <p class="about-desc">À travers nos différents pôles d'activité, nous réunissons des espaces de travail modernes, des solutions de formation professionnelle, des studios dédiés à la création de contenu et au podcast, ainsi que des services d'accompagnement et de conseil.</p>
     </div>
 
@@ -127,9 +127,10 @@
     <h2 class="activites-title">Nos <em>activités</em></h2>
   </div>
 
-  <div class="act-carousel">
-    <div class="act-track">
-      <a href="#espaces" class="act-card">
+  <div class="act-carousel-wrap">
+    <div class="act-carousel">
+      <div class="act-track">
+        <a href="#espaces" class="act-card">
         <div class="act-img">
           <img src="images/koroba.png" alt="Location de salle" loading="lazy"/>
           <div class="act-tags"><span>Réunion</span><span>Séminaire</span></div>
@@ -176,8 +177,15 @@
           <p>Accompagnement sur-mesure pour entrepreneurs et dirigeants.</p>
           <span class="act-link">Découvrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </div>
-      </a>
+        </a>
+      </div>
     </div>
+    <button class="act-arrow act-arrow--prev" aria-label="Précédent">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="act-arrow act-arrow--next" aria-label="Suivant">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
   </div>
 </section>
 
@@ -594,8 +602,8 @@
               <source src="carte centralis.mp4" type="video/mp4"/>
             </video>
             <div class="ct-visite-overlay">
-              <span>Visitez nos locaux</span>
-              <p>Réservez une visite personnalisée de nos espaces</p>
+              <span>Prise de rendez-vous</span>
+              <p>Réservez votre créneau en ligne</p>
             </div>
           </div>
           <div class="ct-cal">
