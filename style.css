@@ -1795,19 +1795,24 @@ img { max-width: 100%; display: block; }
   /* 1. Hero bannière d'accueil */
   .hero-full {
     min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .hero-full-content {
-    padding: 0 !important;
-    text-align: center !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 90%;
-    margin: 0 auto;
-  }
-  .hero-full-content h1,
-  .hero-full-content p {
     width: 100%;
-    text-align: center !important;
+    padding: 0 1.5rem !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .hero-full-title,
+  .hero-full-sub {
+    text-align: center;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
   .hero-full-title {
     font-size: clamp(2.2rem, 10vw, 3rem);
