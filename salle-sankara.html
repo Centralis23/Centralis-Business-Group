@@ -3,12 +3,322 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <meta name="description" content="Salle Sankara — Formation haut de gamme à Alfortville. Centralis Business Group."/>
+  <meta name="description" content="Salle Sankara — Espace de formation lumineux à Alfortville. 16 personnes. À partir de 35€/h."/>
   <title>Salle Sankara — Centralis Business Group</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
+  <style>
+    .salle-hero {
+      position: relative;
+      height: 75vh;
+      min-height: 480px;
+      overflow: hidden;
+      border-radius: 0 0 32px 32px;
+      margin-bottom: 0;
+    }
+    .salle-hero img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .salle-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.55) 100%);
+    }
+    .salle-hero-content {
+      position: absolute;
+      bottom: 2.5rem; left: 0; right: 0;
+      padding: 0 4rem;
+    }
+    .salle-breadcrumb {
+      display: flex; gap: 0.5rem; align-items: center;
+      font-size: 0.75rem; color: rgba(255,255,255,0.65);
+      margin-bottom: 0.75rem;
+    }
+    .salle-breadcrumb a { color: rgba(255,255,255,0.65); text-decoration: none; }
+    .salle-breadcrumb a:hover { color: #fff; }
+    .salle-hero h1 {
+      font-family: var(--font-s);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    .salle-hero-meta { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    .salle-hero-tag {
+      padding: 0.35rem 0.9rem;
+      border-radius: 50px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .salle-hero-tag--avail { background: #fff; color: #16a34a; }
+    .salle-hero-tag--type  { background: rgba(255,255,255,0.2); color: #fff; backdrop-filter: blur(8px); }
+    .salle-hero-tag--price { background: var(--blue); color: #fff; }
+
+    .salle-wrap {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 3rem;
+      padding: 3rem 0 5rem;
+    }
+    .salle-gallery { margin-bottom: 2.5rem; }
+    .salle-gallery-main {
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      margin-bottom: 0.75rem;
+      background: #f0f0ee;
+    }
+    .salle-gallery-main img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: opacity 0.2s;
+    }
+    .salle-gallery-thumbs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.6rem;
+    }
+    .salle-gallery-thumbs img {
+      width: 100%; aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      opacity: 0.75;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .salle-gallery-thumbs img:hover { opacity: 1; transform: scale(1.02); }
+
+    .salle-section { margin-bottom: 2.5rem; }
+    .salle-section h2 {
+      font-family: var(--font-s);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--dark);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+    .salle-section h3 {
+      font-family: var(--font-s);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 1rem;
+    }
+    .salle-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .salle-tags span {
+      background: #F4F4F2;
+      color: #444;
+      font-size: 0.72rem;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 50px;
+    }
+    .salle-tags .tag-green { background: #dcfce7; color: #16a34a; }
+    .salle-desc {
+      font-size: 0.92rem;
+      color: var(--gray);
+      line-height: 1.75;
+      text-align: justify;
+    }
+    .salle-equip-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem;
+    }
+    .salle-equip-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+      color: var(--dark);
+      background: #F8F8F6;
+      padding: 0.65rem 1rem;
+      border-radius: 10px;
+    }
+    .salle-equip-item::before {
+      content: '✓';
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+
+    .salle-sidebar { position: sticky; top: 100px; align-self: start; }
+    .salle-book-card {
+      background: #fff;
+      border: 1px solid #EFEFED;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+    }
+    .salle-book-card h3 {
+      font-family: var(--font-s);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .salle-book-price {
+      display: flex;
+      align-items: baseline;
+      gap: 0.3rem;
+      margin-bottom: 1.5rem;
+    }
+    .salle-book-price strong {
+      font-family: var(--font-s);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--dark);
+    }
+    .salle-book-price span { color: var(--gray); font-size: 0.85rem; }
+    .btn-book-main {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 1rem;
+      background: var(--dark);
+      color: #fff;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s;
+      margin-bottom: 0.75rem;
+      text-decoration: none;
+    }
+    .btn-book-main:hover { background: var(--blue); }
+    .btn-book-contact {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 0.85rem;
+      border: 1.5px solid #E5E5E3;
+      border-radius: 12px;
+      font-weight: 500;
+      font-size: 0.88rem;
+      color: var(--dark);
+      text-decoration: none;
+      transition: border-color 0.2s;
+      margin-bottom: 1.5rem;
+    }
+    .btn-book-contact:hover { border-color: var(--dark); }
+    .salle-book-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .salle-book-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+    .salle-book-list li::before { content: '✓'; color: #16a34a; font-weight: 700; }
+
+    .ideal-section { background: #F8F8F6; padding: 4rem 0; margin-bottom: 0; }
+    .ideal-section h3 {
+      font-family: var(--font-s);
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--dark);
+    }
+    .ideal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .ideal-item {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.2rem 1.4rem;
+      font-size: 0.85rem;
+      color: var(--dark);
+      border-left: 3px solid var(--blue);
+    }
+
+    .booking-popup {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .booking-popup.open { display: flex; }
+    .booking-popup-inner {
+      background: #fff;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 900px;
+      height: 85vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.3);
+    }
+    .booking-popup-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 1.5rem;
+      border-bottom: 1px solid #EFEFED;
+    }
+    .booking-popup-header h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    .booking-popup-close {
+      background: #F4F4F2;
+      border: none;
+      border-radius: 50%;
+      width: 36px; height: 36px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--dark);
+    }
+    .booking-popup iframe {
+      flex: 1;
+      width: 100%;
+      border: none;
+    }
+
+    .salle-footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.82rem;
+    }
+    .salle-footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    .salle-footer a:hover { color: #fff; }
+
+    @media (max-width: 900px) {
+      .salle-wrap { grid-template-columns: 1fr; }
+      .salle-sidebar { position: static; }
+      .salle-hero-content { padding: 0 1.5rem; }
+      .ideal-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .salle-hero { height: 60vh; border-radius: 0 0 20px 20px; }
+      .salle-gallery-thumbs { grid-template-columns: repeat(3, 1fr); }
+      .salle-equip-grid { grid-template-columns: 1fr; }
+      .ideal-grid { grid-template-columns: 1fr; }
+      .salle-hero h1 { font-size: 2rem; }
+    }
+  </style>
 </head>
 <body>
 
@@ -29,82 +339,64 @@
   </div>
 </nav>
 
-<!-- HERO IMAGE PLEINE LARGEUR -->
-<div class="salle-page-hero" id="salle-hero">
-  <img src="images/sankara.jpg" alt="Salle Sankara" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&q=80'"/>
-  <div class="salle-page-hero-overlay"></div>
-  <div class="salle-page-hero-content container">
-    <nav class="salle-breadcrumb" style="margin-bottom:0.75rem;">
+<!-- HERO -->
+<div class="salle-hero">
+  <img src="sankara.jpg" alt="Salle Sankara"/>
+  <div class="salle-hero-overlay"></div>
+  <div class="salle-hero-content">
+    <nav class="salle-breadcrumb">
       <a href="index.html">Accueil</a><span>›</span>
       <a href="index.html#espaces">Espaces</a><span>›</span>
       Salle Sankara
     </nav>
     <h1>Salle Sankara</h1>
-    <div class="salle-hero-badges">
-      <span class="salle-hero-badge salle-hero-badge--avail">Disponible</span>
-      <span class="salle-hero-badge salle-hero-badge--type">Formation</span>
-      <span class="salle-hero-badge salle-hero-badge--price">À partir de 80€/h</span>
+    <div class="salle-hero-meta">
+      <span class="salle-hero-tag salle-hero-tag--avail">Disponible</span>
+      <span class="salle-hero-tag salle-hero-tag--type">Formation</span>
+      <span class="salle-hero-tag salle-hero-tag--price">À partir de 35€/h</span>
     </div>
   </div>
 </div>
 
-<!-- STATS RAPIDES -->
-<div class="salle-quick-stats">
-  <div class="salle-quick-stats-inner">
-    <div class="sqs-item"><strong>16</strong><span>Personnes max.</span></div>
-    <div class="sqs-item"><strong>40 m²</strong><span>Surface</span></div>
-    <div class="sqs-item"><strong>7j/7</strong><span>Disponibilité</span></div>
-    <div class="sqs-item"><strong>10 min</strong><span>De Paris</span></div>
-    <div class="sqs-item"><strong>Wi-Fi</strong><span>Fibre optique</span></div>
-  </div>
-</div>
-
-<!-- LAYOUT PRINCIPAL -->
+<!-- CONTENU -->
 <div class="container">
-  <div class="salle-layout">
-    <div class="salle-left">
+  <div class="salle-wrap">
+
+    <!-- COLONNE GAUCHE -->
+    <div>
 
       <!-- GALERIE -->
-      <div class="salle-gallery reveal">
+      <div class="salle-gallery salle-section">
         <div class="salle-gallery-main">
-          <img src="images/sankara.jpg" alt="Salle Sankara" id="gallery-main-img" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&q=80'"/>
+          <img src="sankara.jpg" alt="Salle Sankara" id="gallery-main-img"/>
         </div>
         <div class="salle-gallery-thumbs">
-          <img src="images/sankara.jpg" alt="" onclick="document.getElementById('gallery-main-img').src=this.src"/>
-          <img src="images/accueil-bleu.jpg" alt="" onclick="document.getElementById('gallery-main-img').src=this.src"/>
-          <img src="images/accueil-vert.jpg" alt="" onclick="document.getElementById('gallery-main-img').src=this.src"/>
-          <img src="images/lumumba.jpg" alt="" onclick="document.getElementById('gallery-main-img').src=this.src"/>
+          <img src="sankara.jpg" alt="Salle Sankara"/>
+          <img src="sankara2.jpg" alt="Salle Sankara vue 2"/>
+          <img src="sankara3.jpg" alt="Salle Sankara vue 3"/>
         </div>
       </div>
 
       <!-- DESCRIPTION -->
-      <div class="salle-info-block reveal">
+      <div class="salle-section">
         <h2>Salle Sankara</h2>
-        <div class="salle-info-tags">
-          <span>Formation</span><span>16 personnes</span><span>40 m²</span><span class="tag-green">Disponible</span>
+        <div class="salle-tags">
+          <span>Formation</span>
+          <span>16 personnes</span>
+          <span class="tag-green">Disponible</span>
         </div>
-        <p class="salle-description">La salle Sankara se distingue par son caractère résolument haut de gamme, sublimé par une cloison vitrée élégante qui apporte une profondeur visuelle remarquable. Les œuvres d'art africaines soigneusement sélectionnées créent une atmosphère inspirante qui élève naturellement le niveau de chaque échange. Conçue pour accueillir jusqu'à 16 personnes dans 40 m² d'espace premium, elle constitue le cadre idéal pour les formations executives, les présentations clients à fort enjeu et les événements corporate qui exigent une image irréprochable. La salle Sankara transforme chaque session en une expérience mémorable.</p>
+        <p class="salle-desc">La salle Sankara est un espace de formation lumineux et moderne, baigné de lumière naturelle grâce à ses grandes baies vitrées. Pouvant accueillir jusqu'à 16 participants, elle offre un cadre professionnel et inspirant, idéal pour vos formations, ateliers et réunions de groupe. Son agencement modulable s'adapte à toutes vos configurations de travail.</p>
       </div>
 
       <!-- ÉQUIPEMENTS -->
-      <div class="salle-equip reveal">
+      <div class="salle-section">
         <h3>Équipements inclus</h3>
-        <ul class="salle-equip-list">
-          <li>Vidéoprojecteur HD</li><li>Écran de projection</li>
-          <li>Tableau blanc</li><li>Wi-Fi fibre optique</li>
-          <li>Climatisation réversible</li><li>Cafetière &amp; eau</li>
-          <li>Paperboard</li><li>Prises multiples</li>
-        </ul>
-      </div>
-
-      <!-- TARIFS -->
-      <div class="salle-pricing reveal">
-        <h3>Tarifs</h3>
-        <div class="pricing-table">
-          <div class="pricing-row"><span class="pricing-label">1 heure</span><span class="pricing-val">80€</span></div>
-          <div class="pricing-row"><span class="pricing-label">Demi-journée (4h)</span><span class="pricing-val">280€</span></div>
-          <div class="pricing-row"><span class="pricing-label">Journée complète (8h)</span><span class="pricing-val">520€</span></div>
-          <div class="pricing-row"><span class="pricing-label">Semaine (5 jours)</span><span class="pricing-val">Sur devis</span></div>
+        <div class="salle-equip-grid">
+          <div class="salle-equip-item">Vidéoprojecteur</div>
+          <div class="salle-equip-item">Wi-Fi fibre optique</div>
+          <div class="salle-equip-item">Climatisation</div>
+          <div class="salle-equip-item">Prises multiples</div>
+          <div class="salle-equip-item">Café &amp; eau</div>
         </div>
       </div>
 
@@ -112,17 +404,18 @@
 
     <!-- SIDEBAR -->
     <div class="salle-sidebar">
-      <div class="salle-book-card reveal-scale">
+      <div class="salle-book-card">
         <h3>Réserver cet espace</h3>
-        <div class="salle-book-price"><strong>80€</strong><span>/ heure</span></div>
-        <a href="https://centralisbusinessgroup.com/reservation?salle=sankara" class="btn-book-main" target="_blank">Réserver maintenant</a>
+        <div class="salle-book-price">
+          <strong>35€</strong>
+          <span>/ heure</span>
+        </div>
+        <button class="btn-book-main" onclick="openBooking()">Réserver maintenant</button>
         <a href="index.html#contact" class="btn-book-contact">Demander un devis</a>
-        <ul class="salle-book-info">
+        <ul class="salle-book-list">
           <li>Réservation en ligne 24h/24</li>
           <li>Confirmation immédiate</li>
-          <li>Annulation gratuite 48h avant</li>
-          <li>Caution remboursable</li>
-          <li>Parking gratuit</li>
+          <li>Annulation gratuite</li>
         </ul>
       </div>
     </div>
@@ -131,138 +424,30 @@
 </div>
 
 <!-- IDÉAL POUR -->
-<section class="ideal-pour">
+<section class="ideal-section">
   <div class="container">
-    <h3 class="reveal">Idéal pour</h3>
+    <h3>Idéal pour</h3>
     <div class="ideal-grid">
-      <div class="ideal-item reveal"><div class="ideal-dot"></div><p>Pitchs investisseurs et levées de fonds</p></div>
-      <div class="ideal-item reveal reveal-delay-1"><div class="ideal-dot"></div><p>Formations executives et managers</p></div>
-      <div class="ideal-item reveal reveal-delay-2"><div class="ideal-dot"></div><p>Présentations clients à fort enjeu</p></div>
-      <div class="ideal-item reveal"><div class="ideal-dot"></div><p>Ateliers d'innovation et design thinking</p></div>
-      <div class="ideal-item reveal reveal-delay-1"><div class="ideal-dot"></div><p>Conférences de presse et points médias</p></div>
-      <div class="ideal-item reveal reveal-delay-2"><div class="ideal-dot"></div><p>Événements corporate et remises de prix</p></div>
+      <div class="ideal-item">Formations professionnelles</div>
+      <div class="ideal-item">Ateliers et workshops</div>
+      <div class="ideal-item">Séminaires d'équipe</div>
+      <div class="ideal-item">Réunions de groupe</div>
+      <div class="ideal-item">Sessions de brainstorming</div>
+      <div class="ideal-item">Présentations clients</div>
     </div>
   </div>
 </section>
 
-<!-- AMBIANCE -->
-<section class="salle-ambiance">
-  <div class="container">
-    <div class="ambiance-grid">
-      <div class="ambiance-imgs reveal-left">
-        <div class="ambiance-img ambiance-img--tall">
-          <img src="images/sankara.jpg" alt="Salle Sankara" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&q=80'"/>
-        </div>
-        <div class="ambiance-img">
-          <img src="images/accueil-bleu.jpg" alt="Accueil CBG" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80'"/>
-        </div>
-        <div class="ambiance-img">
-          <img src="images/accueil-vert.jpg" alt="Espaces CBG" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1567016432779-094069958ea5?w=600&q=80'"/>
-        </div>
-      </div>
-      <div class="ambiance-text reveal-right">
-        <p class="section-eyebrow">L'environnement</p>
-        <h3>L'élégance au service de votre ambition</h3>
-        <p>La salle Sankara réunit dans un même espace l'art africain contemporain et l'architecture moderne. Sa cloison vitrée caractéristique crée une sensation d'ouverture et de fluidité, tandis que les œuvres sélectionnées avec soin témoignent d'un engagement profond pour la culture et l'excellence africaine.</p>
-        <p>Cet espace premium est conçu pour les professionnels qui refusent le compromis entre esthétique et performance. Chaque formation, chaque présentation, chaque événement organisé dans la salle Sankara bénéficie d'un cadre qui renforce naturellement la crédibilité et l'impact de votre message.</p>
-        <div class="ambiance-feature">Accès PMR et stationnement inclus</div>
-        <div class="ambiance-feature">À 10 minutes de Paris — métro et RER à proximité</div>
-        <div class="ambiance-feature">Service d'accueil personnalisé sur demande</div>
-      </div>
+<!-- POPUP RÉSERVATION -->
+<div class="booking-popup" id="bookingPopup">
+  <div class="booking-popup-inner">
+    <div class="booking-popup-header">
+      <h4>Réserver — Salle Sankara</h4>
+      <button class="booking-popup-close" onclick="closeBooking()">✕</button>
     </div>
+    <iframe src="https://centralisbusinessgroup.com/salle-sankara/" title="Réservation Salle Sankara" loading="lazy"></iframe>
   </div>
-</section>
-
-<!-- SALLES SIMILAIRES -->
-<section class="salle-related">
-  <div class="container">
-    <h2 class="reveal">Autres espaces disponibles</h2>
-    <div class="re-grid reveal">
-
-      <div class="re-card reveal">
-        <a href="salle-koroba.html" class="re-card-img-wrap">
-          <img src="images/koroba.png" alt="Salle Koroba" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=900&q=80'"/>
-          <span class="re-avail">Disponible</span>
-          <span class="re-type">Réunion</span>
-        </a>
-        <div class="re-body">
-          <div class="re-header">
-            <h3>Salle Koroba</h3>
-            <div class="re-price">À partir de <strong>50€</strong>/h</div>
-          </div>
-          <div class="re-specs">
-            <span>8 personnes</span>
-            <span>25 m²</span>
-            <span>Projecteur</span>
-          </div>
-          <p class="re-desc">Espace de réunion élégant, moulures, table en bois clair, ambiance prestige.</p>
-          <div class="re-amenities">
-            <span>Wifi</span><span>Clim</span><span>Écran</span><span>Tableau</span>
-          </div>
-          <div class="re-actions">
-            <a href="salle-koroba.html" class="re-btn-outline">Voir le détail</a>
-            <a href="https://centralisbusinessgroup.com/reservation?salle=koroba" target="_blank" class="re-btn-solid">Réserver</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="re-card reveal reveal-delay-1">
-        <a href="salle-mandela.html" class="re-card-img-wrap">
-          <img src="images/mandela.jpg" alt="Salle Mandela" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1462899006636-339e08d1844e?w=900&q=80'"/>
-          <span class="re-avail">Disponible</span>
-          <span class="re-type">Créative</span>
-        </a>
-        <div class="re-body">
-          <div class="re-header">
-            <h3>Salle Mandela</h3>
-            <div class="re-price">À partir de <strong>80€</strong>/h</div>
-          </div>
-          <div class="re-specs">
-            <span>16 personnes</span>
-            <span>40 m²</span>
-            <span>Tableau blanc</span>
-          </div>
-          <p class="re-desc">Murs gris anthracite, tableaux africains, ambiance créative et inspirante.</p>
-          <div class="re-amenities">
-            <span>Wifi</span><span>Clim</span><span>Projecteur</span><span>Art africain</span>
-          </div>
-          <div class="re-actions">
-            <a href="salle-mandela.html" class="re-btn-outline">Voir le détail</a>
-            <a href="https://centralisbusinessgroup.com/reservation?salle=mandela" target="_blank" class="re-btn-solid">Réserver</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="re-card reveal reveal-delay-2">
-        <a href="salle-lumumba.html" class="re-card-img-wrap">
-          <img src="images/lumumba.jpg" alt="Salle Lumumba" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80'"/>
-          <span class="re-avail">Disponible</span>
-          <span class="re-type re-type--premium">Séminaire</span>
-        </a>
-        <div class="re-body">
-          <div class="re-header">
-            <h3>Salle Lumumba</h3>
-            <div class="re-price">À partir de <strong>100€</strong>/h</div>
-          </div>
-          <div class="re-specs">
-            <span>20 personnes</span>
-            <span>50 m²</span>
-            <span>Sono intégrée</span>
-          </div>
-          <p class="re-desc">Grande salle lumineuse, config. îlots ou U, végétalisation, sono intégrée.</p>
-          <div class="re-amenities">
-            <span>Wifi</span><span>Clim</span><span>Projecteur</span><span>Sono</span>
-          </div>
-          <div class="re-actions">
-            <a href="salle-lumumba.html" class="re-btn-outline">Voir le détail</a>
-            <a href="https://centralisbusinessgroup.com/reservation?salle=lumumba" target="_blank" class="re-btn-solid">Réserver</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+</div>
 
 <!-- FOOTER -->
 <footer class="salle-footer">
@@ -273,19 +458,28 @@
 
 <script src="script.js"></script>
 <script>
-const sqsItems = document.querySelectorAll('.sqs-item');
-const statsObs = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('visible'), i * 80);
-      statsObs.unobserve(e.target);
-    }
+document.body.style.overflow = '';
+</script>
+<script>
+document.querySelectorAll('.salle-gallery-thumbs img').forEach(thumb => {
+  thumb.addEventListener('click', () => {
+    const main = document.getElementById('gallery-main-img');
+    main.style.opacity = '0';
+    setTimeout(() => { main.src = thumb.src; main.style.opacity = '1'; }, 200);
   });
-}, { threshold: 0.3 });
-sqsItems.forEach(el => statsObs.observe(el));
+});
 
-const hero = document.getElementById('salle-hero');
-if (hero) setTimeout(() => hero.classList.add('loaded'), 100);
+function openBooking() {
+  document.getElementById('bookingPopup').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeBooking() {
+  document.getElementById('bookingPopup').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('bookingPopup').addEventListener('click', function(e) {
+  if (e.target === this) closeBooking();
+});
 </script>
 </body>
 </html>
