@@ -188,7 +188,7 @@ img { max-width: 100%; display: block; }
   height: 72px;
 }
 .nav-logo { display: flex; align-items: center; margin-right: auto; }
-.nav-logo-img { height: 44px; width: auto; object-fit: contain; }
+.nav-logo-img { height: 64px; width: auto; object-fit: contain; }
 .nav-links {
   display: flex;
   list-style: none;
