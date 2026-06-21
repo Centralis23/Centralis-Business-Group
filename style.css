@@ -1912,36 +1912,34 @@ img { max-width: 100%; display: block; }
     text-align: left;
   }
 
-  /* 4. Cartes salles en carousel horizontal sur mobile */
+  /* 4. Cartes salles — carousel mobile */
+  .re-card, .re-card:hover {
+    transform: none !important;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07) !important;
+    transition: none !important;
+  }
+  .re-card img { transition: none !important; }
+
   .re-carousel-wrap {
     position: relative;
-    padding: 0 44px;
-  }
-  .re-arrows-row { display: none; }
-  .re-card:hover {
-    transform: none;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
   }
   .re-grid {
     display: flex;
     overflow-x: auto;
     gap: 1rem;
-    scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    padding-bottom: 1rem;
-    margin-bottom: 0;
+    padding: 0 1rem 1rem;
   }
   .re-grid::-webkit-scrollbar { display: none; }
   .re-grid .re-card {
     flex: 0 0 78vw;
     min-width: 260px;
-    scroll-snap-align: start;
   }
   .re-arrow {
     display: flex;
     position: absolute;
-    top: 45%;
+    top: 42%;
     transform: translateY(-50%);
     z-index: 10;
     width: 36px; height: 36px;
@@ -1953,22 +1951,39 @@ img { max-width: 100%; display: block; }
     justify-content: center;
     cursor: pointer;
     color: var(--dark);
-    transition: background 0.2s, color 0.2s;
   }
-  .re-arrow--prev { left: 2px; }
-  .re-arrow--next { right: 2px; }
+  .re-arrow--prev { left: -10px; }
+  .re-arrow--next { right: -10px; }
   .re-arrow:active { background: var(--blue); color: #fff; }
 
-  /* Cartes formations — mêmes flèches latérales */
+  /* 5. Cartes formations — carousel mobile */
+  .form-card, .form-card:hover {
+    transform: none !important;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07) !important;
+    transition: none !important;
+  }
+  .form-card img { transition: none !important; }
+
   .form-carousel-wrap {
     position: relative;
-    padding: 0 44px;
   }
-  .form-arrows-row { display: none !important; }
+  .form-grid {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 1rem;
+    padding: 0 1rem 1rem;
+  }
+  .form-grid::-webkit-scrollbar { display: none; }
+  .form-grid .form-card {
+    flex: 0 0 78vw;
+    min-width: 260px;
+  }
   .form-arrow {
     display: flex;
     position: absolute;
-    top: 45%;
+    top: 42%;
     transform: translateY(-50%);
     z-index: 10;
     width: 36px; height: 36px;
@@ -1980,10 +1995,9 @@ img { max-width: 100%; display: block; }
     justify-content: center;
     cursor: pointer;
     color: var(--dark);
-    transition: background 0.2s, color 0.2s;
   }
-  .form-arrow--prev { left: 2px; }
-  .form-arrow--next { right: 2px; }
+  .form-arrow--prev { left: -10px; }
+  .form-arrow--next { right: -10px; }
   .form-arrow:active { background: var(--blue); color: #fff; }
 }
 
