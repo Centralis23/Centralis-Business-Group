@@ -784,7 +784,7 @@ img { max-width: 100%; display: block; }
   justify-content: center;
   overflow: hidden;
   margin: 0 2rem;
-  border-radius: 24px 24px 0 0;
+  border-radius: 24px;
 }
 .espaces-hero-bg {
   position: absolute;
@@ -837,26 +837,30 @@ img { max-width: 100%; display: block; }
 }
 .espaces-nav {
   background: #fff;
-  padding: 1.4rem 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  justify-content: center;
-  margin: 0 2rem 3rem;
-  border-radius: 0 0 20px 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+  padding: 2.5rem 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: -80px 4rem 3rem;
+  border-radius: 28px 28px 0 0;
+  box-shadow: 0 -4px 40px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 10;
 }
 .espaces-nav-btn {
-  display: inline-block;
-  padding: 0.65rem 1.4rem;
-  background: #F4F4F2;
-  color: var(--dark);
-  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.1rem 1rem;
+  background: #6B6B6B;
+  color: #fff;
+  border-radius: 10px;
   font-family: var(--font);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 500;
   text-decoration: none;
-  transition: background 0.2s ease, color 0.2s ease;
+  text-align: center;
+  transition: background 0.2s ease;
 }
 .espaces-nav-btn:hover { background: var(--dark); color: #fff; }
 
