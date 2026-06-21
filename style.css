@@ -1274,6 +1274,37 @@ img { max-width: 100%; display: block; }
 .cf-group input:focus, .cf-group select:focus, .cf-group textarea:focus {
   outline: none; border-color: var(--blue); background: #fff;
 }
+.cf-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.cf-pill {
+  display: inline-flex;
+  cursor: pointer;
+}
+.cf-pill input[type="radio"] { display: none; }
+.cf-pill span {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  border: 1.5px solid #E8E8E6;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-family: var(--font);
+  color: var(--gray);
+  background: #FAFAF8;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+  user-select: none;
+}
+.cf-pill input[type="radio"]:checked + span {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: #fff;
+}
+.cf-pill:hover span {
+  border-color: var(--blue);
+  color: var(--blue);
+}
 .cf-group select {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; cursor: pointer;

@@ -598,14 +598,13 @@
             </div>
             <div class="cf-group">
               <label>Sujet</label>
-              <select name="sujet">
-                <option value="">Choisissez un sujet</option>
-                <option>Location de salle</option>
-                <option>Réservation studio podcast</option>
-                <option>Inscription formation</option>
-                <option>Audit apport d'affaire / conseil en entreprise</option>
-                <option>Autre demande</option>
-              </select>
+              <div class="cf-pills">
+                <label class="cf-pill"><input type="radio" name="sujet" value="Location de salle"/><span>Location de salle</span></label>
+                <label class="cf-pill"><input type="radio" name="sujet" value="Réservation studio podcast"/><span>Studio podcast</span></label>
+                <label class="cf-pill"><input type="radio" name="sujet" value="Inscription formation"/><span>Inscription formation</span></label>
+                <label class="cf-pill"><input type="radio" name="sujet" value="Audit apport d'affaire / conseil en entreprise"/><span>Audit / conseil</span></label>
+                <label class="cf-pill"><input type="radio" name="sujet" value="Autre demande"/><span>Autre demande</span></label>
+              </div>
             </div>
             <div class="cf-group">
               <label>Message</label>
