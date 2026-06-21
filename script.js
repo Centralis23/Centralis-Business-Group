@@ -180,7 +180,15 @@ if (contactForm) {
     });
   }, 120);
 
-  // Animation CSS marquee — pas besoin de JS scroll
+  // Clone cards for seamless CSS marquee loop
+  const track = document.querySelector('.act-track');
+  if (track) {
+    Array.from(track.querySelectorAll('.act-card')).forEach(card => {
+      const clone = card.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    });
+  }
 })();
 
 // 11. Filter buttons (visual only)
