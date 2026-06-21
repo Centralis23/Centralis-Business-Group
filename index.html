@@ -575,7 +575,37 @@
 
     <div class="ct-grid">
 
-      <!-- COLONNE GAUCHE : infos + formulaire -->
+      <!-- COLONNE GAUCHE : visite + calendrier -->
+      <div class="ct-right-col reveal">
+        <div class="ct-visite-card">
+          <div class="ct-visite-hero">
+            <video autoplay muted loop playsinline>
+              <source src="carte centralis.mp4" type="video/mp4"/>
+            </video>
+            <div class="ct-visite-overlay">
+              <span>Visitez nos locaux</span>
+              <p>Réservez une visite personnalisée de nos espaces</p>
+            </div>
+          </div>
+          <div class="ct-cal">
+            <div id="my-cal-inline-visite-centralis"></div>
+            <script type="text/javascript">
+              (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+              Cal("init", "visite-centralis", {origin:"https://app.cal.com"});
+              Cal.config = Cal.config || {};
+              Cal.config.forwardQueryParams = true;
+              Cal.ns["visite-centralis"]("inline", {
+                elementOrSelector:"#my-cal-inline-visite-centralis",
+                config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"},
+                calLink: "centralis-business-group-2h05wo/visite-centralis",
+              });
+              Cal.ns["visite-centralis"]("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#ffffff"},"dark":{"cal-brand":"#59639b"}},"hideEventTypeDetails":true,"layout":"month_view"});
+            </script>
+          </div>
+        </div>
+      </div>
+
+      <!-- COLONNE DROITE : infos + formulaire -->
       <div class="ct-left-col">
         <div class="ct-info-stack reveal">
           <div class="ct-info-item">
@@ -625,36 +655,6 @@
               Message envoyé ! Nous vous répondrons sous 24h.
             </div>
           </form>
-        </div>
-      </div>
-
-      <!-- COLONNE DROITE : visite + calendrier -->
-      <div class="ct-right-col reveal">
-        <div class="ct-visite-card">
-          <div class="ct-visite-hero">
-            <video autoplay muted loop playsinline>
-              <source src="carte centralis.mp4" type="video/mp4"/>
-            </video>
-            <div class="ct-visite-overlay">
-              <span>Visitez nos locaux</span>
-              <p>Réservez une visite personnalisée de nos espaces</p>
-            </div>
-          </div>
-          <div class="ct-cal">
-            <div id="my-cal-inline-visite-centralis"></div>
-            <script type="text/javascript">
-              (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-              Cal("init", "visite-centralis", {origin:"https://app.cal.com"});
-              Cal.config = Cal.config || {};
-              Cal.config.forwardQueryParams = true;
-              Cal.ns["visite-centralis"]("inline", {
-                elementOrSelector:"#my-cal-inline-visite-centralis",
-                config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"},
-                calLink: "centralis-business-group-2h05wo/visite-centralis",
-              });
-              Cal.ns["visite-centralis"]("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#ffffff"},"dark":{"cal-brand":"#59639b"}},"hideEventTypeDetails":true,"layout":"month_view"});
-            </script>
-          </div>
         </div>
       </div>
 
