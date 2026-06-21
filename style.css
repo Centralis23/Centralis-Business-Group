@@ -275,7 +275,7 @@ img { max-width: 100%; display: block; }
 .nav-links-left a:hover,
 .nav-links-right a:hover { color: var(--blue); }
 .navbar-centered .nav-logo { flex: 0 0 auto; display: flex; align-items: center; }
-.navbar-centered .nav-logo-img { height: 68px; width: auto; object-fit: contain; }
+.navbar-centered .nav-logo-img { height: 84px; width: auto; object-fit: contain; }
 .navbar-centered .burger {
   display: none;
   flex-direction: column;
