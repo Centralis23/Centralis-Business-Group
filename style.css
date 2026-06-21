@@ -1626,3 +1626,12 @@ img { max-width: 100%; display: block; }
   .act-carousel { padding: 0 1.25rem 1rem; }
 }
 .salle-footer a:hover { color: white; }
+
+@media (max-width: 768px) {
+  .hero-full-title {
+    font-size: 2.2rem;
+  }
+  .espaces-hero-title {
+    font-size: 2.2rem;
+  }
+}
