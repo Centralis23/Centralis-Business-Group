@@ -207,6 +207,32 @@ if (contactForm) {
     carousel.scrollLeft = scrollLeft - (x - startX) * 1.5;
   });
 
+  // Dots
+  const dotsContainer = document.getElementById('act-dots');
+  const totalOrig = origCards.length;
+  const dots = [];
+  if (dotsContainer) {
+    for (let i = 0; i < totalOrig; i++) {
+      const d = document.createElement('button');
+      d.className = 'act-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Activité ' + (i + 1));
+      d.addEventListener('click', () => {
+        const halfWidth = carousel.scrollWidth / 2;
+        const cardWidth = halfWidth / totalOrig;
+        carousel.scrollLeft = cardWidth * i;
+      });
+      dotsContainer.appendChild(d);
+      dots.push(d);
+    }
+  }
+  function updateDots() {
+    const halfWidth = carousel.scrollWidth / 2;
+    const cardWidth = halfWidth / totalOrig;
+    const active = Math.round(carousel.scrollLeft / cardWidth) % totalOrig;
+    dots.forEach((d, i) => d.classList.toggle('active', i === active));
+  }
+  carousel.addEventListener('scroll', updateDots, { passive: true });
+
   // Auto-scroll infini : boucle sur la première moitié (cartes originales)
   let paused = false;
   const speed = 0.6;

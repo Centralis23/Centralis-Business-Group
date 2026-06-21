@@ -1676,6 +1676,23 @@ img { max-width: 100%; display: block; }
   min-width: 5vw;
 }
 .act-carousel.dragging { cursor: grabbing; scroll-snap-type: none; }
+.act-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding-bottom: 1rem;
+}
+.act-dot {
+  width: 8px; height: 8px;
+  border-radius: 999px;
+  background: #D1D5DB;
+  transition: background 0.3s, width 0.3s;
+  cursor: pointer;
+}
+.act-dot.active {
+  background: var(--blue);
+  width: 24px;
+}
 .act-card {
   flex: 0 0 calc(30% - 1rem);
   min-width: 280px;
