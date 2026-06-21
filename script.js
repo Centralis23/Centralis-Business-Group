@@ -233,13 +233,13 @@ if (contactForm) {
   }
   carousel.addEventListener('scroll', updateDots, { passive: true });
 
-  // Auto-scroll infini : boucle sur la première moitié (cartes originales)
+  // Auto-scroll infini
   let paused = false;
   const speed = 0.6;
+  let halfWidth = 0;
 
   function autoScroll() {
-    if (!paused) {
-      const halfWidth = carousel.scrollWidth / 2;
+    if (!paused && halfWidth > 0) {
       carousel.scrollLeft += speed;
       if (carousel.scrollLeft >= halfWidth) {
         carousel.scrollLeft -= halfWidth;
@@ -247,7 +247,12 @@ if (contactForm) {
     }
     requestAnimationFrame(autoScroll);
   }
-  requestAnimationFrame(autoScroll);
+
+  // On attend le layout complet pour lire scrollWidth
+  window.addEventListener('load', () => {
+    halfWidth = carousel.scrollWidth / 2;
+    requestAnimationFrame(autoScroll);
+  });
 
   carousel.addEventListener('mouseenter', () => { paused = true; });
   carousel.addEventListener('mouseleave', () => { paused = false; });

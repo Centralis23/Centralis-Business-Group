@@ -1668,8 +1668,7 @@ img { max-width: 100%; display: block; }
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   cursor: grab;
-}
-.act-carousel::-webkit-scrollbar { display: none; }
+}.act-carousel::-webkit-scrollbar { display: none; }
 .act-carousel::after {
   content: '';
   flex: 0 0 5vw;
@@ -1696,7 +1695,7 @@ img { max-width: 100%; display: block; }
 .act-card {
   flex: 0 0 calc(30% - 1rem);
   min-width: 280px;
-  scroll-snap-align: start;
+  /* scroll-snap-align removed — handled by auto-scroll JS */
   display: flex;
   flex-direction: column;
   text-decoration: none;
