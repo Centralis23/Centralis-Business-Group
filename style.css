@@ -1471,6 +1471,14 @@ img { max-width: 100%; display: block; }
   transition: opacity 0.3s;
 }
 .partenaire-logo-item:hover img { opacity: 1; }
+.partenaire-logo-item img[src*="quietforce"] {
+  filter: none;
+  opacity: 1;
+  background: #fff;
+  border-radius: 10px;
+  padding: 6px 14px;
+}
+.partenaire-logo-item:hover img[src*="quietforce"] { opacity: 1; }
 .partenaire-logo-item span {
   font-size: 0.72rem;
   font-weight: 600;
