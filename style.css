@@ -1400,7 +1400,7 @@ img { max-width: 100%; display: block; }
 /* ── PARTENAIRES ── */
 .partenaires {
   padding: 6rem 0 5rem;
-  background: #f9fafb;
+  background: #06060f;
 }
 .part-header { text-align: center; margin-bottom: 4rem; }
 .part-heading {
@@ -1408,10 +1408,17 @@ img { max-width: 100%; display: block; }
   font-size: clamp(2.2rem, 4.5vw, 3.5rem);
   font-weight: 400;
   letter-spacing: -0.03em;
-  color: var(--dark);
+  color: #fff;
   margin: 0.4rem 0 0;
 }
-.part-heading em { font-style: italic; color: var(--blue); }
+.part-heading em { font-style: italic; color: #6b9fff; }
+.part-desc {
+  max-width: 520px;
+  margin: 1.2rem auto 0;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.75;
+}
 
 /* Marquee */
 .part-marquee-outer {
@@ -1427,8 +1434,8 @@ img { max-width: 100%; display: block; }
   z-index: 2;
   pointer-events: none;
 }
-.part-fade-left  { left: 0;  background: linear-gradient(to right, #f9fafb, transparent); }
-.part-fade-right { right: 0; background: linear-gradient(to left,  #f9fafb, transparent); }
+.part-fade-left  { left: 0;  background: linear-gradient(to right, #06060f, transparent); }
+.part-fade-right { right: 0; background: linear-gradient(to left,  #06060f, transparent); }
 
 .part-track {
   display: flex;
@@ -1485,13 +1492,13 @@ img { max-width: 100%; display: block; }
 .part-footer-link a {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--blue);
+  color: #6b9fff;
   text-decoration: none;
-  border-bottom: 1px solid rgba(30,64,175,0.3);
+  border-bottom: 1px solid rgba(107,159,255,0.35);
   padding-bottom: 2px;
-  transition: opacity 0.2s;
+  transition: color 0.2s, border-color 0.2s;
 }
-.part-footer-link a:hover { opacity: 0.65; }
+.part-footer-link a:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
 
 @media (max-width: 640px) {
   .part-logo-card { padding: 1.5rem 2rem; }
