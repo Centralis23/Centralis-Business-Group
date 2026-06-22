@@ -1842,7 +1842,7 @@ img { max-width: 100%; display: block; }
   font-family: var(--font-s);
   font-size: clamp(3rem, 5vw, 5rem);
   font-weight: 700;
-  color: rgba(17,24,39,0.07);
+  color: rgba(17,24,39,0.18);
   line-height: 1;
   letter-spacing: -0.03em;
   position: relative;
@@ -1851,7 +1851,7 @@ img { max-width: 100%; display: block; }
 }
 .activites-title em {
   font-style: italic;
-  color: rgba(17,24,39,0.07);
+  color: rgba(17,24,39,0.18);
 }
 .activites-inner {
   max-width: 1400px;
