@@ -1498,8 +1498,8 @@ img { max-width: 100%; display: block; }
   border-color: rgba(30,64,175,0.2);
 }
 .part-logo-card img {
-  height: 56px;
-  max-width: 160px;
+  height: 90px;
+  max-width: 220px;
   object-fit: contain;
   display: block;
 }
