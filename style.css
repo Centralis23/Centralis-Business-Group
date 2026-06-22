@@ -1520,7 +1520,7 @@ img { max-width: 100%; display: block; }
 
 /* ── STATS ── */
 .stats {
-  background: linear-gradient(135deg, var(--blue), var(--indigo));
+  background: linear-gradient(135deg, #1A1ACC, #4f46e5);
   padding: 5rem 2rem;
   color: #fff;
 }
