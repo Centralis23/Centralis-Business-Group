@@ -300,3 +300,38 @@ if (mainImg) {
     });
   });
 }
+
+// ── PARTENAIRES : tilt 3D + glow suivi souris ──
+(function() {
+  const cards = document.querySelectorAll('.js-tilt');
+  if (!cards.length) return;
+
+  // scroll reveal
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('part-visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  cards.forEach(c => io.observe(c));
+
+  cards.forEach(card => {
+    const glow = card.querySelector('.part-card-glow');
+    const color = card.dataset.color || '#4F46E5';
+    if (glow) glow.style.setProperty('--glow-color', color);
+
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      const x = e.clientX - r.left;
+      const y = e.clientY - r.top;
+      const cx = r.width / 2;
+      const cy = r.height / 2;
+      const rotX = ((y - cy) / cy) * -10;
+      const rotY = ((x - cx) / cx) * 10;
+      card.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.02)`;
+      card.style.borderColor = color + '55';
+      if (glow) { glow.style.left = x + 'px'; glow.style.top = y + 'px'; glow.style.background = color; }
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+      card.style.borderColor = '';
+    });
+  });
+})();
