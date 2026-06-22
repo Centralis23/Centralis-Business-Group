@@ -1398,90 +1398,168 @@ img { max-width: 100%; display: block; }
 .ct-cal #my-cal-inline-visite-centralis { min-height: 420px; height: 100%; }
 
 /* ── PARTENAIRES ── */
-.partenaires {
-  padding: 5rem 0;
-  background: #fff;
-  border-top: 1px solid rgba(17,24,39,0.07);
-  border-bottom: 1px solid rgba(17,24,39,0.07);
+.partenaires { padding: 7rem 0 5rem; background: #fff; }
+
+.part-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
 }
-.part-label {
-  text-align: center;
+.part-count {
   font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--gray);
-  margin-bottom: 3.5rem;
 }
-.part-logos {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
+.part-heading {
+  font-family: var(--font-s);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--dark);
+  margin-bottom: 3rem;
 }
-.part-divider {
-  width: 1px;
-  height: 56px;
-  background: rgba(17,24,39,0.1);
-  flex-shrink: 0;
+.part-heading em { font-style: italic; color: var(--blue); }
+
+/* bento grid */
+.part-bento {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  grid-template-rows: 480px;
+  gap: 1.25rem;
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.part-logo-item {
+.part-bento-col {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+/* carte base */
+.part-bento-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.9rem;
-  padding: 0 4rem;
+  justify-content: flex-end;
   text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* photo bg pour Quietforce */
+.part-bento-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 0.7s cubic-bezier(0.22,1,0.36,1);
+}
+.part-bento-card:hover .part-bento-bg { transform: scale(1.07); }
+.part-bento-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+  transition: background 0.4s;
+}
+.part-bento-card:hover .part-bento-overlay { background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.35) 60%, transparent 100%); }
+
+/* cartes colorées */
+.part-bento-card--violet { background: linear-gradient(135deg, #1a1acc 0%, #7c3aed 100%); }
+.part-bento-card--dark   { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+
+.part-bento-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+/* logo partenaire */
+.part-bento-logo {
+  width: 56px; height: 56px;
+  background: #fff;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 8px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
   transition: transform 0.4s cubic-bezier(0.22,1,0.36,1);
 }
-.part-logo-item:hover { transform: translateY(-4px); }
-.part-logo-item img {
-  height: 52px;
-  width: auto;
-  max-width: 160px;
-  object-fit: contain;
-  filter: grayscale(1);
-  opacity: 0.55;
-  transition: filter 0.4s, opacity 0.4s;
-}
-.part-logo-item:hover img {
-  filter: grayscale(0);
-  opacity: 1;
-}
-.part-logo-item span {
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+.part-bento-card:hover .part-bento-logo { transform: scale(1.1) rotate(-3deg); }
+.part-bento-logo img { max-width: 100%; max-height: 38px; object-fit: contain; }
+
+.part-bento-cat {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gray);
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.3s, transform 0.3s;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 0.35rem;
 }
-.part-logo-item:hover span {
-  opacity: 1;
-  transform: translateY(0);
+.part-bento-content h3 {
+  font-family: var(--font-s);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.15;
+  color: #fff;
 }
-.part-cta {
-  text-align: center;
-  margin-top: 3rem;
+.part-bento-card--lg .part-bento-content h3 { font-size: 2rem; }
+.part-bento-desc {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 0.5rem;
+  line-height: 1.5;
 }
-.part-cta a {
+
+.part-bento-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  transition: color 0.3s;
+}
+.part-bento-link svg { transition: transform 0.3s; }
+.part-bento-card:hover .part-bento-link { color: #fff; }
+.part-bento-card:hover .part-bento-link svg { transform: translate(3px,-3px); }
+
+.part-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.part-footer p { font-size: 0.9rem; color: var(--gray); }
+.part-footer-btn {
   font-size: 0.82rem;
   font-weight: 600;
   color: var(--blue);
   text-decoration: none;
-  letter-spacing: 0.03em;
   border-bottom: 1px solid var(--blue);
   padding-bottom: 2px;
   transition: opacity 0.2s;
 }
-.part-cta a:hover { opacity: 0.7; }
-@media (max-width: 768px) {
-  .part-logos { flex-direction: column; gap: 2.5rem; }
-  .part-divider { width: 40px; height: 1px; }
-  .part-logo-item { padding: 0; }
-  .part-logo-item span { opacity: 1; transform: none; }
+.part-footer-btn:hover { opacity: 0.7; }
+
+@media (max-width: 900px) {
+  .part-bento { grid-template-columns: 1fr; grid-template-rows: auto; }
+  .part-bento-card--lg { min-height: 340px; }
+  .part-bento-col { grid-template-rows: auto; }
+  .part-bento-card--sm { min-height: 200px; }
 }
 
 /* ── FOOTER ── */
