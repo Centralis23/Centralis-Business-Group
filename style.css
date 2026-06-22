@@ -1398,50 +1398,26 @@ img { max-width: 100%; display: block; }
 .ct-cal #my-cal-inline-visite-centralis { min-height: 420px; height: 100%; }
 
 /* ── PARTENAIRES ── */
-.partenaires { padding: 6rem 0 5rem; background: #fff; }
-.part-top { margin-bottom: 3rem; }
+.partenaires { padding: 6rem 0 5rem; background: #fff; overflow: hidden; }
+
+.part-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: end;
+  margin-bottom: 4rem;
+}
 .part-heading {
   font-family: var(--font-s);
-  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 400;
   letter-spacing: -0.03em;
   color: var(--dark);
+  margin: 0.5rem 0 0;
 }
 .part-heading em { font-style: italic; color: var(--blue); }
-
-.part-rows { border-top: 1px solid rgba(17,24,39,0.08); }
-.part-row {
-  display: grid;
-  grid-template-columns: 80px 140px 1fr auto;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem 2rem;
-  border-bottom: 1px solid rgba(17,24,39,0.08);
-  text-decoration: none;
-  color: var(--dark);
-  transition: background 0.3s;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.part-row:hover { background: #F7F8FF; }
-.part-row-num {
-  font-family: var(--font-s);
-  font-size: 1rem;
-  font-weight: 700;
-  color: rgba(17,24,39,0.2);
-  transition: color 0.3s;
-}
-.part-row:hover .part-row-num { color: var(--blue); }
-.part-row-logo { height: 52px; display: flex; align-items: center; }
-.part-row-logo img { max-height: 52px; max-width: 130px; object-fit: contain; filter: grayscale(0.2); transition: filter 0.3s; }
-.part-row:hover .part-row-logo img { filter: grayscale(0); }
-.part-row-info h3 { font-family: var(--font-s); font-size: 1.25rem; font-weight: 600; margin: 0; }
-.part-row-info p { font-size: 0.78rem; color: var(--gray); margin-top: 0.25rem; letter-spacing: 0.05em; text-transform: uppercase; }
-.part-row-arrow { color: rgba(17,24,39,0.2); transition: color 0.3s, transform 0.3s; }
-.part-row:hover .part-row-arrow { color: var(--blue); transform: translate(4px, -4px); }
-
-.part-bottom { padding-top: 2rem; text-align: right; }
-.part-bottom-link {
+.part-desc { font-size: 0.92rem; color: var(--gray); line-height: 1.75; margin-bottom: 1.5rem; }
+.part-cta-link {
   font-size: 0.82rem;
   font-weight: 600;
   color: var(--blue);
@@ -1450,12 +1426,77 @@ img { max-width: 100%; display: block; }
   padding-bottom: 2px;
   transition: opacity 0.2s;
 }
-.part-bottom-link:hover { opacity: 0.7; }
+.part-cta-link:hover { opacity: 0.65; }
 
-@media (max-width: 640px) {
-  .part-row { grid-template-columns: 40px 80px 1fr auto; gap: 0.75rem; padding: 1.25rem 1rem; }
-  .part-row-logo img { max-height: 36px; max-width: 80px; }
-  .part-row-info h3 { font-size: 1rem; }
+/* Marquee */
+.part-marquee-wrap {
+  position: relative;
+  border-top: 1px solid rgba(17,24,39,0.08);
+  border-bottom: 1px solid rgba(17,24,39,0.08);
+  padding: 2.5rem 0;
+  overflow: hidden;
+}
+.part-marquee-wrap::before,
+.part-marquee-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+.part-marquee-wrap::before { left: 0; background: linear-gradient(to right, #fff 0%, transparent 100%); }
+.part-marquee-wrap::after  { right: 0; background: linear-gradient(to left, #fff 0%, transparent 100%); }
+
+.part-marquee { overflow: hidden; }
+.part-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: max-content;
+  animation: marquee-scroll 22s linear infinite;
+}
+.part-marquee-track:hover { animation-play-state: paused; }
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-33.333%); }
+}
+
+.part-marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-shrink: 0;
+}
+.part-marquee-item img {
+  height: 44px;
+  max-width: 120px;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.55;
+  transition: filter 0.3s, opacity 0.3s;
+}
+.part-marquee-item:hover img { filter: grayscale(0); opacity: 1; }
+.part-marquee-item span {
+  font-family: var(--font-s);
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(17,24,39,0.35);
+  white-space: nowrap;
+  transition: color 0.3s;
+}
+.part-marquee-item:hover span { color: var(--dark); }
+
+.part-marquee-sep {
+  font-size: 0.7rem;
+  color: rgba(17,24,39,0.18);
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .part-header { grid-template-columns: 1fr; gap: 1.5rem; }
+  .part-marquee-item img { height: 32px; max-width: 90px; }
 }
 
 /* ── FOOTER ── */
