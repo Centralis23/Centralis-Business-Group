@@ -1795,7 +1795,7 @@ img { max-width: 100%; display: block; }
 
 /* ── ACTIVITÉS ── */
 .activites {
-  background: linear-gradient(160deg, #F7FBFF 0%, #FAFCFF 60%, #F5FAFF 100%);
+  background: #ffffff;
   padding: 5rem 0 6rem;
   position: relative;
 }
@@ -1899,12 +1899,17 @@ img { max-width: 100%; display: block; }
   background: #fff;
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 2px 20px rgba(0,0,0,0.07);
+  border: 1px solid rgba(17,24,39,0.08);
+  box-shadow: 0 4px 24px rgba(17,24,39,0.09);
   opacity: 1;
   transform: none;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.35s ease, transform 0.35s ease, border-color 0.35s ease;
 }
-.act-card:hover { box-shadow: 0 8px 40px rgba(0,0,0,0.13); }
+.act-card:hover {
+  box-shadow: 0 16px 48px rgba(17,24,39,0.16);
+  transform: translateY(-5px);
+  border-color: rgba(30,64,175,0.18);
+}
 .act-img {
   position: relative;
   overflow: hidden;
