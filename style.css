@@ -1400,7 +1400,7 @@ img { max-width: 100%; display: block; }
 /* ── PARTENAIRES ── */
 .partenaires {
   padding: 6rem 0 5rem;
-  background: #06060f;
+  background: #06060f !important;
 }
 .part-header { text-align: center; margin-bottom: 4rem; }
 .part-heading {
