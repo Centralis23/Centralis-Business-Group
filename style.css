@@ -1442,13 +1442,14 @@ img { max-width: 100%; display: block; }
   align-items: center;
   gap: 2rem;
   width: max-content;
-  animation: part-scroll 20s linear infinite;
+  animation: part-scroll 35s linear infinite;
+  will-change: transform;
 }
-.part-track:hover { animation-play-state: paused; }
+.part-marquee-outer:hover .part-track { animation-play-state: paused; }
 
 @keyframes part-scroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
 }
 
 .part-logo-card {
