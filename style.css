@@ -1707,7 +1707,7 @@ img { max-width: 100%; display: block; }
 .act-arrow { display: none; }
 .act-carousel {
   overflow: hidden;
-  padding: 0.5rem 0 2rem;
+  padding: 0.5rem 1.5rem 2rem;
 }
 .act-track {
   display: grid;
