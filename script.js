@@ -181,20 +181,23 @@ if (contactForm) {
   const cards = document.querySelectorAll('.act-card');
   if (!cards.length) return;
 
-  // Scroll reveal
+  // Apparition une par une avec délai échelonné
+  cards.forEach((c, i) => { c.style.transitionDelay = (i * 0.15) + 's'; });
   const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.05 });
-  cards.forEach(c => io.observe(c));
+    if (entries.some(e => e.isIntersecting)) {
+      cards.forEach((c, i) => {
+        setTimeout(() => { c.classList.add('in-view'); }, i * 150);
+      });
+      io.disconnect();
+    }
+  }, { threshold: 0.05, rootMargin: '0px 0px -60px 0px' });
+  io.observe(cards[0]);
   setTimeout(() => {
-    cards.forEach(c => {
-      if (c.getBoundingClientRect().top < window.innerHeight) c.classList.add('in-view');
-    });
+    if (cards[0].getBoundingClientRect().top < window.innerHeight) {
+      cards.forEach((c, i) => {
+        setTimeout(() => { c.classList.add('in-view'); }, i * 150);
+      });
+    }
   }, 120);
 
   // Mobile carousel arrows
