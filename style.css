@@ -1397,6 +1397,67 @@ img { max-width: 100%; display: block; }
 .ct-cal { flex: 1; min-height: 420px; }
 .ct-cal #my-cal-inline-visite-centralis { min-height: 420px; height: 100%; }
 
+/* ── PARTENAIRES ── */
+.partenaires { padding: 7rem 0; background: #F7F8FF; }
+.partenaires-hd { text-align: center; margin-bottom: 3.5rem; }
+.partenaires-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.partenaire-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: #fff;
+  border: 1px solid rgba(26,26,204,0.1);
+  border-radius: 16px;
+  padding: 1.75rem;
+  transition: var(--tr);
+  text-decoration: none;
+  color: var(--dark);
+}
+.partenaire-card:hover { box-shadow: 0 8px 32px rgba(26,26,204,0.12); transform: translateY(-3px); border-color: var(--blue); }
+.partenaire-logo-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  background: var(--blueL);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.partenaire-logo-wrap img { width: 48px; height: 48px; object-fit: contain; }
+.partenaire-initial {
+  font-family: var(--font-s);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: 0.05em;
+}
+.partenaire-logo-wrap--plus { background: rgba(26,26,204,0.06); border: 2px dashed rgba(26,26,204,0.25); }
+.partenaire-logo-wrap--plus span { font-size: 1.8rem; font-weight: 300; color: var(--blue); line-height: 1; }
+.partenaire-info h4 { font-family: var(--font-s); font-weight: 600; font-size: 0.95rem; margin-bottom: 0.3rem; }
+.partenaire-info p { font-size: 0.82rem; color: var(--gray); line-height: 1.4; }
+.partenaire-card--cta { background: rgba(26,26,204,0.03); }
+.partenaire-btn {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.45rem 1rem;
+  background: var(--blue);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: var(--tr);
+}
+.partenaire-btn:hover { background: var(--blue3); }
+@media (max-width: 768px) {
+  .partenaires-grid { grid-template-columns: 1fr; }
+}
+
 /* ── FOOTER ── */
 .footer { background: #080818; padding: 5rem 0 2rem; }
 .footer-grid {
