@@ -1532,6 +1532,29 @@ img { max-width: 100%; display: block; }
 }
 
 
+/* ── CONTACT HERO ── */
+.contact-hero {
+  background: #06060f;
+  padding: 9rem 2rem 5rem;
+  text-align: center;
+}
+.contact-hero-inner { max-width: 700px; margin: 0 auto; }
+.contact-hero-title {
+  font-family: var(--font-s);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  color: #fff;
+  line-height: 1.05;
+  margin: 0.5rem 0 1.2rem;
+}
+.contact-hero-title em { font-style: italic; color: #6b9fff; }
+.contact-hero-sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.7;
+}
+
 /* ── FOOTER ── */
 .footer { background: #080818; padding: 5rem 0 2rem; }
 .footer-grid {
