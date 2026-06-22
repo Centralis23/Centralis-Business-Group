@@ -1399,10 +1399,10 @@ img { max-width: 100%; display: block; }
 
 /* ── PARTENAIRES ── */
 .partenaires {
-  padding: 6rem 0 5rem;
+  padding: 4rem 0 4rem;
   background: #06060f !important;
 }
-.part-header { text-align: center; margin-bottom: 4rem; }
+.part-header { text-align: center; margin-bottom: 2.5rem; }
 .part-heading {
   font-family: var(--font-s);
   font-size: clamp(2.2rem, 4.5vw, 3.5rem);
@@ -1413,11 +1413,38 @@ img { max-width: 100%; display: block; }
 }
 .part-heading em { font-style: italic; color: #6b9fff; }
 .part-desc {
-  max-width: 520px;
-  margin: 1.2rem auto 0;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: rgba(255,255,255,0.45);
   line-height: 1.75;
+  margin: 1rem auto 0;
+  max-width: 680px;
+}
+
+/* Animation d'entrée */
+.part-header.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.part-header.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.part-marquee-outer {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease 0.3s, transform 0.7s ease 0.3s;
+}
+.part-marquee-outer.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.part-footer-link.reveal {
+  opacity: 0;
+  transition: opacity 0.6s ease 0.5s;
+}
+.part-footer-link.reveal.visible {
+  opacity: 1;
 }
 
 /* Marquee */
