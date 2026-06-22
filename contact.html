@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Contactez Centralis Business Group — 12 rue Anatole France, 94140 Alfortville"/>
+  <title>Contact — Centralis Business Group</title>
+  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<nav id="navbar" class="scrolled">
+  <div class="nav-inner container">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="Centralis Business Group" class="nav-logo-img"/>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#accueil">Accueil</a></li>
+      <li><a href="salles.html">Espaces</a></li>
+      <li><a href="studio.html">Studio</a></li>
+      <li><a href="formations.html">Formations</a></li>
+      <li><a href="index.html#blog">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn-nav-cta">Nous contacter</a>
+    <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div style="padding-top:80px;">
+<section id="contact" class="contact">
+  <div class="container">
+
+    <div class="ct-header reveal">
+      <p class="section-eyebrow">Contact &amp; Rendez-vous</p>
+      <h2 class="serif-title">Parlons de<br><em>votre projet.</em></h2>
+    </div>
+
+    <div class="ct-grid">
+
+      <!-- COLONNE GAUCHE : visite + calendrier -->
+      <div class="ct-right-col reveal">
+        <div class="ct-visite-card">
+          <div class="ct-visite-hero">
+            <video autoplay muted loop playsinline>
+              <source src="carte centralis.mp4" type="video/mp4"/>
+            </video>
+            <div class="ct-visite-overlay">
+              <span>Prise de rendez-vous</span>
+              <p>Réservez votre créneau en ligne</p>
+            </div>
+          </div>
+          <div class="ct-cal">
+            <div id="my-cal-inline-visite-centralis"></div>
+            <script type="text/javascript">
+              (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+              Cal("init", "visite-centralis", {origin:"https://app.cal.com"});
+              Cal.config = Cal.config || {};
+              Cal.config.forwardQueryParams = true;
+              Cal.ns["visite-centralis"]("inline", {
+                elementOrSelector:"#my-cal-inline-visite-centralis",
+                config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"},
+                calLink: "centralis-business-group-2h05wo/visite-centralis",
+              });
+              Cal.ns["visite-centralis"]("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#ffffff"},"dark":{"cal-brand":"#59639b"}},"hideEventTypeDetails":true,"layout":"month_view"});
+            </script>
+          </div>
+        </div>
+      </div>
+
+      <!-- COLONNE DROITE : infos + formulaire -->
+      <div class="ct-left-col">
+        <div class="ct-info-stack reveal">
+          <div class="ct-info-item">
+            <div class="ct-info-icon"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M10 2a5.5 5.5 0 100 11A5.5 5.5 0 0010 2zM3 18c0-3 3.1-5 7-5s7 2 7 5"/></svg></div>
+            <div><strong>Adresse</strong><p>12 rue Anatole France, 94140 Alfortville</p></div>
+          </div>
+          <div class="ct-info-item">
+            <div class="ct-info-icon"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><rect x="2" y="4" width="16" height="12" rx="2"/><path d="M2 6l8 5.5L18 6"/></svg></div>
+            <div><strong>Email</strong><p>contact@centralisbusinessgroup.com</p></div>
+          </div>
+          <div class="ct-info-item">
+            <div class="ct-info-icon"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="10" cy="10" r="8"/><path d="M10 6v4l2.5 2"/></svg></div>
+            <div><strong>Horaires</strong><p>Lundi – Vendredi · 10h à 18h</p></div>
+          </div>
+        </div>
+
+        <div class="ct-form-wrap reveal" id="formulaire">
+          <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact"/>
+            <p style="display:none"><input name="bot-field"/></p>
+            <div class="cf-row">
+              <div class="cf-group">
+                <label>Nom</label>
+                <input type="text" name="nom" placeholder="Jean Dupont" required/>
+              </div>
+              <div class="cf-group">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="jean@exemple.fr" required/>
+              </div>
+            </div>
+            <div class="cf-group">
+              <label>Sujet</label>
+              <div class="cf-pills cf-pills--desktop">
+                <label class="cf-pill"><input type="radio" name="sujet" value="Location de salle"/><span>Location de salle</span></label>
+                <label class="cf-pill"><input type="radio" name="sujet" value="Réservation studio podcast"/><span>Studio podcast</span></label>
+                <label class="cf-pill"><input type="radio" name="sujet" value="Inscription formation"/><span>Inscription formation</span></label>
+                <label class="cf-pill"><input type="radio" name="sujet" value="Audit apport d'affaire / conseil en entreprise"/><span>Audit / conseil</span></label>
+                <label class="cf-pill"><input type="radio" name="sujet" value="Autre demande"/><span>Autre demande</span></label>
+              </div>
+              <select name="sujet" class="cf-select--mobile">
+                <option value="">Choisissez un sujet</option>
+                <option>Location de salle</option>
+                <option>Réservation studio podcast</option>
+                <option>Inscription formation</option>
+                <option>Audit apport d'affaire / conseil en entreprise</option>
+                <option>Autre demande</option>
+              </select>
+            </div>
+            <div class="cf-group">
+              <label>Message</label>
+              <textarea name="message" rows="4" placeholder="Décrivez votre projet..." required></textarea>
+            </div>
+            <button type="submit" class="ct-submit">Envoyer le message</button>
+            <div id="form-success" style="display:none;margin-top:1rem;padding:1rem;background:#DCFCE7;border-radius:10px;color:#15803D;font-weight:600;font-size:0.85rem;">
+              Message envoyé ! Nous vous répondrons sous 24h.
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="CBG" class="footer-logo" onerror="this.style.display='none'"/>
+        <p>Groupe d'excellence à Alfortville. Espaces professionnels, formations certifiées et conseil stratégique.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#a-propos">À Propos</a></li>
+          <li><a href="salles.html">Espaces</a></li>
+          <li><a href="studio.html">Studio Podcast</a></li>
+          <li><a href="formations.html">Formations</a></li>
+          <li><a href="index.html#blog">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Nos espaces</h4>
+        <ul>
+          <li><a href="salle-koroba.html">Salle Koroba</a></li>
+          <li><a href="salle-nkhrumah.html">Salle Nkhrumah</a></li>
+          <li><a href="salle-sankara.html">Salle Sankara</a></li>
+          <li><a href="salle-mandela.html">Salle Mandela</a></li>
+          <li><a href="salle-lumumba.html">Salle Lumumba</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="cgv.html">Conditions générales de vente</a></li>
+          <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>12 rue Anatole France, 94140 Alfortville</p>
+        <p>contact@centralisbusinessgroup.com</p>
+        <p>Lundi – Vendredi · 10h à 18h</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Centralis Business Group · Tous droits réservés</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
