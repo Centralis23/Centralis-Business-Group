@@ -1818,7 +1818,6 @@ img { max-width: 100%; display: block; }
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 420px;
   align-self: stretch;
 }
 .comm-center-inner {
