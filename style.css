@@ -1519,6 +1519,7 @@ img { max-width: 100%; display: block; }
 @media (max-width: 640px) {
   .part-logo-card { padding: 1.5rem 2rem; }
   .part-logo-card img { height: 95px; max-width: 200px; }
+  .part-logo-card img[alt="Quietforce Studio"] { height: 135px; max-width: 270px; }
 }
 
 
