@@ -1502,8 +1502,8 @@ img { max-width: 100%; display: block; }
   transform: translateY(-4px);
 }
 .part-logo-card img {
-  height: 60px;
-  max-width: 150px;
+  height: 75px;
+  max-width: 170px;
   object-fit: contain;
   display: block;
 }
@@ -1529,6 +1529,55 @@ img { max-width: 100%; display: block; }
   transition: color 0.2s, border-color 0.2s;
 }
 .part-cta:hover { color: #fff; border-color: rgba(255,255,255,0.6); }
+
+.part-badges {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1rem 0 1.25rem;
+}
+.part-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.55);
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 100px;
+  padding: 0.3rem 0.85rem;
+}
+.part-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1.5rem 0 1.75rem;
+}
+.part-meta-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+.part-meta-num {
+  font-family: var(--font-s);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+.part-meta-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+.part-meta-sep {
+  width: 1px;
+  height: 2rem;
+  background: rgba(255,255,255,0.12);
+}
 
 @media (max-width: 640px) {
   .part-logo-card { padding: 1.5rem 2rem; height: 130px; justify-content: center; overflow: hidden; }
