@@ -222,15 +222,18 @@ img { max-width: 100%; display: block; }
   .nav-links.open {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    width: 100%;
+    position: fixed;
+    top: 80px;
+    right: 1rem;
+    left: auto;
+    width: auto;
+    min-width: 180px;
     background: white;
-    padding: 1rem;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    padding: 0.5rem 0;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
     z-index: 999;
+    border-radius: 12px;
+    border: 1px solid rgba(17,24,39,0.08);
   }
   .nav-links.open a { color: var(--dark) !important; padding: 0.75rem 1rem; }
   .burger { display: flex; }
