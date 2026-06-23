@@ -1488,8 +1488,8 @@ img { max-width: 100%; display: block; }
   transform: translateY(-4px);
 }
 .part-logo-card img {
-  height: 110px;
-  max-width: 260px;
+  height: 150px;
+  max-width: 340px;
   object-fit: contain;
   display: block;
 }
@@ -1518,7 +1518,7 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 640px) {
   .part-logo-card { padding: 1.5rem 2rem; }
-  .part-logo-card img { height: 75px; max-width: 170px; }
+  .part-logo-card img { height: 95px; max-width: 200px; }
 }
 
 
