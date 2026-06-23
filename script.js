@@ -221,21 +221,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// 7. Video fallback — économiseur batterie / autoplay bloqué
+// 7. Video — forcer la lecture même en mode économiseur de batterie
 const heroVideo = document.querySelector('.hero-full-vid');
 const heroFallback = document.querySelector('.hero-fallback');
 if (heroVideo) {
-  const playPromise = heroVideo.play();
-  if (playPromise !== undefined) {
-    playPromise.then(() => {
-      // Vidéo lancée — masquer le fallback
+  const tryPlay = () => {
+    heroVideo.play().then(() => {
       if (heroFallback) heroFallback.style.opacity = '0';
-    }).catch(() => {
-      // Autoplay bloqué (économiseur batterie, etc.) — garder le fallback visible
-      heroVideo.style.display = 'none';
-      if (heroFallback) heroFallback.style.zIndex = '1';
-    });
-  }
+    }).catch(() => {});
+  };
+  // Tentative immédiate
+  tryPlay();
+  // Si bloqué, relancer au premier geste de l'utilisateur
+  const events = ['touchstart', 'touchend', 'click', 'scroll', 'keydown'];
+  const onInteraction = () => {
+    tryPlay();
+    events.forEach(e => document.removeEventListener(e, onInteraction));
+  };
+  events.forEach(e => document.addEventListener(e, onInteraction, { once: false, passive: true }));
   heroVideo.addEventListener('error', () => {
     heroVideo.style.display = 'none';
     if (heroFallback) heroFallback.style.zIndex = '1';
