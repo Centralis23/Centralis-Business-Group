@@ -1664,6 +1664,229 @@ img { max-width: 100%; display: block; }
   .stat-item:nth-child(4) { border-top: 1px solid rgba(17,24,39,0.1); }
 }
 
+/* ── COMMUNAUTÉ ── */
+.community {
+  padding: 6rem 0;
+  background: #f8f9ff;
+  overflow: hidden;
+}
+.comm-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+.comm-title {
+  font-family: var(--font-s);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.15;
+}
+.comm-title em { font-style: italic; font-weight: 300; color: #1a1acc; }
+
+.comm-bento {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+/* Cards */
+.comm-col { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.comm-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: default;
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease;
+}
+.comm-card:hover { transform: translateY(-6px); }
+.comm-card-inner {
+  position: relative;
+  z-index: 1;
+  padding: 1.75rem;
+}
+.comm-card-glow {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 20px;
+}
+.comm-card:hover .comm-card-glow { opacity: 1; }
+
+/* Couleurs par carte */
+.comm-card--1 {
+  background: linear-gradient(135deg, #0a0a2e 0%, #1a1acc 100%);
+  box-shadow: 0 12px 40px rgba(26,26,204,0.25);
+}
+.comm-card--1 .comm-card-glow { background: radial-gradient(circle at top right, rgba(100,120,255,0.3), transparent 60%); }
+.comm-card--1:hover { box-shadow: 0 20px 60px rgba(26,26,204,0.4); }
+
+.comm-card--2 {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  box-shadow: 0 12px 40px rgba(37,99,235,0.25);
+}
+.comm-card--2 .comm-card-glow { background: radial-gradient(circle at bottom left, rgba(147,197,253,0.2), transparent 60%); }
+.comm-card--2:hover { box-shadow: 0 20px 60px rgba(37,99,235,0.4); }
+
+.comm-card--3 {
+  background: linear-gradient(135deg, #1d4ed8 0%, #60a5fa 100%);
+  box-shadow: 0 12px 40px rgba(29,78,216,0.25);
+}
+.comm-card--3 .comm-card-glow { background: radial-gradient(circle at top left, rgba(255,255,255,0.15), transparent 60%); }
+.comm-card--3:hover { box-shadow: 0 20px 60px rgba(29,78,216,0.4); }
+
+.comm-card--4 {
+  background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
+  box-shadow: 0 12px 40px rgba(15,23,42,0.3);
+}
+.comm-card--4 .comm-card-glow { background: radial-gradient(circle at bottom right, rgba(96,165,250,0.2), transparent 60%); }
+.comm-card--4:hover { box-shadow: 0 20px 60px rgba(30,64,175,0.5); }
+
+/* Contenu des cartes */
+.comm-num {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 0.85rem;
+}
+.comm-icon {
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  margin-bottom: 1rem;
+  transition: background 0.3s, transform 0.3s;
+}
+.comm-card:hover .comm-icon { background: rgba(255,255,255,0.2); transform: scale(1.08); }
+.comm-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.6rem;
+  line-height: 1.25;
+}
+.comm-card p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.comm-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 100px;
+  padding: 0.25rem 0.75rem;
+}
+
+/* Centre */
+.comm-center {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+}
+.comm-center-dot {
+  position: absolute;
+  width: 10px; height: 10px;
+  background: #1a1acc;
+  border-radius: 50%;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.comm-center-ring {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid rgba(26,26,204,0.15);
+  animation: ringPulse 3s ease-in-out infinite;
+}
+.comm-center-ring--1 { width: 120px; height: 120px; animation-delay: 0s; }
+.comm-center-ring--2 { width: 220px; height: 220px; animation-delay: 0.8s; border-color: rgba(26,26,204,0.08); }
+@keyframes ringPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  50% { transform: translate(-50%, -50%) scale(1.06); opacity: 0.6; }
+}
+.comm-center-text {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 0 1rem;
+}
+.comm-center-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1a1acc;
+  margin-bottom: 0.75rem;
+}
+.comm-center-heading {
+  font-family: var(--font-s);
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  font-weight: 800;
+  color: var(--dark);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.comm-center-heading em { font-style: italic; font-weight: 300; color: #1a1acc; }
+.comm-center-sub {
+  font-size: 0.8rem;
+  color: rgba(17,24,39,0.5);
+  line-height: 1.65;
+  max-width: 240px;
+  margin: 0 auto;
+}
+
+/* Animations reveal */
+.comm-reveal-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+.comm-reveal-left--delay { transition-delay: 0.2s; }
+.comm-reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+.comm-reveal-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+.comm-reveal-right--delay { transition-delay: 0.2s; }
+.comm-reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+/* Mobile */
+@media (max-width: 900px) {
+  .comm-bento {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .comm-col { flex-direction: row; gap: 1rem; }
+  .comm-col .comm-card { flex: 1; }
+  .comm-center { min-height: auto; padding: 2rem 0; }
+  .comm-center-ring--1 { width: 80px; height: 80px; }
+  .comm-center-ring--2 { width: 150px; height: 150px; }
+}
+@media (max-width: 640px) {
+  .community { padding: 4rem 0; }
+  .comm-col { flex-direction: column; }
+  .comm-card-inner { padding: 1.35rem; }
+  .comm-center { padding: 1.5rem 0; }
+  .comm-center-sub { max-width: 100%; }
+}
+
 /* ── CONTACT HERO ── */
 .contact-hero {
   background: #06060f;

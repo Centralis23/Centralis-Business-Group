@@ -123,6 +123,17 @@ const counterObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
 
+// Community cards reveal
+const commObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      commObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.comm-reveal-left, .comm-reveal-right').forEach(el => commObserver.observe(el));
+
 // Stats items reveal
 const statObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
