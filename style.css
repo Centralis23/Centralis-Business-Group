@@ -1852,7 +1852,7 @@ img { max-width: 100%; display: block; }
 }
 .comm-center-heading {
   font-family: var(--font-s);
-  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
   font-weight: 800;
   color: var(--dark);
   line-height: 1.2;
