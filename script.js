@@ -136,11 +136,11 @@ function animateCounter(el) {
 const counterObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      animateCounter(entry.target);
+      setTimeout(() => animateCounter(entry.target), 400);
       counterObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.5 });
+}, { threshold: 0.3 });
 document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
 
 // Community cards reveal
@@ -158,7 +158,7 @@ document.querySelectorAll('.comm-reveal-left, .comm-reveal-right').forEach(el =>
 const statObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('in-view');
+      setTimeout(() => entry.target.classList.add('in-view'), 300);
       statObserver.unobserve(entry.target);
     }
   });
