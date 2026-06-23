@@ -123,6 +123,17 @@ const counterObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
 
+// Stats items reveal
+const statObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      statObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+document.querySelectorAll('.stat-item').forEach(el => statObserver.observe(el));
+
 // 6. Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', e => {
