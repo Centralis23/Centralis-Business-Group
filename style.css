@@ -1906,7 +1906,7 @@ img { max-width: 100%; display: block; }
   .community { padding: 4rem 0; }
   .comm-col { flex-direction: column; }
   .comm-card-inner { padding: 1.35rem; }
-  .comm-center { padding: 1.5rem 0; }
+  .comm-center { padding: 0.5rem 0; min-height: unset; }
   .comm-center-sub { max-width: 100%; }
 }
 
