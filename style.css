@@ -532,6 +532,7 @@ img { max-width: 100%; display: block; }
   color: var(--gray);
   line-height: 1.75;
   margin-bottom: 0.9rem;
+  text-align: justify;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.7s ease 0.48s, transform 0.7s cubic-bezier(0.22,1,0.36,1) 0.48s;
@@ -2517,10 +2518,6 @@ img { max-width: 100%; display: block; }
   }
   .cf-select--mobile:focus { outline: none; border-color: var(--blue); background-color: #fff; }
 
-  /* Texte "Qui sommes nous" — supprime justification sur mobile */
-  .about-desc {
-    text-align: left;
-  }
 
   /* 4. Cartes salles — carousel mobile */
   .re-card, .re-card:hover {
