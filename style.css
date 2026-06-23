@@ -1520,9 +1520,10 @@ img { max-width: 100%; display: block; }
 .part-cta:hover { color: #fff; border-color: rgba(255,255,255,0.6); }
 
 @media (max-width: 640px) {
-  .part-logo-card { padding: 1.5rem 2rem; height: 150px; justify-content: center; }
-  .part-logo-card img { height: 95px; max-width: 200px; }
-  .part-logo-card img[alt="Quietforce Studio"] { height: 130px; max-width: 260px; }
+  .part-logo-card { padding: 1.5rem 2rem; height: 130px; justify-content: center; overflow: hidden; }
+  .part-logo-card p { display: none; }
+  .part-logo-card img { height: 90px; max-width: 190px; }
+  .part-logo-card img[alt="Quietforce Studio"] { height: 120px; max-width: 240px; }
 }
 
 
