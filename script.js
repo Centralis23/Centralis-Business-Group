@@ -227,7 +227,7 @@ if (heroVideo) {
   heroVideo.play().catch(() => {});
 }
 
-// 8. Contact form — Netlify Forms
+// 8. Contact form — Web3Forms
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
   contactForm.addEventListener('submit', async function(e) {
@@ -237,13 +237,13 @@ if (contactForm) {
     btn.textContent = 'Envoi en cours...';
     btn.disabled = true;
     try {
-      const body = new URLSearchParams(new FormData(this)).toString();
-      const res = await fetch('/', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(this)))
       });
-      if (res.ok) {
+      const data = await res.json();
+      if (data.success) {
         const success = document.getElementById('form-success');
         if (success) success.style.display = 'block';
         this.reset();

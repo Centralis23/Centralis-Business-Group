@@ -96,9 +96,11 @@
         </div>
 
         <div class="ct-form-wrap reveal" id="formulaire">
-          <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="contact"/>
-            <p style="display:none"><input name="bot-field"/></p>
+          <form id="contact-form" name="contact" method="POST">
+            <input type="hidden" name="access_key" value="VOTRE_CLE_WEB3FORMS"/>
+            <input type="hidden" name="subject" value="Nouveau message — Centralis Business Group"/>
+            <input type="hidden" name="from_name" value="Site Web Centralis"/>
+            <input type="checkbox" name="botcheck" style="display:none"/>
             <div class="cf-row">
               <div class="cf-group">
                 <label>Nom</label>
