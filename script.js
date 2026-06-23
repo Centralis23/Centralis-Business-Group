@@ -224,7 +224,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // 7. Video hero
 const heroVideo = document.querySelector('.hero-full-vid');
 if (heroVideo) {
-  heroVideo.play().catch(() => {});
+  heroVideo.play().catch(() => {
+    // Autoplay bloqué (économiseur de batterie) — relance au premier toucher
+    const unlock = () => {
+      heroVideo.play().catch(() => {});
+      ['touchstart','click','scroll'].forEach(e => document.removeEventListener(e, unlock));
+    };
+    ['touchstart','click','scroll'].forEach(e => document.addEventListener(e, unlock, { once: true, passive: true }));
+  });
 }
 
 // 8. Contact form — Web3Forms
