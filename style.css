@@ -1907,7 +1907,8 @@ img { max-width: 100%; display: block; }
     align-items: center;
     text-align: center;
   }
-  .comm-center-dot { margin: 0 auto 0.75rem; }
+  .comm-center-dot { margin: 0 auto 0.5rem; }
+  .comm-header { margin-bottom: 1.5rem; }
   .comm-center-text { padding: 0; }
   .comm-center-heading { font-size: 1.3rem; }
 }
