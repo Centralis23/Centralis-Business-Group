@@ -1714,7 +1714,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* Cards */
-.comm-col { display: flex; flex-direction: column; gap: 1.25rem; }
+.comm-col { display: flex; flex-direction: column; gap: 1.25rem; justify-content: space-between; }
 
 .comm-card {
   position: relative;
