@@ -1419,6 +1419,10 @@ img { max-width: 100%; display: block; }
   margin: 1rem auto 0;
   max-width: 100%;
 }
+@media (max-width: 768px) {
+  .part-desc { text-align: justify; }
+  .part-desc-more { display: none; }
+}
 
 /* Animation d'entrée */
 .part-header.reveal {
