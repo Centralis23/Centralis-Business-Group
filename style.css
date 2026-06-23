@@ -1414,7 +1414,7 @@ img { max-width: 100%; display: block; }
 /* ── PARTENAIRES ── */
 .partenaires {
   padding: 5rem 0;
-  background: linear-gradient(160deg, #bfdbfe 0%, #60a5fa 40%, #3b82f6 100%);
+  background: linear-gradient(160deg, #f0f6ff 0%, #e8f0fe 100%);
 }
 .part-header { text-align: center; margin-bottom: 3rem; }
 .part-heading {
@@ -1466,8 +1466,8 @@ img { max-width: 100%; display: block; }
   z-index: 2;
   pointer-events: none;
 }
-.part-fade-left  { left: 0;  background: linear-gradient(to right, #bfdbfe, transparent); }
-.part-fade-right { right: 0; background: linear-gradient(to left,  #3b82f6, transparent); }
+.part-fade-left  { left: 0;  background: linear-gradient(to right, #f0f6ff, transparent); }
+.part-fade-right { right: 0; background: linear-gradient(to left,  #e8f0fe, transparent); }
 
 .part-track {
   display: flex;
