@@ -297,16 +297,18 @@ img { max-width: 100%; display: block; }
     flex-direction: column;
     position: fixed;
     top: 80px;
-    left: 0;
-    right: 0;
-    width: 100%;
+    right: 1rem;
+    left: auto;
+    width: auto;
+    min-width: 180px;
     background: white;
-    padding: 1rem 1.5rem;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    padding: 0.5rem 0;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
     z-index: 999;
-    border-top: 1px solid rgba(17,24,39,0.06);
+    border-radius: 12px;
+    border: 1px solid rgba(17,24,39,0.08);
   }
-  .nav-links-left.open a, .nav-links-right.open a { color: var(--dark) !important; padding: 0.75rem 1rem; }
+  .nav-links-left.open a, .nav-links-right.open a { color: var(--dark) !important; padding: 0.75rem 1.25rem; font-size: 0.9rem; }
   .navbar-centered .burger { display: flex; }
 }
 
