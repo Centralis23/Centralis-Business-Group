@@ -115,7 +115,10 @@
     .blog-featured-date { font-size: 0.72rem; color: rgba(255,255,255,0.45); }
 
     .blog-featured-side { display: flex; flex-direction: column; gap: 2rem; }
-    .blog-featured-side .blog-featured-card img { min-height: 200px; max-height: 200px; }
+    .blog-featured-side .blog-featured-card { flex: 1; min-height: 220px; }
+    .blog-featured-side .blog-featured-card img { min-height: 220px; height: 100%; max-height: none; }
+    .blog-featured-side .blog-featured-body { padding: 1.25rem; }
+    .blog-featured-side .blog-featured-body h2 { font-size: 0.95rem; margin-bottom: 0.4rem; }
 
     .blog-page-grid {
       display: grid;
