@@ -1420,7 +1420,7 @@ img { max-width: 100%; display: block; }
   max-width: 100%;
 }
 @media (max-width: 768px) {
-  .part-desc { text-align: justify; }
+  .part-desc { font-size: 0.8rem; text-align: justify; }
   .part-desc-more { display: none; }
 }
 
@@ -1488,8 +1488,8 @@ img { max-width: 100%; display: block; }
   transform: translateY(-4px);
 }
 .part-logo-card img {
-  height: 90px;
-  max-width: 220px;
+  height: 110px;
+  max-width: 260px;
   object-fit: contain;
   display: block;
 }
@@ -1518,7 +1518,7 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 640px) {
   .part-logo-card { padding: 1.5rem 2rem; }
-  .part-logo-card img { height: 60px; max-width: 140px; }
+  .part-logo-card img { height: 75px; max-width: 170px; }
 }
 
 
