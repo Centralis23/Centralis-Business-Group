@@ -1611,7 +1611,7 @@ img { max-width: 100%; display: block; }
   .footer { padding: 3rem 0 1.5rem; }
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
   .footer-grid > *:nth-child(3),
-  .footer-grid > *:nth-child(4) { display: none; }
+  .footer-grid > *:nth-child(5) { display: none; }
   .footer-brand p { display: none; }
 }
 .footer-logo { height: 44px; width: auto; object-fit: contain; margin-bottom: 1rem; filter: brightness(10); }
