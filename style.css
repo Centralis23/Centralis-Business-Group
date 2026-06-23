@@ -1710,7 +1710,7 @@ img { max-width: 100%; display: block; }
   display: grid;
   grid-template-columns: 1fr 1.1fr 1fr;
   gap: 1.5rem;
-  align-items: center;
+  align-items: stretch;
 }
 
 /* Cards */
