@@ -65,27 +65,47 @@ if (navbarCentered && navbarCentered !== navbar) {
   onScrollC();
 }
 
-// 3. Burger menu
+// 3. Burger menu — tiroir latéral
 const burger = document.querySelector('.burger');
 const navLeft = document.querySelector('.nav-links-left');
 const navRight = document.querySelector('.nav-links-right');
 const navLinks = document.querySelector('.nav-links');
+
+// Overlay
+const drawerOverlay = document.createElement('div');
+drawerOverlay.id = 'drawer-overlay';
+drawerOverlay.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:1000;opacity:0;transition:opacity 0.35s ease;';
+document.body.appendChild(drawerOverlay);
+
+function closeDrawer() {
+  const targets = [navLeft, navRight, navLinks].filter(Boolean);
+  targets.forEach(t => t.classList.remove('open'));
+  if (burger) burger.setAttribute('aria-expanded', 'false');
+  drawerOverlay.style.opacity = '0';
+  setTimeout(() => { drawerOverlay.style.display = 'none'; }, 350);
+  document.body.style.overflow = '';
+}
+
+function openDrawer() {
+  const targets = [navLeft, navRight, navLinks].filter(Boolean);
+  targets.forEach(t => t.classList.add('open'));
+  if (burger) burger.setAttribute('aria-expanded', 'true');
+  drawerOverlay.style.display = 'block';
+  requestAnimationFrame(() => { drawerOverlay.style.opacity = '1'; });
+  document.body.style.overflow = 'hidden';
+}
+
 if (burger) {
   burger.addEventListener('click', () => {
     const targets = [navLeft, navRight, navLinks].filter(Boolean);
-    const isOpen = targets[0] ? !targets[0].classList.contains('open') : false;
-    targets.forEach(t => t.classList.toggle('open', isOpen));
-    burger.setAttribute('aria-expanded', isOpen);
+    const isOpen = targets[0] ? targets[0].classList.contains('open') : false;
+    isOpen ? closeDrawer() : openDrawer();
   });
   [navLeft, navRight, navLinks].filter(Boolean).forEach(nav => {
-    nav.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        [navLeft, navRight, navLinks].filter(Boolean).forEach(t => t.classList.remove('open'));
-        burger.setAttribute('aria-expanded', 'false');
-      });
-    });
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
   });
 }
+drawerOverlay.addEventListener('click', closeDrawer);
 
 // 4. Scroll reveal
 const revealObserver = new IntersectionObserver((entries) => {
