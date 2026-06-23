@@ -376,6 +376,16 @@ document.querySelectorAll('.re-filter-btn').forEach(btn => {
   cards.forEach(c => io.observe(c));
 })();
 
+// Accordion — Pourquoi nous choisir (formations mobile)
+document.querySelectorAll('.form-accordion-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const body = btn.nextElementSibling;
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+    body.classList.toggle('open', !expanded);
+  });
+});
+
 // 11. Gallery thumbnail click (salle pages)
 const mainImg = document.querySelector('.salle-gallery-main img');
 if (mainImg) {
