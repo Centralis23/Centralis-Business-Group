@@ -1897,18 +1897,21 @@ img { max-width: 100%; display: block; }
     flex-direction: column;
     gap: 1rem;
   }
+  .comm-col--left { order: 2; }
+  .comm-center    { order: 1; }
+  .comm-col--right { order: 3; }
   .comm-col { flex-direction: row; gap: 1rem; }
   .comm-col .comm-card { flex: 1; }
   .comm-center {
     min-height: 0 !important;
     height: auto !important;
-    padding: 0.5rem 0;
+    padding: 0.25rem 0 0.5rem;
     justify-content: flex-start;
     align-items: center;
     text-align: center;
   }
   .comm-center-dot { margin: 0 auto 0.5rem; }
-  .comm-header { margin-bottom: 1.5rem; }
+  .comm-header { margin-bottom: 1.25rem; }
   .comm-center-text { padding: 0; }
   .comm-center-heading { font-size: 1.3rem; }
 }
