@@ -221,15 +221,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// 7. Video fallback
-const heroVideo = document.querySelector('.hero-video');
+// 7. Video fallback — économiseur batterie / autoplay bloqué
+const heroVideo = document.querySelector('.hero-full-vid');
 const heroFallback = document.querySelector('.hero-fallback');
-if (heroVideo && heroFallback) {
-  heroVideo.addEventListener('canplay', () => {
-    heroFallback.style.transition = 'opacity 0.5s';
-    heroFallback.style.opacity = '0';
-  }, { once: true });
-  heroVideo.addEventListener('error', () => { heroVideo.style.display = 'none'; });
+if (heroVideo) {
+  const playPromise = heroVideo.play();
+  if (playPromise !== undefined) {
+    playPromise.then(() => {
+      // Vidéo lancée — masquer le fallback
+      if (heroFallback) heroFallback.style.opacity = '0';
+    }).catch(() => {
+      // Autoplay bloqué (économiseur batterie, etc.) — garder le fallback visible
+      heroVideo.style.display = 'none';
+      if (heroFallback) heroFallback.style.zIndex = '1';
+    });
+  }
+  heroVideo.addEventListener('error', () => {
+    heroVideo.style.display = 'none';
+    if (heroFallback) heroFallback.style.zIndex = '1';
+  });
 }
 
 // 8. Contact form — Netlify Forms
