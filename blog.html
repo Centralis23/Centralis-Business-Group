@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Blog Centralis Business Group — Actualités, conseils formations, coworking et podcast à Alfortville"/>
+  <title>Blog — Centralis Business Group</title>
+  <link rel="icon" href="favicon.ico" sizes="any"/>
+  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css?v=10"/>
+  <style>
+    #navbar { background: rgba(255,255,255,0.97) !important; box-shadow: 0 2px 20px rgba(17,24,39,0.08) !important; }
+    #navbar .nav-links a { color: var(--dark) !important; }
+    #navbar .nav-links a:hover { color: var(--blue) !important; }
+    #navbar .burger span { background: var(--dark) !important; }
+
+    .blog-page-hero {
+      background: linear-gradient(135deg, #0a0a2e 0%, #1a1acc 100%);
+      padding: 8rem 0 5rem;
+      text-align: center;
+    }
+    .blog-page-hero .section-eyebrow { color: rgba(255,255,255,0.5); }
+    .blog-page-hero h1 {
+      font-family: var(--font-s);
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 400;
+      color: #fff;
+      letter-spacing: -0.03em;
+      margin: 0.5rem 0 1rem;
+    }
+    .blog-page-hero h1 em { font-style: italic; font-weight: 300; }
+    .blog-page-hero p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.55);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .blog-page-section {
+      padding: 5rem 0 7rem;
+      background: #fff;
+    }
+
+    .blog-featured {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .blog-featured-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      box-shadow: 0 8px 40px rgba(17,24,39,0.1);
+      transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s ease;
+    }
+    .blog-featured-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(17,24,39,0.15); }
+    .blog-featured-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      min-height: 380px;
+      transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+    }
+    .blog-featured-card:hover img { transform: scale(1.04); }
+    .blog-featured-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 60%);
+    }
+    .blog-featured-body {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 2rem;
+    }
+    .blog-featured-tag {
+      display: inline-block;
+      padding: 0.25rem 0.8rem;
+      border-radius: 50px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--blue);
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+    .blog-featured-body h2 {
+      font-family: var(--font-s);
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+    }
+    .blog-featured-body p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+    .blog-featured-date { font-size: 0.72rem; color: rgba(255,255,255,0.45); }
+
+    .blog-featured-side { display: flex; flex-direction: column; gap: 2rem; }
+    .blog-featured-side .blog-featured-card img { min-height: 170px; }
+
+    .blog-page-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .blog-page-grid-title {
+      font-family: var(--font-s);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid rgba(17,24,39,0.08);
+    }
+
+    @media (max-width: 900px) {
+      .blog-featured { grid-template-columns: 1fr; }
+      .blog-featured-card img { min-height: 260px !important; }
+      .blog-page-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .blog-page-grid { grid-template-columns: 1fr; }
+      .blog-page-hero { padding: 6rem 0 3.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="navbar" class="scrolled">
+  <div class="nav-inner container">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="Centralis Business Group" class="nav-logo-img"/>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="salles.html">Espaces</a></li>
+      <li><a href="studio.html">Studio</a></li>
+      <li><a href="formations.html">Formations</a></li>
+      <li><a href="blog.html" style="color:var(--blue)!important">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn-nav-cta">Nous contacter</a>
+    <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="blog-page-hero">
+  <div class="container">
+    <p class="section-eyebrow">Actualités & Conseils</p>
+    <h1>Le blog <em>CBG</em></h1>
+    <p>Conseils, actualités et ressources pour entrepreneurs, étudiants et créateurs de contenu.</p>
+  </div>
+</div>
+
+<!-- ARTICLES -->
+<section class="blog-page-section">
+  <div class="container">
+
+    <!-- Article mis en avant -->
+    <div class="blog-featured reveal">
+      <a href="blog-domiciliation.html" class="blog-featured-card">
+        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80" alt="Location salle de réunion"/>
+        <div class="blog-featured-overlay"></div>
+        <div class="blog-featured-body">
+          <span class="blog-featured-tag">Coworking</span>
+          <h2>Pourquoi louer une salle de réunion plutôt qu'investir dans un bureau fixe</h2>
+          <p>Flexibilité, économies et cadre professionnel : découvrez pourquoi la location de salle séduit de plus en plus d'entrepreneurs.</p>
+          <p class="blog-featured-date">12 juin 2025 · 5 min de lecture</p>
+        </div>
+      </a>
+      <div class="blog-featured-side">
+        <a href="blog-bts-alternance.html" class="blog-featured-card">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80" alt="BTS alternance"/>
+          <div class="blog-featured-overlay"></div>
+          <div class="blog-featured-body">
+            <span class="blog-featured-tag">Formation</span>
+            <h2>Comment réussir son BTS en alternance : nos conseils</h2>
+            <p class="blog-featured-date">5 juin 2025 · 4 min de lecture</p>
+          </div>
+        </a>
+        <a href="blog-podcast.html" class="blog-featured-card">
+          <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&q=80" alt="Podcast entreprise"/>
+          <div class="blog-featured-overlay"></div>
+          <div class="blog-featured-body">
+            <span class="blog-featured-tag">Podcast</span>
+            <h2>Podcast d'entreprise : pourquoi vous devez vous lancer</h2>
+            <p class="blog-featured-date">28 mai 2025 · 4 min de lecture</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="CBG" class="footer-logo" onerror="this.style.display='none'"/>
+        <p>Groupe d'excellence à Alfortville. Espaces professionnels, formations certifiées et conseil stratégique.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#a-propos">À Propos</a></li>
+          <li><a href="salles.html">Espaces</a></li>
+          <li><a href="studio.html">Studio Podcast</a></li>
+          <li><a href="formations.html">Formations</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Nos espaces</h4>
+        <ul>
+          <li><a href="salle-koroba.html">Salle Koroba</a></li>
+          <li><a href="salle-nkhrumah.html">Salle Nkhrumah</a></li>
+          <li><a href="salle-sankara.html">Salle Sankara</a></li>
+          <li><a href="salle-mandela.html">Salle Mandela</a></li>
+          <li><a href="salle-lumumba.html">Salle Lumumba</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="cgv.html">Conditions générales de vente</a></li>
+          <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>12 rue Anatole France, 94140 Alfortville</p>
+        <p>contact@centralisbusinessgroup.com</p>
+        <p>Lundi – Vendredi · 10h à 18h</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Centralis Business Group · Tous droits réservés</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
