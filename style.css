@@ -222,8 +222,8 @@ img { max-width: 100%; display: block; }
   .nav-links.open {
     display: flex;
     flex-direction: column;
-    position: fixed;
-    top: 72px;
+    position: absolute;
+    top: 100%;
     left: 0;
     right: 0;
     width: 100%;
@@ -295,8 +295,8 @@ img { max-width: 100%; display: block; }
   .nav-links-left.open, .nav-links-right.open {
     display: flex;
     flex-direction: column;
-    position: fixed;
-    top: 72px;
+    position: absolute;
+    top: 100%;
     left: 0;
     right: 0;
     width: 100%;
