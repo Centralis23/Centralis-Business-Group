@@ -71,52 +71,59 @@ const navLeft = document.querySelector('.nav-links-left');
 const navRight = document.querySelector('.nav-links-right');
 const navLinks = document.querySelector('.nav-links');
 
-// Overlay
-const drawerOverlay = document.createElement('div');
-drawerOverlay.id = 'drawer-overlay';
-drawerOverlay.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:1000;opacity:0;transition:opacity 0.35s ease;';
-document.body.appendChild(drawerOverlay);
+// Créer un tiroir séparé injecté dans le DOM
+const drawer = document.createElement('div');
+drawer.id = 'mobile-drawer';
+drawer.style.cssText = [
+  'position:fixed',
+  'top:0','right:0','bottom:0',
+  'width:75vw','max-width:300px',
+  'background:#fff',
+  'z-index:1002',
+  'padding:4.5rem 1.75rem 2rem',
+  'display:flex','flex-direction:column',
+  'gap:0',
+  'transform:translateX(110%)',
+  'transition:transform 0.35s cubic-bezier(0.4,0,0.2,1)',
+  'box-shadow:-8px 0 40px rgba(0,0,0,0.2)',
+  'overflow-y:auto',
+].join(';');
 
-function applyDrawerStyles(el, open) {
-  if (!el) return;
-  Object.assign(el.style, {
-    display: 'flex',
-    flexDirection: 'column',
-    position: 'fixed',
-    top: '0',
-    right: '0',
-    bottom: '0',
-    left: 'auto',
-    width: '75vw',
-    maxWidth: '300px',
-    background: '#ffffff',
-    padding: '5rem 2rem 2rem',
-    zIndex: '1001',
-    boxShadow: '-8px 0 40px rgba(0,0,0,0.18)',
-    gap: '0.25rem',
-    listStyle: 'none',
-    transform: open ? 'translateX(0)' : 'translateX(110%)',
-    visibility: open ? 'visible' : 'hidden',
-    transition: 'transform 0.35s cubic-bezier(0.4,0,0.2,1)',
-    margin: '0',
-    overflowY: 'auto',
-  });
-  el.querySelectorAll('a').forEach(a => {
-    Object.assign(a.style, {
-      color: '#0a0a1a',
-      padding: '0.9rem 0',
-      fontSize: '1rem',
-      fontWeight: '500',
-      borderBottom: '1px solid rgba(17,24,39,0.06)',
-      display: 'block',
-      textDecoration: 'none',
-    });
+// Bouton fermer
+const drawerClose = document.createElement('button');
+drawerClose.style.cssText = 'position:absolute;top:1.2rem;right:1.2rem;background:none;border:none;cursor:pointer;padding:4px;';
+drawerClose.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+drawer.appendChild(drawerClose);
+
+// Cloner les liens depuis le nav existant
+const sourceNav = navRight || navLinks;
+if (sourceNav) {
+  sourceNav.querySelectorAll('a').forEach(a => {
+    const link = document.createElement('a');
+    link.href = a.href;
+    link.textContent = a.textContent.trim();
+    link.style.cssText = 'display:block;padding:0.9rem 0;font-size:1rem;font-weight:600;color:#111827;border-bottom:1px solid rgba(17,24,39,0.07);text-decoration:none;';
+    drawer.appendChild(link);
   });
 }
 
+// CTA contact
+const drawerCta = document.createElement('a');
+drawerCta.href = 'contact.html';
+drawerCta.textContent = 'Nous contacter';
+drawerCta.style.cssText = 'display:block;margin-top:1.5rem;padding:0.85rem 1.25rem;background:#1a1acc;color:#fff;border-radius:6px;font-weight:700;font-size:0.85rem;text-align:center;text-decoration:none;letter-spacing:0.03em;';
+drawer.appendChild(drawerCta);
+
+document.body.appendChild(drawer);
+
+// Overlay
+const drawerOverlay = document.createElement('div');
+drawerOverlay.id = 'drawer-overlay';
+drawerOverlay.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:1001;opacity:0;transition:opacity 0.35s ease;';
+document.body.appendChild(drawerOverlay);
+
 function closeDrawer() {
-  const targets = [navLeft, navRight, navLinks].filter(Boolean);
-  targets.forEach(t => { t.classList.remove('open'); applyDrawerStyles(t, false); });
+  drawer.style.transform = 'translateX(110%)';
   if (burger) burger.setAttribute('aria-expanded', 'false');
   drawerOverlay.style.opacity = '0';
   setTimeout(() => { drawerOverlay.style.display = 'none'; }, 350);
@@ -124,28 +131,23 @@ function closeDrawer() {
 }
 
 function openDrawer() {
-  const targets = [navLeft, navRight, navLinks].filter(Boolean);
-  targets.forEach(t => { t.classList.add('open'); applyDrawerStyles(t, true); });
-  if (burger) burger.setAttribute('aria-expanded', 'true');
   drawerOverlay.style.display = 'block';
-  requestAnimationFrame(() => { drawerOverlay.style.opacity = '1'; });
+  requestAnimationFrame(() => {
+    drawerOverlay.style.opacity = '1';
+    drawer.style.transform = 'translateX(0)';
+  });
+  if (burger) burger.setAttribute('aria-expanded', 'true');
   document.body.style.overflow = 'hidden';
 }
 
-// Initialize drawer styles on load (off-screen, hidden)
-[navLeft, navRight, navLinks].filter(Boolean).forEach(t => applyDrawerStyles(t, false));
-
 if (burger) {
   burger.addEventListener('click', () => {
-    const targets = [navLeft, navRight, navLinks].filter(Boolean);
-    const isOpen = targets[0] ? targets[0].classList.contains('open') : false;
-    isOpen ? closeDrawer() : openDrawer();
-  });
-  [navLeft, navRight, navLinks].filter(Boolean).forEach(nav => {
-    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+    drawer.style.transform === 'translateX(0)' ? closeDrawer() : openDrawer();
   });
 }
+drawerClose.addEventListener('click', closeDrawer);
 drawerOverlay.addEventListener('click', closeDrawer);
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
 
 // 4. Scroll reveal
 const revealObserver = new IntersectionObserver((entries) => {

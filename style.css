@@ -1893,22 +1893,24 @@ img { max-width: 100%; display: block; }
 /* Mobile */
 @media (max-width: 900px) {
   .comm-bento {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
   }
+  .comm-center { display: none; }
   .comm-col { flex-direction: row; gap: 1rem; }
   .comm-col .comm-card { flex: 1; }
-  .comm-center { min-height: 0 !important; height: auto !important; padding: 0.75rem 0; }
-  .comm-center-ring--1 { width: 80px; height: 80px; }
-  .comm-center-ring--2 { width: 150px; height: 150px; }
+  .comm-mobile-phrase { display: block; text-align: center; padding: 1.25rem 0 0.5rem; }
+  .comm-mobile-phrase h3 { font-family: var(--font-s); font-size: 1.3rem; font-weight: 700; color: var(--dark); line-height: 1.25; letter-spacing: -0.02em; }
+  .comm-mobile-phrase h3 em { font-style: italic; font-weight: 300; color: #1a1acc; }
+  .comm-mobile-phrase p { font-size: 0.8rem; color: rgba(17,24,39,0.5); margin-top: 0.5rem; line-height: 1.55; }
 }
 @media (max-width: 640px) {
   .community { padding: 4rem 0; }
   .comm-col { flex-direction: column; }
   .comm-card-inner { padding: 1.35rem; }
-  .comm-center { min-height: 0 !important; height: auto !important; padding: 0.5rem 0; }
-  .comm-center-sub { max-width: 100%; }
 }
+.comm-mobile-phrase { display: none; }
 
 /* ── CONTACT HERO ── */
 .contact-hero {
