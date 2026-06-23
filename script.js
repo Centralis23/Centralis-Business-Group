@@ -121,26 +121,28 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 // 5. Counter animation
 function animateCounter(el) {
   const target = parseInt(el.dataset.target, 10);
-  const duration = 2000;
+  const duration = 2500;
+  el.textContent = '0';
   const startTime = performance.now();
   const update = (currentTime) => {
     const elapsed = currentTime - startTime;
     const progress = Math.min(elapsed / duration, 1);
-    const ease = 1 - Math.pow(1 - progress, 4);
+    const ease = 1 - Math.pow(1 - progress, 3);
     el.textContent = Math.floor(ease * target);
     if (progress < 1) requestAnimationFrame(update);
     else el.textContent = target;
   };
-  requestAnimationFrame(update);
+  setTimeout(() => requestAnimationFrame(update), 50);
 }
 const counterObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      setTimeout(() => animateCounter(entry.target), 400);
+      // Attend que le stat-item soit bien apparu (après son fade-in de 300ms + transition 700ms)
+      setTimeout(() => animateCounter(entry.target), 900);
       counterObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.3 });
+}, { threshold: 0.5 });
 document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
 
 // Community cards reveal
