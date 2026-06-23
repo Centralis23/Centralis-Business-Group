@@ -221,28 +221,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// 7. Video — forcer la lecture même en mode économiseur de batterie
+// 7. Video hero
 const heroVideo = document.querySelector('.hero-full-vid');
-const heroFallback = document.querySelector('.hero-fallback');
 if (heroVideo) {
-  const tryPlay = () => {
-    heroVideo.play().then(() => {
-      if (heroFallback) heroFallback.style.opacity = '0';
-    }).catch(() => {});
-  };
-  // Tentative immédiate
-  tryPlay();
-  // Si bloqué, relancer au premier geste de l'utilisateur
-  const events = ['touchstart', 'touchend', 'click', 'scroll', 'keydown'];
-  const onInteraction = () => {
-    tryPlay();
-    events.forEach(e => document.removeEventListener(e, onInteraction));
-  };
-  events.forEach(e => document.addEventListener(e, onInteraction, { once: false, passive: true }));
-  heroVideo.addEventListener('error', () => {
-    heroVideo.style.display = 'none';
-    if (heroFallback) heroFallback.style.zIndex = '1';
-  });
+  heroVideo.play().catch(() => {});
 }
 
 // 8. Contact form — Netlify Forms
