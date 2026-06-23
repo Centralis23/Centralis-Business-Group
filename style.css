@@ -1897,13 +1897,19 @@ img { max-width: 100%; display: block; }
     flex-direction: column;
     gap: 1rem;
   }
-  .comm-center { display: none; }
   .comm-col { flex-direction: row; gap: 1rem; }
   .comm-col .comm-card { flex: 1; }
-  .comm-mobile-phrase { display: block; text-align: center; padding: 1.25rem 0 0.5rem; }
-  .comm-mobile-phrase h3 { font-family: var(--font-s); font-size: 1.3rem; font-weight: 700; color: var(--dark); line-height: 1.25; letter-spacing: -0.02em; }
-  .comm-mobile-phrase h3 em { font-style: italic; font-weight: 300; color: #1a1acc; }
-  .comm-mobile-phrase p { font-size: 0.8rem; color: rgba(17,24,39,0.5); margin-top: 0.5rem; line-height: 1.55; }
+  .comm-center {
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 0.5rem 0;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+  }
+  .comm-center-dot { margin: 0 auto 0.75rem; }
+  .comm-center-text { padding: 0; }
+  .comm-center-heading { font-size: 1.3rem; }
 }
 @media (max-width: 640px) {
   .community { padding: 4rem 0; }
