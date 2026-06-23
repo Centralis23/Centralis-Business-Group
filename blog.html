@@ -136,6 +136,81 @@
       border-bottom: 2px solid rgba(17,24,39,0.08);
     }
 
+    /* Carte blog grille */
+    .blog-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(17,24,39,0.07);
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(17,24,39,0.06);
+    }
+    .blog-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(17,24,39,0.13); }
+    .blog-card-img {
+      position: relative;
+      overflow: hidden;
+      height: 200px;
+    }
+    .blog-card-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .blog-card:hover .blog-card-img img { transform: scale(1.05); }
+    .blog-card-tag {
+      position: absolute;
+      top: 1rem; left: 1rem;
+      padding: 0.22rem 0.7rem;
+      border-radius: 50px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--blue);
+      color: #fff;
+    }
+    .blog-card-body {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-card-body h3 {
+      font-family: var(--font-s);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--dark);
+      line-height: 1.35;
+      margin-bottom: 0.6rem;
+    }
+    .blog-card-body p {
+      font-size: 0.82rem;
+      color: rgba(17,24,39,0.55);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      flex: 1;
+    }
+    .blog-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+    }
+    .blog-card-date { font-size: 0.72rem; color: rgba(17,24,39,0.35); }
+    .blog-card-link {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
     @media (max-width: 900px) {
       .blog-featured { grid-template-columns: 1fr; }
       .blog-featured-card img { min-height: 260px !important; }
@@ -180,7 +255,7 @@
 <section class="blog-page-section">
   <div class="container">
 
-    <!-- Article mis en avant -->
+    <!-- Articles à la une -->
     <div class="blog-featured reveal">
       <a href="blog-domiciliation.html" class="blog-featured-card">
         <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80" alt="Location salle de réunion"/>
@@ -211,6 +286,57 @@
           </div>
         </a>
       </div>
+    </div>
+
+    <!-- Grille tous les articles -->
+    <p class="blog-page-grid-title">Tous les articles</p>
+    <div class="blog-page-grid reveal">
+
+      <a href="blog-domiciliation.html" class="blog-card">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80" alt="Location salle de réunion" loading="lazy"/>
+          <span class="blog-card-tag">Coworking</span>
+        </div>
+        <div class="blog-card-body">
+          <h3>Pourquoi louer une salle de réunion plutôt qu'investir dans un bureau fixe</h3>
+          <p>Flexibilité, économies et cadre professionnel : découvrez pourquoi la location de salle séduit de plus en plus d'entrepreneurs.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-date">12 juin 2025 · 5 min</span>
+            <span class="blog-card-link">Lire <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-bts-alternance.html" class="blog-card">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80" alt="BTS alternance" loading="lazy"/>
+          <span class="blog-card-tag">Formation</span>
+        </div>
+        <div class="blog-card-body">
+          <h3>Comment réussir son BTS en alternance : nos conseils</h3>
+          <p>Organisation, implication en entreprise, gestion du temps — nos meilleurs conseils pour réussir votre BTS en alternance.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-date">5 juin 2025 · 4 min</span>
+            <span class="blog-card-link">Lire <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-podcast.html" class="blog-card">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&q=80" alt="Podcast entreprise" loading="lazy"/>
+          <span class="blog-card-tag">Podcast</span>
+        </div>
+        <div class="blog-card-body">
+          <h3>Podcast d'entreprise : pourquoi vous devez vous lancer</h3>
+          <p>Le podcast est devenu un outil puissant pour les entreprises. Découvrez comment il peut renforcer votre image de marque.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-date">28 mai 2025 · 4 min</span>
+            <span class="blog-card-link">Lire <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </div>
+      </a>
+
     </div>
 
   </div>
