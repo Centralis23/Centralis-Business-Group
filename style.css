@@ -1431,7 +1431,7 @@ img { max-width: 100%; display: block; }
 /* ── PARTENAIRES ── */
 .partenaires {
   padding: 5rem 0;
-  background: #06060f;
+  background: linear-gradient(160deg, #eef2ff 0%, #f0f4ff 100%);
 }
 .part-header { text-align: center; margin-bottom: 3rem; }
 .part-heading {
@@ -1439,13 +1439,13 @@ img { max-width: 100%; display: block; }
   font-size: clamp(2.2rem, 4.5vw, 3.5rem);
   font-weight: 400;
   letter-spacing: -0.03em;
-  color: #fff;
+  color: #0a0a1a;
   margin: 0.4rem 0 0;
 }
-.part-heading em { font-style: italic; color: #fff; }
+.part-heading em { font-style: italic; color: #1d4ed8; }
 .part-desc {
   font-size: 0.95rem;
-  color: rgba(255,255,255,0.45);
+  color: rgba(10,10,26,0.55);
   line-height: 1.75;
   margin: 1rem auto 0;
   max-width: 100%;
@@ -1483,8 +1483,8 @@ img { max-width: 100%; display: block; }
   z-index: 2;
   pointer-events: none;
 }
-.part-fade-left  { left: 0;  background: linear-gradient(to right, #06060f, transparent); }
-.part-fade-right { right: 0; background: linear-gradient(to left,  #06060f, transparent); }
+.part-fade-left  { left: 0;  background: linear-gradient(to right, #eef2ff, transparent); }
+.part-fade-right { right: 0; background: linear-gradient(to left,  #f0f4ff, transparent); }
 
 .part-track {
   display: flex;
@@ -1566,9 +1566,9 @@ img { max-width: 100%; display: block; }
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.6);
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
+  color: #1e3a8a;
+  background: rgba(255,255,255,0.5);
+  border: 1px solid rgba(29,78,216,0.15);
   border-radius: 100px;
   padding: 0.35rem 1rem;
   opacity: 0;
@@ -1576,7 +1576,7 @@ img { max-width: 100%; display: block; }
   transition: opacity 0.5s ease, transform 0.5s ease, background 0.3s, color 0.3s;
 }
 .part-badge svg { opacity: 0.7; }
-.part-badge:hover { background: rgba(255,255,255,0.12); color: #fff; }
+.part-badge:hover { background: rgba(255,255,255,0.8); color: #1e3a8a; }
 .part-header.visible .part-badge:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
 .part-header.visible .part-badge:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.45s; }
 .part-header.visible .part-badge:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.6s; }
@@ -1597,19 +1597,19 @@ img { max-width: 100%; display: block; }
   font-family: var(--font-s);
   font-size: 1.5rem;
   font-weight: 700;
-  color: #fff;
+  color: #0a0a1a;
   line-height: 1;
 }
 .part-meta-label {
   font-size: 0.65rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
+  color: rgba(10,10,26,0.45);
 }
 .part-meta-sep {
   width: 1px;
   height: 2rem;
-  background: rgba(255,255,255,0.12);
+  background: rgba(10,10,26,0.12);
 }
 
 @media (max-width: 640px) {
