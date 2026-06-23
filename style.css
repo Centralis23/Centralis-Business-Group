@@ -218,31 +218,32 @@ img { max-width: 100%; display: block; }
 .burger span { display: block; width: 24px; height: 2px; background: white; border-radius: 2px; transition: var(--tr); }
 #navbar.scrolled .burger span { background: var(--dark); }
 @media (max-width: 900px) {
-  .nav-links, .btn-nav-cta { display: none; }
+  .nav-links, .btn-nav-cta { display: none !important; }
   .burger { display: flex; }
 
-  /* Tiroir latéral */
+  /* Tiroir latéral — pages secondaires */
   .nav-links {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     position: fixed;
     top: 0; right: 0; bottom: 0;
     width: 75vw;
     max-width: 300px;
-    background: #fff;
+    background: #ffffff !important;
     padding: 5rem 2rem 2rem;
     z-index: 1001;
-    transform: translateX(100%);
+    transform: translateX(110%);
     transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
     box-shadow: -8px 0 40px rgba(0,0,0,0.18);
     gap: 0.25rem;
+    visibility: hidden;
   }
   .nav-links.open {
-    transform: translateX(0);
-    display: flex;
+    transform: translateX(0) !important;
+    visibility: visible;
   }
-  .nav-links.open a { color: var(--dark) !important; padding: 0.9rem 0; font-size: 1rem; font-weight: 500; border-bottom: 1px solid rgba(17,24,39,0.06); }
-  .nav-links.open a:last-child { border-bottom: none; }
+  .nav-links a { color: #0a0a1a !important; padding: 0.9rem 0; font-size: 1rem; font-weight: 500; border-bottom: 1px solid rgba(17,24,39,0.06); display: block; }
+  .nav-links a:last-child { border-bottom: none; }
 }
 
 /* ── NAVBAR CENTERED ── */
@@ -300,31 +301,32 @@ img { max-width: 100%; display: block; }
 }
 .navbar-centered .burger span { display: block; width: 24px; height: 2px; background: var(--dark); border-radius: 2px; transition: var(--tr); }
 @media (max-width: 900px) {
-  .nav-links-left, .nav-links-right { display: none; }
+  .nav-links-left, .nav-links-right { display: none !important; }
   .navbar-centered .burger { display: flex; }
 
-  /* Tiroir latéral */
+  /* Tiroir latéral — page d'accueil */
   .nav-links-right {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     position: fixed;
     top: 0; right: 0; bottom: 0;
     width: 75vw;
     max-width: 300px;
-    background: #fff;
+    background: #ffffff !important;
     padding: 5rem 2rem 2rem;
     z-index: 1001;
-    transform: translateX(100%);
+    transform: translateX(110%);
     transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
     box-shadow: -8px 0 40px rgba(0,0,0,0.18);
     gap: 0.25rem;
+    visibility: hidden;
   }
   .nav-links-right.open {
-    transform: translateX(0);
-    display: flex;
+    transform: translateX(0) !important;
+    visibility: visible;
   }
-  .nav-links-right.open a { color: var(--dark) !important; padding: 0.9rem 0; font-size: 1rem; font-weight: 500; border-bottom: 1px solid rgba(17,24,39,0.06); }
-  .nav-links-right.open a:last-child { border-bottom: none; }
+  .nav-links-right a { color: #0a0a1a !important; padding: 0.9rem 0; font-size: 1rem; font-weight: 500; border-bottom: 1px solid rgba(17,24,39,0.06); display: block; }
+  .nav-links-right a:last-child { border-bottom: none; }
 }
 
 /* ── HERO FULL ── */
