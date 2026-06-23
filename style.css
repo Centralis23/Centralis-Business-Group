@@ -1898,7 +1898,7 @@ img { max-width: 100%; display: block; }
   }
   .comm-col { flex-direction: row; gap: 1rem; }
   .comm-col .comm-card { flex: 1; }
-  .comm-center { min-height: unset; padding: 1rem 0; }
+  .comm-center { min-height: 0 !important; height: auto !important; padding: 0.75rem 0; }
   .comm-center-ring--1 { width: 80px; height: 80px; }
   .comm-center-ring--2 { width: 150px; height: 150px; }
 }
@@ -1906,7 +1906,7 @@ img { max-width: 100%; display: block; }
   .community { padding: 4rem 0; }
   .comm-col { flex-direction: column; }
   .comm-card-inner { padding: 1.35rem; }
-  .comm-center { padding: 0.5rem 0; min-height: unset; }
+  .comm-center { min-height: 0 !important; height: auto !important; padding: 0.5rem 0; }
   .comm-center-sub { max-width: 100%; }
 }
 
