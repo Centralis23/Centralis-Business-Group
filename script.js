@@ -77,9 +77,46 @@ drawerOverlay.id = 'drawer-overlay';
 drawerOverlay.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:1000;opacity:0;transition:opacity 0.35s ease;';
 document.body.appendChild(drawerOverlay);
 
+function applyDrawerStyles(el, open) {
+  if (!el) return;
+  Object.assign(el.style, {
+    display: 'flex',
+    flexDirection: 'column',
+    position: 'fixed',
+    top: '0',
+    right: '0',
+    bottom: '0',
+    left: 'auto',
+    width: '75vw',
+    maxWidth: '300px',
+    background: '#ffffff',
+    padding: '5rem 2rem 2rem',
+    zIndex: '1001',
+    boxShadow: '-8px 0 40px rgba(0,0,0,0.18)',
+    gap: '0.25rem',
+    listStyle: 'none',
+    transform: open ? 'translateX(0)' : 'translateX(110%)',
+    visibility: open ? 'visible' : 'hidden',
+    transition: 'transform 0.35s cubic-bezier(0.4,0,0.2,1)',
+    margin: '0',
+    overflowY: 'auto',
+  });
+  el.querySelectorAll('a').forEach(a => {
+    Object.assign(a.style, {
+      color: '#0a0a1a',
+      padding: '0.9rem 0',
+      fontSize: '1rem',
+      fontWeight: '500',
+      borderBottom: '1px solid rgba(17,24,39,0.06)',
+      display: 'block',
+      textDecoration: 'none',
+    });
+  });
+}
+
 function closeDrawer() {
   const targets = [navLeft, navRight, navLinks].filter(Boolean);
-  targets.forEach(t => t.classList.remove('open'));
+  targets.forEach(t => { t.classList.remove('open'); applyDrawerStyles(t, false); });
   if (burger) burger.setAttribute('aria-expanded', 'false');
   drawerOverlay.style.opacity = '0';
   setTimeout(() => { drawerOverlay.style.display = 'none'; }, 350);
@@ -88,12 +125,15 @@ function closeDrawer() {
 
 function openDrawer() {
   const targets = [navLeft, navRight, navLinks].filter(Boolean);
-  targets.forEach(t => t.classList.add('open'));
+  targets.forEach(t => { t.classList.add('open'); applyDrawerStyles(t, true); });
   if (burger) burger.setAttribute('aria-expanded', 'true');
   drawerOverlay.style.display = 'block';
   requestAnimationFrame(() => { drawerOverlay.style.opacity = '1'; });
   document.body.style.overflow = 'hidden';
 }
+
+// Initialize drawer styles on load (off-screen, hidden)
+[navLeft, navRight, navLinks].filter(Boolean).forEach(t => applyDrawerStyles(t, false));
 
 if (burger) {
   burger.addEventListener('click', () => {

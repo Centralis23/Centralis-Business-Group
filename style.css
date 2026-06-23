@@ -1451,8 +1451,10 @@ img { max-width: 100%; display: block; }
   max-width: 100%;
 }
 @media (max-width: 768px) {
-  .part-desc { font-size: 0.8rem; text-align: justify; }
+  .part-desc { font-size: 0.85rem; text-align: center; max-width: 320px; margin: 0 auto; }
   .part-desc-more { display: none; }
+  .part-badges { flex-direction: column; align-items: center; gap: 0.5rem; margin: 0.75rem auto 1rem; }
+  .part-badge { width: fit-content; }
 }
 
 /* Animation d'entrée */
@@ -1896,7 +1898,7 @@ img { max-width: 100%; display: block; }
   }
   .comm-col { flex-direction: row; gap: 1rem; }
   .comm-col .comm-card { flex: 1; }
-  .comm-center { min-height: auto; padding: 2rem 0; }
+  .comm-center { min-height: unset; padding: 1rem 0; }
   .comm-center-ring--1 { width: 80px; height: 80px; }
   .comm-center-ring--2 { width: 150px; height: 150px; }
 }
