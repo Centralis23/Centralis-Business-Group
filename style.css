@@ -1430,10 +1430,10 @@ img { max-width: 100%; display: block; }
 
 /* ── PARTENAIRES ── */
 .partenaires {
-  padding: 5rem 0;
+  padding: 3rem 0;
   background: linear-gradient(160deg, #f8faff 0%, #f5f7ff 100%);
 }
-.part-header { text-align: center; margin-bottom: 3rem; }
+.part-header { text-align: center; margin-bottom: 1.5rem; }
 .part-heading {
   font-family: var(--font-s);
   font-size: clamp(2.2rem, 4.5vw, 3.5rem);
@@ -1473,7 +1473,7 @@ img { max-width: 100%; display: block; }
 .part-marquee-outer {
   position: relative;
   overflow: hidden;
-  padding: 2.5rem 0;
+  padding: 1rem 0;
 }
 .part-fade-left,
 .part-fade-right {
@@ -1536,7 +1536,7 @@ img { max-width: 100%; display: block; }
 
 .part-cta {
   display: inline-block;
-  margin-top: 1.75rem;
+  margin-top: 0.75rem;
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -1585,7 +1585,7 @@ img { max-width: 100%; display: block; }
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  margin: 1.5rem 0 1.75rem;
+  margin: 0.75rem 0 0.75rem;
 }
 .part-meta-item {
   display: flex;
