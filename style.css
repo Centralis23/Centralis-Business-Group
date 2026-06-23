@@ -1815,16 +1815,17 @@ img { max-width: 100%; display: block; }
   min-height: 420px;
 }
 .comm-center-dot {
-  width: 10px; height: 10px;
-  background: #1a1acc;
+  width: 8px; height: 8px;
+  background: #a0aec0;
   border-radius: 50%;
-  margin: 0 auto 1.2rem;
-  box-shadow: 0 0 0 4px rgba(26,26,204,0.12), 0 0 0 8px rgba(26,26,204,0.05);
+  margin: 0 auto 1.5rem;
   position: relative;
   z-index: 3;
+}
   z-index: 2;
 }
 .comm-center-ring {
+  display: none;
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
