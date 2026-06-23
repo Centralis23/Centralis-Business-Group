@@ -1809,17 +1809,19 @@ img { max-width: 100%; display: block; }
 .comm-center {
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 420px;
 }
 .comm-center-dot {
-  position: absolute;
   width: 10px; height: 10px;
   background: #1a1acc;
   border-radius: 50%;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
+  margin: 0 auto 1.2rem;
+  box-shadow: 0 0 0 4px rgba(26,26,204,0.12), 0 0 0 8px rgba(26,26,204,0.05);
+  position: relative;
+  z-index: 3;
   z-index: 2;
 }
 .comm-center-ring {
