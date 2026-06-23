@@ -1431,7 +1431,7 @@ img { max-width: 100%; display: block; }
 /* ── PARTENAIRES ── */
 .partenaires {
   padding: 5rem 0;
-  background: linear-gradient(160deg, #eef2ff 0%, #f0f4ff 100%);
+  background: linear-gradient(160deg, #f8faff 0%, #f5f7ff 100%);
 }
 .part-header { text-align: center; margin-bottom: 3rem; }
 .part-heading {
@@ -1483,8 +1483,8 @@ img { max-width: 100%; display: block; }
   z-index: 2;
   pointer-events: none;
 }
-.part-fade-left  { left: 0;  background: linear-gradient(to right, #eef2ff, transparent); }
-.part-fade-right { right: 0; background: linear-gradient(to left,  #f0f4ff, transparent); }
+.part-fade-left  { left: 0;  background: linear-gradient(to right, #f8faff, transparent); }
+.part-fade-right { right: 0; background: linear-gradient(to left,  #f5f7ff, transparent); }
 
 .part-track {
   display: flex;
