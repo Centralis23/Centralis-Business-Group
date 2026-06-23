@@ -1539,7 +1539,7 @@ img { max-width: 100%; display: block; }
 .stat-number {
   font-family: var(--font-s);
   font-size: clamp(2.2rem, 3.5vw, 3.2rem);
-  font-weight: 700;
+  font-weight: 300;
   color: #0a0a1a;
   line-height: 1;
   margin-bottom: 0.6rem;
@@ -1550,7 +1550,7 @@ img { max-width: 100%; display: block; }
 }
 .stat-label {
   font-size: 0.65rem;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 0.14em;
   color: rgba(17,24,39,0.45);
   text-transform: uppercase;
