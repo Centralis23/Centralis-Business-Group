@@ -1814,17 +1814,19 @@ img { max-width: 100%; display: block; }
 /* Centre */
 .comm-center {
   position: relative;
-  align-self: stretch;
-  min-height: 400px;
-}
-.comm-center-inner {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  min-height: 400px;
+  text-align: center;
+}
+.comm-center-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   width: 100%;
   z-index: 3;
@@ -1918,24 +1920,10 @@ img { max-width: 100%; display: block; }
   .comm-center {
     min-height: 0 !important;
     height: auto !important;
-    width: 100% !important;
-    padding: 2rem 1rem !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
+    padding: 2rem 1.5rem;
   }
   .comm-center-inner {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    transform: none !important;
-    width: 100% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    padding: 0 !important;
+    width: 100%;
   }
     display: flex;
     flex-direction: column;
