@@ -253,10 +253,12 @@ if (contactForm) {
     btn.textContent = 'Envoi en cours...';
     btn.disabled = true;
     try {
+      const formData = Object.fromEntries(new FormData(this));
+      formData.access_key = '7f32e165-460f-4517-9c22-9709b204c4eb';
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(Object.fromEntries(new FormData(this)))
+        body: JSON.stringify(formData)
       });
       const data = await res.json();
       if (data.success) {
