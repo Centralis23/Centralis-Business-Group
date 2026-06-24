@@ -188,15 +188,24 @@ const counterObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
 
 // Community cards reveal
-const commObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      commObserver.unobserve(entry.target);
-    }
+if (window.innerWidth <= 900) {
+  // Sur mobile : rendre visible immédiatement, pas d'animation
+  document.querySelectorAll('.comm-reveal-left, .comm-reveal-right, .comm-reveal-left--delay, .comm-reveal-right--delay').forEach(el => {
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+    el.style.transition = 'none';
   });
-}, { threshold: 0.15 });
-document.querySelectorAll('.comm-reveal-left, .comm-reveal-right').forEach(el => commObserver.observe(el));
+} else {
+  const commObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        commObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.comm-reveal-left, .comm-reveal-right').forEach(el => commObserver.observe(el));
+}
 
 // Stats items reveal
 const statObserver = new IntersectionObserver((entries) => {
