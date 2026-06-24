@@ -1830,6 +1830,7 @@ img { max-width: 100%; display: block; }
   text-align: center;
   width: 100%;
   z-index: 3;
+  margin: auto;
 }
 .comm-center-dot {
   width: 8px; height: 8px;
