@@ -269,9 +269,9 @@ if (contactForm) {
       } else { throw new Error(data.message || 'Erreur inconnue'); }
     } catch(err) {
       console.error('Web3Forms error:', err.message);
-      btn.textContent = 'Erreur — réessayez';
+      btn.textContent = 'Erreur : ' + (err.message || 'inconnue');
       btn.disabled = false;
-      setTimeout(() => { btn.textContent = original; btn.disabled = false; }, 3000);
+      setTimeout(() => { btn.textContent = original; btn.disabled = false; }, 6000);
     }
   });
 }
