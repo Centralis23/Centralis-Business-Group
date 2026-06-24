@@ -163,7 +163,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 // 5. Counter animation
 function animateCounter(el) {
   const target = parseInt(el.dataset.target, 10);
-  const duration = 1200;
+  const duration = 700;
   el.textContent = '0';
   const startTime = performance.now();
   const update = (currentTime) => {
@@ -180,7 +180,7 @@ const counterObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       // Attend que le stat-item soit bien apparu (après son fade-in de 300ms + transition 700ms)
-      setTimeout(() => animateCounter(entry.target), 200);
+      setTimeout(() => animateCounter(entry.target), 0);
       counterObserver.unobserve(entry.target);
     }
   });
