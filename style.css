@@ -1530,6 +1530,10 @@ img { max-width: 100%; display: block; }
   object-fit: contain;
   display: block;
 }
+.part-logo-card img[alt="Quiet Force Studio"] {
+  height: 110px;
+  max-width: 260px;
+}
 .part-logo-card p {
   font-size: 0.75rem;
   font-weight: 600;
