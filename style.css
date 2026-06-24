@@ -1529,6 +1529,7 @@ img { max-width: 100%; display: block; }
   max-width: 170px;
   object-fit: contain;
   display: block;
+  filter: brightness(0) opacity(0.55);
 }
 .part-logo-card p {
   font-size: 0.75rem;
