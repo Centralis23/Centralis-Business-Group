@@ -1910,8 +1910,8 @@ img { max-width: 100%; display: block; }
     flex-direction: column;
     gap: 1rem;
   }
-  .comm-col--left { order: 2; }
-  .comm-center    { order: 1; }
+  .comm-col--left { order: 1; }
+  .comm-center    { order: 2; }
   .comm-col--right { order: 3; }
   .comm-col { flex-direction: row; gap: 1rem; }
   .comm-col .comm-card { flex: 1; }
