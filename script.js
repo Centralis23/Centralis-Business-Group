@@ -266,8 +266,9 @@ if (contactForm) {
         if (success) success.style.display = 'block';
         this.reset();
         btn.textContent = 'Message envoyé ✓';
-      } else { throw new Error(); }
-    } catch {
+      } else { throw new Error(data.message || 'Erreur inconnue'); }
+    } catch(err) {
+      console.error('Web3Forms error:', err.message);
       btn.textContent = 'Erreur — réessayez';
       btn.disabled = false;
       setTimeout(() => { btn.textContent = original; btn.disabled = false; }, 3000);
