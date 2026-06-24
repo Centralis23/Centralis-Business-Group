@@ -1915,7 +1915,7 @@ img { max-width: 100%; display: block; }
   .comm-col--left { order: 1; }
   .comm-center    { order: 2; }
   .comm-col--right { order: 3; }
-  .comm-col { flex-direction: column; gap: 1rem; }
+  .comm-col { flex-direction: column !important; gap: 1rem !important; justify-content: flex-start !important; }
   .comm-col .comm-card { width: 100%; }
   .comm-center {
     min-height: 0 !important;
