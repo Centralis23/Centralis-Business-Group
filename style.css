@@ -1930,13 +1930,6 @@ img { max-width: 100%; display: block; }
     opacity: 1 !important;
     transform: none !important;
   }
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    padding: 0 1rem;
-  }
   .comm-center-dot { margin: 0 auto 0.5rem; }
   .comm-header { margin-bottom: 1.25rem; }
   .comm-center-text { padding: 0; }
@@ -1944,7 +1937,7 @@ img { max-width: 100%; display: block; }
 }
 @media (max-width: 640px) {
   .community { padding: 4rem 0; }
-  .comm-col { flex-direction: column; }
+  .comm-col { flex-direction: column !important; justify-content: flex-start !important; }
   .comm-card-inner { padding: 1.35rem; }
 }
 .comm-mobile-phrase { display: none; }
