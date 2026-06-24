@@ -1819,6 +1819,7 @@ img { max-width: 100%; display: block; }
   align-items: center;
   justify-content: center;
   align-self: stretch;
+  text-align: center;
 }
 .comm-center-inner {
   display: flex;
@@ -1827,6 +1828,7 @@ img { max-width: 100%; display: block; }
   text-align: center;
   position: relative;
   z-index: 3;
+  margin: auto 0;
 }
 .comm-center-dot {
   width: 8px; height: 8px;
@@ -1917,8 +1919,8 @@ img { max-width: 100%; display: block; }
   .comm-center {
     min-height: 0 !important;
     height: auto !important;
-    padding: 0.25rem 0 0.5rem;
-    justify-content: flex-start;
+    padding: 1rem 0;
+    justify-content: center;
     align-items: center;
     text-align: center;
   }
