@@ -315,11 +315,17 @@ if (contactForm) {
   }
 })();
 
-// 11. Filter buttons (visual only)
+// 11. Filter buttons
 document.querySelectorAll('.re-filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.re-filter-btn').forEach(b => b.classList.remove('re-filter-btn--active'));
     btn.classList.add('re-filter-btn--active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.re-card').forEach(card => {
+      const cats = card.dataset.category || '';
+      const show = filter === 'tous' || cats.includes(filter);
+      card.style.display = show ? '' : 'none';
+    });
   });
 });
 
