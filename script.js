@@ -6,7 +6,7 @@
 (function() {
   const el = document.getElementById('typewriter');
   if (!el) return;
-  const words = ['Réussir.', 'Innover.', 'Entreprendre.', 'Se former.', 'Exceller.'];
+  const words = ['Réussir.', 'Innover.', 'Se former.', 'Exceller.', 'Grandir.'];
   let wi = 0, ci = 0, deleting = false;
   function type() {
     const word = words[wi];
