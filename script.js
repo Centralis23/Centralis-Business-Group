@@ -26,19 +26,19 @@
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 window.scrollTo(0, 0);
 
-// 1. Intro progress bar
+// 1. Intro agence créative — compteur géant + slide up
 (function() {
   const overlay = document.getElementById('intro-overlay');
   const bar = document.getElementById('intro-progress');
   const pct = document.getElementById('intro-percent');
+  const brand = document.getElementById('intro-brand');
 
   function dismiss() {
     if (!overlay) return;
-    overlay.classList.add('hidden');
+    overlay.classList.add('slide-up');
     document.body.style.overflow = '';
     setTimeout(() => {
       if (overlay.parentNode) overlay.remove();
-      // Scroll to target section si paramètre ?to= présent (depuis boutons blog)
       const to = new URLSearchParams(window.location.search).get('to');
       if (to) {
         const target = document.getElementById(to);
@@ -47,7 +47,7 @@ window.scrollTo(0, 0);
           window.scrollTo({ top, behavior: 'smooth' });
         }
       }
-    }, 100);
+    }, 950);
   }
 
   if (!overlay || !bar) { document.body.style.overflow = ''; return; }
@@ -55,18 +55,20 @@ window.scrollTo(0, 0);
   const safetyTimer = setTimeout(dismiss, 5000);
 
   let progress = 0;
-  const duration = 2800;
-  const interval = 30;
+  const duration = 2200;
+  const interval = 20;
   const step = 100 / (duration / interval);
+
   const timer = setInterval(() => {
-    progress = Math.min(progress + step + Math.random() * step * 0.5, 100);
+    progress = Math.min(progress + step + Math.random() * step * 0.8, 100);
     bar.style.width = progress + '%';
-    if (pct) pct.textContent = Math.floor(progress) + '%';
+    if (pct) pct.textContent = Math.floor(progress);
+    if (progress >= 60 && brand) brand.classList.add('visible');
     if (progress >= 100) {
       clearInterval(timer);
       clearTimeout(safetyTimer);
-      if (pct) pct.textContent = '100%';
-      setTimeout(dismiss, 300);
+      if (pct) pct.textContent = '100';
+      setTimeout(dismiss, 400);
     }
   }, interval);
 })();
