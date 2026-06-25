@@ -2419,7 +2419,7 @@ img { max-width: 100%; display: block; }
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
   justify-content: center;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 .act-dots {
