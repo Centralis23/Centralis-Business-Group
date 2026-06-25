@@ -1562,10 +1562,9 @@ img { max-width: 100%; display: block; }
 }
 .part-formations-sub {
   display: block;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--blue);
   margin-top: 0.4rem;
   white-space: nowrap;
