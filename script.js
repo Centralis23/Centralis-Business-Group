@@ -355,6 +355,21 @@ document.querySelectorAll('.re-filter-btn').forEach(btn => {
   }, 100);
 })();
 
+// Partner formation cards carousel arrows
+(function() {
+  const grid = document.querySelector('.part-form-grid');
+  const prev = document.querySelector('.part-form-arrow--prev');
+  const next = document.querySelector('.part-form-arrow--next');
+  if (!grid || !prev || !next) return;
+  const scroll = (dir) => {
+    const card = grid.querySelector('.part-form-card');
+    if (!card) return;
+    grid.scrollBy({ left: dir * (card.offsetWidth + 16), behavior: 'smooth' });
+  };
+  prev.addEventListener('click', () => scroll(-1));
+  next.addEventListener('click', () => scroll(1));
+})();
+
 // Formation cards carousel arrows
 (function() {
   const grid = document.querySelector('.form-grid');
