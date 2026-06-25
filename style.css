@@ -2417,8 +2417,11 @@ img { max-width: 100%; display: block; }
 }
 .act-track {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
 .act-dots {
   display: flex;
