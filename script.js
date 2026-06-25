@@ -375,6 +375,32 @@ document.querySelectorAll('.re-filter-btn').forEach(btn => {
   }, 100);
 })();
 
+// Effet tilt 3D sur les cartes
+(function() {
+  const cards = document.querySelectorAll('.re-card, .act-card, .form-card, .part-form-card');
+  cards.forEach(card => {
+    card.style.transition = 'transform 0.15s ease, box-shadow 0.15s ease';
+    card.style.willChange = 'transform';
+
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const cx = rect.width / 2;
+      const cy = rect.height / 2;
+      const tiltX = ((y - cy) / cy) * -8;
+      const tiltY = ((x - cx) / cx) * 8;
+      card.style.transform = `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.03)`;
+      card.style.boxShadow = `${-tiltY * 2}px ${tiltX * 2}px 40px rgba(17,24,39,0.18)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
+      card.style.boxShadow = '';
+    });
+  });
+})();
+
 // Partner formation cards carousel arrows
 (function() {
   const grid = document.querySelector('.part-form-grid');
