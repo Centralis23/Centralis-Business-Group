@@ -1531,9 +1531,8 @@ img { max-width: 100%; display: block; }
   display: block;
 }
 .part-logo-card img[alt="Quiet Force Studio"] {
-  width: 200px;
-  height: auto;
-  max-width: none;
+  height: 75px;
+  max-width: 170px;
 }
 .part-logo-card p {
   font-size: 0.75rem;
@@ -1754,7 +1753,7 @@ img { max-width: 100%; display: block; }
   .part-logo-card { padding: 1.5rem 2rem; height: 130px; justify-content: center; overflow: hidden; }
   .part-logo-card p { display: none; }
   .part-logo-card img { height: 90px; max-width: 190px; }
-  .part-logo-card img[alt="Quiet Force Studio"] { height: 120px; max-width: 240px; }
+  .part-logo-card img[alt="Quiet Force Studio"] { height: 90px; max-width: 190px; }
 }
 
 
