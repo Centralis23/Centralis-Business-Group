@@ -1569,6 +1569,12 @@ img { max-width: 100%; display: block; }
   margin-top: 0.4rem;
   white-space: nowrap;
 }
+@media (max-width: 600px) {
+  .part-formations-sub {
+    font-size: 0.62rem;
+    letter-spacing: 0;
+  }
+}
 .part-formations-title {
   font-family: var(--font-s);
   font-size: clamp(1.4rem, 2.5vw, 2rem);
