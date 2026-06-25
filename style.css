@@ -1560,6 +1560,15 @@ img { max-width: 100%; display: block; }
   color: rgba(17,24,39,0.4);
   margin-bottom: 0.5rem;
 }
+.part-formations-sub {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-top: 0.4rem;
+}
 .part-formations-title {
   font-family: var(--font-s);
   font-size: clamp(1.4rem, 2.5vw, 2rem);
