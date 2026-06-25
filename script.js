@@ -2,6 +2,26 @@
    CENTRALIS BUSINESS GROUP — script.js
    ================================================ */
 
+// Typewriter effect
+(function() {
+  const el = document.getElementById('typewriter');
+  if (!el) return;
+  const words = ['Réussir.', 'Innover.', 'Entreprendre.', 'Se former.', 'Exceller.'];
+  let wi = 0, ci = 0, deleting = false;
+  function type() {
+    const word = words[wi];
+    if (!deleting) {
+      el.textContent = word.slice(0, ++ci);
+      if (ci === word.length) { deleting = true; setTimeout(type, 1800); return; }
+    } else {
+      el.textContent = word.slice(0, --ci);
+      if (ci === 0) { deleting = false; wi = (wi + 1) % words.length; setTimeout(type, 400); return; }
+    }
+    setTimeout(type, deleting ? 60 : 100);
+  }
+  setTimeout(type, 1200);
+})();
+
 // Désactive la restauration de scroll du navigateur
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 window.scrollTo(0, 0);
