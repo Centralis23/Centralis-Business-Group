@@ -1568,6 +1568,7 @@ img { max-width: 100%; display: block; }
   text-transform: uppercase;
   color: var(--blue);
   margin-top: 0.4rem;
+  white-space: nowrap;
 }
 .part-formations-title {
   font-family: var(--font-s);
