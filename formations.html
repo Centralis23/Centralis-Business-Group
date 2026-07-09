@@ -15,13 +15,119 @@
     #navbar .nav-links a { color: var(--dark) !important; }
     #navbar .nav-links a:hover { color: var(--blue) !important; }
     #navbar .burger span { background: var(--dark) !important; }
-    .form-carousel-wrap .form-arrow { display: none; }
-    @media (max-width: 768px) { .form-carousel-wrap .form-arrow { display: flex; } }
-    .form-grid--4 { grid-template-columns: repeat(4, 1fr) !important; }
-    @media (max-width: 1024px) { .form-grid--4 { grid-template-columns: repeat(2, 1fr) !important; } }
-    @media (max-width: 768px) { .form-grid--4 { display: flex !important; } }
-    .form-grid--2 { grid-template-columns: repeat(2, 1fr) !important; max-width: 800px; margin: 0 auto; }
-    @media (max-width: 768px) { .form-grid--2 { display: flex !important; } }
+
+    /* ── Sections partenaires ── */
+    .partner-section { padding: 3rem 0; }
+    .partner-label {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--blue);
+      background: var(--blueL); padding: 0.35rem 0.85rem;
+      border-radius: 20px; margin-bottom: 0.75rem;
+    }
+    .partner-title {
+      font-family: var(--font-s); font-size: clamp(1.4rem,2.8vw,2.2rem);
+      font-weight: 700; color: var(--dark); margin-bottom: 0.5rem;
+    }
+    .partner-title em { color: var(--blue); font-style: normal; }
+    .partner-sub { font-size: 0.9rem; color: var(--gray); margin-bottom: 2.5rem; }
+    .partner-divider { width: 100%; height: 1px; background: rgba(26,26,204,0.08); margin: 3rem 0; }
+
+    /* ── Grille EFS : 4 colonnes ── */
+    .efs-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+    @media (max-width: 1024px) { .efs-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px)  { .efs-grid { grid-template-columns: 1fr; } }
+
+    .efs-card {
+      background: #fff;
+      border: 1px solid rgba(26,26,204,0.10);
+      border-radius: 16px;
+      padding: 1.75rem 1.5rem 1.5rem;
+      display: flex; flex-direction: column;
+      box-shadow: 0 2px 16px rgba(17,24,39,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .efs-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(26,26,204,0.12); }
+    .efs-card-accent { width: 40px; height: 4px; border-radius: 2px; background: var(--blue); margin-bottom: 1.25rem; }
+    .efs-card--gold .efs-card-accent { background: #D4A017; }
+    .efs-badge {
+      display: inline-block; font-size: 0.65rem; font-weight: 800;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 4px;
+      background: var(--blueL); color: var(--blue);
+      margin-bottom: 1rem; align-self: flex-start;
+    }
+    .efs-badge--tp { background: rgba(234,179,8,0.12); color: #92400E; }
+    .efs-sigle {
+      font-family: var(--font-s); font-size: 2.2rem; font-weight: 800;
+      color: var(--dark); line-height: 1; margin-bottom: 0.4rem;
+    }
+    .efs-name { font-size: 0.78rem; color: var(--gray); line-height: 1.45; margin-bottom: 1rem; flex: 1; }
+    .efs-meta { font-size: 0.72rem; color: var(--blue); font-weight: 700; margin-bottom: 1.25rem; }
+    .efs-points { list-style: none; display: flex; flex-direction: column; gap: 0.3rem; margin-bottom: 1.25rem; }
+    .efs-points li { font-size: 0.74rem; color: #4B5563; padding-left: 14px; position: relative; }
+    .efs-points li::before { content: '—'; position: absolute; left: 0; color: var(--blue); font-weight: 700; }
+    .efs-btn {
+      display: inline-block; background: var(--blue); color: #fff;
+      padding: 0.6rem 1.2rem; border-radius: 8px;
+      font-size: 0.78rem; font-weight: 700; text-align: center;
+      transition: background 0.2s; align-self: flex-start;
+    }
+    .efs-btn:hover { background: #1212b0; }
+    .efs-card--gold .efs-btn { background: #D4A017; }
+    .efs-card--gold .efs-btn:hover { background: #b38914; }
+
+    /* ── Grille Mélio : 2 colonnes ── */
+    .melio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-width: 900px; margin: 0 auto;
+    }
+    @media (max-width: 700px) { .melio-grid { grid-template-columns: 1fr; } }
+
+    .melio-card {
+      background: #fff;
+      border: 1px solid rgba(99,102,241,0.15);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(99,102,241,0.08);
+      display: flex; flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .melio-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(99,102,241,0.16); }
+    .melio-img { aspect-ratio: 16/9; overflow: hidden; }
+    .melio-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .melio-card:hover .melio-img img { transform: scale(1.04); }
+    .melio-body { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; }
+    .melio-badge {
+      display: inline-block; font-size: 0.65rem; font-weight: 800;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 4px;
+      background: rgba(99,102,241,0.1); color: #4338CA;
+      margin-bottom: 0.9rem; align-self: flex-start;
+    }
+    .melio-sigle { font-family: var(--font-s); font-size: 1.7rem; font-weight: 800; color: var(--dark); margin-bottom: 0.3rem; }
+    .melio-name { font-size: 0.8rem; color: var(--gray); line-height: 1.4; margin-bottom: 0.9rem; }
+    .melio-desc { font-size: 0.82rem; color: #374151; line-height: 1.65; margin-bottom: 1rem; flex: 1; }
+    .melio-footer {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 1rem; border-top: 1px solid rgba(99,102,241,0.08);
+      font-size: 0.75rem; color: var(--gray); font-weight: 600;
+    }
+    .melio-btn {
+      display: inline-block; background: #4338CA; color: #fff;
+      padding: 0.55rem 1.1rem; border-radius: 8px;
+      font-size: 0.78rem; font-weight: 700; transition: background 0.2s;
+    }
+    .melio-btn:hover { background: #3730a3; }
+
+    /* masquer flèches carousel sur desktop */
+    .form-carousel-wrap .form-arrow { display: none !important; }
   </style>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://centralisbusinessgroup.com/formations.html"/>
@@ -56,230 +162,132 @@
   </div>
 </nav>
 
-<section id="formations" class="formations" style="padding-top:100px;">
+<section id="formations" class="formations" style="padding-top:100px; padding-bottom: 6rem;">
   <div class="container">
-    <div class="section-hd reveal">
+
+    <!-- En-tête principal -->
+    <div class="section-hd reveal" style="margin-bottom:3.5rem;">
       <p class="section-eyebrow">Nos formations</p>
       <h2 class="serif-title">Construisez votre avenir<br><em>professionnel</em></h2>
       <p class="section-sub">Des formations reconnues par l'État · BTS, titres professionnels & certifications</p>
     </div>
 
-    <!-- SECTION EFS -->
-    <div class="section-hd reveal" style="margin-bottom:2rem;">
-      <h3 class="serif-title" style="font-size:clamp(1.3rem,2.5vw,2rem);">Nos formations en partenariat avec <em>École Française Supérieure</em></h3>
-    </div>
-    <div class="form-carousel-wrap">
-    <div class="form-grid form-grid--4">
+    <!-- ── SECTION EFS ── -->
+    <div class="partner-section reveal">
+      <span class="partner-label">Partenariat</span>
+      <h3 class="partner-title">Nos formations en partenariat avec <em>École Française Supérieure</em></h3>
+      <p class="partner-sub">BTS en alternance et titre professionnel — diplômes reconnus par l'État, niveaux Bac+2</p>
 
-      <div class="form-card reveal">
-        <div class="form-img">
-          <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80" alt="BTS NDRC" loading="lazy"/>
+      <div class="efs-grid">
+
+        <div class="efs-card reveal">
+          <div class="efs-card-accent"></div>
+          <span class="efs-badge">BTS · Alternance</span>
+          <p class="efs-sigle">NDRC</p>
+          <p class="efs-name">Négociation et Digitalisation de la Relation Client</p>
+          <p class="efs-meta">2 ans · Bac+2</p>
+          <ul class="efs-points">
+            <li>Négociation B2B/B2C</li>
+            <li>Marketing digital & CRM</li>
+            <li>Management commercial</li>
+          </ul>
+          <a href="https://www.ecolefrancaisesuperieure.fr" target="_blank" class="efs-btn">Candidater →</a>
         </div>
-        <div class="form-badges"><span class="badge-bts">BTS</span><span class="badge-alt">Alternance</span></div>
-        <h3 class="form-sigle">NDRC</h3>
-        <p class="form-name">Négociation et Digitalisation de la Relation Client</p>
-        <p class="form-desc">Maîtrisez les techniques commerciales modernes et le marketing digital pour devenir un commercial d'élite.</p>
-        <ul class="form-points">
-          <li>Négociation commerciale B2B/B2C</li>
-          <li>Marketing digital & CRM</li>
-          <li>Management commercial</li>
-          <li>Gestion de portefeuille client</li>
-        </ul>
-        <div class="form-footer">
-          <span>2 ans · Bac+2</span>
-          <a href="https://www.ecolefrancaisesuperieure.fr" target="_blank" class="btn-form">Candidater →</a>
+
+        <div class="efs-card efs-card--gold reveal reveal-delay-1">
+          <div class="efs-card-accent"></div>
+          <span class="efs-badge">BTS · Alternance</span>
+          <p class="efs-sigle">GPME</p>
+          <p class="efs-name">Gestion de la PME</p>
+          <p class="efs-meta">2 ans · Bac+2</p>
+          <ul class="efs-points">
+            <li>Gestion administrative & RH</li>
+            <li>Comptabilité & finances</li>
+            <li>Communication d'entreprise</li>
+          </ul>
+          <a href="https://www.ecolefrancaisesuperieure.fr" target="_blank" class="efs-btn">Candidater →</a>
         </div>
+
+        <div class="efs-card reveal reveal-delay-2">
+          <div class="efs-card-accent"></div>
+          <span class="efs-badge">BTS · Alternance</span>
+          <p class="efs-sigle">MCO</p>
+          <p class="efs-name">Management Commercial Opérationnel</p>
+          <p class="efs-meta">2 ans · Bac+2</p>
+          <ul class="efs-points">
+            <li>Animation & gestion de rayon</li>
+            <li>Management d'équipe</li>
+            <li>Développement clientèle</li>
+          </ul>
+          <a href="https://www.ecolefrancaisesuperieure.fr" target="_blank" class="efs-btn">Candidater →</a>
+        </div>
+
+        <div class="efs-card reveal reveal-delay-3">
+          <div class="efs-card-accent"></div>
+          <span class="efs-badge efs-badge--tp">Titre Pro · Alternance</span>
+          <p class="efs-sigle">NTC</p>
+          <p class="efs-name">Négociateur Technico-Commercial</p>
+          <p class="efs-meta">1 an · Titre Professionnel</p>
+          <ul class="efs-points">
+            <li>Prospection & développement</li>
+            <li>Argumentation technique</li>
+            <li>Négociation B2B</li>
+          </ul>
+          <a href="https://www.ecolefrancaisesuperieure.fr" target="_blank" class="efs-btn">Candidater →</a>
+        </div>
+
       </div>
-
-      <div class="form-card form-card--gold reveal reveal-delay-1">
-        <div class="form-img">
-          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="BTS GPME" loading="lazy"/>
-        </div>
-        <div class="form-badges"><span class="badge-bts badge-bts--gold">BTS</span><span class="badge-alt">Alternance</span></div>
-        <h3 class="form-sigle">GPME</h3>
-        <p class="form-name">Gestion de la PME</p>
-        <p class="form-desc">Devenez le bras droit indispensable du chef d'entreprise en maîtrisant la gestion administrative et financière.</p>
-        <ul class="form-points">
-          <li>Gestion administrative & RH</li>
-          <li>Comptabilité & finances</li>
-          <li>Développement commercial</li>
-          <li>Communication d'entreprise</li>
-        </ul>
-        <div class="form-footer">
-          <span>2 ans · Bac+2</span>
-          <a href="https://www.ecolefrancaisesuperieure.fr" target="_blank" class="btn-form btn-form--gold">Candidater →</a>
-        </div>
-      </div>
-
-      <div class="form-card reveal reveal-delay-2">
-        <div class="form-img">
-          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80" alt="BTS MCO" loading="lazy"/>
-        </div>
-        <div class="form-badges"><span class="badge-bts">BTS</span><span class="badge-alt">Alternance</span></div>
-        <h3 class="form-sigle">MCO</h3>
-        <p class="form-name">Management Commercial Opérationnel</p>
-        <p class="form-desc">Pilotez la performance commerciale, managez des équipes et maximisez les résultats d'une unité commerciale.</p>
-        <ul class="form-points">
-          <li>Animation & gestion de rayon</li>
-          <li>Management d'équipe</li>
-          <li>Développement de clientèle</li>
-          <li>Merchandising</li>
-        </ul>
-        <div class="form-footer">
-          <span>2 ans · Bac+2</span>
-          <a href="https://www.ecolefrancaisesuperieure.fr" target="_blank" class="btn-form">Candidater →</a>
-        </div>
-      </div>
-
-      <div class="form-card reveal">
-        <div class="form-img">
-          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80" alt="TP NTC" loading="lazy"/>
-        </div>
-        <div class="form-badges"><span class="badge-bts badge-bts--alt">Titre Pro</span><span class="badge-alt">Alternance</span></div>
-        <h3 class="form-sigle">NTC</h3>
-        <p class="form-name">Négociateur Technico-Commercial</p>
-        <p class="form-desc">Maîtrisez les techniques de vente en B2B, la prospection et la négociation dans des secteurs à forte valeur ajoutée.</p>
-        <ul class="form-points">
-          <li>Prospection & développement commercial</li>
-          <li>Argumentation technique</li>
-          <li>Négociation B2B</li>
-          <li>Gestion de la relation client</li>
-        </ul>
-        <div class="form-footer">
-          <span>1 an · Titre Pro</span>
-          <a href="https://www.ecolefrancaisesuperieure.fr" target="_blank" class="btn-form">Candidater →</a>
-        </div>
-      </div>
-
-    </div>
-      <button class="form-arrow form-arrow--prev" aria-label="Précédent">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-      <button class="form-arrow form-arrow--next" aria-label="Suivant">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
-    </div>
-  </div>
-
-  <!-- SECTION MÉLIO ACADÉMIE -->
-  <div class="container" style="margin-top:4rem;">
-    <div class="section-hd reveal" style="margin-bottom:2rem;">
-      <h3 class="serif-title" style="font-size:clamp(1.3rem,2.5vw,2rem);">Nos formations en partenariat avec <em>Mélio Académie</em></h3>
-    </div>
-    <div class="form-carousel-wrap">
-    <div class="form-grid form-grid--2">
-
-      <div class="form-card form-card--special reveal reveal-delay-1">
-        <div class="form-img">
-          <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80" alt="IA Marketing" loading="lazy"/>
-        </div>
-        <div class="form-badges"><span class="badge-bts badge-bts--ia">IA</span><span class="badge-alt badge-alt--melio">Melio Académie</span></div>
-        <h3 class="form-sigle">IA Marketing</h3>
-        <p class="form-name">Intelligence Artificielle & Marketing</p>
-        <p class="form-desc">Formation de pointe en partenariat avec Melio Académie pour maîtriser l'IA appliquée au marketing digital.</p>
-        <ul class="form-points">
-          <li>Outils IA (ChatGPT, Midjourney…)</li>
-          <li>Stratégie de contenu IA</li>
-          <li>Automatisation marketing</li>
-          <li>Data & analytics</li>
-        </ul>
-        <div class="form-footer">
-          <span>Certification</span>
-          <a href="https://melioacademie.com" target="_blank" class="btn-form">Candidater →</a>
-        </div>
-      </div>
-
-      <div class="form-card reveal reveal-delay-2">
-        <div class="form-img">
-          <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80" alt="TCF FLE" loading="lazy"/>
-        </div>
-        <div class="form-badges"><span class="badge-bts badge-bts--lang">Langue</span><span class="badge-alt badge-alt--melio">Melio Académie</span></div>
-        <h3 class="form-sigle">TCF/FLE</h3>
-        <p class="form-name">Test de Connaissance du Français & Français Langue Étrangère</p>
-        <p class="form-desc">Préparation intensive aux tests officiels de langue française — TCF, DELF, DALF — pour vos démarches administratives ou professionnelles.</p>
-        <ul class="form-points">
-          <li>Compréhension orale & écrite</li>
-          <li>Expression écrite & orale</li>
-          <li>Méthodologie aux tests</li>
-          <li>Suivi personnalisé</li>
-        </ul>
-        <div class="form-footer">
-          <span>Sessions courtes</span>
-          <a href="https://melioacademie.com" target="_blank" class="btn-form">Candidater →</a>
-        </div>
-      </div>
-
-    </div>
-      <button class="form-arrow form-arrow--prev" aria-label="Précédent">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-      <button class="form-arrow form-arrow--next" aria-label="Suivant">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
-    </div>
-  </div>
-
-  <!-- BLOC MOBILE UNIQUEMENT -->
-  <div class="form-mobile-extra">
-
-    <div class="form-why">
-      <h3 class="form-why-title">Pourquoi nous choisir ?</h3>
-
-      <div class="form-accordion-item">
-        <button class="form-accordion-btn" aria-expanded="false">
-          <span>Diplômes reconnus par l'État</span>
-          <svg class="form-accordion-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="form-accordion-body">
-          <p>Nos BTS et titres professionnels sont enregistrés au Répertoire National des Certifications Professionnelles (RNCP). Vos diplômes ont une valeur reconnue par les employeurs et les institutions.</p>
-        </div>
-      </div>
-
-      <div class="form-accordion-item">
-        <button class="form-accordion-btn" aria-expanded="false">
-          <span>Accompagnement individualisé</span>
-          <svg class="form-accordion-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="form-accordion-body">
-          <p>Effectifs réduits et suivi personnalisé par nos formateurs experts. Chaque étudiant bénéficie d'un accompagnement adapté à son rythme et à ses objectifs professionnels.</p>
-        </div>
-      </div>
-
-      <div class="form-accordion-item">
-        <button class="form-accordion-btn" aria-expanded="false">
-          <span>Des formations variées et accessibles</span>
-          <svg class="form-accordion-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="form-accordion-body">
-          <p>BTS en alternance, titres professionnels, certifications IA et préparation linguistique (TCF/FLE) : nous couvrons des domaines variés pour répondre à chaque profil et chaque ambition.</p>
-        </div>
-      </div>
-
-      <div class="form-accordion-item">
-        <button class="form-accordion-btn" aria-expanded="false">
-          <span>Cadre de travail professionnel</span>
-          <svg class="form-accordion-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="form-accordion-body">
-          <p>Locaux modernes à Alfortville, à 10 minutes de Paris (ligne 8). Salles équipées, espace de travail collaboratif et environnement propice à la concentration et à la réussite.</p>
-        </div>
-      </div>
-
-      <div class="form-accordion-item">
-        <button class="form-accordion-btn" aria-expanded="false">
-          <span>Réseau et insertion professionnelle</span>
-          <svg class="form-accordion-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="form-accordion-body">
-          <p>Grâce à notre réseau de partenaires entreprises, nous facilitons la mise en relation avec des recruteurs et accompagnons nos étudiants dans leur insertion professionnelle dès la fin de la formation.</p>
-        </div>
-      </div>
-
     </div>
 
-    <div class="form-mobile-cta">
-      <p>Une question sur nos formations ?</p>
-      <a href="contact.html" class="btn-form" style="display:inline-block;margin-top:0.75rem;">Nous contacter →</a>
+    <div class="partner-divider"></div>
+
+    <!-- ── SECTION MÉLIO ACADÉMIE ── -->
+    <div class="partner-section reveal">
+      <span class="partner-label" style="background:rgba(99,102,241,0.1);color:#4338CA;">Partenariat</span>
+      <h3 class="partner-title">Nos formations en partenariat avec <em style="color:#4338CA;">Mélio Académie</em></h3>
+      <p class="partner-sub">Certifications et préparation linguistique — formations innovantes orientées marché</p>
+
+      <div class="melio-grid">
+
+        <div class="melio-card reveal reveal-delay-1">
+          <div class="melio-img">
+            <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80" alt="IA Marketing" loading="lazy"/>
+          </div>
+          <div class="melio-body">
+            <span class="melio-badge">IA · Certification</span>
+            <p class="melio-sigle">IA Marketing</p>
+            <p class="melio-name">Intelligence Artificielle & Marketing Digital</p>
+            <p class="melio-desc">Maîtrisez les outils d'IA (ChatGPT, Midjourney…) appliqués au marketing : stratégie de contenu, automatisation, data & analytics.</p>
+            <div class="melio-footer">
+              <span>Certification</span>
+              <a href="https://melioacademie.com" target="_blank" class="melio-btn">Candidater →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="melio-card reveal reveal-delay-2">
+          <div class="melio-img">
+            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80" alt="TCF FLE" loading="lazy"/>
+          </div>
+          <div class="melio-body">
+            <span class="melio-badge">Langue · FLE</span>
+            <p class="melio-sigle">TCF / FLE</p>
+            <p class="melio-name">Test de Connaissance du Français & Français Langue Étrangère</p>
+            <p class="melio-desc">Préparation intensive aux tests officiels (TCF, DELF, DALF) — compréhension, expression, méthodologie et suivi personnalisé.</p>
+            <div class="melio-footer">
+              <span>Sessions courtes</span>
+              <a href="https://melioacademie.com" target="_blank" class="melio-btn">Candidater →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CTA contact -->
+    <div style="text-align:center;margin-top:3.5rem;" class="reveal">
+      <p style="font-size:1rem;color:var(--gray);margin-bottom:1rem;">Une question sur nos formations ?</p>
+      <a href="contact.html" class="btn btn-outline">Nous contacter →</a>
     </div>
 
   </div>
