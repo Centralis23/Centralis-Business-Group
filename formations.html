@@ -15,6 +15,13 @@
     #navbar .nav-links a { color: var(--dark) !important; }
     #navbar .nav-links a:hover { color: var(--blue) !important; }
     #navbar .burger span { background: var(--dark) !important; }
+    .form-carousel-wrap .form-arrow { display: none; }
+    @media (max-width: 768px) { .form-carousel-wrap .form-arrow { display: flex; } }
+    .form-grid--4 { grid-template-columns: repeat(4, 1fr) !important; }
+    @media (max-width: 1024px) { .form-grid--4 { grid-template-columns: repeat(2, 1fr) !important; } }
+    @media (max-width: 768px) { .form-grid--4 { display: flex !important; } }
+    .form-grid--2 { grid-template-columns: repeat(2, 1fr) !important; max-width: 800px; margin: 0 auto; }
+    @media (max-width: 768px) { .form-grid--2 { display: flex !important; } }
   </style>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://centralisbusinessgroup.com/formations.html"/>
@@ -62,7 +69,7 @@
       <h3 class="serif-title" style="font-size:clamp(1.3rem,2.5vw,2rem);">Nos formations en partenariat avec <em>École Française Supérieure</em></h3>
     </div>
     <div class="form-carousel-wrap">
-    <div class="form-grid">
+    <div class="form-grid form-grid--4">
 
       <div class="form-card reveal">
         <div class="form-img">
@@ -160,7 +167,7 @@
       <h3 class="serif-title" style="font-size:clamp(1.3rem,2.5vw,2rem);">Nos formations en partenariat avec <em>Mélio Académie</em></h3>
     </div>
     <div class="form-carousel-wrap">
-    <div class="form-grid">
+    <div class="form-grid form-grid--2">
 
       <div class="form-card form-card--special reveal reveal-delay-1">
         <div class="form-img">
