@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Conseil aux entreprises — Centralis Business Group accompagne les entrepreneurs et PME dans l'optimisation de leur organisation."/>
+  <title>Conseil aux entreprises — Centralis Business Group</title>
+  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css?v=12"/>
+  <style>
+    #navbar { background: transparent !important; box-shadow: none !important; transition: background 0.4s, box-shadow 0.4s; }
+    #navbar.scrolled { background: rgba(255,255,255,0.97) !important; box-shadow: 0 2px 20px rgba(17,24,39,0.08) !important; }
+    #navbar .nav-links a { color: #fff !important; }
+    #navbar.scrolled .nav-links a { color: var(--dark) !important; }
+    #navbar .nav-links a:hover { color: rgba(255,255,255,0.7) !important; }
+    #navbar.scrolled .nav-links a:hover { color: var(--blue) !important; }
+    #navbar .burger span { background: #fff !important; }
+    #navbar.scrolled .burger span { background: var(--dark) !important; }
+    #navbar .btn-nav-cta { border-color: rgba(255,255,255,0.5) !important; color: #fff !important; }
+    #navbar.scrolled .btn-nav-cta { border-color: var(--blue) !important; color: var(--blue) !important; }
+    #navbar .nav-logo-img { filter: brightness(0) invert(1); transition: filter 0.4s; }
+    #navbar.scrolled .nav-logo-img { filter: none; }
+
+    /* ── HERO ── */
+    .cs-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex; align-items: center;
+      background: linear-gradient(135deg, #0A0A1A 0%, #1A1ACC 60%, #0F0FAA 100%);
+      overflow: hidden;
+    }
+    .cs-hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&q=80');
+      background-size: cover; background-position: center;
+      opacity: 0.15; mix-blend-mode: luminosity;
+    }
+    .cs-hero-grid {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      animation: grid-drift 30s linear infinite;
+    }
+    @keyframes grid-drift { from { transform: translateY(0); } to { transform: translateY(60px); } }
+    .cs-hero-glow {
+      position: absolute;
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(26,26,204,0.5) 0%, transparent 70%);
+      top: -200px; right: -200px;
+      animation: glow-pulse 6s ease-in-out infinite alternate;
+    }
+    @keyframes glow-pulse { from { transform: scale(1); opacity: 0.5; } to { transform: scale(1.15); opacity: 0.8; } }
+    .cs-hero-inner {
+      position: relative; z-index: 2;
+      max-width: 860px;
+      padding: 0 2rem;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .cs-hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: rgba(255,255,255,0.7);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 0.4rem 1rem; border-radius: 100px;
+      margin-bottom: 2rem;
+      animation: fade-up 0.8s ease both;
+    }
+    .cs-hero-eyebrow span { width: 6px; height: 6px; background: #6EE7B7; border-radius: 50%; display: inline-block; }
+    .cs-hero-title {
+      font-family: var(--font-s);
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      font-weight: 700; color: #fff; line-height: 1.1;
+      margin-bottom: 1.5rem; letter-spacing: -0.02em;
+      animation: fade-up 0.8s 0.15s ease both;
+    }
+    .cs-hero-title em { color: #6EE7B7; font-style: normal; }
+    .cs-hero-sub {
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+      color: rgba(255,255,255,0.75);
+      line-height: 1.7; max-width: 640px; margin: 0 auto 2.5rem;
+      animation: fade-up 0.8s 0.3s ease both;
+    }
+    .cs-hero-cta {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: #fff; color: var(--blue);
+      padding: 1rem 2rem; border-radius: 12px;
+      font-weight: 700; font-size: 0.95rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: fade-up 0.8s 0.45s ease both;
+    }
+    .cs-hero-cta:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
+    .cs-hero-scroll {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+      color: rgba(255,255,255,0.5); font-size: 0.7rem; letter-spacing: 0.1em;
+      text-transform: uppercase; animation: bounce 2s infinite;
+    }
+    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+    @keyframes fade-up { from { opacity:0; transform: translateY(30px); } to { opacity:1; transform: translateY(0); } }
+
+    /* ── STATS ── */
+    .cs-stats { background: #fff; padding: 4rem 0; border-bottom: 1px solid rgba(26,26,204,0.07); }
+    .cs-stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; text-align: center; }
+    @media (max-width: 768px) { .cs-stats-grid { grid-template-columns: repeat(2,1fr); } }
+    .cs-stat-num { font-family: var(--font-s); font-size: 2.8rem; font-weight: 800; color: var(--blue); line-height: 1; margin-bottom: 0.4rem; }
+    .cs-stat-label { font-size: 0.82rem; color: var(--gray); line-height: 1.4; }
+
+    /* ── INTRO ── */
+    .cs-intro { padding: 6rem 0; background: var(--bg); }
+    .cs-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    @media (max-width: 900px) { .cs-intro-grid { grid-template-columns: 1fr; gap: 3rem; } }
+    .cs-intro-img { position: relative; border-radius: 24px; overflow: hidden; }
+    .cs-intro-img img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+    .cs-intro-img-badge {
+      position: absolute; bottom: 1.5rem; left: 1.5rem;
+      background: #fff; border-radius: 12px; padding: 1rem 1.25rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .cs-intro-img-badge-icon { width: 42px; height: 42px; background: var(--blueL); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+    .cs-intro-img-badge strong { font-size: 0.9rem; color: var(--dark); display: block; }
+    .cs-intro-img-badge span { font-size: 0.75rem; color: var(--gray); }
+    .cs-intro-text p { font-size: 1rem; color: #374151; line-height: 1.8; margin-bottom: 1.25rem; }
+    .cs-intro-text p:last-child { margin-bottom: 0; }
+    .cs-highlight {
+      background: linear-gradient(135deg, var(--blueL) 0%, #F0F0FF 100%);
+      border-left: 4px solid var(--blue);
+      border-radius: 0 12px 12px 0;
+      padding: 1.25rem 1.5rem;
+      font-size: 1rem; color: var(--dark);
+      font-style: italic; line-height: 1.65;
+      margin: 2rem 0;
+    }
+
+    /* ── SERVICES ── */
+    .cs-services { padding: 6rem 0; background: #fff; }
+    .cs-services-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem; margin-top: 3rem; }
+    @media (max-width: 768px) { .cs-services-grid { grid-template-columns: 1fr; } }
+    .cs-service-card {
+      border: 1px solid rgba(26,26,204,0.08);
+      border-radius: 20px; padding: 2rem;
+      position: relative; overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+    .cs-service-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(26,26,204,0.1); border-color: rgba(26,26,204,0.2); }
+    .cs-service-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue), #6EE7B7);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .cs-service-card:hover::before { opacity: 1; }
+    .cs-service-icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: var(--blueL); color: var(--blue);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .cs-service-card h3 { font-family: var(--font-s); font-size: 1.2rem; font-weight: 600; color: var(--dark); margin-bottom: 0.75rem; }
+    .cs-service-card p { font-size: 0.88rem; color: var(--gray); line-height: 1.7; }
+    .cs-service-img { width: 100%; aspect-ratio: 16/7; object-fit: cover; border-radius: 10px; margin-top: 1.25rem; }
+
+    /* ── BÉNÉFICES ── */
+    .cs-benefits { padding: 6rem 0; background: linear-gradient(135deg, #0A0A1A 0%, #1A1ACC 100%); position: relative; overflow: hidden; }
+    .cs-benefits::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=1600&q=80');
+      background-size: cover; background-position: center;
+      opacity: 0.08;
+    }
+    .cs-benefits-inner { position: relative; z-index: 2; }
+    .cs-benefits-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin-top: 3rem; }
+    @media (max-width: 1024px) { .cs-benefits-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 640px) { .cs-benefits-grid { grid-template-columns: 1fr; } }
+    .cs-benefit-item {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px; padding: 1.25rem;
+    }
+    .cs-benefit-check { width: 24px; height: 24px; border-radius: 50%; background: #6EE7B7; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .cs-benefit-check svg { color: #0A0A1A; }
+    .cs-benefit-text { font-size: 0.88rem; color: rgba(255,255,255,0.85); line-height: 1.5; font-weight: 500; }
+
+    /* ── MÉTHODE ── */
+    .cs-method { padding: 6rem 0; background: var(--bg); }
+    .cs-method-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; margin-top: 3rem; position: relative; }
+    .cs-method-steps::before {
+      content: '';
+      position: absolute; top: 28px; left: calc(12.5% + 28px); right: calc(12.5% + 28px);
+      height: 2px; background: linear-gradient(90deg, var(--blue), #6EE7B7);
+    }
+    @media (max-width: 768px) { .cs-method-steps { grid-template-columns: 1fr; } .cs-method-steps::before { display: none; } }
+    .cs-step { text-align: center; }
+    .cs-step-num {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--blue); color: #fff;
+      font-family: var(--font-s); font-size: 1.3rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.25rem;
+      position: relative; z-index: 1;
+      box-shadow: 0 0 0 6px var(--blueL);
+    }
+    .cs-step h4 { font-family: var(--font-s); font-size: 1.05rem; font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; }
+    .cs-step p { font-size: 0.84rem; color: var(--gray); line-height: 1.6; }
+
+    /* ── POURQUOI ── */
+    .cs-why { padding: 6rem 0; background: #fff; }
+    .cs-why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-top: 3rem; }
+    @media (max-width: 900px) { .cs-why-grid { grid-template-columns: 1fr; gap: 3rem; } }
+    .cs-why-img { border-radius: 24px; overflow: hidden; position: relative; }
+    .cs-why-img img { width: 100%; aspect-ratio: 3/4; object-fit: cover; }
+    .cs-why-img-tag {
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      background: #fff; border-radius: 10px; padding: 0.75rem 1rem;
+      font-size: 0.78rem; font-weight: 700; color: var(--blue);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .cs-why-text p { font-size: 1rem; color: #374151; line-height: 1.8; margin-bottom: 1.25rem; }
+    .cs-why-text strong { color: var(--dark); }
+
+    /* ── CALENDRIER ── */
+    .cs-booking { padding: 6rem 0; background: var(--bg); }
+    .cs-booking-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: start; margin-top: 3rem; }
+    @media (max-width: 1024px) { .cs-booking-grid { grid-template-columns: 1fr; } }
+    .cs-booking-info h3 { font-family: var(--font-s); font-size: 1.5rem; font-weight: 700; color: var(--dark); margin-bottom: 1rem; }
+    .cs-booking-info p { font-size: 0.92rem; color: var(--gray); line-height: 1.75; margin-bottom: 2rem; }
+    .cs-booking-features { display: flex; flex-direction: column; gap: 1rem; }
+    .cs-booking-feat {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      background: #fff; border: 1px solid rgba(26,26,204,0.08);
+      border-radius: 12px; padding: 1rem 1.25rem;
+    }
+    .cs-booking-feat-icon { width: 36px; height: 36px; border-radius: 9px; background: var(--blueL); color: var(--blue); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .cs-booking-feat strong { font-size: 0.88rem; color: var(--dark); display: block; margin-bottom: 0.2rem; }
+    .cs-booking-feat span { font-size: 0.78rem; color: var(--gray); }
+    .cs-cal-wrap { background: #fff; border-radius: 20px; box-shadow: 0 4px 40px rgba(26,26,204,0.08); overflow: hidden; padding: 1rem; }
+
+    /* ── CTA FINAL ── */
+    .cs-cta-final {
+      padding: 5rem 0; text-align: center;
+      background: linear-gradient(135deg, #0A0A1A 0%, #1A1ACC 100%);
+      position: relative; overflow: hidden;
+    }
+    .cs-cta-final::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&q=80');
+      background-size: cover; background-position: center;
+      opacity: 0.07;
+    }
+    .cs-cta-final-inner { position: relative; z-index: 2; }
+    .cs-cta-final h2 { font-family: var(--font-s); font-size: clamp(1.8rem,3.5vw,3rem); font-weight: 700; color: #fff; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .cs-cta-final h2 em { color: #6EE7B7; font-style: normal; }
+    .cs-cta-final p { font-size: 1rem; color: rgba(255,255,255,0.7); margin-bottom: 2.5rem; max-width: 540px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+    .cs-cta-btn {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: #fff; color: var(--blue);
+      padding: 1rem 2.25rem; border-radius: 12px;
+      font-weight: 700; font-size: 0.95rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .cs-cta-btn:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
+    .cs-tag { font-size: 0.72rem; color: rgba(255,255,255,0.45); margin-top: 1.5rem; letter-spacing: 0.05em; }
+
+    /* section-hd blanc */
+    .cs-benefits .section-eyebrow { color: rgba(255,255,255,0.6); }
+    .cs-benefits .serif-title { color: #fff; }
+    .cs-benefits .section-sub { color: rgba(255,255,255,0.6); }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-inner container">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="Centralis Business Group" class="nav-logo-img"/>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#accueil">Accueil</a></li>
+      <li><a href="salles.html">Espaces</a></li>
+      <li><a href="studio.html">Studio</a></li>
+      <li><a href="formations.html">Formations</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn-nav-cta">Nous contacter</a>
+    <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════
+     HERO
+══════════════════════════════════ -->
+<section class="cs-hero">
+  <div class="cs-hero-bg"></div>
+  <div class="cs-hero-grid"></div>
+  <div class="cs-hero-glow"></div>
+  <div class="cs-hero-inner">
+    <div class="cs-hero-eyebrow"><span></span>Conseil aux entreprises</div>
+    <h1 class="cs-hero-title">Accélérez la <em>performance</em><br>de votre entreprise.</h1>
+    <p class="cs-hero-sub">Nous accompagnons les entrepreneurs, dirigeants et PME dans l'optimisation de leur organisation afin de gagner en efficacité, réduire leurs coûts et développer durablement leur activité.</p>
+    <a href="#rdv" class="cs-hero-cta">
+      Demander un audit stratégique
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+  <div class="cs-hero-scroll">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     STATS
+══════════════════════════════════ -->
+<section class="cs-stats">
+  <div class="container">
+    <div class="cs-stats-grid">
+      <div class="reveal">
+        <p class="cs-stat-num">+200</p>
+        <p class="cs-stat-label">Entreprises accompagnées</p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <p class="cs-stat-num">100%</p>
+        <p class="cs-stat-label">Accompagnement personnalisé</p>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <p class="cs-stat-num">4</p>
+        <p class="cs-stat-label">Axes d'optimisation</p>
+      </div>
+      <div class="reveal reveal-delay-3">
+        <p class="cs-stat-num">10+</p>
+        <p class="cs-stat-label">Ans d'expertise</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     INTRO
+══════════════════════════════════ -->
+<section class="cs-intro">
+  <div class="container">
+    <div class="cs-intro-grid">
+      <div class="cs-intro-img reveal">
+        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80" alt="Conseil stratégique"/>
+        <div class="cs-intro-img-badge">
+          <div class="cs-intro-img-badge-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1ACC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <strong>Audit offert</strong>
+            <span>Premier rendez-vous gratuit</span>
+          </div>
+        </div>
+      </div>
+      <div class="cs-intro-text reveal reveal-delay-1">
+        <p class="section-eyebrow">Notre mission</p>
+        <h2 class="serif-title" style="margin-bottom:1.5rem;">Les meilleures opportunités sont souvent celles que l'on n'<em>exploite pas.</em></h2>
+        <div class="cs-highlight">
+          De nombreuses entreprises disposent de dispositifs, d'optimisations et de solutions qui restent inexploités.
+        </div>
+        <p>Grâce à un audit complet de votre organisation, nous identifions les axes d'amélioration qui permettent d'augmenter votre performance tout en sécurisant votre développement.</p>
+        <p>Notre accompagnement est entièrement personnalisé et orienté vers des résultats concrets.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SERVICES
+══════════════════════════════════ -->
+<section class="cs-services">
+  <div class="container">
+    <div class="section-hd reveal">
+      <p class="section-eyebrow">Nos domaines d'intervention</p>
+      <h2 class="serif-title">Une approche globale<br>au service de votre <em>croissance</em></h2>
+      <p class="section-sub">Quatre piliers pour transformer votre organisation</p>
+    </div>
+    <div class="cs-services-grid">
+
+      <div class="cs-service-card reveal">
+        <div class="cs-service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Optimisation de la masse salariale</h3>
+        <p>Nous analysons votre organisation afin d'identifier les solutions les plus adaptées pour optimiser vos ressources humaines et accompagner votre développement.</p>
+        <img class="cs-service-img" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=700&q=80" alt="Ressources humaines" loading="lazy"/>
+      </div>
+
+      <div class="cs-service-card reveal reveal-delay-1">
+        <div class="cs-service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <h3>Développement des compétences</h3>
+        <p>Vos collaborateurs représentent votre premier levier de croissance. Nous vous accompagnons dans l'identification et la mobilisation des dispositifs de formation afin de renforcer les compétences de vos équipes.</p>
+        <img class="cs-service-img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=700&q=80" alt="Formation" loading="lazy"/>
+      </div>
+
+      <div class="cs-service-card reveal reveal-delay-2">
+        <div class="cs-service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Optimisation des processus</h3>
+        <p>Nous analysons vos méthodes de travail afin d'identifier les tâches à faible valeur ajoutée. Grâce à des solutions d'automatisation, nous améliorons votre productivité et faisons gagner un temps précieux à vos équipes.</p>
+        <img class="cs-service-img" src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=700&q=80" alt="Processus" loading="lazy"/>
+      </div>
+
+      <div class="cs-service-card reveal reveal-delay-3">
+        <div class="cs-service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        </div>
+        <h3>Accompagnement stratégique</h3>
+        <p>Chaque entreprise est unique. Nous construisons un plan d'action sur mesure pour accompagner votre croissance, optimiser votre organisation et renforcer durablement votre compétitivité.</p>
+        <img class="cs-service-img" src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=700&q=80" alt="Stratégie" loading="lazy"/>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     BÉNÉFICES
+══════════════════════════════════ -->
+<section class="cs-benefits">
+  <div class="container cs-benefits-inner">
+    <div class="section-hd reveal">
+      <p class="section-eyebrow">Des bénéfices concrets</p>
+      <h2 class="serif-title">Ce que vous gagnez<br>avec notre <em>accompagnement</em></h2>
+    </div>
+    <div class="cs-benefits-grid">
+      <div class="cs-benefit-item reveal">
+        <div class="cs-benefit-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p class="cs-benefit-text">Optimisation de la masse salariale</p>
+      </div>
+      <div class="cs-benefit-item reveal reveal-delay-1">
+        <div class="cs-benefit-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p class="cs-benefit-text">Réduction des coûts de fonctionnement</p>
+      </div>
+      <div class="cs-benefit-item reveal reveal-delay-2">
+        <div class="cs-benefit-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p class="cs-benefit-text">Optimisation des charges</p>
+      </div>
+      <div class="cs-benefit-item reveal reveal-delay-3">
+        <div class="cs-benefit-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p class="cs-benefit-text">Valorisation des dispositifs de formation</p>
+      </div>
+      <div class="cs-benefit-item reveal">
+        <div class="cs-benefit-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p class="cs-benefit-text">Équipes plus performantes</p>
+      </div>
+      <div class="cs-benefit-item reveal reveal-delay-1">
+        <div class="cs-benefit-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p class="cs-benefit-text">Processus plus efficaces</p>
+      </div>
+      <div class="cs-benefit-item reveal reveal-delay-2">
+        <div class="cs-benefit-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p class="cs-benefit-text">Gain de temps grâce à l'automatisation</p>
+      </div>
+      <div class="cs-benefit-item reveal reveal-delay-3">
+        <div class="cs-benefit-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p class="cs-benefit-text">Accompagnement stratégique personnalisé</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     MÉTHODE
+══════════════════════════════════ -->
+<section class="cs-method">
+  <div class="container">
+    <div class="section-hd reveal">
+      <p class="section-eyebrow">Notre méthode</p>
+      <h2 class="serif-title">4 étapes vers la <em>performance</em></h2>
+      <p class="section-sub">Un processus clair, structuré et centré sur vos résultats</p>
+    </div>
+    <div class="cs-method-steps">
+      <div class="cs-step reveal">
+        <div class="cs-step-num">1</div>
+        <h4>Échanger</h4>
+        <p>Nous prenons le temps de comprendre votre activité, vos objectifs et vos enjeux.</p>
+      </div>
+      <div class="cs-step reveal reveal-delay-1">
+        <div class="cs-step-num">2</div>
+        <h4>Auditer</h4>
+        <p>Analyse complète de votre organisation pour identifier les leviers d'optimisation.</p>
+      </div>
+      <div class="cs-step reveal reveal-delay-2">
+        <div class="cs-step-num">3</div>
+        <h4>Construire</h4>
+        <p>Nous élaborons une stratégie personnalisée adaptée à votre entreprise.</p>
+      </div>
+      <div class="cs-step reveal reveal-delay-3">
+        <div class="cs-step-num">4</div>
+        <h4>Accompagner</h4>
+        <p>Nous restons à vos côtés pour assurer la mise en œuvre et mesurer les résultats.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     POURQUOI CBG
+══════════════════════════════════ -->
+<section class="cs-why">
+  <div class="container">
+    <div class="cs-why-grid">
+      <div class="cs-why-img reveal">
+        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&q=80" alt="Pourquoi Centralis"/>
+        <div class="cs-why-img-tag">Partenaire de confiance</div>
+      </div>
+      <div class="cs-why-text reveal reveal-delay-1">
+        <p class="section-eyebrow">Pourquoi nous choisir</p>
+        <h2 class="serif-title" style="margin-bottom:1.5rem;">Parce que nous ne proposons pas de solutions <em>standardisées.</em></h2>
+        <p>Nous croyons qu'une entreprise performante est une entreprise qui exploite pleinement ses ressources.</p>
+        <p>Notre accompagnement repose sur une vision globale de votre activité afin de créer des solutions <strong>durables, efficaces et adaptées à vos ambitions.</strong></p>
+        <p>Notre objectif n'est pas simplement de vous conseiller, mais de devenir un véritable <strong>partenaire de votre développement.</strong></p>
+        <div style="margin-top:2rem;">
+          <a href="#rdv" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:0.5rem;background:var(--blue);color:#fff;padding:0.9rem 1.75rem;border-radius:10px;font-weight:700;font-size:0.9rem;transition:transform 0.3s,box-shadow 0.3s;">
+            Prendre rendez-vous →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     CALENDRIER
+══════════════════════════════════ -->
+<section class="cs-booking" id="rdv">
+  <div class="container">
+    <div class="section-hd reveal">
+      <p class="section-eyebrow">Prise de rendez-vous</p>
+      <h2 class="serif-title">Réservez votre <em>audit stratégique</em></h2>
+      <p class="section-sub">Premier échange offert · Sans engagement · En ligne ou à Alfortville</p>
+    </div>
+    <div class="cs-booking-grid">
+      <div class="cs-booking-info reveal">
+        <h3>Donnez une nouvelle dimension à votre entreprise.</h3>
+        <p>Vous souhaitez identifier les opportunités d'optimisation de votre organisation et accélérer votre croissance ? Échangeons ensemble lors d'un premier rendez-vous.</p>
+        <div class="cs-booking-features">
+          <div class="cs-booking-feat">
+            <div class="cs-booking-feat-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <strong>30 à 60 minutes</strong>
+              <span>Audit initial complet de votre situation</span>
+            </div>
+          </div>
+          <div class="cs-booking-feat">
+            <div class="cs-booking-feat-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div>
+              <strong>Échange personnalisé</strong>
+              <span>Analyse de vos besoins spécifiques</span>
+            </div>
+          </div>
+          <div class="cs-booking-feat">
+            <div class="cs-booking-feat-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div>
+              <strong>Sans engagement</strong>
+              <span>Premier rendez-vous 100% gratuit</span>
+            </div>
+          </div>
+          <div class="cs-booking-feat">
+            <div class="cs-booking-feat-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div>
+              <strong>En présentiel ou à distance</strong>
+              <span>12 rue Anatole France, 94140 Alfortville</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cs-cal-wrap reveal reveal-delay-1">
+        <div id="my-cal-inline-conseil"></div>
+        <script type="text/javascript">
+          (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+          Cal("init", "conseil-centralis", {origin:"https://app.cal.com"});
+          Cal.config = Cal.config || {};
+          Cal.config.forwardQueryParams = true;
+          Cal.ns["conseil-centralis"]("inline", {
+            elementOrSelector:"#my-cal-inline-conseil",
+            config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"},
+            calLink: "centralis-business-group-2h05wo/visite-centralis",
+          });
+          Cal.ns["conseil-centralis"]("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#1A1ACC"},"dark":{"cal-brand":"#59639b"}},"hideEventTypeDetails":true,"layout":"month_view"});
+        </script>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     CTA FINAL
+══════════════════════════════════ -->
+<section class="cs-cta-final">
+  <div class="container cs-cta-final-inner">
+    <h2>Optimiser aujourd'hui.<br><em>Performer durablement.</em></h2>
+    <p>Centralis Business Group — votre partenaire stratégique pour une croissance durable et maîtrisée.</p>
+    <a href="#rdv" class="cs-cta-btn">
+      Prendre rendez-vous
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+    <p class="cs-tag">Audit stratégique personnalisé · Sans engagement</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="CBG" class="footer-logo" onerror="this.style.display='none'"/>
+        <p>Groupe d'excellence à Alfortville. Espaces professionnels, formations certifiées et conseil stratégique.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#a-propos">À Propos</a></li>
+          <li><a href="salles.html">Espaces</a></li>
+          <li><a href="studio.html">Studio Podcast</a></li>
+          <li><a href="formations.html">Formations</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Nos espaces</h4>
+        <ul>
+          <li><a href="salle-koroba.html">Salle Koroba</a></li>
+          <li><a href="salle-nkhrumah.html">Salle Nkhrumah</a></li>
+          <li><a href="salle-sankara.html">Salle Sankara</a></li>
+          <li><a href="salle-mandela.html">Salle Mandela</a></li>
+          <li><a href="salle-lumumba.html">Salle Lumumba</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="cgv.html">Conditions générales de vente</a></li>
+          <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>12 rue Anatole France, 94140 Alfortville</p>
+        <p>contact@centralisbusinessgroup.com</p>
+        <p>Lundi – Vendredi · 10h à 18h</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Centralis Business Group · Tous droits réservés</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
