@@ -116,7 +116,8 @@
     .cs-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
     @media (max-width: 900px) { .cs-intro-grid { grid-template-columns: 1fr; gap: 3rem; } }
     .cs-intro-img { position: relative; border-radius: 24px; overflow: hidden; }
-    .cs-intro-img img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+    .cs-intro-img img { width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: center; display: block; }
+    @media (max-width: 640px) { .cs-intro-img img { aspect-ratio: 3/2; } }
     .cs-intro-img-badge {
       position: absolute; bottom: 1.5rem; left: 1.5rem;
       background: #fff; border-radius: 12px; padding: 1rem 1.25rem;
@@ -165,7 +166,8 @@
     }
     .cs-service-card h3 { font-family: var(--font-s); font-size: 1.2rem; font-weight: 600; color: var(--dark); margin-bottom: 0.75rem; }
     .cs-service-card p { font-size: 0.88rem; color: var(--gray); line-height: 1.7; }
-    .cs-service-img { width: 100%; aspect-ratio: 16/7; object-fit: cover; border-radius: 10px; margin-top: 1.25rem; }
+    .cs-service-img { width: 100%; aspect-ratio: 16/7; object-fit: cover; object-position: center; border-radius: 10px; margin-top: 1.25rem; display: block; }
+    @media (max-width: 640px) { .cs-service-img { aspect-ratio: 16/9; } }
 
     /* ── BÉNÉFICES ── */
     .cs-benefits { padding: 6rem 0; background: linear-gradient(135deg, #0A0A1A 0%, #1A1ACC 100%); position: relative; overflow: hidden; }
@@ -216,7 +218,8 @@
     .cs-why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-top: 3rem; }
     @media (max-width: 900px) { .cs-why-grid { grid-template-columns: 1fr; gap: 3rem; } }
     .cs-why-img { border-radius: 24px; overflow: hidden; position: relative; }
-    .cs-why-img img { width: 100%; aspect-ratio: 3/4; object-fit: cover; }
+    .cs-why-img img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center; display: block; }
+    @media (max-width: 900px) { .cs-why-img img { aspect-ratio: 16/9; } }
     .cs-why-img-tag {
       position: absolute; top: 1.5rem; right: 1.5rem;
       background: #fff; border-radius: 10px; padding: 0.75rem 1rem;
@@ -324,7 +327,7 @@
   <div class="container">
     <div class="cs-stats-grid">
       <div class="reveal">
-        <p class="cs-stat-num">+200</p>
+        <p class="cs-stat-num">+50</p>
         <p class="cs-stat-label">Entreprises accompagnées</p>
       </div>
       <div class="reveal reveal-delay-1">
@@ -351,15 +354,6 @@
     <div class="cs-intro-grid">
       <div class="cs-intro-img reveal">
         <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80" alt="Conseil stratégique"/>
-        <div class="cs-intro-img-badge">
-          <div class="cs-intro-img-badge-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1ACC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          </div>
-          <div>
-            <strong>Audit offert</strong>
-            <span>Premier rendez-vous gratuit</span>
-          </div>
-        </div>
       </div>
       <div class="cs-intro-text reveal reveal-delay-1">
         <p class="section-eyebrow">Notre mission</p>
