@@ -126,12 +126,6 @@ if (sourceNav) {
   });
 }
 
-// CTA contact
-const drawerCta = document.createElement('a');
-drawerCta.href = 'contact.html';
-drawerCta.textContent = 'Nous contacter';
-drawerCta.style.cssText = 'display:block;margin-top:1.5rem;padding:0.85rem 1.25rem;background:#1a1acc;color:#fff;border-radius:6px;font-weight:700;font-size:0.85rem;text-align:center;text-decoration:none;letter-spacing:0.03em;';
-drawer.appendChild(drawerCta);
 
 document.body.appendChild(drawer);
 
